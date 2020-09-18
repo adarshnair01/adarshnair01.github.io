@@ -1,206 +1,1369 @@
-<html>
-<!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<!--
+		Basic
+	-->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title>Ryan - vCard / Resume / CV Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="vCard & Resume Template" />
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
+	<meta name="author" content="beshleyua" />
+	
+	<!--
+		Load Fonts
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
+	
+	<!--
+		Load CSS
+	-->
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/blogs.css" />
+	<link rel="stylesheet" href="css/ionicons.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
 
+	<!--
+		Background Gradient
+	-->
+	<!--<link rel="stylesheet" href="css/gradient.css" />-->
+	
+	<!--
+		Template New-Skin
+	-->
+	<link rel="stylesheet" href="css/new-skin/new-skin.css" />
 
-  <title>Adi || Roboticist</title>
+	<!--
+		Template RTL
+	-->
+	<!--<link rel="stylesheet" href="css/rtl.css" />-->
+	
+	<!--
+		Template Colors
+	-->
+	<!-- <link rel="stylesheet" href="css/template-colors/green.css" /> -->
+	<!-- <link rel="stylesheet" href="css/template-colors/blue.css" /> -->
+	<link rel="stylesheet" href="css/template-colors/orange.css" />
+	<!-- <link rel="stylesheet" href="css/template-colors/pink.css" /> -->
+	<!-- <link rel="stylesheet" href="css/template-colors/purple.css" /> -->
+	<!-- <link rel="stylesheet" href="css/template-colors/red.css" /> -->
 
-  <!-- Material Design fonts -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Material Design -->
-  <link href="./bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" rel="stylesheet">
-  <link href="./bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
-  <!--Font Awesome icons-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--
+		Template Dark
+	-->
+	<link rel="stylesheet" href="css/template-dark/dark.css" />
+	
 
-  <!--Lightbox-->
-  <link href="./bower_components/bootstrap/dist/css/ekkolightbox.min.css" rel="stylesheet">
-
-  <link href="./bower_components/bootstrap/dist/css/style.css" rel="stylesheet">
-
-  <!-- <link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!--
+		Favicons
+	-->
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	
 </head>
+
 <body>
-    <div id="mainpage">
-      <div class="topnav">
-        <div class="navbar navbar-fixed-top navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="navbar-collapse collapse navbar-inverse-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://adarshnair01.github.io/blog">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <h1 class="container">Adarsh Nair</h1>
-      </div>
-      <div>
-        <div class="container">
+	<div class="page new-skin">
+		
+		<!-- preloader -->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-          <div id="home" class="col-sm-1">
-            <a target="_blank" data-toggle="modal" data-target=".modal">
-              <i class="fa fa-map-marker"></i>
-            </a>
-          </div>
-          <div id="effect" class="col-sm-8 col-sm-offset-1 col-xs-12 " id="children">
-            <div class="cardsocial text-right">
-              <a href="https://www.facebook.com/adarshnair01"><i class="fa fa-facebook-square"></i></a>
-              <a href="https://plus.google.com/u/1/+AdarshNair01"><i class="fa fa-google-plus"></i></a>
-              <a href="http://github.com/adarshnair01"><i class="fa fa-github-square"></i></a>
-              <a href="https://in.linkedin.com/in/adarshnair01"><i class="fa fa-linkedin-square"></i></a>
-              <a href="https://www.youtube.com/channel/UC9L0IQZxwbKX3c00A4tWPiw"><i class="fa fa-youtube-square"></i></a>
-            </div>
-            <div id="intro" class="well">
-              <div class="row">
-                <div class="col-sm-6 col-md-4">
-                  <div class="thumbnail">
-                    <img src="images/dp.jpg" alt="card">
-                  </div>
-                  <div class="cardaddress">
-                      <address>
-                        <strong>C-99, Tejendra Nagar-7</strong><br>
-                        Tragad Road, Chandkheda<br>
-                        Ahmedabad, Gujarat 382424<br>
-                        <abbr title="Phone">P:</abbr> <a href="tel:+919426643740">(+91) 9426643740 </a>
-                      </address>
+		<!-- background -->
+		<div class="background"></div>
 
-                      <address>
-                        <strong>Adarsh Nair</strong><br>
-                        <a href="mailto:#">adarshnair01@gmail.com</a>
-                      </address>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-8">
-                  <h2>Roboticist</h2><hr color="white"/>
-                    <p class="text-justify">Adarsh's not really limited to the robots, he also has interest in web development and other domains. He came into existence on 216<sup>th</sup> day of leap year in Gregorian calendar. He spent most of his life in Gujarat, travelled to different states and presently is in Uttar pradesh doing his Masters in Information Technology. He loves jogging, riding cycle, spending time with friends, playing outdoor games and much more. He also loves teasing his sibling and fighting with him occassionaly. He believes that there's no such thing as darkness, just an absence of light. The fat on his body is designer, which makes him do crazy things when he is idle. The places where he spent part of his life introduced him to new people, great places to hang on and friends who helped him through the difficulties in life. He knows 4 Indian Languages(Hindi, Gujarati, Malayalam and Tamil) and English. </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<!--
+			Container
+		-->
+		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
 
-  <div class="modal "  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title"><i class="fa fa-home"></i> Home sweet home</h4>
-        </div>
-        <div class="modal-body">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d917.3709791952109!2d72.56362668804344!3d23.115980699051995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82f905ef498f%3A0xd224d896bd1999a2!2zMjPCsDA2JzU3LjUiTiA3MsKwMzMnNTEuMCJF!5e0!3m2!1sen!2sin!4v1536605974136" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="./bower_components/jquery/dist/jquery.js"></script>
-  <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./bower_components/bootstrap/dist/js/ekkolightbox.min.js"></script>
-  <script src="./bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
-  <script src="./bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
+			<!--
+				Header
+			-->
+			<header class="header">
 
-  <script>
+				<!-- menu -->
+				<div class="top-menu">
+					<ul>
+						<li class="active">
+							<a href="#about-card">
+								<span class="icon ion-person"></span>
+								<span class="link">About</span>
+							</a>
+						</li>
+						<li>
+							<a href="#resume-card">
+								<span class="icon ion-android-list"></span>
+								<span class="link">Resume</span>
+							</a>
+						</li>
+						<li>
+							<a href="#works-card">
+								<span class="icon ion-camera"></span>
+								<span class="link">Clicks</span>
+							</a>
+						</li>
+						<li>
+							<a href="#blog-card">
+								<span class="icon ion-chatbox-working"></span>
+								<span class="link">Blog</span>
+							</a>
+						</li>
+						<li>
+							<a href="#contacts-card">
+								<span class="icon ion-at"></span>
+								<span class="link">Contact</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 
-  $( "#contactform" ).submit(function( event ) {
-    var data=jQuery("#focusedInput1").val();
-    var user=jQuery("#focusedInput2").val();
-    alert(data+user);
-    $.ajax({
-      type: "POST",
-      url: "https://mandrillapp.com/api/1.0/messages/send.json",
-      data: {
-        'key': 'lK_F6csdlG6roX34i0loNQ',
-        'message': {
-          'from_email': user,
-          'to': [
-              {
-                'email': 'adarshnair01@gmail.com',
-                'name': 'Adarsh Nair',
-                'type': 'to'
-              }
-            ],
-          'autotext': 'true',
-          'subject': 'Portfolio',
-          'html': data
-        }
-      }
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-     });
-  });
+			</header>
 
-  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
-  });
-  $(function () {
-    $.material.init();
-      $( "#effect" ).finish();
-      $( "#effect" ).effect( "shake",{times:1},500 );
-  });
+			<!--
+				Card - Started
+			-->
+			<div class="card-started" id="home-card">
+
+				<!--
+					Profile
+				-->
+				<div class="profile">
+
+					<!-- profile image -->
+					<div class="slide" style="background-image: url(images/bg.jpg);"></div>
+
+					<!-- profile photo -->
+					<div class="image">
+						<img src="images/profile.png" alt="" />
+					</div>
+
+					<!-- profile titles -->
+					<div class="title">Adarsh Nair</div>
+					<div class="subtitle">Data Scientist</div>
+
+					<!-- profile socials -->
+					<div class="social">
+						<a target="_blank" href="https://www.facebook.com/adarshnair01/"><span class="fab fa-facebook"></span></a>
+						<a target="_blank" href="https://www.instagram.com/adarshnair01/"><span class="fab fa-instagram"></span></a>
+						<a target="_blank" href="https://www.linkedin.com/in/adarshnair01"><span class="fab fa-linkedin"></span></a>
+						<a target="_blank" href="https://twitter.com/adarshnair01"><span class="fab fa-twitter"></span></a>
+						<a target="_blank" href="https://github.com/adarshnair01"><span class="fab fa-github"></span></a>
+						<a target="_blank" href="https://www.kaggle.com/dextrousjinx"><span class="fab fa-kaggle"></span></a>
+						<a target="_blank" href="https://stackoverflow.com/users/1882887/adarsh-nair"><span class="fab fa-stack-overflow"></span></a>
+					</div>
+					
+					<!-- profile buttons -->
+					<div class="lnks">
+						<a href="#" class="lnk">
+							<span class="text">Download CV</span>
+							<span class="ion ion-archive"></span>
+						</a>
+						<a href="#" class="lnk discover">
+							<span class="text">Contact Me</span>
+							<span class="arrow"></span>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- 
+				Card - About
+			-->
+			<div class="card-inner animated active" id="about-card">
+				<div class="card-wrap">
+
+					<!-- 
+						About 
+					-->
+					<div class="content about">
+
+						<!-- title -->
+						<div class="title">About Me</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="text-box">
+									<p>
+										I am Adarsh Nair, Data Scientist with 4+ years of 
+										experience creating data regression models, using 
+										predictive data modelling, and analyzing data mining algorithms
+										to implement action-oriented
+										solutions to complex marketing problems, and solving 
+										the business critical NLP problems
+									</p>
+								</div>
+							</div>
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="info-list">
+									<ul>
+										<li><strong>Age . . . . .</strong> 28</li>
+										<li><strong>Residence . . . . .</strong> Kerala, India</li>
+										<li><strong>Research. . . . .</strong> Motion Planning</li>
+										<li><strong>Status. . . . .</strong> Single</li>
+										<li><strong>Interest . . . . .</strong> Soccer, Travel</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Services
+					-->
+					<div class="content services">
+
+						<!-- title -->
+						<div class="title">Skills</div>
+
+						<!-- content -->
+						<div class="row service-items border-line-v">
 
 
-          //
-          // $("#btnPrint").on("click", function () {
-          //     var divContents = $("#resume").html();
-          //     var printWindow = window.open('', '', 'height=400,width=800');
-          //     printWindow.document.write('<html><head><title>Resume</title>');
-          //     printWindow.document.write('</head><body >');
-          //     printWindow.document.write(divContents);
-          //     printWindow.document.write('</body></html>');
-          //     printWindow.document.close();
-          //     printWindow.print();
-          // });
-$('#children').draggable({ containment: "#mainpage", scroll:false });
+							<!-- service item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-h">
+								<div class="service-item">
+									<div class="icon"><span class="ion ion-stats-bars"></span></div>
+									<div class="name">Forecasting & Text Analytics</div>
+									<p>
+										Mined text-based conversations and used AI 
+										to improve the accuracy of forecasting.
+									</p>
+								</div>
+							</div>
+
+							<!-- service item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-h">
+								<div class="service-item">
+									<div class="icon"><span class="ion ion-social-python"></span></div>
+									<div class="name">Python Development</div>
+									<p>
+										Experience working with data using libraries like SkLearn, 
+										TensorFlow, gensim, nltk, Spacy, NumPy and Pandas.
+									</p>
+								</div>
+							</div>
 
 
-$(function () {
-    $("#btnPrint").click(function () {
-        var contents = $("#resume").html();
-        var frame1 = $('<iframe />');
-        frame1[0].name = "frame1";
-        frame1.css({ "position": "absolute", "top": "-1000000px" });
-        $("body").append(frame1);
-        var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
-        frameDoc.document.open();
-        //Create a new HTML document.
-        frameDoc.document.write('<html><head><title>DIV Contents</title>');
-        frameDoc.document.write('</head><body>');
-        //Append the external CSS file.
-        frameDoc.document.write('');
-        //Append the DIV contents.
-        frameDoc.document.write(contents);
-        frameDoc.document.write('</body></html>');
-        frameDoc.document.close();
-        setTimeout(function () {
-            window.frames["frame1"].focus();
-            window.frames["frame1"].print();
-            frame1.remove();
-        }, 500);
-    });
-});
+							<!-- service item -->
+							<div class="col col-d-6 col-t-6 col-m-12">
+								<div class="service-item">
+									<div class="icon"><span class="ion ion-code"></span></div>
+									<div class="name">Software Development</div>
+									<p>
+										Software development with quality of code as per standards, 
+										quality tools, and best practices.
+									</p>
+								</div>
+							</div>
 
-  </script>
-  <!-- <script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script> -->
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script> -->
+							<!-- service item -->
+							<div class="col col-d-6 col-t-6 col-m-12">
+								<div class="service-item">
+									<div class="icon"><span class="ion-speedometer"></span></div>
+									<div class="name">Improve Algorithm</div>
+									<p>
+										Optimize algorithm by balancing the trade-off between faster 
+										processing times and higher storage requirements.
+									</p>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Price Tables
+					-->
+					<div class="content pricing">
+
+						<!-- title -->
+						<div class="title">Technical Skills</div>
+
+						<!-- content -->
+						<div class="row pricing-items">
+
+							<!-- pricing item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="pricing-item">
+									<div class="icon"><i class="ion ion-fork-repo"></i></div>
+									<div class="name">Languages</div>
+									<!-- <div class="amount">
+										<span class="dollar">$</span>
+										<span class="number">22</span>
+										<span class="period">hour</span>
+									</div> -->
+									<div class="feature-list">
+										<ul>
+											<li>Julia<strong>new</strong></li>
+											<li>Python</li>
+											<li>SQL</li>
+											<li>ElasticSearch</li>
+											<li>C/C++</li>
+										</ul>
+									</div>
+									<div class="lnks">
+										<a href="#" class="lnk">
+											<!-- <span class="text">Tools & IDE</span>
+											<i class="ion ion-wrench"></i> -->
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- pricing item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="pricing-item">
+									<div class="icon"><i class="ion ion-gear-a"></i></div>
+									<div class="name">Tools & IDE</div>
+									<!-- <div class="amount">
+										<span class="dollar">$</span>
+										<span class="number">48</span>
+										<span class="period">hour</span>
+									</div> -->
+									<div class="feature-list">
+										<ul>
+											<li>Visual Code<strong>new</strong></li>
+											<li>Atom</li>
+											<li>PyCharm</li>
+											<li>Visual Studio</li>
+											<li>SQL Management Studio </li>
+											<li>Eclipse </li>
+										</ul>
+									</div>
+									<div class="lnks">
+										<a href="#" class="lnk">
+											<!-- <span class="text">Buy Pro</span>
+											<i class="ion ion-speedometer"></i> -->
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Fun Fact
+					-->
+					<div class="content fuct">
+
+						<!-- title -->
+						<div class="title">Fun Fact</div>
+
+						<!-- content -->
+						<div class="row fuct-items">
+
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="ion ion-disc"></span></div>
+									<div class="name">12 Courses Completed</div>
+								</div>
+							</div>
+
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="ion ion-trophy"></span></div>
+									<div class="name">5 Awards Won</div>
+								</div>
+							</div>
+
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="ion ion-coffee"></span></div>
+									<div class="name">1 000 Cups of coffee</div>
+								</div>
+							</div>
+
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="ion ion-flag"></span></div>
+									<div class="name">Completed 3 Trek</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Clients
+					-->
+					<!-- <div class="content clients"> -->
+
+						<!-- title -->
+						<!-- <div class="title">Clients</div> -->
+
+						<!-- content -->
+						<!-- <div class="row client-items"> -->
+
+							<!-- client item -->
+							<!-- <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="client-item">
+									<div class="image">
+										<a target="_blank" href="https://www.google.com">
+											<img src="images/clients/client_1.png" alt="" />
+										</a>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- client item -->
+							<!-- <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="client-item">
+									<div class="image">
+										<a target="_blank" href="https://www.google.com">
+											<img src="images/clients/client_2.png" alt="" />
+										</a>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- client item -->
+							<!-- <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="client-item">
+									<div class="image">
+										<a target="_blank" href="https://www.google.com">
+											<img src="images/clients/client_3.png" alt="" />
+										</a>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- client item -->
+							<!-- <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="client-item">
+									<div class="image">
+										<a target="_blank" href="https://www.google.com">
+											<img src="images/clients/client_4.png" alt="" />
+										</a>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- <div class="clear"></div> -->
+						<!-- </div> -->
+
+					<!-- </div> -->
+
+					<!--
+						Testimonials
+					-->
+					<div class="content testimonials">
+
+						<!-- title -->
+						<div class="title">Testimonials</div>
+
+						<!-- content -->
+						<div class="row testimonials-items">
+
+							<!-- client item -->
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="revs-carousel default-revs">
+									<div class="owl-carousel">
+										<div class="item">
+											<div class="revs-item">
+												<div class="text">
+													Adarsh is simple, calm, understandable, helpful & always willing to work, self motivated person.												
+												</div>
+												<div class="user">
+													<div class="img"><img src="images/man1.jpg" alt="" /></div>
+													<div class="info">
+														<div class="name">Sandesh Sharma </div>
+														<div class="company">Research Scholar, MNIT Jaipur</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="revs-item">
+												<div class="text">
+													I was always in awe of Adarsh’s ability to command a room and get people on board with ideas—even people who were initially on completely different pages. He is a perfect mentor for a fresher. 
+													
+													It's always fun to work with Adarsh.
+												</div>
+												<div class="user">
+													<div class="img"><img src="images/man2.jpg" alt="" /></div>
+													<div class="info">
+														<div class="name">Rishabh Pandey</div>
+														<div class="company">Python Developer, Kvantum Inc.</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											</div>
+										</div>
+										<!-- <div class="item">
+											<div class="revs-item">
+												<div class="text">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+												</div>
+												<div class="user">
+													<div class="img"><img src="images/man1.jpg" alt="" /></div>
+													<div class="info">
+														<div class="name">Helen Floyd</div>
+														<div class="company">Art Director</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Resume
+			-->
+			<div class="card-inner" id="resume-card">
+				<div class="card-wrap">
+
+					<!--
+						Resume
+					-->
+					<div class="content resume">
+
+						<!-- title -->
+						<div class="title">Resume</div>
+
+						<!-- content -->
+						<div class="row">
+
+							<!-- experience -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="ion ion-briefcase"></i></div>
+									<div class="name">Experience</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h active">
+										<div class="date">2019 - Present</div>
+										<div class="name">Senior Data Scientist</div>
+										<div class="company">Kvantum Inc.</div>
+										<p>
+											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2017 - 2019</div>
+										<div class="name">Data Scientist</div>
+										<div class="company">Kvantum Inc.</div>
+										<p>
+											Monitored technical aspects of the delivery for several projects and develop new NLP components.
+										</p>
+									</div>
+									<div class="resume-item">
+										<div class="date">2016 - 2017</div>
+										<div class="name">Software Developer</div>
+										<div class="company">MAQ Software</div>
+										<p>
+											Design software architecture, Develop algorithms and Ensure quality of code.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- education -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="ion ion-university"></i></div>
+									<div class="name">Education</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h">
+										<div class="date">2014 - 2016</div>
+										<div class="name">Robotics Course</div>
+										<div class="company">Allahabad</div>
+										<p>
+											Master's Degree in Informatin Technology from Indian Institute of Information Technology
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2009 - 2013</div>
+										<div class="name">Programming Course</div>
+										<div class="company">Bhavnagar</div>
+										<p>
+											Bachelor's Degree in Information Technology from Government Engineering  College.
+										</p>
+									</div>
+									<!-- <div class="resume-item">
+										<div class="date">2004 - 2005</div>
+										<div class="name">Web Design Course</div>
+										<div class="company">London</div>
+										<p>
+											Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript
+										</p>
+									</div> -->
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Skills
+					-->
+					<div class="content skills">
+
+						<!-- title -->
+						<div class="title">My Skills</div>
+					
+						<!-- content -->
+						<div class="row">
+						
+							<!-- skill item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="ion ion-wand"></i></div>
+										<div class="name">Data Science</div>
+									</div>
+									<ul>
+										<li class="border-line-h"> 
+											<div class="name">Regression</div>
+											<div class="progress">
+												<div class="percentage" style="width:90%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Neural Network</div>
+											<div class="progress">
+												<div class="percentage" style="width:65%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Optimization</div>
+											<div class="progress">
+												<div class="percentage" style="width:75%;"></div>
+											</div>
+										</li>
+										<li>
+											<div class="name">Data Visualization</div>
+											<div class="progress">
+												<div class="percentage" style="width:85%;"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- skill item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list dotted">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="ion ion-flag"></i></div>
+										<div class="name">Languages</div>
+									</div>
+									<ul>
+										<li class="border-line-h"> 
+											<div class="name">English</div>
+											<div class="progress">
+												<div class="percentage" style="width:90%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Hindi</div>
+											<div class="progress">
+												<div class="percentage" style="width:90%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Malayalam</div>
+											<div class="progress">
+												<div class="percentage" style="width:60%;"></div>
+											</div>
+										</li>
+										<li> 
+											<div class="name">Gujarati</div>
+											<div class="progress ">
+												<div class="percentage" style="width:70%;"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- skill item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list circles">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="ion ion-code"></i></div>
+										<div class="name">Coding</div>
+									</div>
+									<ul>
+										<li> 
+											<div class="name">Python/Julia</div>
+											<div class="progress p90">
+												<span>95%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">SQL</div>
+											<div class="progress p75">
+												<span>75%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">ElasticSearch</div>
+											<div class="progress p85">
+												<span>85%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">C/C++/C#</div>
+											<div class="progress p95">
+												<span>70%</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- skill item -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list list">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="ion ion-android-list"></i></div>
+										<div class="name">Knowledge</div>
+									</div>
+									<ul>
+										<li> 
+											<div class="name">Regression(Linear, Logistic)</div>
+										</li>
+										<li> 
+											<div class="name">Kalman Filters</div>
+										</li>
+										<li> 
+											<div class="name">Decision Tree</div>
+										</li>
+										<li> 
+											<div class="name">Support Vector Machine</div>
+										</li>
+										<li> 
+											<div class="name">K- Nearest Neighbors</div>
+										</li>
+										<li> 
+											<div class="name">Random Forest</div>
+										</li>
+										<li> 
+											<div class="name">Gradient Boosting & AdaBoost</div>
+										</li>
+										<li> 
+											<div class="name">PCA</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Works
+			-->
+			<div class="card-inner" id="works-card">
+				<div class="card-wrap">
+
+					<!--
+						Works
+					-->
+					<div class="content works">
+
+						<!-- title -->
+						<div class="title">Recent Clicks</div>
+
+						<!-- filters -->
+						<div class="filter-menu filter-button-group">
+							<div class="f_btn active">
+								<label><input type="radio" name="fl_radio" value="grid-item" />All</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="kerala" />Kerala</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="gujarat" />Gujarat</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="ncr" />Delhi</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="misc" />Misc</label>
+							</div>
+						</div>
+
+						<!-- content -->
+						<div class="row grid-items border-line-v">
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item kerala border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/118594598_361619581551210_3520842927322121907_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=RLFObr9rSsMAX8AzYNH&_nc_tp=18&oh=0d486d4df0c4ff15ea7124e3bc766181&oe=5F8FEDD8" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/118594598_361619581551210_3520842927322121907_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=RLFObr9rSsMAX8AzYNH&_nc_tp=18&oh=0d486d4df0c4ff15ea7124e3bc766181&oe=5F8FEDD8" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/118594598_361619581551210_3520842927322121907_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=RLFObr9rSsMAX8AzYNH&_nc_tp=18&oh=0d486d4df0c4ff15ea7124e3bc766181&oe=5F8FEDD8" class="name has-popup-image">Kannur</a>
+										<div class="category">Kerala</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item kerala border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/101452425_1148925405490117_2646313468007937518_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=njisPQkUoi4AX8Uk-rI&_nc_tp=18&oh=7c80414fb2b7d62d2213148d64fd39d6&oe=5F8EFBA6" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/101452425_1148925405490117_2646313468007937518_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=njisPQkUoi4AX8Uk-rI&_nc_tp=18&oh=7c80414fb2b7d62d2213148d64fd39d6&oe=5F8EFBA6" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/101452425_1148925405490117_2646313468007937518_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=njisPQkUoi4AX8Uk-rI&_nc_tp=18&oh=7c80414fb2b7d62d2213148d64fd39d6&oe=5F8EFBA6" class="name has-popup-image">Munnar</a>
+										<div class="category">Kerala</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item kerala border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/99087793_897378187404690_7142110321662158947_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0o_e7g5NDdsAX-lTpel&_nc_tp=18&oh=dc8c79bd78a968346ef2789e0ba634b8&oe=5F9083D6" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/99087793_897378187404690_7142110321662158947_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0o_e7g5NDdsAX-lTpel&_nc_tp=18&oh=dc8c79bd78a968346ef2789e0ba634b8&oe=5F9083D6" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/99087793_897378187404690_7142110321662158947_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0o_e7g5NDdsAX-lTpel&_nc_tp=18&oh=dc8c79bd78a968346ef2789e0ba634b8&oe=5F9083D6" class="name has-popup-image">Munnar</a>
+										<div class="category">Kerala</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item gujarat border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/47581663_1156440101197079_306197334352945596_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=AhBCcqAx74QAX_QOl-j&_nc_tp=18&oh=b82b179aa1e6648ffe2a80856cce663d&oe=5F8EA049" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/47581663_1156440101197079_306197334352945596_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=AhBCcqAx74QAX_QOl-j&_nc_tp=18&oh=b82b179aa1e6648ffe2a80856cce663d&oe=5F8EA049" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/47581663_1156440101197079_306197334352945596_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=AhBCcqAx74QAX_QOl-j&_nc_tp=18&oh=b82b179aa1e6648ffe2a80856cce663d&oe=5F8EA049" class="name has-popup-image">Narmada</a>
+										<div class="category">Gujarat</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item gujarat border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/53113460_789270778122173_1316622413061813425_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8s2IBVMGRD0AX-ODUsM&_nc_tp=18&oh=18ffce09b8e39a6a22cacab8a260e5f0&oe=5F8F16A7" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/53113460_789270778122173_1316622413061813425_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8s2IBVMGRD0AX-ODUsM&_nc_tp=18&oh=18ffce09b8e39a6a22cacab8a260e5f0&oe=5F8F16A7" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/53113460_789270778122173_1316622413061813425_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8s2IBVMGRD0AX-ODUsM&_nc_tp=18&oh=18ffce09b8e39a6a22cacab8a260e5f0&oe=5F8F16A7" class="name has-popup-image">Ahmedabad</a>
+										<div class="category">Gujarat</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item misc border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/46539871_222893601945415_6380326458743122624_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=FlWMzsv74_oAX-Qg-K6&_nc_tp=18&oh=02909e58be45185378d328250b3715bd&oe=5F8FCDAE" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/46539871_222893601945415_6380326458743122624_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=FlWMzsv74_oAX-Qg-K6&_nc_tp=18&oh=02909e58be45185378d328250b3715bd&oe=5F8FCDAE" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/46539871_222893601945415_6380326458743122624_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=FlWMzsv74_oAX-Qg-K6&_nc_tp=18&oh=02909e58be45185378d328250b3715bd&oe=5F8FCDAE" class="name has-popup-image">Mumbai</a>
+										<div class="category">Maharashtra</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item ncr border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/21433535_2003857396525745_7633950343075725312_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=X7eA5bjNwqAAX9CiQNN&_nc_tp=18&oh=ffd6335c076825019acf826e9d11734b&oe=5F8E72F4" class="has-popup-image">
+											<img src="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/21433535_2003857396525745_7633950343075725312_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=X7eA5bjNwqAAX9CiQNN&_nc_tp=18&oh=ffd6335c076825019acf826e9d11734b&oe=5F8E72F4" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://instagram.fcok7-1.fna.fbcdn.net/v/t51.2885-15/e35/21433535_2003857396525745_7633950343075725312_n.jpg?_nc_ht=instagram.fcok7-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=X7eA5bjNwqAAX9CiQNN&_nc_tp=18&oh=ffd6335c076825019acf826e9d11734b&oe=5F8E72F4" class="name has-popup-image">Delhi</a>
+										<div class="category">NCR</div>
+									</div>
+								</div>
+							</div>
+							
+							
+
+							<!-- work item music -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item music border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&show_artwork=true" class="has-popup-music">
+											<img src="images/works/work3.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-music-note"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="#" class="name has-popup">Staircase</a>
+										<div class="category">Music</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- work item design -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item design border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="#popup-1" class="has-popup-media">
+											<img src="images/works/work4.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-images"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="#popup-1" class="name has-popup-media">Mobile Application</a>
+										<div class="category">Design</div>
+									</div>
+									<div id="popup-1" class="popup-box mfp-fade mfp-hide">
+										<div class="content">
+											<div class="image">
+												<img src="images/works/work4.jpg" alt="">
+											</div>
+											<div class="desc">
+												<div class="post-box">
+													<h1>Mobile Application</h1>						
+													<div class="blog-detail">Design</div>
+													<div class="blog-content">
+														<p>
+															So striking at of to welcomed resolved. Northward by described up household therefore 
+															attention. Excellence decisively nay man yet impression for contrasted remarkably.
+														</p>
+														<p>
+															Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. 
+															Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining 
+															determine few her two cordially admitting old.
+														</p>
+														<blockquote>
+															Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
+															Curae; Pellentesque suscipit.
+														</blockquote>
+														<p>
+															Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh 
+															removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. 
+															Increasing sufficient everything men him admiration unpleasing sex.
+														</p>
+														<ul class="list-style">
+															<li>Greatest properly off ham exercise all.</li>
+															<li>Unsatiable invitation its possession nor off.</li>
+															<li>All difficulty estimating unreserved increasing the solicitude.</li>
+														</ul>
+														<p>
+															Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means 
+															up civil do an offer wound of.
+														</p>
+													</div>
+													<a href="#" class="button">
+														<span class="text">View Project</span>
+														<span class="arrow"></span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- work item photo -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item photo border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/work5.jpg" class="has-popup-image">
+											<img src="images/works/work5.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/work5.jpg" class="name has-popup-image">Gereal Travels</a>
+										<div class="category">Photo</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- work item music -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item music border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&show_artwork=true" class="has-popup-music">
+											<img src="images/works/work8.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-music-note"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="#" class="name has-popup">Daylight Entrance</a>
+										<div class="category">Music</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- work item video -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item video border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://vimeo.com/97102654" class="has-popup-video">
+											<img src="images/works/work6.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-videocamera"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://vimeo.com/97102654" class="name has-popup-video">Architecture</a>
+										<div class="category">Video</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- work item design -->
+							<!-- <div class="col col-d-6 col-t-6 col-m-12 grid-item design border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="#popup-2" class="has-popup-media">
+											<img src="images/works/work7.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-images"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="#popup-2" class="name has-popup-media">Social Website</a>
+										<div class="category">Design</div>
+									</div>
+									<div id="popup-2" class="popup-box mfp-fade mfp-hide">
+										<div class="content">
+											<div class="image">
+												<img src="images/works/work7.jpg" alt="">
+											</div>
+											<div class="desc">
+												<div class="post-box">
+													<h1>Mobile Application</h1>						
+													<div class="blog-detail">Design</div>
+													<div class="blog-content">
+														<p>
+															So striking at of to welcomed resolved. Northward by described up household therefore 
+															attention. Excellence decisively nay man yet impression for contrasted remarkably.
+														</p>
+														<p>
+															Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. 
+															Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining 
+															determine few her two cordially admitting old.
+														</p>
+														<blockquote>
+															Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
+															Curae; Pellentesque suscipit.
+														</blockquote>
+														<p>
+															Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh 
+															removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. 
+															Increasing sufficient everything men him admiration unpleasing sex.
+														</p>
+														<ul class="list-style">
+															<li>Greatest properly off ham exercise all.</li>
+															<li>Unsatiable invitation its possession nor off.</li>
+															<li>All difficulty estimating unreserved increasing the solicitude.</li>
+														</ul>
+														<p>
+															Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means 
+															up civil do an offer wound of.
+														</p>
+													</div>
+													<a href="#" class="button">
+														<span class="text">View Project</span>
+														<span class="arrow"></span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Blog
+			-->
+			<div class="card-inner blog" id="blog-card">
+				<div class="card-wrap">
+
+					<!--
+						Blog
+					-->
+					<div class="content blog">
+
+						<!-- title -->
+						<div class="title">Latest Posts</div>
+
+						<!-- content -->
+						<div class="row border-line-v">
+
+							<!-- blog item -->
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="https://adarshnair01.github.io/hugo_blog/post/airtelpostpaid/">
+											<img src="images/blog/blog1.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-document-text"></span>
+											</span>
+											<span class="date"><strong>27</strong>Sep, 2018</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="https://adarshnair01.github.io/hugo_blog/post/airtelpostpaid/" class="name">Every coin has two sides. So does Airtel</a>
+										<div class="category">Complaint</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- blog item -->
+							<!-- <div class="col col-d-12 col-t-12 col-m-12 border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="blog-post-new-dark.html">
+											<img src="images/blog/blog2.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-document-text"></span>
+											</span>
+											<span class="date"><strong>19</strong>Jun</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="blog-post-new-dark.html" class="name">Two Before Arrow Not Relied</a>
+										<div class="category">Coding</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- blog item -->
+							<!-- <div class="col col-d-12 col-t-12 col-m-12 border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="blog-post-new-dark.html">
+											<img src="images/blog/blog3.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-document-text"></span>
+											</span>
+											<span class="date"><strong>20</strong>Jun</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="blog-post-new-dark.html" class="name">By spite about do of do allow blush</a>
+										<div class="category">Travel</div>
+									</div>
+								</div>
+							</div> -->
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Contacts
+			-->
+			<div class="card-inner contacts" id="contacts-card">
+				<div class="card-wrap">
+
+					<!--
+						Conacts Info
+					-->
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Get in Touch</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<!-- <div class="map" id="map"></div> -->
+								<div class="info-list">
+									<ul>
+										<li><strong>Address . . . . .</strong> Kannur, Kerala, India</li>
+										<li><strong>Email . . . . .</strong> adarshnair01@gmail.com</li>
+										<li><strong>Phone . . . . .</strong> +91 9426643740</li>
+										<li><strong>Freelance . . . . .</strong> Available</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Contact Form
+					-->
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Contact Form</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="contact_form">
+									<form id="cform" action="mailto:adarshnair01@gmail.com" method="post">
+										<div class="row">
+											<div class="col col-d-6 col-t-6 col-m-12">
+												<div class="group-val">
+													<input type="text" name="name" placeholder="Full Name" />
+												</div>
+											</div>
+											<div class="col col-d-6 col-t-6 col-m-12">
+												<div class="group-val">
+													<input type="text" name="email" placeholder="Email Address" />
+												</div>
+											</div>
+											<div class="col col-d-12 col-t-12 col-m-12">
+												<div class="group-val">
+													<textarea name="message" placeholder="Your Message"></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="align-left">
+											<a href="#" class="button" onclick="document.forms[0].submit();">
+												<span class="text">Send Message</span>
+												<span class="arrow"></span>
+											</a>
+										</div>
+									</form>
+									<div class="alert-success">
+										<p>Thanks, your message is sent successfully.</p>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!--
+		jQuery Scripts
+	-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/imagesloaded.pkgd.js"></script>
+	<script src="js/isotope.pkgd.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	
+	<!--
+		Google map api
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPDW_D7SzgjYSdbPYNoYVJ4SnIU6dBQ00"></script>
+	
+	<!--
+		Main Scripts
+	-->
+	<script src="js/scripts.js"></script>
+	
 </body>
 </html>
