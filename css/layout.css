@@ -1,9 +1,9 @@
 /**
 *	Ryan - Resume/CV/vCard Template (HTML)
-*	Version: 2.0
-*	Author: beshleyua
-*	Author URL: http://themeforest.net/user/beshleyua
-*	Copyright © Cvio by beshleyua. All Rights Reserved.
+*	Version: 2.6
+*	Author: bslthemes
+*	Author URL: http://themeforest.net/user/bslthemes
+*	Copyright © RyanCV by bslthemes. All Rights Reserved.
 **/
 
 /* TABLE OF CONTENTS
@@ -39,6 +39,70 @@
 .header.active {
 	opacity: 1!important;
 	visibility: visible!important;
+}
+
+.header .menu-btn {
+	margin-bottom: 8px;
+	position: relative;
+	display: block;
+	height: 72px;
+	text-align: center;
+	background: #ffffff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	z-index: 2;
+}
+
+.no-sidebar .header .menu-btn, .disable-sidebar .header .menu-btn {
+	display: none;
+}
+
+.header .menu-btn span {
+	margin-left: -13px;
+	margin-top: -1px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: block;
+	width: 26px;
+	height: 2px;
+	background: #323232;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+
+.header .menu-btn span:before, .header .menu-btn span:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -7px;
+	width: 80%;
+	height: 100%;
+	background: #323232;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+
+.header .menu-btn span:after {
+	top: auto;
+	bottom: -7px;
+	width: 60%;
+}
+
+.header .menu-btn:hover span, .header .menu-btn:hover span:before, .header .menu-btn:hover span:after {
+	background: #78cc6d;
+}
+
+.header .menu-btn:hover span:before {
+	width: 100%;
+}
+
+.header .menu-btn:hover span:after {
+	width: 100%;
 }
 
 .header .top-menu {
@@ -142,6 +206,51 @@
 	color: #78cc6d;
 }
 
+.header .profile {
+	padding: 10px 62px 10px 18px;
+	width: auto;
+	height: 64px;
+	text-align: left;
+	display: none;
+}
+
+.header .profile .image {
+	margin-right: 14px;
+	float: left;
+	width: 44px;
+	font-size: 0;
+}
+
+.header .profile .image img {
+	width: 100%;
+	height: auto;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+
+.header .profile .title {
+	font-size: 15px;
+	color: #323232;
+	font-weight: 500;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.header .profile .subtitle {
+	font-size: 12px;
+	color: #78cc6d;
+	line-height: 14px;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.no-sidebar .header .menu-btn, .disable-sidebar .header .menu-btn {
+	display: none;
+}
+
 @media (max-width: 1023px) {
 	.header {
 		position: fixed;
@@ -201,6 +310,13 @@
 		display: block;
 	}
 
+	.disable-sidebar.no-sticky-menu .header .menu-btn, .no-sidebar .no-sticky-menu .header .menu-btn {
+		height: 62px;
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+
 }
 
 @media (max-width: 560px) {
@@ -208,11 +324,19 @@
 		padding: 0 5px;
 		width: 100%;
 	}
-
 	.header .top-menu {
 		max-width: 100%;
 	}
-
+	.header .profile {
+		display: block;
+	}
+	.header .menu-btn {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    width: 62px;
+	    height: 62px;
+	}
 }
 
 /*
@@ -331,8 +455,8 @@
 .card-started .profile .image:before {
 	content: '';
 	position: absolute;
-	top: 3px;
-	left: -3px;
+	top: 10px;
+	left: -10px;
 	width: 100%;
 	height: 100%;
 	background: -moz-linear-gradient(-45deg, rgba(120, 204, 109, 0.4) 0%, rgba(120, 204, 109, 0.01) 100%);
@@ -843,7 +967,7 @@
 }
 
 .client-items .client-item img {
-	max-width: 100%;
+	max-width: 92px;
 	opacity: 0.4;
 }
 
@@ -1591,112 +1715,112 @@
 }
 
 .skills-list.dotted ul li .progress .da span {
-	background: #78cc6d!important;
+	background: #78cc6d;
 }
 
-.skills-list.circles .progress.p51 .slice, 
-.skills-list.circles .progress.p52 .slice, 
-.skills-list.circles .progress.p53 .slice, 
-.skills-list.circles .progress.p54 .slice, 
-.skills-list.circles .progress.p55 .slice, 
-.skills-list.circles .progress.p56 .slice, 
-.skills-list.circles .progress.p57 .slice, 
-.skills-list.circles .progress.p58 .slice, 
-.skills-list.circles .progress.p59 .slice, 
-.skills-list.circles .progress.p60 .slice, 
-.skills-list.circles .progress.p61 .slice, 
-.skills-list.circles .progress.p62 .slice, 
-.skills-list.circles .progress.p63 .slice, 
-.skills-list.circles .progress.p64 .slice, 
-.skills-list.circles .progress.p65 .slice, 
-.skills-list.circles .progress.p66 .slice, 
-.skills-list.circles .progress.p67 .slice, 
-.skills-list.circles .progress.p68 .slice, 
-.skills-list.circles .progress.p69 .slice, 
-.skills-list.circles .progress.p70 .slice, 
-.skills-list.circles .progress.p71 .slice, 
-.skills-list.circles .progress.p72 .slice, 
-.skills-list.circles .progress.p73 .slice, 
-.skills-list.circles .progress.p74 .slice, 
-.skills-list.circles .progress.p75 .slice, 
-.skills-list.circles .progress.p76 .slice, 
-.skills-list.circles .progress.p77 .slice, 
-.skills-list.circles .progress.p78 .slice, 
-.skills-list.circles .progress.p79 .slice, 
-.skills-list.circles .progress.p80 .slice, 
-.skills-list.circles .progress.p81 .slice, 
-.skills-list.circles .progress.p82 .slice, 
-.skills-list.circles .progress.p83 .slice, 
-.skills-list.circles .progress.p84 .slice, 
-.skills-list.circles .progress.p85 .slice, 
-.skills-list.circles .progress.p86 .slice, 
-.skills-list.circles .progress.p87 .slice, 
-.skills-list.circles .progress.p88 .slice, 
-.skills-list.circles .progress.p89 .slice, 
-.skills-list.circles .progress.p90 .slice, 
-.skills-list.circles .progress.p91 .slice, 
-.skills-list.circles .progress.p92 .slice, 
-.skills-list.circles .progress.p93 .slice, 
-.skills-list.circles .progress.p94 .slice, 
-.skills-list.circles .progress.p95 .slice, 
-.skills-list.circles .progress.p96 .slice, 
-.skills-list.circles .progress.p97 .slice, 
-.skills-list.circles .progress.p98 .slice, 
-.skills-list.circles .progress.p99 .slice, 
+.skills-list.circles .progress.p51 .slice,
+.skills-list.circles .progress.p52 .slice,
+.skills-list.circles .progress.p53 .slice,
+.skills-list.circles .progress.p54 .slice,
+.skills-list.circles .progress.p55 .slice,
+.skills-list.circles .progress.p56 .slice,
+.skills-list.circles .progress.p57 .slice,
+.skills-list.circles .progress.p58 .slice,
+.skills-list.circles .progress.p59 .slice,
+.skills-list.circles .progress.p60 .slice,
+.skills-list.circles .progress.p61 .slice,
+.skills-list.circles .progress.p62 .slice,
+.skills-list.circles .progress.p63 .slice,
+.skills-list.circles .progress.p64 .slice,
+.skills-list.circles .progress.p65 .slice,
+.skills-list.circles .progress.p66 .slice,
+.skills-list.circles .progress.p67 .slice,
+.skills-list.circles .progress.p68 .slice,
+.skills-list.circles .progress.p69 .slice,
+.skills-list.circles .progress.p70 .slice,
+.skills-list.circles .progress.p71 .slice,
+.skills-list.circles .progress.p72 .slice,
+.skills-list.circles .progress.p73 .slice,
+.skills-list.circles .progress.p74 .slice,
+.skills-list.circles .progress.p75 .slice,
+.skills-list.circles .progress.p76 .slice,
+.skills-list.circles .progress.p77 .slice,
+.skills-list.circles .progress.p78 .slice,
+.skills-list.circles .progress.p79 .slice,
+.skills-list.circles .progress.p80 .slice,
+.skills-list.circles .progress.p81 .slice,
+.skills-list.circles .progress.p82 .slice,
+.skills-list.circles .progress.p83 .slice,
+.skills-list.circles .progress.p84 .slice,
+.skills-list.circles .progress.p85 .slice,
+.skills-list.circles .progress.p86 .slice,
+.skills-list.circles .progress.p87 .slice,
+.skills-list.circles .progress.p88 .slice,
+.skills-list.circles .progress.p89 .slice,
+.skills-list.circles .progress.p90 .slice,
+.skills-list.circles .progress.p91 .slice,
+.skills-list.circles .progress.p92 .slice,
+.skills-list.circles .progress.p93 .slice,
+.skills-list.circles .progress.p94 .slice,
+.skills-list.circles .progress.p95 .slice,
+.skills-list.circles .progress.p96 .slice,
+.skills-list.circles .progress.p97 .slice,
+.skills-list.circles .progress.p98 .slice,
+.skills-list.circles .progress.p99 .slice,
 .skills-list.circles .progress.p100 .slice {
 	clip: rect(auto, auto, auto, auto);
 }
 
-.skills-list.circles .progress .bar, 
-.skills-list.circles .progress.p51 .fill, 
-.skills-list.circles .progress.p52 .fill, 
-.skills-list.circles .progress.p53 .fill, 
-.skills-list.circles .progress.p54 .fill, 
-.skills-list.circles .progress.p55 .fill, 
-.skills-list.circles .progress.p56 .fill, 
-.skills-list.circles .progress.p57 .fill, 
-.skills-list.circles .progress.p58 .fill, 
-.skills-list.circles .progress.p59 .fill, 
-.skills-list.circles .progress.p60 .fill, 
-.skills-list.circles .progress.p61 .fill, 
-.skills-list.circles .progress.p62 .fill, 
-.skills-list.circles .progress.p63 .fill, 
-.skills-list.circles .progress.p64 .fill, 
-.skills-list.circles .progress.p65 .fill, 
-.skills-list.circles .progress.p66 .fill, 
-.skills-list.circles .progress.p67 .fill, 
-.skills-list.circles .progress.p68 .fill, 
-.skills-list.circles .progress.p69 .fill, 
-.skills-list.circles .progress.p70 .fill, 
-.skills-list.circles .progress.p71 .fill, 
-.skills-list.circles .progress.p72 .fill, 
-.skills-list.circles .progress.p73 .fill, 
-.skills-list.circles .progress.p74 .fill, 
-.skills-list.circles .progress.p75 .fill, 
-.skills-list.circles .progress.p76 .fill, 
-.skills-list.circles .progress.p77 .fill, 
-.skills-list.circles .progress.p78 .fill, 
-.skills-list.circles .progress.p79 .fill, 
-.skills-list.circles .progress.p80 .fill, 
-.skills-list.circles .progress.p81 .fill, 
-.skills-list.circles .progress.p82 .fill, 
-.skills-list.circles .progress.p83 .fill, 
-.skills-list.circles .progress.p84 .fill, 
-.skills-list.circles .progress.p85 .fill, 
-.skills-list.circles .progress.p86 .fill, 
-.skills-list.circles .progress.p87 .fill, 
-.skills-list.circles .progress.p88 .fill, 
-.skills-list.circles .progress.p89 .fill, 
-.skills-list.circles .progress.p90 .fill, 
-.skills-list.circles .progress.p91 .fill, 
-.skills-list.circles .progress.p92 .fill, 
-.skills-list.circles .progress.p93 .fill, 
-.skills-list.circles .progress.p94 .fill, 
-.skills-list.circles .progress.p95 .fill, 
-.skills-list.circles .progress.p96 .fill, 
-.skills-list.circles .progress.p97 .fill, 
-.skills-list.circles .progress.p98 .fill, 
-.skills-list.circles .progress.p99 .fill, 
+.skills-list.circles .progress .bar,
+.skills-list.circles .progress.p51 .fill,
+.skills-list.circles .progress.p52 .fill,
+.skills-list.circles .progress.p53 .fill,
+.skills-list.circles .progress.p54 .fill,
+.skills-list.circles .progress.p55 .fill,
+.skills-list.circles .progress.p56 .fill,
+.skills-list.circles .progress.p57 .fill,
+.skills-list.circles .progress.p58 .fill,
+.skills-list.circles .progress.p59 .fill,
+.skills-list.circles .progress.p60 .fill,
+.skills-list.circles .progress.p61 .fill,
+.skills-list.circles .progress.p62 .fill,
+.skills-list.circles .progress.p63 .fill,
+.skills-list.circles .progress.p64 .fill,
+.skills-list.circles .progress.p65 .fill,
+.skills-list.circles .progress.p66 .fill,
+.skills-list.circles .progress.p67 .fill,
+.skills-list.circles .progress.p68 .fill,
+.skills-list.circles .progress.p69 .fill,
+.skills-list.circles .progress.p70 .fill,
+.skills-list.circles .progress.p71 .fill,
+.skills-list.circles .progress.p72 .fill,
+.skills-list.circles .progress.p73 .fill,
+.skills-list.circles .progress.p74 .fill,
+.skills-list.circles .progress.p75 .fill,
+.skills-list.circles .progress.p76 .fill,
+.skills-list.circles .progress.p77 .fill,
+.skills-list.circles .progress.p78 .fill,
+.skills-list.circles .progress.p79 .fill,
+.skills-list.circles .progress.p80 .fill,
+.skills-list.circles .progress.p81 .fill,
+.skills-list.circles .progress.p82 .fill,
+.skills-list.circles .progress.p83 .fill,
+.skills-list.circles .progress.p84 .fill,
+.skills-list.circles .progress.p85 .fill,
+.skills-list.circles .progress.p86 .fill,
+.skills-list.circles .progress.p87 .fill,
+.skills-list.circles .progress.p88 .fill,
+.skills-list.circles .progress.p89 .fill,
+.skills-list.circles .progress.p90 .fill,
+.skills-list.circles .progress.p91 .fill,
+.skills-list.circles .progress.p92 .fill,
+.skills-list.circles .progress.p93 .fill,
+.skills-list.circles .progress.p94 .fill,
+.skills-list.circles .progress.p95 .fill,
+.skills-list.circles .progress.p96 .fill,
+.skills-list.circles .progress.p97 .fill,
+.skills-list.circles .progress.p98 .fill,
+.skills-list.circles .progress.p99 .fill,
 .skills-list.circles .progress.p100 .fill {
 	position: absolute;
 	width: 0.82em;
@@ -1709,105 +1833,105 @@
 	transform: rotate(0deg);
 }
 
-.skills-list.circles .progress.p51 .bar:after, 
-.skills-list.circles .progress.p51 .fill, 
-.skills-list.circles .progress.p52 .bar:after, 
-.skills-list.circles .progress.p52 .fill, 
-.skills-list.circles .progress.p53 .bar:after, 
-.skills-list.circles .progress.p53 .fill, 
-.skills-list.circles .progress.p54 .bar:after, 
-.skills-list.circles .progress.p54 .fill, 
-.skills-list.circles .progress.p55 .bar:after, 
-.skills-list.circles .progress.p55 .fill, 
-.skills-list.circles .progress.p56 .bar:after, 
-.skills-list.circles .progress.p56 .fill, 
-.skills-list.circles .progress.p57 .bar:after, 
-.skills-list.circles .progress.p57 .fill, 
-.skills-list.circles .progress.p58 .bar:after, 
-.skills-list.circles .progress.p58 .fill, 
-.skills-list.circles .progress.p59 .bar:after, 
-.skills-list.circles .progress.p59 .fill, 
-.skills-list.circles .progress.p60 .bar:after, 
-.skills-list.circles .progress.p60 .fill, 
-.skills-list.circles .progress.p61 .bar:after, 
-.skills-list.circles .progress.p61 .fill, 
-.skills-list.circles .progress.p62 .bar:after, 
-.skills-list.circles .progress.p62 .fill, 
-.skills-list.circles .progress.p63 .bar:after, 
-.skills-list.circles .progress.p63 .fill, 
-.skills-list.circles .progress.p64 .bar:after, 
-.skills-list.circles .progress.p64 .fill, 
-.skills-list.circles .progress.p65 .bar:after, 
-.skills-list.circles .progress.p65 .fill, 
-.skills-list.circles .progress.p66 .bar:after, 
-.skills-list.circles .progress.p66 .fill, 
-.skills-list.circles .progress.p67 .bar:after, 
-.skills-list.circles .progress.p67 .fill, 
-.skills-list.circles .progress.p68 .bar:after, 
-.skills-list.circles .progress.p68 .fill, 
-.skills-list.circles .progress.p69 .bar:after, 
-.skills-list.circles .progress.p69 .fill, 
-.skills-list.circles .progress.p70 .bar:after, 
-.skills-list.circles .progress.p70 .fill, 
-.skills-list.circles .progress.p71 .bar:after, 
-.skills-list.circles .progress.p71 .fill, 
-.skills-list.circles .progress.p72 .bar:after, 
-.skills-list.circles .progress.p72 .fill, 
-.skills-list.circles .progress.p73 .bar:after, 
-.skills-list.circles .progress.p73 .fill, 
-.skills-list.circles .progress.p74 .bar:after, 
-.skills-list.circles .progress.p74 .fill, 
-.skills-list.circles .progress.p75 .bar:after, 
-.skills-list.circles .progress.p75 .fill, 
-.skills-list.circles .progress.p76 .bar:after, 
-.skills-list.circles .progress.p76 .fill, 
-.skills-list.circles .progress.p77 .bar:after, 
-.skills-list.circles .progress.p77 .fill, 
-.skills-list.circles .progress.p78 .bar:after, 
-.skills-list.circles .progress.p78 .fill, 
-.skills-list.circles .progress.p79 .bar:after, 
-.skills-list.circles .progress.p79 .fill, 
-.skills-list.circles .progress.p80 .bar:after, 
-.skills-list.circles .progress.p80 .fill, 
-.skills-list.circles .progress.p81 .bar:after, 
-.skills-list.circles .progress.p81 .fill, 
-.skills-list.circles .progress.p82 .bar:after, 
-.skills-list.circles .progress.p82 .fill, 
-.skills-list.circles .progress.p83 .bar:after, 
-.skills-list.circles .progress.p83 .fill, 
-.skills-list.circles .progress.p84 .bar:after, 
-.skills-list.circles .progress.p84 .fill, 
-.skills-list.circles .progress.p85 .bar:after, 
-.skills-list.circles .progress.p85 .fill, 
-.skills-list.circles .progress.p86 .bar:after, 
-.skills-list.circles .progress.p86 .fill, 
-.skills-list.circles .progress.p87 .bar:after, 
-.skills-list.circles .progress.p87 .fill, 
-.skills-list.circles .progress.p88 .bar:after, 
-.skills-list.circles .progress.p88 .fill, 
-.skills-list.circles .progress.p89 .bar:after, 
-.skills-list.circles .progress.p89 .fill, 
-.skills-list.circles .progress.p90 .bar:after, 
-.skills-list.circles .progress.p90 .fill, 
-.skills-list.circles .progress.p91 .bar:after, 
-.skills-list.circles .progress.p91 .fill, 
-.skills-list.circles .progress.p92 .bar:after, 
-.skills-list.circles .progress.p92 .fill, 
-.skills-list.circles .progress.p93 .bar:after, 
-.skills-list.circles .progress.p93 .fill, 
-.skills-list.circles .progress.p94 .bar:after, 
-.skills-list.circles .progress.p94 .fill, 
-.skills-list.circles .progress.p95 .bar:after, 
-.skills-list.circles .progress.p95 .fill, 
-.skills-list.circles .progress.p96 .bar:after, 
-.skills-list.circles .progress.p96 .fill, 
-.skills-list.circles .progress.p97 .bar:after, 
-.skills-list.circles .progress.p97 .fill, 
-.skills-list.circles .progress.p98 .bar:after, 
-.skills-list.circles .progress.p98 .fill, 
-.skills-list.circles .progress.p99 .bar:after, 
-.skills-list.circles .progress.p99 .fill, 
-.skills-list.circles .progress.p100 .bar:after, 
+.skills-list.circles .progress.p51 .bar:after,
+.skills-list.circles .progress.p51 .fill,
+.skills-list.circles .progress.p52 .bar:after,
+.skills-list.circles .progress.p52 .fill,
+.skills-list.circles .progress.p53 .bar:after,
+.skills-list.circles .progress.p53 .fill,
+.skills-list.circles .progress.p54 .bar:after,
+.skills-list.circles .progress.p54 .fill,
+.skills-list.circles .progress.p55 .bar:after,
+.skills-list.circles .progress.p55 .fill,
+.skills-list.circles .progress.p56 .bar:after,
+.skills-list.circles .progress.p56 .fill,
+.skills-list.circles .progress.p57 .bar:after,
+.skills-list.circles .progress.p57 .fill,
+.skills-list.circles .progress.p58 .bar:after,
+.skills-list.circles .progress.p58 .fill,
+.skills-list.circles .progress.p59 .bar:after,
+.skills-list.circles .progress.p59 .fill,
+.skills-list.circles .progress.p60 .bar:after,
+.skills-list.circles .progress.p60 .fill,
+.skills-list.circles .progress.p61 .bar:after,
+.skills-list.circles .progress.p61 .fill,
+.skills-list.circles .progress.p62 .bar:after,
+.skills-list.circles .progress.p62 .fill,
+.skills-list.circles .progress.p63 .bar:after,
+.skills-list.circles .progress.p63 .fill,
+.skills-list.circles .progress.p64 .bar:after,
+.skills-list.circles .progress.p64 .fill,
+.skills-list.circles .progress.p65 .bar:after,
+.skills-list.circles .progress.p65 .fill,
+.skills-list.circles .progress.p66 .bar:after,
+.skills-list.circles .progress.p66 .fill,
+.skills-list.circles .progress.p67 .bar:after,
+.skills-list.circles .progress.p67 .fill,
+.skills-list.circles .progress.p68 .bar:after,
+.skills-list.circles .progress.p68 .fill,
+.skills-list.circles .progress.p69 .bar:after,
+.skills-list.circles .progress.p69 .fill,
+.skills-list.circles .progress.p70 .bar:after,
+.skills-list.circles .progress.p70 .fill,
+.skills-list.circles .progress.p71 .bar:after,
+.skills-list.circles .progress.p71 .fill,
+.skills-list.circles .progress.p72 .bar:after,
+.skills-list.circles .progress.p72 .fill,
+.skills-list.circles .progress.p73 .bar:after,
+.skills-list.circles .progress.p73 .fill,
+.skills-list.circles .progress.p74 .bar:after,
+.skills-list.circles .progress.p74 .fill,
+.skills-list.circles .progress.p75 .bar:after,
+.skills-list.circles .progress.p75 .fill,
+.skills-list.circles .progress.p76 .bar:after,
+.skills-list.circles .progress.p76 .fill,
+.skills-list.circles .progress.p77 .bar:after,
+.skills-list.circles .progress.p77 .fill,
+.skills-list.circles .progress.p78 .bar:after,
+.skills-list.circles .progress.p78 .fill,
+.skills-list.circles .progress.p79 .bar:after,
+.skills-list.circles .progress.p79 .fill,
+.skills-list.circles .progress.p80 .bar:after,
+.skills-list.circles .progress.p80 .fill,
+.skills-list.circles .progress.p81 .bar:after,
+.skills-list.circles .progress.p81 .fill,
+.skills-list.circles .progress.p82 .bar:after,
+.skills-list.circles .progress.p82 .fill,
+.skills-list.circles .progress.p83 .bar:after,
+.skills-list.circles .progress.p83 .fill,
+.skills-list.circles .progress.p84 .bar:after,
+.skills-list.circles .progress.p84 .fill,
+.skills-list.circles .progress.p85 .bar:after,
+.skills-list.circles .progress.p85 .fill,
+.skills-list.circles .progress.p86 .bar:after,
+.skills-list.circles .progress.p86 .fill,
+.skills-list.circles .progress.p87 .bar:after,
+.skills-list.circles .progress.p87 .fill,
+.skills-list.circles .progress.p88 .bar:after,
+.skills-list.circles .progress.p88 .fill,
+.skills-list.circles .progress.p89 .bar:after,
+.skills-list.circles .progress.p89 .fill,
+.skills-list.circles .progress.p90 .bar:after,
+.skills-list.circles .progress.p90 .fill,
+.skills-list.circles .progress.p91 .bar:after,
+.skills-list.circles .progress.p91 .fill,
+.skills-list.circles .progress.p92 .bar:after,
+.skills-list.circles .progress.p92 .fill,
+.skills-list.circles .progress.p93 .bar:after,
+.skills-list.circles .progress.p93 .fill,
+.skills-list.circles .progress.p94 .bar:after,
+.skills-list.circles .progress.p94 .fill,
+.skills-list.circles .progress.p95 .bar:after,
+.skills-list.circles .progress.p95 .fill,
+.skills-list.circles .progress.p96 .bar:after,
+.skills-list.circles .progress.p96 .fill,
+.skills-list.circles .progress.p97 .bar:after,
+.skills-list.circles .progress.p97 .fill,
+.skills-list.circles .progress.p98 .bar:after,
+.skills-list.circles .progress.p98 .fill,
+.skills-list.circles .progress.p99 .bar:after,
+.skills-list.circles .progress.p99 .fill,
+.skills-list.circles .progress.p100 .bar:after,
 .skills-list.circles .progress.p100 .fill {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
@@ -2566,4 +2690,605 @@
 	-ms-transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);
 	transform: rotate(360deg);
+}
+
+/*
+	Sidebar Widgets
+*/
+.s_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 106;
+	opacity: 0.6;
+	display: none;
+}
+
+.content-sidebar {
+	position: fixed;
+	top: 0;
+	left: -438px;
+	width: 338px;
+	height: 100%;
+	background: #fff;
+	z-index: 107;
+	transition: all 0.6s ease 0s;
+	-moz-transition: all 0.6s ease 0s;
+	-webkit-transition: all 0.6s ease 0s;
+	-o-transition: all 0.6s ease 0s;
+}
+
+.content-sidebar .close {
+	position: absolute;
+	top: 0;
+	right: -68px;
+	width: 68px;
+	height: 68px;
+	background: #eeeeee;
+	cursor: pointer;
+	border-radius: 0 0 4px 0;
+	-moz-border-radius: 0 0 4px 0;
+	-webkit-border-radius: 0 0 4px 0;
+	-khtml-border-radius: 0 0 4px 0;
+	z-index: 10;
+}
+
+.content-sidebar .close:before, .content-sidebar .close:after {
+	content: '';
+	margin: -2px 0 0 -10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20px;
+	height: 2px;
+	background: #363636;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+
+.content-sidebar .close:after {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.content-sidebar .close:hover:before, .content-sidebar .close:hover:after {
+	background: #999;
+}
+
+.content-sidebar .sidebar-wrap {
+	position: relative;
+}
+
+.content-sidebar.active {
+	left: 0;
+}
+
+.content-sidebar .widget-area {
+	position: relative;
+}
+
+.content-sidebar .profile {
+	padding-top: 150px;
+	padding-bottom: 0;
+	height: auto;
+}
+
+.content-sidebar .profile.no-photo {
+	padding-top: 270px;
+}
+
+.content-sidebar .profile .slide {
+	height: 250px;
+}
+
+.content-sidebar .main-menu {
+	padding: 25px 0;
+	display: none;
+}
+
+.content-sidebar .main-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.content-sidebar .main-menu ul li {
+	position: relative;
+}
+
+.content-sidebar .main-menu ul li:after,
+.content-sidebar .main-menu ul li:first-child::before {
+	content: '';
+	position: absolute;
+	left: -25px;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: -moz-radial-gradient(left, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
+	background: -webkit-radial-gradient(left, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
+	background: radial-gradient(ellipse at left, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.content-sidebar .main-menu ul li:first-child:before {
+	bottom: auto;
+	top: 0;
+}
+
+.content-sidebar .main-menu ul li a {
+	position: relative;
+	padding: 17px 25px;
+	display: block;
+	font-weight: 500;
+	color: #363636;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.6s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+
+.content-sidebar .main-menu ul li .children_toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 65px;
+	height: 55px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.content-sidebar .main-menu ul li .icon {
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+.content-sidebar .main-menu ul li.page_item_has_children > a:before,
+.content-sidebar .main-menu ul li.page_item_has_children > a:after {
+	margin-top: -1px;
+	content: '';
+	position: absolute;
+	right: 25px;
+	top: 50%;
+	width: 9px;
+	height: 2px;
+	background: #666;
+	transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+}
+
+.content-sidebar .main-menu ul li.page_item_has_children > a:after {
+	right: 30px;
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+
+.content-sidebar .main-menu ul li.current_page_item > a,
+.content-sidebar .main-menu ul li:hover > a,
+.content-sidebar .main-menu ul li.current_page_parent > a,
+.content-sidebar .main-menu ul li.current_page_ancestor > a {
+	text-decoration: none;
+	color: #78cc6d;
+}
+
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_item > a:before,
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_item > a:after,
+.content-sidebar .main-menu ul li.page_item_has_children:hover > a:before,
+.content-sidebar .main-menu ul li.page_item_has_children:hover > a:after,
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_parent > a:before,
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_parent > a:after,
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_ancestor > a:before,
+.content-sidebar .main-menu ul li.page_item_has_children.current_page_ancestor > a:after {
+	background: #78cc6d;
+}
+
+.content-sidebar .main-menu ul li ul {
+	padding: 10px 0 10px 25px;
+	background: #f6f6f6;
+	display: none;
+}
+
+.content-sidebar .main-menu ul li ul li a {
+	position: relative;
+	padding: 6px 25px;
+	display: block;
+	font-weight: 400;
+	color: #363636;
+	font-size: 14px;
+}
+
+.content-sidebar .main-menu ul li ul li:before,
+.content-sidebar .main-menu ul li ul li:after {
+	display: none;
+}
+
+.content-sidebar .widget {
+	padding: 25px;
+}
+
+.content-sidebar .widget tfoot {
+	display: none;
+}
+
+.content-sidebar .widget th {
+	color: #000;
+	padding: 5px;
+	text-align: center;
+}
+
+.content-sidebar .widget td {
+	padding: 5px;
+	text-align: center;
+}
+
+.content-sidebar .widget label {
+	padding-bottom: 0;
+}
+
+.content-sidebar .widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.content-sidebar .widget ul ul {
+	margin-top: 5px;
+	margin-left: 0;
+	margin-bottom: 5px;
+	padding: 5px 10px;
+	font-size: 14px;
+}
+
+.content-sidebar .widget ul ul ul {
+	margin-top: 5px;
+	padding-left: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+
+.content-sidebar .widget ul li {
+	position: relative;
+	padding: 10px 0;
+	margin: 0;
+	color: #999;
+	border-top: 1px solid #eee;
+}
+
+.content-sidebar .widget ul li:last-child {
+	border-bottom: 1px solid #eee;
+}
+
+.content-sidebar .widget ul li a {
+	padding-bottom: 0;
+	color: #363636;
+}
+
+.content-sidebar .widget ul li a:hover {
+	color: #78cc6d;
+}
+
+.content-sidebar .widget ul li li {
+	position: relative;
+	overflow: hidden;
+	margin: 5px 0 0 0;
+	padding: 0;
+	padding-left: 15px;
+	border: none;
+}
+
+.content-sidebar .widget ul li li:before {
+	margin: 0;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 8px;
+	width: 4px;
+	height: 4px;
+	background: #78cc6d;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+}
+
+.content-sidebar .widget ul li li li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.content-sidebar .widget ul li li li li {
+	padding-left: 10px;
+}
+
+.content-sidebar .widget ul li li li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.content-sidebar .widget ul li li li:before {
+	top: 8px;
+}
+
+.content-sidebar .widget ul li li:last-child {
+	border-bottom: none;
+}
+
+.content-sidebar .widget.widget_recent_comments a, .content-sidebar .widget.widget_recent_entries a {
+	padding-top: 0;
+	font-weight: 400;
+	display: block!important;
+}
+
+.content-sidebar .widget ul li .post-date {
+	margin: 0;
+	display: inline-block;
+	padding: 0;
+	height: 20px;
+	line-height: 18px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #999;
+}
+
+.content-sidebar .widget img {
+	max-width: 100%;
+	height: auto;
+}
+
+.content-sidebar .widget .rss-date, .content-sidebar .widget cite {
+	margin: 5px 0 10px 0;
+	padding: 0;
+	display: block;
+	height: 20px;
+	line-height: 18px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #999;
+}
+
+.content-sidebar .widget cite {
+	margin: 10px 0 0 0;
+}
+
+.content-sidebar .widget .rssSummary {
+	color: #363636;
+}
+
+.content-sidebar span.screen-reader-text {
+	display: none;
+}
+
+.content-sidebar span.screen-reader-text span {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-khtml-box-shadow: none;
+}
+
+.search-form input.search-field {
+	border: solid 1px #ddd;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	padding: 0 50px 0 15px;
+	box-shadow: none;
+	font-weight: 400;
+	-webkit-appearance: textfield;
+}
+
+.search-form input.search-submit {
+	margin-top: -50px;
+	margin-right: 0;
+	padding: 0;
+	float: right;
+	width: 50px;
+	height: 50px;
+	background: url(../images/android-search.png) no-repeat center center;
+	background-size: 18px 18px;
+	font-size: 0;
+	border: none;
+}
+
+.search-form input.search-submit:hover {
+	background: url(../images/android-search.png) no-repeat center center;
+	background-size: 18px 18px;
+}
+
+.content-sidebar h2.widget-title {
+	margin: 0 0 15px 0;
+	padding: 0 0 5px 0;
+	position: relative;
+	font-size: 18px;
+	color: #323232;
+	line-height: 21px;
+	font-weight: 600;
+}
+
+.content-sidebar h2.widget-title .first-word {
+	color: #78cc6d;
+}
+
+.content-sidebar h2.widget-title::first-letter,
+.content-sidebar h2.widget-title .first-letter::first-letter {
+	color: #78cc6d;
+}
+
+.content-sidebar h2.widget-title:before {
+	content: '';
+	position: absolute;
+	left: -12px;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	background: -moz-linear-gradient(-45deg, rgba(46, 202, 127, 0.15) 0%, rgba(46, 202, 127, 0.01) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(46, 202, 127, 0.15) 0%, rgba(46, 202, 127, 0.01) 100%);
+	background: linear-gradient(135deg, rgba(46, 202, 127, 0.15) 0%, rgba(46, 202, 127, 0.01) 100%);
+	z-index: -1;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-khtml-border-radius: 30px;
+}
+
+.content-sidebar .recentcomments {
+	color: #999;
+}
+
+.content-sidebar .recentcomments a {
+	padding-top: 6px;
+	display: block!important;
+}
+
+.content-sidebar .recentcomments a.url {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: 20px;
+	line-height: 18px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #999;
+}
+
+.content-sidebar .recentcomments .comment-author-link {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: 20px;
+	line-height: 18px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #999;
+}
+
+.content-sidebar .tagcloud a {
+	margin: 4px 2px;
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 0 5px;
+	font-weight: 400;
+	font-size: 13px;
+	color: #78cc6d;
+	border: 1px solid #78cc6d;
+}
+
+.content-sidebar .screen-reader-text {
+	display: none;
+}
+
+.content-sidebar .widget select {
+	width: 100%;
+	height: 34px;
+}
+
+.content-sidebar table {
+	margin: 0;
+}
+
+.content-sidebar .widget.widget_media_image {
+	max-width: 100%;
+}
+
+.logged-in .content-sidebar {
+	top: 28px;
+}
+
+.logged-in .content-sidebar .widget:last-child {
+	padding-bottom: 50px;
+}
+
+p.no-comments {
+	margin: 25px 0;
+}
+
+@media (max-width: 1199px) {
+	.content-sidebar .sidebar-wrap {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.content-sidebar .main-menu {
+		padding: 25px;
+		display: block;
+	}
+	.content-sidebar .main-menu ul li:after, .content-sidebar .main-menu ul li:first-child::before {
+		left: 0;
+	}
+}
+
+@media (max-width: 782px) {
+	.logged-in .content-sidebar {
+		top: 42px;
+	}
+}
+
+@media (max-width: 680px) {
+	html.sidebar-open, body.sidebar-open {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.content-sidebar {
+		left: -100%;
+		width: 100%;
+	}
+	.content-sidebar.active {
+		left: 0;
+	}
+	.content-sidebar .sidebar-wrap {
+		padding-top: 68px;
+	}
+	.content-sidebar .close {
+		right: 0;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		width: 100%;
+	}
+	.post-comments .post-comment .desc .name a {
+		display: block;
+	}
+	.post-comments .post-comment .desc .comment-time,
+	.post-comments .post-comment .desc .comment-date {
+		margin: 0;
+	}
+	.post-comments .post-comment .desc span.comment-reply {
+		position: relative;
+		top: 4px;
+		display: block;
+	}
+	.comment-respond .title_inner small {
+		position: relative;
+		top: 5px;
+	}
+	.header .menu-btn {
+		margin-bottom: 0;
+	}
+}
+
+.post-box.single-post-text .search-form input.search-submit {
+	margin-top: -60px;
+}
+
+.post-box.single-post-text .search-form span.screen-reader-text {
+	margin: 0 0 10px 0;
+	display: block;
+	font-size: 16px;
+	font-weight: 500;
+	color: #323232;
+}
+
+.typed-cursor {
+    display: none!important;
 }

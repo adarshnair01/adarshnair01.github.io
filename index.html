@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<!--
 		Basic
 	-->
 	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<title>Adarsh Nair - Senior Data Scientist</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ryan - vCard / Resume / CV Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="My Personal Portfolio" />
-	<meta name="keywords" content="adarsh, nair, data, scientist, vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
-	<meta name="author" content="adarsh" />
-	
+	<meta name="description" content="vCard & Resume Template" />
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
+	<meta name="author" content="bslthemes" />
+
 	<!--
 		Load Fonts
 	-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
-	
+
 	<!--
 		Load CSS
 	-->
-	<link rel="stylesheet" href="css/portfolio.css" />
-	
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/blogs.css" />
+	<link rel="stylesheet" href="css/ionicons.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+
+	<!--
+		Background Gradient
+	-->
+	<link rel="stylesheet" href="css/gradient.css" />
+
+	<!--
+		Template New-Skin
+	-->
+	<link rel="stylesheet" href="css/new-skin/new-skin.css" />
+
+	<!--
+		Template RTL
+	-->
+	<!--<link rel="stylesheet" href="css/rtl-new.css" />-->
+
+	<!--
+		Template Colors
+	-->
+	<link rel="stylesheet" href="css/demos/demo-1-colors.css" />
+	<!--<link rel="stylesheet" href="css/template-colors/blue.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
+
+	<!--
+		Template Dark
+	-->
+	<!--<link rel="stylesheet" href="css/template-dark/dark.css" />-->
+
 
 	<!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
+
 	<!--
 		Favicons
 	-->
 	<link rel="shortcut icon" href="images/favicons/favicon.ico">
-	
+
 </head>
 
 <body>
 	<div class="page new-skin">
-		
+
 		<!-- preloader -->
 		<div class="preloader">
 			<div class="centrize full-width">
@@ -52,7 +88,20 @@
 		</div>
 
 		<!-- background -->
-		<div class="background"></div>
+		<div class="background gradient">
+			<ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+		</div>
 
 		<!--
 			Container
@@ -63,6 +112,21 @@
 				Header
 			-->
 			<header class="header">
+
+				<!-- header profile -->
+				<div class="profile">
+					<div class="title">Adarsh Nair</div>
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Data Science Manager</p>
+							<p>Google Certified Professional ML Engineer</p>
+							<p>Software Developer</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- menu btn -->
+				<!--<a href="#" class="menu-btn"><span></span></a>-->
 
 				<!-- menu -->
 				<div class="top-menu">
@@ -75,14 +139,20 @@
 						</li>
 						<li>
 							<a href="#resume-card">
-								<span class="icon ion-android-list"></span>
+								<span class="icon ion-code"></span>
+								<span class="link">Skills</span>
+							</a>
+						</li>
+						<li>
+							<a href="#experience-card">
+								<span class="icon ion-briefcase"></span>
 								<span class="link">Resume</span>
 							</a>
 						</li>
 						<li>
 							<a href="#works-card">
 								<span class="icon ion-camera"></span>
-								<span class="link">Clicks</span>
+								<span class="link">Works</span>
 							</a>
 						</li>
 						<li>
@@ -110,31 +180,32 @@
 				<!--
 					Profile
 				-->
-				<div class="profile">
+				<div class="profile no-photo">
 
 					<!-- profile image -->
-					<div class="slide" style="background-image: url(images/bg.jpg);"></div>
-
-					<!-- profile photo -->
-					<div class="image">
-						<img src="images/profile.png" alt="" />
-					</div>
+					<div class="slide" style="background-image: url(images/profile.png);"></div>
 
 					<!-- profile titles -->
 					<div class="title">Adarsh Nair</div>
-					<div class="subtitle">Data Scientist</div>
+					<!--<div class="subtitle">Web Designer</div>-->
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Data Science Manager</p>
+							<p>Google Certified Professional ML Engineer</p>
+							<p>Software Developer</p>
+						</div>
+					</div>
 
 					<!-- profile socials -->
 					<div class="social">
-						<a target="_blank" href="https://www.facebook.com/adarshnair01/"><span class="fab fa-facebook"></span></a>
-						<a target="_blank" href="https://www.instagram.com/adarshnair01/"><span class="fab fa-instagram"></span></a>
-						<a target="_blank" href="https://www.linkedin.com/in/adarshnair01"><span class="fab fa-linkedin"></span></a>
-						<a target="_blank" href="https://twitter.com/adarshnair01"><span class="fab fa-twitter"></span></a>
-						<a target="_blank" href="https://github.com/adarshnair01"><span class="fab fa-github"></span></a>
-						<a target="_blank" href="https://www.kaggle.com/dextrousjinx"><span class="fab fa-kaggle"></span></a>
-						<a target="_blank" href="https://stackoverflow.com/users/1882887/adarsh-nair"><span class="fab fa-stack-overflow"></span></a>
+						<a target="_blank" href="https://www.facebook.com/adarshnair01/"><span class="fa fa-facebook"></span></a>
+						<a target="_blank" href="https://www.instagram.com/adarshnair01/"><span class="fa fa-instagram"></span></a>
+						<a target="_blank" href="https://www.linkedin.com/in/adarshnair01"><span class="fa fa-linkedin"></span></a>
+						<a target="_blank" href="https://twitter.com/adarshnair01"><span class="fa fa-twitter"></span></a>
+						<a target="_blank" href="https://github.com/adarshnair01"><span class="fa fa-github"></span></a>
+						<a target="_blank" href="https://stackoverflow.com/users/1882887/adarsh-nair"><span class="fa fa-stack-overflow"></span></a>
 					</div>
-					
+
 					<!-- profile buttons -->
 					<div class="lnks">
 						<a href="#" class="lnk">
@@ -151,6 +222,7 @@
 
 			</div>
 
+			
 			<!-- 
 				Card - About
 			-->
@@ -170,22 +242,18 @@
 							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
 								<div class="text-box">
 									<p>
-										I am Adarsh Nair, Data Scientist with 4+ years of 
-										experience creating data regression models, using 
-										predictive data modelling, and analyzing data mining algorithms
-										to implement action-oriented
-										solutions to complex marketing problems, and solving 
-										the business critical NLP problems
+										I am Adarsh Nair, data science professional from Bengaluru, India. I have rich experience in Data Science. Led teams to increase conversion rates and marketing effectiveness by 10%, implemented recommendation engine, improved sales forecasting by 25%.
+
 									</p>
 								</div>
 							</div>
 							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
 								<div class="info-list">
 									<ul>
-										<li><strong>Age . . . . .</strong> 28</li>
-										<li><strong>Residence . . . . .</strong> Kerala, India</li>
-										<li><strong>Research. . . . .</strong> Motion Planning</li>
-										<li><strong>Status. . . . .</strong> Single</li>
+										<li><strong>Age . . . . .</strong> 31</li>
+										<li><strong>Residence . . . . .</strong> Bengaluru, India</li>
+										<li><strong>Research. . . . .</strong> Recommendation Engine</li>
+										<li><strong>Status. . . . .</strong> Married</li>
 										<li><strong>Interest . . . . .</strong> Soccer, Travel</li>
 									</ul>
 								</div>
@@ -457,88 +525,14 @@
 				</div>
 			</div>
 
+			
+
 			<!--
-				Card - Resume
+				Card - Skills
 			-->
 			<div class="card-inner" id="resume-card">
 				<div class="card-wrap">
-
-					<!--
-						Resume
-					-->
-					<div class="content resume">
-
-						<!-- title -->
-						<div class="title">Resume</div>
-
-						<!-- content -->
-						<div class="row">
-
-							<!-- experience -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="ion ion-briefcase"></i></div>
-									<div class="name">Experience</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h active">
-										<div class="date">2019 - Present</div>
-										<div class="name">Senior Data Scientist</div>
-										<div class="company">Kvantum Inc.</div>
-										<p>
-											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
-										</p>
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">2017 - 2019</div>
-										<div class="name">Data Scientist</div>
-										<div class="company">Kvantum Inc.</div>
-										<p>
-											Monitored technical aspects of the delivery for several projects and develop new NLP components.
-										</p>
-									</div>
-									<div class="resume-item">
-										<div class="date">2016 - 2017</div>
-										<div class="name">Software Developer</div>
-										<div class="company">MAQ Software</div>
-										<p>
-											Design software architecture, Develop algorithms and Ensure quality of code.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<!-- education -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="ion ion-university"></i></div>
-									<div class="name">Education</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h">
-										<div class="date">2014 - 2016</div>
-										<div class="name">Robotics Course</div>
-										<div class="company">Allahabad</div>
-										<p>
-											Master's Degree in Information Technology from Indian Institute of Information Technology
-										</p>
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">2009 - 2013</div>
-										<div class="name">Programming Course</div>
-										<div class="company">Bhavnagar</div>
-										<p>
-											Bachelor's Degree in Information Technology from Government Engineering  College.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="clear"></div>
-						</div>
-
-					</div>
-
+					
 					<!--
 						Skills
 					-->
@@ -698,6 +692,117 @@
 						</div>
 						
 					</div>
+
+
+				</div>
+			</div>
+
+			<!--
+				Card - Experience
+			-->
+			<div class="card-inner" id="experience-card">
+				<div class="card-wrap">
+
+					<!--
+						Resume
+					-->
+					<div class="content resume">
+
+						<!-- title -->
+						<div class="title">Resume</div>
+
+						<!-- content -->
+						<div class="row">
+
+							<!-- experience -->
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="ion ion-briefcase"></i></div>
+									<div class="name">Experience</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h active">
+										<div class="date">2022 - Present</div>
+										<div class="name">Senior Data Science Manager</div>
+										<div class="company">Yum! Brands</div>
+										<p>
+											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2021 - 2022</div>
+										<div class="name">Data Science Manager</div>
+										<div class="company">Yum! Brands</div>
+										<p>
+											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2020 - 2021</div>
+										<div class="name">Principal Data Scientist</div>
+										<div class="company">Kvantum Inc.</div>
+										<p>
+											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2019 - 2020</div>
+										<div class="name">Senior Data Scientist</div>
+										<div class="company">Kvantum Inc.</div>
+										<p>
+											Lead the end-to-end design, development, and deployment of time series predictive modeling solutions.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2017 - 2019</div>
+										<div class="name">Data Scientist</div>
+										<div class="company">Kvantum Inc.</div>
+										<p>
+											Monitored technical aspects of the delivery for several projects and develop new NLP components.
+										</p>
+									</div>
+									<div class="resume-item">
+										<div class="date">2016 - 2017</div>
+										<div class="name">Software Developer</div>
+										<div class="company">MAQ Software</div>
+										<p>
+											Design software architecture, Develop algorithms and Ensure quality of code.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- education -->
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="ion ion-university"></i></div>
+									<div class="name">Education</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h">
+										<div class="date">2014 - 2016</div>
+										<div class="name">Robotics Course</div>
+										<div class="company">Allahabad</div>
+										<p>
+											Master's Degree in Information Technology from Indian Institute of Information Technology
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2009 - 2013</div>
+										<div class="name">Information</div>
+										<div class="company">Bhavnagar</div>
+										<p>
+											Bachelor's Degree in Information Technology from Government Engineering  College.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
 
 				</div>
 			</div>
@@ -938,6 +1043,7 @@
 				</div>
 			</div>
 
+
 			<!--
 				Card - Contacts
 			-->
@@ -958,10 +1064,10 @@
 								<!-- <div class="map" id="map"></div> -->
 								<div class="info-list">
 									<ul>
-										<li><strong>Address . . . . .</strong> Kannur, Kerala, India</li>
-										<li><strong>Email . . . . .</strong> adarshnair01@gmail.com</li>
-										<li><strong>Phone . . . . .</strong> +91 9426643740</li>
-										<li><strong>Freelance . . . . .</strong> Available</li>
+										<li><strong>Address . . .</strong> Bengaluru, India</li>
+										<li><strong>Email . . .</strong> adarshnair01@gmail.com</li>
+										<li><strong>Phone . . .</strong> +91 9426643740</li>
+										<li><strong>Freelance . . .</strong> Available</li>
 									</ul>
 								</div>
 							</div>
@@ -1021,8 +1127,105 @@
 			</div>
 
 		</div>
+
+		<div class="s_overlay"></div>
+		<div class="content-sidebar">
+			<div class="sidebar-wrap search-form">
+				<aside id="secondary" class="widget-area">
+					<section id="search-2" class="widget widget_search">
+						<label>
+							<span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</section>
+					<section class="widget widget_recent_entries">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Posts</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="#">Creativity Is More Than</a>
+							</li>
+							<li>
+								<a href="#">Designing the perfect</a>
+							</li>
+							<li>
+								<a href="#">Music Player Design</a>
+							</li>
+							<li>
+								<a href="#">A Song And Dance Act</a>
+							</li>
+							<li>
+								<a href="#">By spite about do of allow</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_recent_comments">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Comments</span>
+						</h2>
+						<ul>
+							<li class="recentcomments">
+								<span class="comment-author-link">JOHN SMITH</span> on <a href="#">Creativity Is More Than</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">ADAM SMITH</span> on <a href="#">Creativity Is More Than</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">admin</span> on <a href="#">Designing the perfect</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">admin</span> on <a href=#">Designing the perfect</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">James</span> on <a href="#">Designing the perfect</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_archive">
+						<h2 class="widget-title">
+							<span class="widget-title-span">
+								<span class="first-letter">Archives</span>
+							</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="#">November 2018</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_categories">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-letter">Categories</span></span>
+						</h2>
+						<ul>
+							<li class="cat-item cat-item-2">
+								<a href="#">Design</a>
+							</li>
+							<li class="cat-item cat-item-3">
+								<a href="#">Music</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_meta">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-letter">Meta</span></span>
+						</h2>
+						<ul>
+							<li><a href="#">Log in</a></li>
+							<li><a href="#">Entries feed</a></li>
+							<li><a href="#">Comments feed</a></li>
+							<li><a href="#">WordPress.org</a></li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+			<span class="close"></span>
+		</div>
+
 	</div>
-	
+
 	<!--
 		jQuery Scripts
 	-->
@@ -1033,22 +1236,18 @@
 	<script src="js/isotope.pkgd.js"></script>
 	<script src="js/jquery.slimscroll.js"></script>
 	<script src="js/owl.carousel.js"></script>
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L0R6W103M"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-3L0R6W103M');
-	</script>
-
+	<script src="js/typed.js"></script>
+	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
 
 	<!--
 		Main Scripts
 	-->
 	<script src="js/scripts.js"></script>
-	
+
+	<!--
+		Google map api
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
 </body>
 </html>
