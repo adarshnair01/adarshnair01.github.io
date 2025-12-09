@@ -1,0 +1,28 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glow at tip -->
+  <circle cx="2" cy="2" r="2" fill="#ec4899" fill-opacity="0.5" filter="url(#glow)"/>
+  
+  <!-- Elder Wand Shaft (Dark Wood) -->
+  <path d="M28 28L4 4" stroke="#372e29" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Knots/Segments (Bulbs) with gradients -->
+  <defs>
+    <radialGradient id="knotGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.5 0.5) scale(1)">
+      <stop stop-color="#5c4d44"/>
+      <stop offset="1" stop-color="#372e29"/>
+    </radialGradient>
+    <filter id="glow" x="-2" y="-2" width="8" height="8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+  
+  <!-- Handle bulb -->
+  <circle cx="24" cy="24" r="2.5" fill="#3d322d" stroke="#26201d" stroke-width="0.5"/>
+  <!-- Middle bulbs -->
+  <circle cx="19" cy="19" r="2.2" fill="#3d322d" stroke="#26201d" stroke-width="0.5"/>
+  <circle cx="14" cy="14" r="1.8" fill="#3d322d" stroke="#26201d" stroke-width="0.5"/>
+  <circle cx="9" cy="9" r="1.5" fill="#3d322d" stroke="#26201d" stroke-width="0.5"/>
+  
+  <!-- Tip highlight -->
+  <path d="M4 4L6 6" stroke="#8b7355" stroke-width="0.5" stroke-linecap="round"/>
+</svg>
