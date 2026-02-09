@@ -29,7 +29,7 @@ const Projects = () => {
                 { value: '50ms', label: 'Avg Latency' },
                 { value: '5M+', label: 'Daily Users' }
             ],
-            link: '#',
+            link: 'https://github.com/adarshnair01/Recommendation-Engine',
             image: '/recommendation-engine.png'
         },
         {

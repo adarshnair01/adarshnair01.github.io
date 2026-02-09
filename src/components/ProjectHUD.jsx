@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { X, Cpu, Database, Globe, Activity, Terminal, Shield, Zap, Target, Layers } from 'lucide-react';
+import { X, Cpu, Database, Globe, Activity, Terminal, Shield, Zap, Target, Layers, Github } from 'lucide-react';
 
 // Matrix Boot Sequence Component
 const MatrixBoot = ({ onComplete }) => {
@@ -125,6 +125,17 @@ const ProjectHUD = ({ isOpen, onClose, project, onNext, onPrev }) => {
 
                                     <div className="flex items-center gap-4">
                                         <div className="flex mr-4">
+                                            {project.link && project.link !== '#' && (
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="p-2 border border-[#00f3ff]/50 text-[#00f3ff] hover:bg-[#00f3ff] hover:text-black transition-all flex items-center gap-2 mr-2"
+                                                >
+                                                    <Github size={16} />
+                                                    <span className="hidden md:inline">GITHUB</span>
+                                                </a>
+                                            )}
                                             <button
                                                 onClick={(e) => { e.stopPropagation(); onPrev(); }}
                                                 className="p-2 border border-[#00f3ff]/50 text-[#00f3ff] hover:bg-[#00f3ff] hover:text-black transition-all border-r-0"
