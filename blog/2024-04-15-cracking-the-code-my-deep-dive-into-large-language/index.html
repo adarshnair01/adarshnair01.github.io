@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Cracking the Code: My Deep Dive into Large Language Models (LLMs) | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how AI can write poems, code, or even summarize an entire book? It all starts with Large Language Models, and today, we're going on an adventure to demystify these incredible digital brains." />
+    <meta property="og:description" content="Ever wondered how AI can write poems, code, or even summarize an entire book? It all starts with Large Language Models, and today, we're going on an adventure to demystify these incredible digital brains." />
+    <meta property="og:title" content="Cracking the Code: My Deep Dive into Large Language Models (LLMs)" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cracking the Code: My Deep Dive into Large Language Models (LLMs)","datePublished":"2024-04-15","description":"Ever wondered how AI can write poems, code, or even summarize an entire book? It all starts with Large Language Models, and today, we're going on an adventure to demystify these incredible digital brains.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Cracking the Code: My Deep Dive into Large Language Models (LLMs)</h1>
+           <p>Ever wondered how AI can write poems, code, or even summarize an entire book? It all starts with Large Language Models, and today, we're going on an adventure to demystify these incredible digital brains.</p>
+           <p>My journey into the world of Large Language Models (LLMs) began not with a textbook, but with a simple conversation. I typed a query into a chatbot, something mundane, and received a response so coherent, so contextually aware, that it felt less like interacting with a program and more like chatting with a very knowledgeable, albeit digital, friend. That moment sparked an insatiable curiosity: <em>How does it do that?</em></p>
+<p>This blog post is a personal exploration, a sharing of my &quot;aha!&quot; moments and the technical insights I’ve gathered while peeling back the layers of LLMs. Whether you&#39;re a budding data scientist, an enthusiastic high school student, or just someone fascinated by the future of AI, join me as we uncover the magic behind these modern marvels.</p>
+<h3>The &quot;Large&quot; in Large Language Models</h3>
+<p>First things first: what <em>is</em> an LLM? At its core, an LLM is a type of artificial intelligence designed to understand and generate human-like text. The &quot;Large&quot; isn&#39;t just a marketing gimmick; it refers to the sheer scale:</p>
+<ol>
+<li><strong>Parameters:</strong> These are the internal variables or &quot;knobs&quot; that the model learns to adjust during training. Modern LLMs can have <em>billions</em> of parameters (think 175 billion for GPT-3, even more for others!). More parameters often mean a greater capacity to learn complex patterns in language.</li>
+<li><strong>Training Data:</strong> LLMs are trained on colossal amounts of text data – entire swaths of the internet, including books, articles, websites, and more. Imagine reading almost everything ever written online; that&#39;s the kind of input these models digest.</li>
+</ol>
+<p>This immense scale isn&#39;t just about making models bigger; it leads to <em>emergent abilities</em>. Things like reasoning, summarization, and even coding, which weren&#39;t explicitly programmed, seem to &quot;emerge&quot; as the model grows large enough and is exposed to enough data. It&#39;s like a child suddenly connecting disparate pieces of knowledge to form a new understanding.</p>
+<h3>From Words to Numbers: Tokenization and Embeddings</h3>
+<p>Computers, at their heart, understand numbers, not words. So, how does an LLM process language? It starts with two crucial steps:</p>
+<ol>
+<li><strong>Tokenization:</strong> First, raw text is broken down into smaller units called &quot;tokens.&quot; These can be whole words, parts of words (like &quot;un-&quot; or &quot;-ing&quot;), or even punctuation marks. For example, the sentence &quot;I love machine learning!&quot; might become <code>[&quot;I&quot;, &quot; love&quot;, &quot; machine&quot;, &quot; learning&quot;, &quot;!&quot;]</code>. This helps manage vocabulary size and handles rare words efficiently.</li>
+<li><strong>Embeddings:</strong> Each token is then converted into a numerical vector – a list of numbers. This isn&#39;t just a random assignment. These &quot;embedding vectors&quot; are learned during training, and they capture the semantic meaning and relationships between words. Words with similar meanings (e.g., &quot;king&quot; and &quot;queen&quot;) will have vectors that are &quot;close&quot; to each other in a high-dimensional space.</li>
+</ol>
+<p>Imagine you&#39;re trying to describe a color without using its name. You might use its position on a spectrum, its brightness, its saturation. That&#39;s a bit like an embedding: representing a word&#39;s meaning through its numerical &quot;coordinates&quot; in a multi-dimensional space.</p>
+<h3>The Secret Sauce: The Transformer Architecture</h3>
+<p>While earlier models like Recurrent Neural Networks (RNNs) struggled with long-range dependencies in text (i.e., remembering information from the beginning of a long sentence), the <strong>Transformer</strong> architecture, introduced in 2017, revolutionized the field. It&#39;s the backbone of virtually all modern LLMs.</p>
+<p>The Transformer&#39;s magic lies in its ability to process entire sequences of text <em>in parallel</em> and, most importantly, in its <strong>Self-Attention mechanism</strong>.</p>
+<h4>Self-Attention: Paying Attention to What Matters</h4>
+<p>Think about how <em>you</em> read a sentence: &quot;The quick brown fox jumped over the lazy dog.&quot; If I ask you what &quot;lazy&quot; describes, your brain immediately connects it to &quot;dog.&quot; You don&#39;t need to re-read the entire sentence word-by-word from the beginning. You &quot;attend&quot; to the relevant parts.</p>
+<p>Self-attention works similarly for the model. For each word in a sequence, it computes a &quot;score&quot; of how much it should &quot;pay attention&quot; to every other word in that same sequence. This allows the model to weigh the importance of different words when encoding a particular word&#39;s meaning.</p>
+<p>It uses three key vectors derived from each word&#39;s embedding:</p>
+<ul>
+<li><strong>Query (Q):</strong> What am I looking for? (Like a search query)</li>
+<li><strong>Key (K):</strong> What do I have? (Like an index in a database)</li>
+<li><strong>Value (V):</strong> What information is associated with what I have? (The actual data)</li>
+</ul>
+<p>The attention score between a Query and a Key tells the model how relevant they are to each other. These scores are then used to create a weighted sum of the Value vectors. The technical heart of this is the <strong>Scaled Dot-Product Attention</strong>:</p>
+<p>$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $</p>
+<p>Here, $Q$, $K$, and $V$ are matrices stacked with query, key, and value vectors for all words in the sequence. $d_k$ is the dimension of the key vectors, used for scaling to prevent very large dot products that push the softmax function into regions with tiny gradients. The <code>softmax</code> function turns the scores into probabilities, ensuring they sum to 1. This weighted sum effectively tells the model, &quot;When I&#39;m processing <em>this</em> word, I should focus <em>this much</em> on <em>that</em> word over there.&quot;</p>
+<p>To make it even more powerful, Transformers use <strong>Multi-Head Attention</strong>. Instead of just one set of Q, K, V vectors, they use multiple sets (e.g., 8 or 16 &quot;heads&quot;). Each head learns to attend to different aspects of the relationships between words, like focusing on grammatical dependencies in one head and semantic similarities in another. It&#39;s like having multiple specialized &quot;experts&quot; looking at the same problem from different angles.</p>
+<h4>Positional Encoding: Understanding Order</h4>
+<p>Even with attention, how does the Transformer know the order of words? Since it processes words in parallel, it loses the inherent sequential information. This is where <strong>Positional Encoding</strong> comes in.</p>
+<p>Before words enter the self-attention layers, a special vector representing its position in the sequence is added to each word&#39;s embedding. These positional vectors are usually sine and cosine functions of different frequencies, allowing the model to distinguish between words at different positions without interfering too much with their semantic meaning.</p>
+<p>For example, a common positional encoding formula looks something like this:
+$ \text{PE}(pos, 2i) = \sin(pos / 10000^{2i/d_{model}}) $
+$ \text{PE}(pos, 2i+1) = \cos(pos / 10000^{2i/d_{model}}) $
+where $pos$ is the position of the token in the sequence, $i$ is the dimension within the embedding vector, and $d_{model}$ is the dimension of the embedding. This creates a unique &quot;fingerprint&quot; for each position.</p>
+<h4>The Rest of the Transformer Block</h4>
+<p>After the attention mechanisms, the Transformer block typically includes a <strong>Feed-Forward Network</strong> (a simple neural network applied independently to each position), layer normalization (to stabilize training), and residual connections (to help gradients flow through deep networks).</p>
+<p>Modern LLMs primarily use the <strong>decoder-only</strong> architecture of the Transformer. The original Transformer had an Encoder (for understanding input) and a Decoder (for generating output). Decoder-only models are optimized for generating text sequence-by-sequence, making them perfect for tasks like chatbots and creative writing. They have a &quot;masked&quot; self-attention mechanism, meaning a word can only attend to previous words in the sequence, ensuring it doesn&#39;t &quot;cheat&quot; by looking at future words it&#39;s supposed to predict.</p>
+<h3>Training LLMs: The Grueling Marathon</h3>
+<p>Building an LLM isn&#39;t like writing a regular program; it&#39;s more like raising a highly intelligent digital being. The process typically involves two major phases:</p>
+<ol>
+<li><strong>Pre-training (The &quot;Learning Everything&quot; Phase):</strong> This is the massive, unsupervised learning phase. The model is fed vast amounts of text and asked to predict the next word in a sentence (or fill in masked words). For example, if it sees &quot;The cat sat on the...&quot;, it learns that &quot;mat&quot; or &quot;rug&quot; are likely continuations. By repeatedly doing this across trillions of words, the model builds an incredibly rich statistical understanding of language, grammar, facts, and even some reasoning patterns. This phase requires immense computational power (GPUs!) and time.</li>
+<li><strong>Fine-tuning &amp; Alignment (The &quot;Becoming Helpful&quot; Phase):</strong> After pre-training, the model is a general-purpose language wizard, but it might not be very good at specific tasks or always safe/helpful.<ul>
+<li><strong>Supervised Fine-tuning (SFT):</strong> The model is further trained on smaller, high-quality datasets of specific tasks (e.g., question-answering pairs, summarization examples).</li>
+<li><strong>Reinforcement Learning from Human Feedback (RLHF):</strong> This is a crucial step for aligning LLMs with human values. Humans rate the quality, helpfulness, and safety of different model outputs. This feedback is then used to train a &quot;reward model,&quot; which in turn guides the LLM to generate responses that are preferred by humans. This is how models learn to be polite, refuse harmful requests, and provide useful information.</li>
+</ul>
+</li>
+</ol>
+<h3>What Can LLMs Do? Capabilities &amp; Limitations</h3>
+<p>The capabilities of LLMs are truly astonishing:</p>
+<ul>
+<li><strong>Text Generation:</strong> Writing articles, poems, stories, emails, code.</li>
+<li><strong>Summarization:</strong> Condensing long documents into key points.</li>
+<li><strong>Translation:</strong> Bridging language barriers.</li>
+<li><strong>Question Answering:</strong> Providing information based on vast knowledge.</li>
+<li><strong>Coding Assistance:</strong> Generating code snippets, debugging, explaining code.</li>
+<li><strong>Creative Tasks:</strong> Brainstorming ideas, generating dialogue for scripts.</li>
+</ul>
+<p>However, it&#39;s crucial to understand their limitations:</p>
+<ul>
+<li><strong>Hallucinations:</strong> LLMs can confidently generate factually incorrect information because they are pattern-matching engines, not truth-seeking ones. They predict what <em>sounds plausible</em>, not necessarily what <em>is true</em>.</li>
+<li><strong>Lack of True Understanding/Reasoning:</strong> They don&#39;t &quot;understand&quot; in the way humans do. They lack common sense, real-world experience, and true consciousness. Their &quot;reasoning&quot; is often a sophisticated form of pattern matching.</li>
+<li><strong>Bias:</strong> Because they learn from human-generated data, they can inherit and even amplify biases present in that data (e.g., gender, racial, cultural biases).</li>
+<li><strong>Context Window Limitations:</strong> While improving, LLMs have a finite &quot;memory&quot; or context window. They can only refer back to a certain number of tokens in the conversation.</li>
+<li><strong>Cost &amp; Energy:</strong> Training and running large LLMs are incredibly expensive and energy-intensive.</li>
+</ul>
+<h3>The Future is Bright (and Challenging)</h3>
+<p>The field of LLMs is evolving at a breathtaking pace. We&#39;re seeing trends towards:</p>
+<ul>
+<li><strong>Multimodality:</strong> Models that can understand and generate not just text, but also images, audio, and video.</li>
+<li><strong>Efficiency:</strong> Research into making smaller, more efficient models that can run on less powerful hardware.</li>
+<li><strong>Better Alignment &amp; Safety:</strong> Continued efforts to make LLMs more helpful, harmless, and honest through advanced alignment techniques.</li>
+<li><strong>Personalization &amp; Integration:</strong> Seamless integration into our daily tools and personalized AI assistants.</li>
+</ul>
+<p>For me, the journey into LLMs has been a profound experience. It’s a testament to human ingenuity and the power of data and computation. While they are incredibly powerful tools, they are just that – tools. Understanding their mechanics, capabilities, and limitations is paramount for anyone navigating this rapidly changing technological landscape.</p>
+<p>I hope this deep dive has sparked your own curiosity and given you a clearer picture of what makes these fascinating models tick. The future with LLMs will be complex, but undoubtedly, incredibly exciting. Let&#39;s keep exploring!</p>
+
+       </div>
+</body>
+
+</html>

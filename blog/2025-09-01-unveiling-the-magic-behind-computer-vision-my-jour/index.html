@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Unveiling the Magic Behind Computer Vision: My Journey with Convolutional Neural Networks | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how computers &quot;see&quot; and understand images? Join me as we demystify Convolutional Neural Networks, the groundbreaking deep learning architecture that taught machines to perceive the world visually." />
+    <meta property="og:description" content="Ever wondered how computers &quot;see&quot; and understand images? Join me as we demystify Convolutional Neural Networks, the groundbreaking deep learning architecture that taught machines to perceive the world visually." />
+    <meta property="og:title" content="Unveiling the Magic Behind Computer Vision: My Journey with Convolutional Neural Networks" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Unveiling the Magic Behind Computer Vision: My Journey with Convolutional Neural Networks","datePublished":"2025-09-01","description":"Ever wondered how computers \"see\" and understand images? Join me as we demystify Convolutional Neural Networks, the groundbreaking deep learning architecture that taught machines to perceive the world visually.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Unveiling the Magic Behind Computer Vision: My Journey with Convolutional Neural Networks</h1>
+           <p>Ever wondered how computers "see" and understand images? Join me as we demystify Convolutional Neural Networks, the groundbreaking deep learning architecture that taught machines to perceive the world visually.</p>
+           <p>My fascination with how computers could potentially &quot;see&quot; began years ago. As a curious student, I often found myself pondering complex questions: How does a machine differentiate between a cat and a dog? How does it recognize faces in a crowded photo or identify a stop sign on the road? For us humans, it&#39;s intuitive. We&#39;ve spent our entire lives processing visual information, our brains are incredibly optimized for it. But for a computer, an image is just a grid of numbers, pixels, each representing a color intensity. Turning those numbers into meaningful understanding? That felt like magic.</p>
+<p>This quest for understanding led me down a rabbit hole, eventually landing on a concept that truly blew my mind: Convolutional Neural Networks, or CNNs. They&#39;re not just a clever algorithm; they&#39;re the bedrock of modern computer vision, powering everything from self-driving cars to medical diagnosis. And today, I want to share my journey into unraveling their secrets, making them accessible to anyone who’s ever been curious about how machines gained their sight.</p>
+<h3>The Problem with &quot;Vanilla&quot; Neural Networks and Images</h3>
+<p>Before CNNs came along, we had traditional Artificial Neural Networks (ANNs), often called &quot;fully connected&quot; networks. Imagine trying to feed an image into one of these. Let&#39;s say you have a small image, just 100x100 pixels. That&#39;s 10,000 pixels. If it&#39;s a color image, it has three color channels (Red, Green, Blue), so that&#39;s 30,000 numbers! Each of these 30,000 numbers would be an input to the first layer of a traditional neural network.</p>
+<p>Now, imagine the first hidden layer has, say, 1,000 neurons. Each of these 1,000 neurons would need a <em>weight</em> connection to every single one of those 30,000 input pixels. That&#39;s $30,000 \times 1,000 = 30,000,000$ weights just for the first layer! And that&#39;s for a tiny image. Modern images are often 1000x1000 pixels or more. The number of parameters explodes, making the network incredibly slow to train, prone to overfitting, and demanding immense amounts of data.</p>
+<p>Moreover, traditional ANNs treat each pixel as an independent feature. They completely ignore the spatial relationship between pixels. The fact that a pixel&#39;s neighbors often contain crucial context (like being part of an edge or a texture) is lost. This is like trying to understand a sentence by just looking at individual words randomly, without considering their order or proximity. Clearly, we needed a better way.</p>
+<h3>The &quot;Convolutional&quot; Breakthrough: Learning Features Like Our Brains (Sort Of!)</h3>
+<p>This is where the &quot;convolutional&quot; part comes in. The core idea behind CNNs is inspired by the organization of the animal visual cortex. Scientists found that individual neurons in the visual cortex respond only to stimuli in a restricted region of the visual field, called the &quot;receptive field.&quot; And different neurons are responsible for detecting different kinds of patterns, like edges, lines, or specific shapes.</p>
+<p>CNNs mimic this by using something called a &quot;filter&quot; or &quot;kernel.&quot; Imagine this filter as a small magnifying glass, perhaps 3x3 or 5x5 pixels in size. This magnifying glass &quot;sweeps&quot; across the entire image, looking for a specific pattern.</p>
+<p>Let&#39;s say our 3x3 filter is designed to detect vertical edges. As it slides over different parts of the image, if it encounters a vertical edge, it will &quot;activate&quot; strongly, indicating &quot;Aha! A vertical edge here!&quot; If it encounters something else, it won&#39;t activate as much.</p>
+<p><strong>How does this &quot;sweeping&quot; work?</strong> It&#39;s a mathematical operation called <strong>convolution</strong>. For each position the filter lands on, it performs an element-wise multiplication with the underlying pixels and sums up the results. This single sum becomes one pixel in a new, smaller image called a &quot;feature map&quot; or &quot;activation map.&quot;</p>
+<p>The formula for a 2D convolution operation can be written as:
+$ (I * K)(i, j) = \sum_m \sum_n I(i-m, j-n) K(m, n) $
+Where:</p>
+<ul>
+<li>$I$ is the input image.</li>
+<li>$K$ is the filter (kernel).</li>
+<li>$(i, j)$ are the coordinates of the output pixel in the feature map.</li>
+<li>$(m, n)$ are the coordinates within the filter.</li>
+<li>The summation happens over all pixels covered by the filter.</li>
+</ul>
+<p>Don&#39;t let the math scare you! What this basically means is: take the image ($I$), apply a small filter ($K$) to it by sliding it over, multiplying corresponding values, and summing them up to get one output pixel. Repeat this for the entire image.</p>
+<p>This process gives CNNs three crucial properties that address the weaknesses of traditional ANNs for images:</p>
+<ol>
+<li><strong>Local Receptive Fields:</strong> Each neuron in a convolutional layer only &quot;sees&quot; a small, localized region of the input image, just like neurons in our visual cortex. This drastically reduces the number of parameters.</li>
+<li><strong>Shared Weights:</strong> The <em>same</em> filter (set of weights) is applied across the entire image. If a vertical edge detector is useful in one part of the image, it&#39;s probably useful in another. This massively reduces parameters and makes the network learn more generalizable features.</li>
+<li><strong>Translational Invariance:</strong> Because the filter sweeps across the entire image, if a feature (like an edge) appears in a different location, the same filter will still detect it. This is incredibly important for robust image recognition.</li>
+</ol>
+<h3>The Building Blocks of a CNN: A Deep Dive</h3>
+<p>A typical CNN architecture is a stack of several different types of layers, each playing a unique role in transforming raw pixel data into high-level features for classification.</p>
+<h4>1. The Convolutional Layer (Conv Layer)</h4>
+<p>This is the heart of a CNN. As we discussed, it applies a set of learnable filters to the input image.</p>
+<ul>
+<li><strong>Filter Size:</strong> Common sizes are 3x3, 5x5, or 7x7 pixels. Smaller filters often capture finer details.</li>
+<li><strong>Number of Filters:</strong> A convolutional layer typically uses <em>many</em> filters (e.g., 32, 64, 128). Each filter learns to detect a different feature – one might detect vertical edges, another horizontal edges, another corners, another specific textures. The output of applying all these filters is a stack of feature maps.</li>
+<li><strong>Stride:</strong> This determines how many pixels the filter shifts at each step. A stride of 1 means it moves one pixel at a time. A stride of 2 means it skips a pixel, effectively reducing the spatial dimensions of the output feature map.</li>
+<li><strong>Padding:</strong> Sometimes, to ensure the output feature map has the same spatial dimensions as the input, we add &quot;padding&quot; – typically rows and columns of zeros – around the border of the input image before convolution. This is called &quot;same padding.&quot; If no padding is used, it&#39;s &quot;valid padding,&quot; and the output size will be smaller.</li>
+</ul>
+<p>After the convolution operation, a non-linear <strong>activation function</strong> is applied to the feature map. The most common choice is the Rectified Linear Unit (ReLU), defined as $f(x) = \max(0, x)$. ReLU introduces non-linearity, allowing the network to learn more complex patterns than if it were just linear transformations. Without non-linearity, stacking layers would just be equivalent to a single linear transformation, limiting the network&#39;s power.</p>
+<h4>2. The Pooling Layer (Pool Layer)</h4>
+<p>Pooling layers are inserted periodically between convolutional layers. Their main purpose is to reduce the spatial dimensions (width and height) of the feature maps, thus reducing the number of parameters and computation in the network. This also helps in making the features detected by the network more robust to slight variations or shifts in the input image (translational invariance at a higher level).</p>
+<p>The most popular type of pooling is <strong>Max Pooling</strong>. Here&#39;s how it works:</p>
+<ul>
+<li>You define a small spatial window (e.g., 2x2) and a stride (e.g., 2).</li>
+<li>The window slides over the feature map.</li>
+<li>For each position, it takes the <em>maximum</em> value within that window and outputs it.</li>
+<li>This effectively summarizes the features within that region, retaining the most prominent activation.</li>
+</ul>
+<p>Think of it like this: if a filter detected an edge somewhere in a 2x2 region, max-pooling would simply say, &quot;Yes, there was an edge detected in this general area,&quot; without caring about its exact pixel location within that 2x2 window. This makes the network more tolerant to minor shifts or distortions.</p>
+<h4>3. The Flattening Layer</h4>
+<p>After several convolutional and pooling layers, we&#39;re left with a stack of 2D feature maps. To feed these into a traditional fully connected neural network (which typically expects a 1D vector input), we need to &quot;flatten&quot; them. This layer simply takes all the elements from the final feature maps and arranges them into a single, long vector.</p>
+<h4>4. The Fully Connected Layer (Dense Layer)</h4>
+<p>Once the features are flattened into a 1D vector, they are passed to one or more fully connected (Dense) layers. These are standard neural network layers where every neuron in one layer connects to every neuron in the next. Their job is to take the high-level features extracted by the convolutional layers and use them to perform the final classification.</p>
+<ul>
+<li><strong>Hidden Dense Layers:</strong> These learn complex non-linear combinations of the extracted features.</li>
+<li><strong>Output Layer:</strong> The final fully connected layer typically has a number of neurons equal to the number of classes we want to predict (e.g., 10 for digits 0-9). For classification tasks, a <strong>Softmax activation function</strong> is often used here. Softmax converts the raw output scores into probabilities, summing up to 1, indicating the likelihood of the input belonging to each class.</li>
+</ul>
+<h3>Putting It All Together: A Typical CNN Architecture</h3>
+<p>A typical CNN architecture might look something like this:</p>
+<p><code>Input Image -&gt; [Conv Layer + ReLU] -&gt; [Pooling Layer] -&gt; [Conv Layer + ReLU] -&gt; [Pooling Layer] -&gt; Flatten Layer -&gt; [Fully Connected Layer + ReLU] -&gt; [Output Layer + Softmax]</code></p>
+<p>As you go deeper into the network (more layers):</p>
+<ul>
+<li><strong>Early layers</strong> tend to learn very basic, low-level features like edges, lines, and color blobs.</li>
+<li><strong>Mid-level layers</strong> combine these basic features to detect more complex patterns, like corners, circles, or parts of objects (e.g., an eye, a wheel spoke).</li>
+<li><strong>Deep layers</strong> can then identify even more abstract and complex features, such as entire objects (faces, cars, animals) or specific textures.</li>
+</ul>
+<p>This hierarchical feature extraction is incredibly powerful because the network <em>learns</em> the features directly from the data, rather than requiring humans to manually design feature detectors.</p>
+<h3>Why CNNs are So Powerful</h3>
+<ol>
+<li><strong>Automatic Feature Learning:</strong> No need for manual feature engineering. CNNs learn optimal feature representations directly from the raw pixel data.</li>
+<li><strong>Parameter Efficiency:</strong> Shared weights and local receptive fields drastically reduce the number of parameters compared to fully connected networks, making them less prone to overfitting and faster to train.</li>
+<li><strong>Translational Invariance:</strong> They can detect features regardless of their position in the image, making them robust to variations in object placement.</li>
+<li><strong>Hierarchical Feature Extraction:</strong> They build a rich, multi-level understanding of an image, going from simple patterns to complex objects.</li>
+<li><strong>Unmatched Performance:</strong> CNNs have achieved state-of-the-art results in countless computer vision tasks, revolutionizing fields from medical imaging to autonomous driving.</li>
+</ol>
+<h3>The Road Ahead</h3>
+<p>While CNNs are incredibly powerful, they aren&#39;t without their challenges. They typically require vast amounts of labeled data for training, and training them can be computationally expensive. Furthermore, understanding <em>why</em> a CNN makes a particular prediction can sometimes feel like peering into a black box, though the field of explainable AI (XAI) is actively working on solutions.</p>
+<p>My journey with CNNs continues, and every time I delve deeper, I&#39;m struck by the elegance and ingenuity of these networks. They’ve transformed those grids of numbers into meaningful insights, literally teaching machines to &quot;see.&quot; The next time you unlock your phone with your face, scroll through personalized image feeds, or witness a self-driving car navigate traffic, remember the quiet revolution brought about by these incredible Convolutional Neural Networks. They&#39;re not magic, but they certainly feel close.</p>
+
+       </div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Remembering the Past: A Journey into Recurrent Neural Networks | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how AI understands sentences or predicts the next word you type? It all comes down to giving machines memory, and that's exactly what Recurrent Neural Networks do by allowing information to persist." />
+    <meta property="og:description" content="Ever wondered how AI understands sentences or predicts the next word you type? It all comes down to giving machines memory, and that's exactly what Recurrent Neural Networks do by allowing information to persist." />
+    <meta property="og:title" content="Remembering the Past: A Journey into Recurrent Neural Networks" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Remembering the Past: A Journey into Recurrent Neural Networks","datePublished":"2025-02-10","description":"Ever wondered how AI understands sentences or predicts the next word you type? It all comes down to giving machines memory, and that's exactly what Recurrent Neural Networks do by allowing information to persist.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Remembering the Past: A Journey into Recurrent Neural Networks</h1>
+           <p>Ever wondered how AI understands sentences or predicts the next word you type? It all comes down to giving machines memory, and that's exactly what Recurrent Neural Networks do by allowing information to persist.</p>
+           <p>My journey into the fascinating world of Artificial Intelligence often feels like exploring a dense jungle, full of intricate paths and hidden wonders. One of the most intriguing discoveries I made early on was the concept of &quot;memory&quot; in neural networks. Traditional neural networks, the ones you might have learned about first – Feedforward Neural Networks (FFNNs) – are incredible at recognizing patterns in static data, like classifying an image of a cat. But what happens when the data isn&#39;t static? What if the order of information matters?</p>
+<p>Imagine trying to understand a sentence like &quot;I went to the bank to deposit my money.&quot; If you only processed each word in isolation, you might get confused by &quot;bank&quot; – is it a financial institution or a river&#39;s edge? Your brain, however, easily understands because it remembers the context of previous words. Standard FFNNs lack this crucial ability; they treat each input as independent. This is where Recurrent Neural Networks (RNNs) enter the scene, fundamentally changing how AI processes sequences.</p>
+<h2>The Memory Problem: Why Standard Networks Fall Short</h2>
+<p>Let&#39;s start with a simple thought experiment. If I give a standard neural network the word &quot;apple,&quot; it processes it and gives an output. If I then give it &quot;banana,&quot; it processes that, completely forgetting it ever saw &quot;apple.&quot; This works fine for tasks where inputs are independent, like classifying a single image.</p>
+<p>But what about:</p>
+<ul>
+<li>Predicting the next word in a sentence?</li>
+<li>Translating a German sentence into English?</li>
+<li>Understanding the sentiment of a movie review (e.g., &quot;The movie was <em>not</em> bad at all!&quot;)?</li>
+<li>Forecasting stock prices based on historical data?</li>
+</ul>
+<p>In all these scenarios, the past context is vital. The meaning of the current input often depends heavily on what came before it. Standard neural networks are inherently stateless; they have no internal memory to carry information from one step to the next.</p>
+<h2>Enter Recurrent Neural Networks: The Architects of Memory</h2>
+<p>This fundamental limitation led to the birth of Recurrent Neural Networks. The core idea behind an RNN is deceptively simple yet profoundly powerful: <em>give the network a memory</em>.</p>
+<p>How do they achieve this? An RNN processes sequences by taking not only the current input but also a &quot;hidden state&quot; (often called a &quot;context vector&quot; or &quot;memory&quot;) from the previous step. This hidden state essentially encapsulates information the network has learned from prior inputs in the sequence.</p>
+<p>Think of it like this: You&#39;re reading a novel. To understand the current chapter, you don&#39;t just read it in isolation; you carry the context of previous chapters, characters, and plot developments in your mind. The RNN does something similar – it &quot;reads&quot; the current input while keeping a summary of its &quot;reading&quot; of the past.</p>
+<h3>Unrolling the Loop: Visualizing an RNN</h3>
+<p>While an RNN looks like a single node looping back on itself in diagrams, it&#39;s easier to understand by &quot;unrolling&quot; it over time.</p>
+<p>Imagine we&#39;re processing a sequence of words, $x_1, x_2, ..., x_t$.
+At each time step $t$:</p>
+<ol>
+<li>The network takes the current input, $x_t$.</li>
+<li>It takes the hidden state from the previous time step, $h_{t-1}$.</li>
+<li>It combines these two to produce a new hidden state, $h_t$.</li>
+<li>Optionally, it uses $h_t$ to produce an output, $y_t$.</li>
+</ol>
+<p>Visually, an RNN processing a sequence &quot;I like AI&quot; would look like three connected networks, where the output of the first feeds into the second, and so on.</p>
+<pre><code>       x_0 (initial input, often zero)
+        |
+        V
+     [RNN Unit] --&gt; h_0 --&gt; y_0 (optional)
+        ^  |
+        |  V
+       x_1 [RNN Unit] --&gt; h_1 --&gt; y_1 (optional)
+        ^  |
+        |  V
+       x_2 [RNN Unit] --&gt; h_2 --&gt; y_2 (optional)
+        ^  |
+        |  V
+       x_3 [RNN Unit] --&gt; h_3 --&gt; y_3 (optional)
+</code></pre>
+<p>The crucial part? The same &quot;RNN Unit&quot; (the same set of weights and biases) is used at <em>every</em> time step. This is what allows the network to learn sequential patterns across different parts of the input sequence, no matter its length.</p>
+<h2>The Math Behind the Magic</h2>
+<p>Let&#39;s get a little deeper into the equations that govern this &quot;memory&quot; mechanism. Don&#39;t worry, it&#39;s not as scary as it sounds!</p>
+<p>At each time step $t$, the hidden state $h_t$ is computed based on the previous hidden state $h_{t-1}$ and the current input $x_t$:</p>
+<p>$h_t = f(W_{hh} h_{t-1} + W_{xh} x_t + b_h)$</p>
+<p>Let&#39;s break this down:</p>
+<ul>
+<li>$h_t$: The new hidden state at time $t$. This is the &quot;memory&quot; passed to the next step.</li>
+<li>$h_{t-1}$: The hidden state from the previous time step ($t-1$).</li>
+<li>$x_t$: The current input at time $t$. This could be a word vector, a single character, or a data point in a time series.</li>
+<li>$W_{hh}$: A weight matrix that defines how much influence the <em>previous hidden state</em> has on the <em>current hidden state</em>.</li>
+<li>$W_{xh}$: A weight matrix that defines how much influence the <em>current input</em> has on the <em>current hidden state</em>.</li>
+<li>$b_h$: A bias vector for the hidden state.</li>
+<li>$f$: An activation function (often $\tanh$ or ReLU) that introduces non-linearity, allowing the network to learn complex patterns.</li>
+</ul>
+<p>And if we want an output $y_t$ at each step (e.g., predicting the next word), it&#39;s typically derived from the current hidden state:</p>
+<p>$y_t = g(W_{hy} h_t + b_y)$</p>
+<ul>
+<li>$y_t$: The output at time $t$.</li>
+<li>$W_{hy}$: A weight matrix that maps the hidden state to the output.</li>
+<li>$b_y$: A bias vector for the output.</li>
+<li>$g$: Another activation function (often <code>softmax</code> for classification tasks like predicting the next word, where we need probabilities over a vocabulary).</li>
+</ul>
+<p>Notice those shared weights ($W_{hh}, W_{xh}, W_{hy}$). They are the backbone of an RNN&#39;s ability to generalize and learn temporal dependencies. It means the network learns a single set of rules that apply across the entire sequence, rather than a separate set of rules for each position.</p>
+<h2>A Simple Example: Character Prediction</h2>
+<p>Let&#39;s imagine a tiny RNN trying to predict the next character in the word &quot;hello&quot;.</p>
+<ol>
+<li><strong>Initial state ($t=0$):</strong> We start with an initial hidden state $h_0$ (often initialized as a vector of zeros). No input yet.</li>
+<li><strong>Input &#39;h&#39; ($t=1$):</strong><ul>
+<li>$x_1$ = vector representation of &#39;h&#39;.</li>
+<li>$h_1 = f(W_{hh} h_0 + W_{xh} x_1 + b_h)$.</li>
+<li>$y_1$ = probability distribution over all characters. Ideally, it predicts &#39;e&#39; with high probability.</li>
+</ul>
+</li>
+<li><strong>Input &#39;e&#39; ($t=2$):</strong><ul>
+<li>$x_2$ = vector representation of &#39;e&#39;.</li>
+<li>$h_2 = f(W_{hh} h_1 + W_{xh} x_2 + b_h)$. (Notice $h_1$ carries information from &#39;h&#39;).</li>
+<li>$y_2$ = predicts &#39;l&#39;.</li>
+</ul>
+</li>
+<li><strong>Input &#39;l&#39; ($t=3$):</strong><ul>
+<li>$x_3$ = vector representation of &#39;l&#39;.</li>
+<li>$h_3 = f(W_{hh} h_2 + W_{xh} x_3 + b_h)$. (Now $h_2$ carries info from &#39;h&#39; and &#39;e&#39;).</li>
+<li>$y_3$ = predicts &#39;l&#39;.</li>
+</ul>
+</li>
+<li><strong>Input &#39;l&#39; ($t=4$):</strong><ul>
+<li>$x_4$ = vector representation of &#39;l&#39;.</li>
+<li>$h_4 = f(W_{hh} h_3 + W_{xh} x_4 + b_h)$.</li>
+<li>$y_4$ = predicts &#39;o&#39;.</li>
+</ul>
+</li>
+</ol>
+<p>This iterative process, where the memory ($h_t$) is continuously updated, is what allows RNNs to build up a rich understanding of the sequence as they progress.</p>
+<h2>Training RNNs: Backpropagation Through Time (BPTT)</h2>
+<p>Just like other neural networks, RNNs learn by adjusting their weights to minimize a loss function (e.g., how far off their predictions are from the true values). This is done using an algorithm called Backpropagation Through Time (BPTT).</p>
+<p>BPTT essentially treats the unrolled RNN as a very deep feedforward network. It calculates gradients (how much each weight should change) by propagating the error backward through all time steps. This means the error at time $t$ doesn&#39;t just affect the weights at time $t$, but also the weights at $t-1$, $t-2$, and so on, taking into account the influence of the hidden state.</p>
+<h2>The Long-Term Dependency Problem: A Memory Challenge</h2>
+<p>While revolutionary, simple RNNs faced a significant hurdle: the &quot;long-term dependency problem.&quot; Imagine a sentence like: &quot;The boy, who loved playing with his dog, a fluffy golden retriever, and often spent his afternoons at the park, ____ very happy.&quot; (The blank should be &#39;was&#39;). The verb &#39;was&#39; depends on &#39;boy&#39;, which appeared much earlier in the sentence, separated by many intervening words.</p>
+<p>Simple RNNs struggled to maintain relevant information over many time steps. During BPTT, gradients propagating backward tend to either &quot;vanish&quot; (become extremely small) or &quot;explode&quot; (become extremely large).</p>
+<ul>
+<li><strong>Vanishing Gradients:</strong> Information from earlier steps gets diluted and essentially forgotten as it propagates forward through many non-linear transformations. The network can&#39;t learn long-range dependencies because the impact of past inputs on the final output becomes negligible.</li>
+<li><strong>Exploding Gradients:</strong> The opposite problem, where gradients become so large they lead to unstable training and numerical overflow.</li>
+</ul>
+<p>This was a major roadblock for RNNs in tasks requiring understanding context over long sequences.</p>
+<h2>The Evolution: LSTMs and GRUs to the Rescue!</h2>
+<p>Fortunately, brilliant minds in the field came up with more sophisticated RNN architectures to tackle the long-term dependency problem. The two most prominent are:</p>
+<ol>
+<li><p><strong>Long Short-Term Memory (LSTM) networks:</strong> Introduced by Hochreiter &amp; Schmidhuber in 1997, LSTMs have a more complex internal structure with &quot;gates&quot; that control the flow of information.</p>
+<ul>
+<li><strong>Forget Gate:</strong> Decides what information to throw away from the cell state.</li>
+<li><strong>Input Gate:</strong> Decides what new information to store in the cell state.</li>
+<li><strong>Output Gate:</strong> Decides what part of the cell state to output as the hidden state.
+This sophisticated gating mechanism allows LSTMs to selectively remember or forget information, maintaining a separate &quot;cell state&quot; that runs through the network, largely unaffected by vanishing gradients, making them incredibly effective at capturing long-term dependencies.</li>
+</ul>
+</li>
+<li><p><strong>Gated Recurrent Units (GRUs):</strong> A slightly simplified version of LSTMs, GRUs combine the forget and input gates into a single &quot;update gate&quot; and merge the cell state and hidden state. They often perform comparably to LSTMs on many tasks but have fewer parameters, making them faster to train.</p>
+</li>
+</ol>
+<p>These gated RNNs became the workhorses for sequential data for many years, achieving state-of-the-art results in countless applications.</p>
+<h2>Applications of RNNs: From Language to Finance</h2>
+<p>The ability of RNNs (especially LSTMs and GRUs) to handle sequential data has made them indispensable in many domains:</p>
+<ul>
+<li><strong>Natural Language Processing (NLP):</strong><ul>
+<li><strong>Language Modeling:</strong> Predicting the next word in a sentence (e.g., smartphone auto-completion).</li>
+<li><strong>Machine Translation:</strong> Google Translate famously used LSTMs for years.</li>
+<li><strong>Sentiment Analysis:</strong> Determining if a piece of text expresses positive, negative, or neutral sentiment.</li>
+<li><strong>Text Generation:</strong> Creating coherent and contextually relevant text.</li>
+</ul>
+</li>
+<li><strong>Speech Recognition:</strong> Converting spoken words into text.</li>
+<li><strong>Time Series Prediction:</strong> Forecasting stock prices, weather patterns, or energy consumption.</li>
+<li><strong>Music Generation:</strong> Composing new melodies or extending existing ones.</li>
+<li><strong>Video Analysis:</strong> Understanding actions and events in video sequences.</li>
+</ul>
+<h2>The Road Ahead: Beyond Pure RNNs</h2>
+<p>While RNNs, particularly LSTMs and GRUs, were groundbreaking, they do have some limitations. One significant drawback is their sequential nature; you generally can&#39;t parallelize calculations across time steps, which can make training on very long sequences slow.</p>
+<p>In recent years, a new architecture called the <strong>Transformer</strong> has revolutionized the field, especially in NLP. Transformers eschew recurrence entirely, relying on a mechanism called &quot;attention&quot; to weigh the importance of different parts of the input sequence. This allows for much greater parallelization and has led to models like BERT and GPT, which have achieved unprecedented performance.</p>
+<p>However, this doesn&#39;t diminish the importance or brilliance of RNNs. They laid the crucial groundwork, introducing the concept of memory into neural networks, which was a paradigm shift. For certain tasks, like processing streaming data where you can&#39;t see the whole sequence at once, or in resource-constrained environments, RNNs and their variants still hold their own.</p>
+<h2>Conclusion: A Step Towards True Intelligence</h2>
+<p>Recurrent Neural Networks represent a pivotal moment in the development of AI. By giving machines the ability to remember and learn from sequences, they opened up a vast new landscape of applications, bringing us closer to AI systems that can understand and interact with the world in a more human-like way.</p>
+<p>My journey with RNNs was a profound one, teaching me that sometimes, the simplest ideas – like adding a feedback loop – can lead to the most powerful innovations. While the field continues to evolve at breakneck speed, the foundational concepts introduced by RNNs will forever remain a cornerstone of sequential data processing in deep learning. Keep exploring, keep questioning, and you&#39;ll uncover even more incredible insights on your own AI journey!</p>
+
+       </div>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Crossing the Threshold: My Dive into Logistic Regression | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict &quot;yes&quot; or &quot;no&quot; outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices." />
+    <meta property="og:description" content="Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict &quot;yes&quot; or &quot;no&quot; outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices." />
+    <meta property="og:title" content="Crossing the Threshold: My Dive into Logistic Regression" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Crossing the Threshold: My Dive into Logistic Regression","datePublished":"2024-09-05","description":"Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict \"yes\" or \"no\" outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Crossing the Threshold: My Dive into Logistic Regression</h1>
+           <p>Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict "yes" or "no" outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices.</p>
+           <h3>Hey there, fellow data explorers!</h3>
+<p>Today, I want to share something that truly clicked for me when I first started learning about machine learning: Logistic Regression. It&#39;s one of those foundational algorithms that pops up everywhere, yet its name can sometimes feel a bit intimidating. &quot;Regression? I thought we were classifying things!&quot; you might think, and trust me, I&#39;ve been there. But once you pull back the curtain, it&#39;s remarkably intuitive and incredibly powerful.</p>
+<p>So, grab a virtual coffee, and let&#39;s unravel this together.</p>
+<h3>The &quot;Yes&quot; or &quot;No&quot; Dilemma</h3>
+<p>Imagine you&#39;re building a system to predict if a customer will click on an ad, if an email is spam, or if a student will pass an exam. These aren&#39;t predictions of a continuous value like house prices or temperature. Instead, we&#39;re dealing with <em>binary outcomes</em>: 0 or 1, true or false, yes or no.</p>
+<p>My first thought when encountering such problems was, &quot;Why can&#39;t I just use Linear Regression?&quot; After all, it&#39;s what I learned first, and it works great for predicting numerical values. So, let&#39;s try to fit a straight line to our &quot;yes&quot; (1) and &quot;no&quot; (0) data points.</p>
+<h4>The Problem with Linear Regression for Classification</h4>
+<p>Let&#39;s say we have a dataset where we want to predict if a tumor is malignant (1) or benign (0) based on its size. If we try to use linear regression, our model might look something like this:</p>
+<p>$\hat{y} = \beta_0 + \beta_1 x$</p>
+<p>Where $\hat{y}$ is our predicted outcome, $x$ is the tumor size, and $\beta_0, \beta_1$ are our learned coefficients.</p>
+<p>Here&#39;s where we hit a snag:</p>
+<ol>
+<li><strong>Out-of-Bounds Predictions:</strong> A linear regression model can output <em>any</em> real number. What does a predicted value of -0.5 or 1.8 mean in the context of &quot;malignant&quot; or &quot;benign&quot;? It doesn&#39;t make sense. We need predictions constrained between 0 and 1, representing probabilities.</li>
+<li><strong>Sensitivity to Outliers:</strong> If we have some very large tumors that are still benign (or vice versa), the straight line will try to accommodate them, potentially pulling the decision boundary away from where it should be, leading to poor classifications for the majority of data points.</li>
+<li><strong>Non-Linear Relationship:</strong> The relationship between features and the <em>probability</em> of an event often isn&#39;t linear. Think about it: once a tumor reaches a certain size, the probability of it being malignant might increase sharply, but then level off. A straight line can&#39;t capture this S-shaped curve effectively.</li>
+</ol>
+<p>This led me to realize that while linear regression tries to predict the <em>value</em> of Y, for classification, we want to predict the <em>probability</em> that Y belongs to a certain class. This is where Logistic Regression truly shines.</p>
+<h3>Enter the Sigmoid: The Heart of Logistic Regression</h3>
+<p>The magic ingredient that allows Logistic Regression to overcome these limitations is the <strong>Sigmoid function</strong>, also known as the <strong>Logistic function</strong>.</p>
+<p>The sigmoid function takes any real-valued number and squashes it into a probability between 0 and 1. It looks like a gentle &#39;S&#39; curve.</p>
+<p>Here&#39;s the mathematical beauty of it:</p>
+<p>$\sigma(z) = \frac{1}{1 + e^{-z}}$</p>
+<p>Where:</p>
+<ul>
+<li>$\sigma(z)$ (pronounced &quot;sigma of z&quot;) is the output, representing the probability.</li>
+<li>$e$ is Euler&#39;s number (approximately 2.71828).</li>
+<li>$z$ is the linear combination of our input features and their corresponding weights (or coefficients), just like in linear regression!</li>
+</ul>
+<p>So, that $z$ is simply:</p>
+<p>$z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$</p>
+<p>Or, in vector notation:</p>
+<p>$z = \vec{w} \cdot \vec{x} + b$</p>
+<p>Where $\vec{w}$ are the weights (coefficients), $\vec{x}$ are the input features, and $b$ is the bias (intercept).</p>
+<p><strong>Let&#39;s break down the sigmoid function&#39;s behavior:</strong></p>
+<ul>
+<li>If $z$ is a large positive number, $e^{-z}$ becomes very small, so $\frac{1}{1 + \text{small number}}$ approaches 1.</li>
+<li>If $z$ is zero, $e^{-z}$ becomes $e^0 = 1$, so $\frac{1}{1 + 1} = \frac{1}{2} = 0.5$.</li>
+<li>If $z$ is a large negative number, $e^{-z}$ becomes very large, so $\frac{1}{1 + \text{large number}}$ approaches 0.</li>
+</ul>
+<p>This S-shaped curve perfectly maps our linear combination ($z$) to a probability score between 0 and 1. For example, if $z=0$, the probability is 0.5. If $z$ is positive, the probability is greater than 0.5, and if $z$ is negative, it&#39;s less than 0.5. This means that a higher $z$ value increases the likelihood of a positive outcome.</p>
+<h3>From Probability to Prediction: The Decision Boundary</h3>
+<p>Once our Logistic Regression model outputs a probability (let&#39;s call it $\hat{y}$), we need to translate that into a concrete &quot;yes&quot; (1) or &quot;no&quot; (0) prediction. This is where we introduce a <strong>decision boundary</strong>.</p>
+<p>Typically, this boundary is set at 0.5:</p>
+<ul>
+<li>If $\hat{y} \ge 0.5$, we predict 1 (e.g., &quot;malignant&quot;, &quot;spam&quot;, &quot;click&quot;).</li>
+<li>If $\hat{y} &lt; 0.5$, we predict 0 (e.g., &quot;benign&quot;, &quot;not spam&quot;, &quot;no click&quot;).</li>
+</ul>
+<p>Why 0.5? Because when $z=0$, the sigmoid outputs 0.5. So, predicting 1 when $\hat{y} \ge 0.5$ is equivalent to predicting 1 when $z \ge 0$. This essentially means our decision boundary is defined by where the linear combination $z$ crosses zero.</p>
+<h3>How Does it Learn? The Cost Function</h3>
+<p>Now that we know <em>what</em> Logistic Regression does (maps linear combinations to probabilities), the next big question is: <em>how</em> does it learn the optimal $\beta$ coefficients (or $\vec{w}$ and $b$)? Just like with Linear Regression and its Mean Squared Error, Logistic Regression needs a cost function to tell it how &quot;wrong&quot; its predictions are, which it then tries to minimize.</p>
+<p>For classification tasks, Mean Squared Error (MSE) isn&#39;t the best fit for our sigmoid-transformed outputs. Why? Because when combined with the sigmoid function, MSE becomes a non-convex function, meaning it could have multiple local minima, making it hard for optimization algorithms like Gradient Descent to find the true global minimum.</p>
+<p>Instead, Logistic Regression uses the <strong>Log Loss</strong> function, also known as <strong>Binary Cross-Entropy</strong>. This cost function is specially designed for probability-based classification.</p>
+<p>The Binary Cross-Entropy loss for a single training example $(x^{(i)}, y^{(i)})$ is:</p>
+<p>$L(\hat{y}^{(i)}, y^{(i)}) = -[y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)})]$</p>
+<p>Where:</p>
+<ul>
+<li>$y^{(i)}$ is the actual label (0 or 1).</li>
+<li>$\hat{y}^{(i)}$ is the predicted probability (between 0 and 1) by our model.</li>
+</ul>
+<p>Let&#39;s unpack this with a personal thought process:</p>
+<ul>
+<li><p><strong>If the true label $y^{(i)}$ is 1:</strong> The first term becomes $-\log(\hat{y}^{(i)})$ and the second term becomes 0. We want $\hat{y}^{(i)}$ to be close to 1. If $\hat{y}^{(i)}$ is close to 1, $-\log(\hat{y}^{(i)})$ will be a small positive number (e.g., if $\hat{y}^{(i)}=0.99, -\log(0.99) \approx 0.01$). But if $\hat{y}^{(i)}$ is close to 0 (meaning we predicted wrong), $-\log(\hat{y}^{(i)})$ will be a very large positive number (e.g., if $\hat{y}^{(i)}=0.01, -\log(0.01) \approx 4.6$). This penalizes wrong predictions heavily, which is exactly what we want!</p>
+</li>
+<li><p><strong>If the true label $y^{(i)}$ is 0:</strong> The first term becomes 0 and the second term becomes $-\log(1 - \hat{y}^{(i)})$. We want $\hat{y}^{(i)}$ to be close to 0. If $\hat{y}^{(i)}$ is close to 0, then $(1 - \hat{y}^{(i)})$ is close to 1, so $-\log(1 - \hat{y}^{(i)})$ will be a small positive number. If $\hat{y}^{(i)}$ is close to 1 (meaning we predicted wrong), then $(1 - \hat{y}^{(i)})$ is close to 0, so $-\log(1 - \hat{y}^{(i)})$ will be a very large positive number. Again, strong penalties for incorrect predictions.</p>
+</li>
+</ul>
+<p>The total cost function $J(\beta)$ for all $m$ training examples is the average of these individual losses:</p>
+<p>$J(\beta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)})]$</p>
+<p>This cost function is <strong>convex</strong>, which is fantastic! It means there&#39;s only one global minimum, making it much easier for optimization algorithms to find the best set of $\beta$ coefficients.</p>
+<h3>Optimization: Finding the Best Fit with Gradient Descent</h3>
+<p>Once we have our cost function, we need a way to minimize it. Just like in Linear Regression, we use an iterative optimization algorithm called <strong>Gradient Descent</strong>.</p>
+<p>The idea is simple:</p>
+<ol>
+<li>Start with some random initial values for our $\beta$ coefficients.</li>
+<li>Calculate the gradient (the direction of steepest ascent) of the cost function with respect to each coefficient.</li>
+<li>Update each coefficient by moving a small step in the <em>opposite</em> direction of the gradient (i.e., the direction of steepest descent).</li>
+<li>Repeat until the coefficients converge to values that minimize the cost function.</li>
+</ol>
+<p>The update rule for each coefficient $\beta_j$ would look something like this:</p>
+<p>$\beta_j := \beta_j - \alpha \frac{\partial}{\partial \beta_j} J(\beta)$</p>
+<p>Where $\alpha$ is the learning rate, controlling the size of our steps. The exact derivative $\frac{\partial}{\partial \beta_j} J(\beta)$ for Logistic Regression ends up having a remarkably similar form to that of Linear Regression, which is often a pleasant surprise when you derive it! It&#39;s essentially proportional to the difference between the predicted and actual values.</p>
+<h3>A Personal Analogy</h3>
+<p>Think of it like this: I&#39;m trying to decide if I should order pizza tonight (a &quot;yes&quot; or &quot;no&quot; decision). My &quot;features&quot; might be:</p>
+<ul>
+<li>How hungry I am ($x_1$)</li>
+<li>How much time I have to cook ($x_2$)</li>
+<li>How much money I have ($x_3$)</li>
+<li>Whether I had pizza yesterday ($x_4$, a negative weight!)</li>
+</ul>
+<p>Each of these factors has a certain &quot;weight&quot; (my $\beta$ coefficients) in my decision-making process. I combine these factors linearly to get a &quot;pizza-desire score&quot; ($z$). Then, my internal &quot;sigmoid function&quot; takes that score and translates it into a probability: &quot;There&#39;s an 85% chance I&#39;ll order pizza.&quot; Finally, my &quot;decision boundary&quot; (say, 50%) kicks in: &quot;Since it&#39;s over 50%, YES, I&#39;m ordering pizza!&quot;</p>
+<p>Logistic Regression essentially formalizes this intuitive process, allowing a computer to learn the optimal &quot;weights&quot; for these factors based on historical data.</p>
+<h3>Strengths and Limitations</h3>
+<p>Every model has its pros and cons, and Logistic Regression is no exception.</p>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li><strong>Simplicity and Interpretability:</strong> It&#39;s relatively easy to understand and implement. The coefficients ($\beta_j$) directly tell you how much each feature contributes to the log-odds of the outcome, providing clear insights into feature importance.</li>
+<li><strong>Probabilistic Outputs:</strong> It inherently provides probabilities, which can be very useful for decision-making (e.g., &quot;This patient has an 80% chance of having the disease&quot;).</li>
+<li><strong>Good Baseline Model:</strong> Often, it&#39;s a great first model to try due to its speed and simplicity. If a more complex model doesn&#39;t significantly outperform Logistic Regression, it might be overkill.</li>
+<li><strong>Regularization Ready:</strong> It can be easily regularized (L1 or L2) to prevent overfitting, which is a common practice in machine learning.</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li><strong>Assumes Linearity in Log-Odds:</strong> While it handles non-linear relationships between features and the probability (thanks to the sigmoid), it assumes a linear relationship between features and the <em>log-odds</em> (i.e., the $z$ part). If the true relationship is highly complex and non-linear, Logistic Regression might struggle.</li>
+<li><strong>Doesn&#39;t Handle Complex Relationships Well:</strong> For very complex, high-dimensional data with intricate non-linear boundaries, more advanced models (like SVMs with non-linear kernels, Random Forests, or Neural Networks) often perform better.</li>
+<li><strong>Sensitive to Outliers:</strong> Like Linear Regression, it can be sensitive to outliers, especially if they heavily influence the decision boundary.</li>
+<li><strong>Multicollinearity:</strong> If features are highly correlated, it can make coefficient interpretation difficult and unstable.</li>
+</ul>
+<h3>Beyond Binary: Multinomial Logistic Regression</h3>
+<p>What if we have more than two classes? Like classifying types of animals (cat, dog, bird)? Logistic Regression can be extended for multi-class classification using a technique called <strong>Multinomial Logistic Regression</strong> or <strong>Softmax Regression</strong>. Instead of a single sigmoid, it uses a Softmax function that outputs probabilities for each class, ensuring they sum to 1. Alternatively, you can use a &quot;one-vs-rest&quot; strategy, training a binary logistic regression for each class against all others.</p>
+<h3>Wrapping Up</h3>
+<p>Logistic Regression might sound intimidating, but it&#39;s truly an elegant and fundamental algorithm. It gracefully bridges the gap between linear models and the need for probabilistic classification. For me, understanding its mechanics – the sigmoid function transforming linear scores into probabilities, and the Log Loss function guiding its learning – was a significant &quot;aha!&quot; moment.</p>
+<p>It&#39;s a workhorse in data science, used in everything from medical diagnosis and credit scoring to predicting customer churn and website conversion. It&#39;s often the first algorithm I reach for when tackling a binary classification problem, not just because it&#39;s simple, but because it&#39;s effective and interpretable.</p>
+<p>So, the next time you see a &quot;yes&quot; or &quot;no&quot; prediction, remember the humble yet powerful Logistic Regression working behind the scenes, crossing thresholds and making decisions, one S-curve at a time. Keep exploring, keep questioning, and happy modeling!</p>
+
+       </div>
+</body>
+
+</html>

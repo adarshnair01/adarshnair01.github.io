@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Unlocking Hidden Patterns: A Journey into K-Means Clustering | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights." />
+    <meta property="og:description" content="Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights." />
+    <meta property="og:title" content="Unlocking Hidden Patterns: A Journey into K-Means Clustering" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Unlocking Hidden Patterns: A Journey into K-Means Clustering","datePublished":"2024-02-22","description":"Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Unlocking Hidden Patterns: A Journey into K-Means Clustering</h1>
+           <p>Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights.</p>
+           <p>Hey everyone! Today, let&#39;s dive into one of my absolute favorite unsupervised learning algorithms: K-Means Clustering. Imagine you have a massive pile of LEGOs, all mixed up, and you want to sort them into groups without any pre-defined labels. How would you do it? You&#39;d probably start by picking a few distinct pieces and then putting similar ones next to them, right? That&#39;s essentially what K-Means helps computers do with data!</p>
+<p>K-Means is an <strong>unsupervised learning algorithm</strong> designed to find natural groupings (clusters) within unlabeled data. Our goal isn&#39;t to predict a specific outcome, but rather to discover inherent structures. The &quot;K&quot; in K-Means is crucial – it stands for the <em>number of clusters</em> you want to find. If you want to group your LEGOs into 3 types, K=3. The algorithm then aims to partition &#39;n&#39; observations into these &#39;k&#39; clusters, where each observation belongs to the cluster with the nearest mean (centroid).</p>
+<p>The magic of K-Means unfolds in an iterative process, much like refining your LEGO sorting until it feels just right:</p>
+<ol>
+<li><strong>Initialization:</strong> We randomly select &#39;K&#39; data points to be our initial <strong>centroids</strong>. Think of these as your initial &quot;reference LEGO pieces&quot; for each group.</li>
+<li><strong>Assignment Step:</strong> For every data point, we calculate its distance to each of the &#39;K&#39; centroids. The point is then assigned to the cluster whose centroid is closest. We typically use the <strong>Euclidean distance</strong> for this, which for two points $ \mathbf{p}=(p_1, ..., p_n) $ and $ \mathbf{q}=(q_1, ..., q_n) $ is:
+$ d(\mathbf{p},\mathbf{q}) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2} $
+This step effectively draws boundaries, assigning each data point to its current &quot;best fit&quot; group.</li>
+<li><strong>Update Step:</strong> Now that all points are assigned, we move our centroids. Each centroid is recalculated as the <strong>mean</strong> (average) of all data points currently assigned to its cluster. This shifts the &quot;center&quot; of each cluster to a more representative position.</li>
+<li><strong>Repeat Until Convergence:</strong> We repeat steps 2 and 3 until the centroids no longer move significantly or until a maximum number of iterations is reached. When the centroids stabilize, our clusters are considered &quot;converged.&quot;</li>
+</ol>
+<p>Imagine friends trying to decide where to meet for lunch. Everyone picks a few restaurants (initial centroids). Each person then goes to their <em>closest</em> chosen restaurant (assignment). After that, the &quot;meeting point&quot; for each restaurant group is recalculated based on where everyone who chose it actually lives (update centroid). They repeat until no one wants to switch!</p>
+<p>K-Means is a workhorse in data science, used for:</p>
+<ul>
+<li><strong>Customer Segmentation:</strong> Grouping customers for targeted marketing.</li>
+<li><strong>Image Compression:</strong> Reducing colors in an image.</li>
+<li><strong>Document Clustering:</strong> Organizing text by topic.</li>
+</ul>
+<p>While powerful, K-Means isn&#39;t without its quirks:</p>
+<ul>
+<li><strong>Choosing K:</strong> Deciding the optimal &#39;K&#39; can be tricky (e.g., Elbow Method).</li>
+<li><strong>Initial Centroids:</strong> Random initialization can lead to different results. Running the algorithm multiple times with different initializations is common.</li>
+<li><strong>Sensitive to Outliers:</strong> Outliers can drastically shift centroid positions.</li>
+<li><strong>Spherical Clusters:</strong> Works best with roughly spherical, similarly sized clusters.</li>
+</ul>
+<p>K-Means clustering is a fantastic entry point into unsupervised machine learning. It&#39;s elegantly simple, computationally efficient, and incredibly versatile for uncovering hidden structures in data. Understanding how it works is a fundamental skill for anyone in data science or machine learning. So next time you see data begging to be grouped, remember K-Means – your friendly neighborhood cluster finder!</p>
+
+       </div>
+</body>
+
+</html>

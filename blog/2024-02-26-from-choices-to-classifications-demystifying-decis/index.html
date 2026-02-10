@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>From Choices to Classifications: Demystifying Decision Trees | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process." />
+    <meta property="og:description" content="Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process." />
+    <meta property="og:title" content="From Choices to Classifications: Demystifying Decision Trees" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"From Choices to Classifications: Demystifying Decision Trees","datePublished":"2024-02-26","description":"Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>From Choices to Classifications: Demystifying Decision Trees</h1>
+           <p>Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process.</p>
+           <p>Hey there, fellow data explorer!</p>
+<p>Have you ever played a game of &quot;20 Questions&quot;? Or perhaps navigated a &quot;choose your own adventure&quot; book? That&#39;s precisely the intuition behind one of the most elegant and understandable algorithms in machine learning: the <strong>Decision Tree</strong>. As someone passionate about making sense of data, I find Decision Trees particularly captivating because they explain their reasoning in a way that feels incredibly human.</p>
+<h3>What&#39;s a Decision Tree, Really?</h3>
+<p>Imagine a flowchart. That&#39;s essentially what a Decision Tree is! It&#39;s a non-parametric supervised learning algorithm used for both classification and regression tasks. At its core, it breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with <strong>decision nodes</strong> and <strong>leaf nodes</strong>.</p>
+<ul>
+<li><strong>Root Node</strong>: The very first decision point. It represents the entire dataset.</li>
+<li><strong>Internal Nodes</strong>: These are decision points where the data is split based on a specific feature (a &quot;question&quot; about your data).</li>
+<li><strong>Branches</strong>: The pathways leading from a decision node, representing the possible outcomes of the question.</li>
+<li><strong>Leaf Nodes</strong>: These are the final outcomes or predictions. Once you reach a leaf, you have your answer!</li>
+</ul>
+<h3>How Does It &quot;Decide&quot;? The Magic Under the Hood</h3>
+<p>When building a Decision Tree, the goal is to recursively split the data in such a way that each resulting subset is as &quot;pure&quot; as possible – meaning, samples within that subset mostly belong to the same class. But how does the tree know which &quot;question&quot; (feature) to ask at each node, and at what value, to achieve this purity?</p>
+<p>This is where fascinating concepts like <strong>Gini Impurity</strong> and <strong>Entropy</strong> come into play. These metrics measure the &quot;disorder&quot; or &quot;mixed-up-ness&quot; of a set of samples.</p>
+<ol>
+<li><p><strong>Gini Impurity</strong>: Think of Gini as the probability of misclassifying a randomly chosen element if it were randomly labeled according to the distribution of labels in the subset. A Gini of 0 means perfect purity (all samples belong to one class), while 0.5 is maximum impurity for a binary classification.
+$Gini = 1 - \sum_{i=1}^{c} (p_i)^2$
+where $p_i$ is the proportion of samples belonging to class $i$ and $c$ is the number of classes.</p>
+</li>
+<li><p><strong>Entropy</strong>: Originating from information theory, Entropy measures the average amount of information needed to identify the class of a randomly chosen element. Lower entropy means higher purity.
+$Entropy = - \sum_{i=1}^{c} p_i \log_2(p_i)$</p>
+</li>
+</ol>
+<p>The tree then uses these measures to calculate <strong>Information Gain</strong>. Information Gain is the reduction in entropy (or Gini impurity) achieved by splitting the data on a particular feature. The algorithm greedily chooses the split that yields the highest information gain at each step.
+$Information Gain = Entropy(Parent) - \sum_{i=1}^{k} \frac{N_i}{N} Entropy(Child_i)$
+Here, $N$ is the number of samples in the parent node, $N_i$ is the number of samples in child node $i$, and $k$ is the number of child nodes.</p>
+<h3>The Good, The Bad, and The Ensemble</h3>
+<p>Decision Trees are incredibly intuitive and easy to visualize, making them excellent for explaining predictions. They require minimal data preprocessing and can handle both numerical and categorical data.</p>
+<p>However, they do have a couple of drawbacks. A single Decision Tree can be prone to <strong>overfitting</strong>, meaning it might learn the training data too well, including the noise, and perform poorly on unseen data. They can also be quite sensitive to small changes in the input data, leading to a completely different tree structure.</p>
+<p>But fear not! These challenges paved the way for more robust algorithms like <strong>Random Forests</strong> and <strong>Gradient Boosting</strong>, which leverage the power of multiple Decision Trees working together. These &quot;ensemble&quot; methods harness the wisdom of the crowd, significantly boosting predictive power and stability.</p>
+<h3>Your Turn to Decide!</h3>
+<p>Decision Trees offer a fantastic entry point into the world of machine learning. Their transparency allows us to peek into the &quot;mind&quot; of the algorithm, understanding <em>why</em> a particular decision was made. So next time you&#39;re making a choice, remember the humble Decision Tree – a simple yet powerful structure guiding us through the complex landscape of data. Go on, build one yourself and see the magic unfold!</p>
+
+       </div>
+</body>
+
+</html>

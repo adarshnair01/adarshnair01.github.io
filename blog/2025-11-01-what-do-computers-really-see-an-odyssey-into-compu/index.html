@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>What Do Computers *Really* See? An Odyssey into Computer Vision | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how your phone recognizes faces or how self-driving cars 'see' the road? Join me on a journey into Computer Vision, where we teach machines to interpret the complex visual world around us, transforming pixels into understanding." />
+    <meta property="og:description" content="Ever wondered how your phone recognizes faces or how self-driving cars 'see' the road? Join me on a journey into Computer Vision, where we teach machines to interpret the complex visual world around us, transforming pixels into understanding." />
+    <meta property="og:title" content="What Do Computers *Really* See? An Odyssey into Computer Vision" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"What Do Computers *Really* See? An Odyssey into Computer Vision","datePublished":"2025-11-01","description":"Ever wondered how your phone recognizes faces or how self-driving cars 'see' the road? Join me on a journey into Computer Vision, where we teach machines to interpret the complex visual world around us, transforming pixels into understanding.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>What Do Computers *Really* See? An Odyssey into Computer Vision</h1>
+           <p>Ever wondered how your phone recognizes faces or how self-driving cars 'see' the road? Join me on a journey into Computer Vision, where we teach machines to interpret the complex visual world around us, transforming pixels into understanding.</p>
+           <p>As a budding data scientist and machine learning enthusiast, few fields have captivated my imagination quite like Computer Vision. It’s a discipline that seeks to give machines the ultimate human sense: sight. But not just sight in the literal sense of perceiving light, rather, the ability to <em>understand</em> what they see – to identify objects, recognize faces, interpret scenes, and even infer actions.</p>
+<p>It started with a simple question: How does my phone <em>know</em> that&#39;s <em>my</em> face? This seemingly trivial daily interaction sparked a fascination, pulling me down a rabbit hole of pixels, matrices, and neural networks. What I discovered was a field brimming with innovation, blending complex mathematics with elegant algorithms to solve some of the most challenging problems in AI.</p>
+<h3>The World Through a Computer&#39;s Eyes: Beyond the Pixel</h3>
+<p>Imagine looking at a picture of a cat. You instantly recognize it: furry, pointy ears, whiskers, probably plotting world domination. You perceive it as a cohesive entity, separate from the background. Now, how does a computer &quot;see&quot; that same image?</p>
+<p>For a computer, an image is nothing more than a grid of numbers, a massive matrix of pixels. A typical color image is represented by three such grids (or &quot;channels&quot;), one each for Red, Green, and Blue light intensities. Each pixel&#39;s value usually ranges from 0 to 255. So, a $1000 \times 1000$ pixel color image isn&#39;t a cat; it&#39;s a $1000 \times 1000 \times 3$ array of numbers!</p>
+<pre><code class="language-python"># Conceptual Python representation
+import numpy as np
+
+# A grayscale image (height x width)
+grayscale_image = np.array([
+    [50, 60, 70],
+    [80, 90, 100],
+    [110, 120, 130]
+])
+
+# A color image (height x width x channels)
+color_image = np.array([
+    [[255, 0, 0], [0, 255, 0]],  # Red, Green pixels
+    [[0, 0, 255], [100, 100, 100]] # Blue, Gray pixels
+])
+</code></pre>
+<p>The fundamental challenge of Computer Vision is bridging this enormous gap: transforming raw pixel values into meaningful, semantic understanding. How do we get from &quot;a bunch of numbers&quot; to &quot;that&#39;s a cat wearing a tiny hat&quot;?</p>
+<h3>The Early Days: Handcrafting Features</h3>
+<p>In the early days of Computer Vision, researchers tried to explicitly tell computers what to look for. They engineered &quot;features&quot; – specific patterns or characteristics – that might indicate the presence of an object.</p>
+<ul>
+<li><p><strong>Edge Detection:</strong> One common technique involved finding sharp changes in pixel intensity, which usually correspond to edges of objects. Algorithms like Sobel or Canny filters would essentially &quot;sweep&quot; a small matrix (a &quot;kernel&quot; or &quot;filter&quot;) over the image, performing calculations to highlight these changes.</p>
+<p>Imagine a $3 \times 3$ kernel like this:
+$
+K_x = \begin{pmatrix}
+-1 &amp; 0 &amp; 1 \
+-2 &amp; 0 &amp; 2 \
+-1 &amp; 0 &amp; 1
+\end{pmatrix}
+$
+When this kernel is applied (convolved) over an image, it enhances vertical edges. Similarly, a $K_y$ kernel would enhance horizontal edges.</p>
+</li>
+<li><p><strong>Feature Descriptors:</strong> More complex descriptors like SIFT (Scale-Invariant Feature Transform) or HOG (Histogram of Oriented Gradients) were developed to identify robust features that remained recognizable even if an object was rotated, scaled, or viewed under different lighting.</p>
+</li>
+</ul>
+<p>These methods were ingenious but came with significant limitations. They often struggled with variations in viewpoint, lighting, and clutter. Crafting these features was a laborious, domain-specific task, and the results weren&#39;t always robust enough for real-world applications.</p>
+<h3>The Game Changer: Deep Learning and CNNs</h3>
+<p>The landscape of Computer Vision dramatically transformed with the advent of deep learning, particularly with a specific type of neural network called the <strong>Convolutional Neural Network (CNN)</strong>. Instead of painstakingly designing features, CNNs learn to extract features directly from the data. This paradigm shift was nothing short of revolutionary.</p>
+<h4>What Makes a CNN So Special?</h4>
+<p>Let&#39;s break down the core components of a typical CNN, which often feel like the secret sauce behind modern visual AI.</p>
+<ol>
+<li><p><strong>Convolutional Layers: The Feature Detectors</strong>
+This is where the magic really begins. Like the edge detection filters mentioned earlier, convolutional layers use small learnable filters (kernels) that sweep across the input image. However, unlike traditional methods where these filters are predefined, in a CNN, the filters&#39; values are <em>learned</em> during training.</p>
+<p>Each filter specializes in detecting a particular feature: maybe a horizontal edge, a specific texture, a corner, or even more abstract patterns. As a filter slides over the image (this operation is called <strong>convolution</strong>), it calculates a dot product between its values and the corresponding pixel values in the input patch. The result is a single number in an &quot;output feature map.&quot;</p>
+<p>The formula for a 2D convolution at position $(i, j)$ of the output feature map $O$ for an input image $I$ and a filter $K$ is:
+$
+O(i, j) = \sum_{m=0}^{F-1} \sum_{n=0}^{F-1} I(i+m, j+n) K(m, n)
+$
+Where $F$ is the size of the filter.</p>
+<p>This process is repeated across the entire image, generating a new, smaller representation (the feature map) that highlights where that specific feature is present in the original image. Multiple filters are used in a layer, each generating its own feature map. Stacking these layers allows the network to learn increasingly complex and abstract features. Early layers might detect simple edges, while deeper layers combine these to detect shapes, then parts of objects (e.g., an eye, a wheel), and finally, entire objects.</p>
+</li>
+<li><p><strong>Activation Functions: Introducing Non-Linearity</strong>
+After a convolution operation, an activation function is applied to the feature map. The most common one is the <strong>ReLU (Rectified Linear Unit)</strong>: $f(x) = \max(0, x)$.</p>
+<p>Why non-linearity? If all operations were linear, stacking multiple layers would just be equivalent to a single linear layer. Non-linearities allow the network to learn complex, non-linear relationships in the data, which are crucial for understanding real-world images.</p>
+</li>
+<li><p><strong>Pooling Layers: Downsampling for Robustness</strong>
+Pooling layers, often inserted between convolutional layers, serve to reduce the spatial dimensions (width and height) of the feature maps. The most popular is <strong>Max Pooling</strong>. For a given window (e.g., $2 \times 2$), it takes the maximum value from that window.</p>
+<p>Why pool?</p>
+<ul>
+<li><strong>Dimensionality Reduction:</strong> It reduces the number of parameters and computational cost, preventing overfitting.</li>
+<li><strong>Translational Invariance:</strong> It makes the network more robust to slight shifts or distortions in the input image. If an object shifts slightly, its maximum feature activation will still likely be picked up in the pooled output, making the network less sensitive to exact positions.</li>
+</ul>
+</li>
+<li><p><strong>Fully Connected Layers: The Classifier</strong>
+After several alternating convolutional and pooling layers, the high-level features extracted are &quot;flattened&quot; into a single vector. This vector is then fed into one or more fully connected (dense) layers, similar to a traditional artificial neural network. These layers are responsible for taking the learned features and making a final classification (e.g., &quot;cat,&quot; &quot;dog,&quot; &quot;car&quot;).</p>
+<p>The final layer typically uses a softmax activation function to output probabilities for each possible class.</p>
+</li>
+</ol>
+<h3>Training a CNN: Learning to See</h3>
+<p>So, how do these filters and connections learn? Through a process called <strong>training</strong>, guided by data.</p>
+<ol>
+<li><strong>Data, Data, Data:</strong> We feed the CNN millions of labeled images (e.g., &quot;this image is a cat,&quot; &quot;this image is a dog&quot;). Datasets like ImageNet, with millions of images across thousands of categories, were instrumental in the CNN revolution.</li>
+<li><strong>Loss Function:</strong> For each image, the CNN makes a prediction. A <strong>loss function</strong> (e.g., Cross-Entropy Loss) quantifies how &quot;wrong&quot; that prediction is compared to the true label.</li>
+<li><strong>Optimization (Gradient Descent &amp; Backpropagation):</strong> The goal is to minimize this loss. An optimization algorithm like <strong>Stochastic Gradient Descent (SGD)</strong>, powered by <strong>backpropagation</strong>, calculates how much each weight (including the values in our convolutional filters) contributes to the total loss. It then adjusts these weights incrementally in the direction that reduces the loss. This iterative process allows the CNN to &quot;learn&quot; the optimal filter values and connections that can accurately classify images.</li>
+</ol>
+<p>It&#39;s truly remarkable: the network, starting with random weights, progressively discovers intricate patterns and hierarchical representations of the visual world, entirely on its own!</p>
+<h3>Computer Vision in Action: Impacting Our World</h3>
+<p>The breakthroughs in CNNs have unleashed a torrent of applications, many of which we interact with daily:</p>
+<ul>
+<li><strong>Image Classification:</strong> Identifying the primary subject in an image (e.g., identifying spam images, content moderation).</li>
+<li><strong>Object Detection:</strong> Not just <em>what</em> is in an image, but <em>where</em> it is. This involves drawing bounding boxes around objects. Think self-driving cars identifying pedestrians, vehicles, and traffic signs in real-time (YOLO, Faster R-CNN are popular architectures here).</li>
+<li><strong>Semantic Segmentation:</strong> Taking object detection a step further, this task assigns a class label to <em>every single pixel</em> in an image. It&#39;s like painting different objects with different colors. Crucial for medical imaging (segmenting tumors) and advanced robotics.</li>
+<li><strong>Facial Recognition:</strong> From unlocking your phone to security systems, identifying individuals based on unique facial features.</li>
+<li><strong>Medical Imaging Analysis:</strong> Aiding doctors in diagnosing diseases by analyzing X-rays, MRIs, and CT scans to detect anomalies, often with superhuman accuracy.</li>
+<li><strong>Augmented Reality (AR):</strong> Understanding the real-world environment to seamlessly overlay virtual objects (think Pokémon Go or Snapchat filters).</li>
+<li><strong>Robotics:</strong> Giving robots the ability to perceive their environment, navigate, and interact with objects safely.</li>
+</ul>
+<h3>The Road Ahead: Challenges and Ethical Considerations</h3>
+<p>While Computer Vision has made incredible strides, it&#39;s far from a solved problem. My journey continues to uncover fascinating challenges:</p>
+<ul>
+<li><strong>Data Scarcity:</strong> While large datasets exist, many niche applications still suffer from a lack of labeled data. Techniques like few-shot learning and synthetic data generation are active research areas.</li>
+<li><strong>Robustness and Adversarial Attacks:</strong> CNNs can be surprisingly fragile. Tiny, imperceptible perturbations to an image can trick a model into misclassifying it completely. Ensuring robustness is critical for safety-critical applications.</li>
+<li><strong>Bias:</strong> If the training data is biased (e.g., underrepresents certain demographics), the models will inherit and amplify that bias, leading to unfair or incorrect predictions. Addressing data bias and ensuring fairness is a paramount ethical concern.</li>
+<li><strong>Explainability (XAI):</strong> Why did the model make that decision? Understanding the &quot;black box&quot; of deep neural networks is crucial for trust, debugging, and scientific discovery.</li>
+<li><strong>Real-time Performance:</strong> Many applications, like autonomous driving, demand lightning-fast processing, pushing the boundaries of hardware and efficient model design.</li>
+</ul>
+<h3>My Continuing Journey</h3>
+<p>Exploring Computer Vision has been an exhilarating experience, blending the precision of mathematics with the creative problem-solving of engineering. From understanding how pixels transform into probabilities to appreciating the elegant simplicity of a convolutional filter, it&#39;s a field that constantly challenges and inspires.</p>
+<p>The ability to teach machines to see, understand, and interact with our visual world is not just about technological advancement; it&#39;s about expanding human capabilities, enhancing safety, and opening doors to applications we can barely imagine today. As I continue to build my skills in data science and machine learning, I&#39;m eager to contribute to this vibrant field and help shape the future where AI truly has its eyes wide open.</p>
+<p>Perhaps your journey into Computer Vision will start with a similar question, or simply by observing the marvels around you that are powered by this incredible technology. The tools are more accessible than ever, and the problems waiting to be solved are limitless. So, what will <em>you</em> teach computers to see next?</p>
+
+       </div>
+</body>
+
+</html>

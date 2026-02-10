@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Decision Trees: Your First Branch into Explainable AI | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process." />
+    <meta property="og:description" content="Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process." />
+    <meta property="og:title" content="Decision Trees: Your First Branch into Explainable AI" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Decision Trees: Your First Branch into Explainable AI","datePublished":"2024-02-25","description":"Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Decision Trees: Your First Branch into Explainable AI</h1>
+           <p>Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process.</p>
+           <p>Hey there, fellow explorer of the data universe! Today, I want to share a foundational concept in machine learning that&#39;s as intuitive as it is powerful: Decision Trees. If you&#39;ve ever followed a flowchart or played a &#39;choose-your-own-adventure&#39; book, you&#39;ve already got a head start on understanding them!</p>
+<h3>What Exactly <em>Are</em> Decision Trees?</h3>
+<p>Imagine you&#39;re trying to decide if you should go for a run. You might ask: &quot;Is it raining?&quot; If yes, you might ask: &quot;Do I have an umbrella?&quot; If no, you might ask: &quot;Is it too cold?&quot; Each question leads you down a different path until you reach a final decision: &#39;Run&#39; or &#39;Don&#39;t Run&#39;.</p>
+<p>That&#39;s precisely what a Decision Tree does for computers! It&#39;s a flowchart-like structure where each internal <strong>node</strong> represents a &#39;test&#39; on an attribute (like &#39;Is it raining?&#39;), each <strong>branch</strong> represents the outcome of that test, and each <strong>leaf node</strong> represents a class label (the decision, e.g., &#39;Run&#39;). The topmost node is called the <strong>root node</strong>.</p>
+<h3>How Do They &#39;Think&#39;? Building the Tree</h3>
+<p>The magic lies in how a Decision Tree decides <em>which</em> questions to ask and in what order. The goal is to split the data at each node in a way that best separates the different classes. We want to make the resulting subsets as &#39;pure&#39; as possible, meaning each subset contains mostly instances of a single class.</p>
+<p>To do this, algorithms look for the &#39;best split&#39; using measures of <strong>impurity</strong>. Two common ones are:</p>
+<ol>
+<li><p><strong>Gini Impurity</strong>: This measure tells us how often a randomly chosen element from the set would be incorrectly labeled if it were randomly labeled according to the distribution of labels in the subset. A Gini Imp Impurity of 0 means perfect purity (all elements belong to the same class). The formula for Gini Impurity for a node is:
+$G = 1 - \sum_{i=1}^{C} p_i^2$
+where $p_i$ is the fraction of items belonging to class $i$ and $C$ is the total number of classes.</p>
+</li>
+<li><p><strong>Entropy</strong>: Borrowed from information theory, Entropy measures the disorder or randomness in a set. High entropy means high disorder, low entropy means high order. The algorithm seeks to reduce entropy with each split.</p>
+</li>
+</ol>
+<p>When building the tree, the algorithm at each step selects the feature (the &#39;question&#39;) and the split point that results in the greatest reduction in impurity, or equivalently, the highest <strong>Information Gain</strong>. This process repeats recursively until a stopping condition is met, such as reaching a maximum depth, or when a node becomes &#39;pure&#39; (contains only one class).</p>
+<h3>The Upsides: Why We Love Them</h3>
+<ul>
+<li><strong>Interpretability</strong>: This is their superpower! You can literally trace the path from the root to a leaf to understand <em>why</em> a decision was made. This &#39;explainability&#39; is crucial in many fields.</li>
+<li><strong>Simple to Understand &amp; Visualize</strong>: Flowcharts are naturally intuitive.</li>
+<li><strong>Handles Different Data Types</strong>: They can work with both numerical (like temperature) and categorical (like &#39;raining&#39; or &#39;not raining&#39;) data.</li>
+<li><strong>Little Data Preprocessing</strong>: They don&#39;t require feature scaling or normalization.</li>
+</ul>
+<h3>The Downsides: What to Watch Out For</h3>
+<ul>
+<li><strong>Overfitting</strong>: A common challenge is that deep trees can become too complex, learning the noise in the training data rather than the underlying patterns. This leads to poor performance on new, unseen data.</li>
+<li><strong>Instability</strong>: Small changes in the training data can sometimes lead to a completely different tree structure.</li>
+</ul>
+<p>To combat overfitting, techniques like <strong>pruning</strong> (removing branches that have little predictive power) are used. Even more powerfully, multiple Decision Trees can be combined into <strong>ensemble methods</strong> like Random Forests or Gradient Boosting, creating incredibly robust models – but that&#39;s a story for another blog post!</p>
+<p>Decision Trees are a fantastic entry point into machine learning. They demonstrate the core idea of breaking down complex problems into a series of simple, logical steps. So, next time you make a decision, think of the hidden tree guiding your choices!</p>
+
+       </div>
+</body>
+
+</html>

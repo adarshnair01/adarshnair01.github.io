@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>From \\\"Yes\\\" or \\\"No\\\" to \\\"Probably\\\": Unpacking Logistic Regression for Classification | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities." />
+    <meta property="og:description" content="Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities." />
+    <meta property="og:title" content="From \\\&quot;Yes\\\&quot; or \\\&quot;No\\\&quot; to \\\&quot;Probably\\\&quot;: Unpacking Logistic Regression for Classification" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"From \\\\\\\"Yes\\\\\\\" or \\\\\\\"No\\\\\\\" to \\\\\\\"Probably\\\\\\\": Unpacking Logistic Regression for Classification","datePublished":"2024-03-17","description":"Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>From \\\"Yes\\\" or \\\"No\\\" to \\\"Probably\\\": Unpacking Logistic Regression for Classification</h1>
+           <p>Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities.</p>
+           <p>Welcome, fellow data explorers! Today, we&#39;re diving into a cornerstone of machine learning: Logistic Regression. Don&#39;t let the &quot;regression&quot; in its name fool you; this elegant algorithm is all about <strong>classification</strong>, helping machines make binary decisions like &quot;spam&quot; or &quot;not spam,&quot; &quot;disease&quot; or &quot;no disease,&quot; &quot;churn&quot; or &quot;stay.&quot;</p>
+<p>Imagine you&#39;re trying to predict if a student will pass an exam based on the hours they studied. If you used simple Linear Regression, you might get predictions like 0.2 (which doesn&#39;t make sense for a &quot;pass/fail&quot; outcome) or even 1.5 (definitely not a pass/fail). Clearly, we need a different approach. We need something that gives us a probability, a value comfortably nestled between 0 and 1, which we can then use to make a confident &#39;yes&#39; or &#39;no&#39; decision.</p>
+<p>This is where Logistic Regression steps in, offering a remarkably intuitive path to turning continuous inputs into crisp, binary predictions.</p>
+<h3>Why Not Linear Regression for Classification?</h3>
+<p>Before we jump into Logistic Regression, let&#39;s briefly reinforce why Linear Regression falls short for classification tasks:</p>
+<ol>
+<li><strong>Output Range:</strong> Linear Regression predicts a continuous value. For a binary classification problem (e.g., 0 or 1), we want a probability, something constrained between 0 and 1. A linear model can predict values outside this range (e.g., -0.5, 1.2), which are meaningless as probabilities.</li>
+<li><strong>Interpretation:</strong> What does a Linear Regression output of, say, 0.7 mean in a &quot;pass/fail&quot; context? Is it 70% of a pass? Not quite. We need a clear probabilistic interpretation.</li>
+<li><strong>Sensitivity to Outliers:</strong> In a classification context, outliers can drastically shift the regression line, potentially misclassifying many points.</li>
+</ol>
+<p>Logistic Regression provides a neat solution to these problems by introducing a special function that squashes any real-valued output into the desired (0, 1) probability range.</p>
+<h3>The Heart of Logistic Regression: The Sigmoid Function</h3>
+<p>At its core, Logistic Regression still starts with a linear combination of inputs, much like Linear Regression. For a given data point $\mathbf{x} = [x_1, x_2, \dots, x_n]$, we compute a &quot;score&quot; or &quot;logit,&quot; let&#39;s call it $z$:</p>
+<p>$z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$</p>
+<p>Or, more compactly using vector notation:</p>
+<p>$z = \mathbf{w}^T \mathbf{x} + b$</p>
+<p>Here, $\mathbf{w}$ represents the vector of feature weights (our $\beta$s), and $b$ is the bias (our $\beta_0$). This $z$ can be any real number, positive or negative, large or small.</p>
+<p>But remember, we need a probability between 0 and 1. This is where the magic of the <strong>Sigmoid function</strong> (also known as the Logistic function) comes into play. The Sigmoid function takes any real-valued number and maps it to a value between 0 and 1.</p>
+<p>The Sigmoid function, denoted by $\sigma(z)$, is defined as:</p>
+<p>$\sigma(z) = \frac{1}{1 + e^{-z}}$</p>
+<p>Let&#39;s break down why this function is so perfect for our needs:</p>
+<ul>
+<li><p><strong>S-shaped Curve:</strong> If you were to plot $\sigma(z)$, you&#39;d see a beautiful S-shaped curve. As $z$ approaches positive infinity, $\sigma(z)$ approaches 1. As $z$ approaches negative infinity, $\sigma(z)$ approaches 0. When $z=0$, $\sigma(0) = \frac{1}{1 + e^0} = \frac{1}{1+1} = 0.5$.</p>
+</li>
+<li><p><strong>Probability Interpretation:</strong> We interpret the output of the sigmoid function, $\hat{y} = \sigma(z)$, as the probability that the output $Y$ belongs to class 1, given the input $\mathbf{x}$ and the learned weights $\mathbf{w}$ and bias $b$.</p>
+<p>$\hat{y} = P(Y=1 | \mathbf{x}; \mathbf{w}, b) = \frac{1}{1 + e^{-(\mathbf{w}^T \mathbf{x} + b)}}$</p>
+<p>So, if $\hat{y}$ is 0.8, it means there&#39;s an 80% chance the input $\mathbf{x}$ belongs to class 1. If it&#39;s 0.2, then there&#39;s a 20% chance it belongs to class 1 (and an 80% chance it belongs to class 0).</p>
+</li>
+</ul>
+<h3>Making a Decision: The Decision Boundary</h3>
+<p>Now that we have probabilities, how do we make a firm &quot;yes&quot; or &quot;no&quot; decision? We introduce a <strong>decision boundary</strong>. Typically, we set a threshold, often 0.5.</p>
+<ul>
+<li>If $P(Y=1 | \mathbf{x}) \ge 0.5$, we classify the instance as class 1.</li>
+<li>If $P(Y=1 | \mathbf{x}) &lt; 0.5$, we classify the instance as class 0.</li>
+</ul>
+<p>This threshold of 0.5 has a neat connection back to our linear score, $z$. Remember that $\sigma(z)=0.5$ when $z=0$. So, our decision boundary is effectively defined by:</p>
+<p>$\mathbf{w}^T \mathbf{x} + b = 0$</p>
+<p>Geometrically, this equation represents a hyperplane (a line in 2D, a plane in 3D, and so on in higher dimensions) that separates the feature space into two regions, one for class 0 and one for class 1.</p>
+<h3>The &quot;Logistic&quot; in Logistic Regression: Understanding Log-Odds</h3>
+<p>The name &quot;Logistic Regression&quot; isn&#39;t arbitrary. It comes from the relationship between the probability and the linear score $z$ via the concept of <strong>odds</strong> and <strong>log-odds</strong>.</p>
+<p>The odds of an event occurring is the ratio of the probability that it occurs to the probability that it does not occur:</p>
+<p>$\text{Odds} = \frac{P(Y=1 | \mathbf{x})}{P(Y=0 | \mathbf{x})} = \frac{P(Y=1 | \mathbf{x})}{1 - P(Y=1 | \mathbf{x})}$</p>
+<p>Let&#39;s substitute our sigmoid definition for $P(Y=1 | \mathbf{x})$:</p>
+<p>$\text{Odds} = \frac{\frac{1}{1 + e^{-z}}}{1 - \frac{1}{1 + e^{-z}}} = \frac{\frac{1}{1 + e^{-z}}}{\frac{1 + e^{-z} - 1}{1 + e^{-z}}} = \frac{1}{e^{-z}} = e^z$</p>
+<p>So, the odds of an instance belonging to class 1 are $e^z$.</p>
+<p>Now, if we take the natural logarithm of the odds, we get the <strong>log-odds</strong> (also called the <strong>logit</strong>):</p>
+<p>$\log(\text{Odds}) = \log(e^z) = z$</p>
+<p>Aha! Our linear score $z = \mathbf{w}^T \mathbf{x} + b$ is precisely the log-odds of an instance belonging to class 1. This reveals the true nature of Logistic Regression: it&#39;s a linear model of the <em>log-odds</em>. This connection is crucial for understanding the statistical foundations and interpretability of the model.</p>
+<h3>Learning the Weights: The Cost Function and Gradient Descent</h3>
+<p>So far, we&#39;ve seen how Logistic Regression uses a linear combination and the sigmoid function to predict probabilities. But how does the model <em>learn</em> the optimal weights $\mathbf{w}$ and bias $b$?</p>
+<p>Just like with Linear Regression, we need a way to quantify how &quot;wrong&quot; our current predictions are compared to the actual labels. This is the job of the <strong>Cost Function</strong> (or Loss Function).</p>
+<p>For Logistic Regression, we can&#39;t use Mean Squared Error (MSE) like in Linear Regression. Why? Because when combined with the sigmoid function, MSE creates a non-convex cost function with many local minima, making it hard for optimization algorithms to find the global minimum.</p>
+<p>Instead, Logistic Regression uses the <strong>Cross-Entropy Loss</strong> (also known as Log Loss). This loss function is specifically designed for classification tasks and has a beautiful intuition behind it:</p>
+<p>For a single training example $( \mathbf{x}^{(i)}, y^{(i)} )$, where $y^{(i)}$ is the true label (0 or 1) and $\hat{y}^{(i)}$ is our predicted probability ($P(Y=1 | \mathbf{x}^{(i)})$), the loss function is:</p>
+<p>$L(\hat{y}^{(i)}, y^{(i)}) = -[y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)})]$</p>
+<p>Let&#39;s dissect this:</p>
+<ul>
+<li>If the true label $y^{(i)} = 1$: The loss becomes $-\log(\hat{y}^{(i)})$. We want $\hat{y}^{(i)}$ to be close to 1. If $\hat{y}^{(i)}$ is 1, $\log(1)=0$, so the loss is 0. If $\hat{y}^{(i)}$ is close to 0 (meaning we predicted class 0 with high confidence, but it was actually class 1), then $\log(\hat{y}^{(i)})$ approaches negative infinity, making the loss positive infinity – a huge penalty!</li>
+<li>If the true label $y^{(i)} = 0$: The loss becomes $-\log(1 - \hat{y}^{(i)})$. We want $\hat{y}^{(i)}$ to be close to 0 (meaning $1 - \hat{y}^{(i)}$ is close to 1). If $1 - \hat{y}^{(i)}$ is 1, the loss is 0. If $1 - \hat{y}^{(i)}$ is close to 0 (meaning we predicted class 1 with high confidence, but it was actually class 0), the loss becomes huge.</li>
+</ul>
+<p>This function effectively penalizes confident incorrect predictions much more heavily than confident correct predictions, which is exactly what we want for a classifier.</p>
+<p>The overall Cost Function $J(\mathbf{w}, b)$ for the entire training set is the average loss over all $m$ training examples:</p>
+<p>$J(\mathbf{w}, b) = - \frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)})]$</p>
+<p>Once we have our cost function, we use an optimization algorithm like <strong>Gradient Descent</strong> to find the values of $\mathbf{w}$ and $b$ that minimize $J(\mathbf{w}, b)$. Gradient Descent iteratively adjusts the weights and bias in the direction opposite to the gradient (the steepest ascent) of the cost function, gradually moving towards the minimum loss.</p>
+<h3>Applications and Beyond</h3>
+<p>Logistic Regression, despite its simplicity, is incredibly powerful and widely used. You&#39;ll find it in:</p>
+<ul>
+<li><strong>Spam Detection:</strong> Classifying emails as &quot;spam&quot; or &quot;not spam.&quot;</li>
+<li><strong>Medical Diagnosis:</strong> Predicting the likelihood of a disease based on symptoms and test results.</li>
+<li><strong>Credit Scoring:</strong> Assessing the probability of loan default.</li>
+<li><strong>Customer Churn Prediction:</strong> Determining if a customer is likely to leave a service.</li>
+</ul>
+<p>It&#39;s often the first algorithm data scientists reach for binary classification problems because of its interpretability, efficiency, and robustness. It serves as an excellent baseline model against which more complex models can be compared.</p>
+<h3>Limitations and Considerations</h3>
+<p>While powerful, Logistic Regression isn&#39;t a silver bullet:</p>
+<ul>
+<li><strong>Linear Decision Boundary:</strong> It assumes a linear relationship between the features and the log-odds. If the true decision boundary is highly non-linear, Logistic Regression might struggle unless you engineer new features to capture that non-linearity (e.g., polynomial features).</li>
+<li><strong>Sensitivity to Outliers:</strong> Like Linear Regression, it can be sensitive to extreme outliers, which can skew the decision boundary.</li>
+<li><strong>Multi-class Classification:</strong> By default, Logistic Regression is a binary classifier. For problems with more than two classes, extensions like One-vs-Rest (OvR) or Multinomial Logistic Regression (often called Softmax Regression) are used.</li>
+</ul>
+<h3>Conclusion</h3>
+<p>Logistic Regression is a foundational algorithm in machine learning, offering an elegant and robust solution to binary classification problems. By taking a linear combination of features, passing it through the sigmoid function to obtain a probability, and then optimizing these parameters using cross-entropy loss and gradient descent, it allows machines to make clear, interpretable &quot;yes&quot; or &quot;no&quot; decisions.</p>
+<p>Understanding Logistic Regression isn&#39;t just about knowing an algorithm; it&#39;s about grasping the core concepts of probabilistic modeling and optimization that underpin much of modern machine learning. So, the next time you see an email filtered as spam, remember the humble yet mighty Logistic Regression working silently behind the scenes! Keep learning, keep exploring!</p>
+
+       </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/an-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Kalman Filters: The GPS of the Math World | Adarsh Nair</title>
+  <script type="module" crossorigin src="/assets/index-BEtvEULY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6vE6-qu.css">
+<meta name="description" content="A simple guide to understanding how robots and phones know where they are, even when sensors are noisy." />
+    <meta property="og:description" content="A simple guide to understanding how robots and phones know where they are, even when sensors are noisy." />
+    <meta property="og:title" content="Kalman Filters: The GPS of the Math World" />
+    <meta property="og:type" content="article" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Kalman Filters: The GPS of the Math World","datePublished":"2024-02-13","description":"A simple guide to understanding how robots and phones know where they are, even when sensors are noisy.","author":{"@type":"Person","name":"Adarsh Nair"}}</script>
+  </head>
+
+<body>
+  <div id="root"></div>
+  <div id="seo-content" style="display:none; visibility:hidden;">
+           <h1>Kalman Filters: The GPS of the Math World</h1>
+           <p>A simple guide to understanding how robots and phones know where they are, even when sensors are noisy.</p>
+           <h1>Kalman Filters: A High School Guide</h1>
+<p>Have you ever wondered how your phone knows <em>exactly</em> where you are on a map, even when you&#39;re driving through a tunnel or surrounded by tall buildings? Or how a SpaceX rocket lands itself on a tiny barge in the ocean?</p>
+<p>The secret isn&#39;t magic—it&#39;s an algorithm called the <strong>Kalman Filter</strong>.</p>
+<h2>The Problem: Sensors Lie</h2>
+<p>Imagine you&#39;re trying to track a car. You have a GPS sensor on it.</p>
+<ul>
+<li><strong>Problem 1</strong>: The GPS isn&#39;t perfect. It might say the car is 5 meters to the left of where it actually is.</li>
+<li><strong>Problem 2</strong>: The car follows physics. If it was moving North at 60mph 1 second ago, it&#39;s probably still moving North at 60mph.</li>
+</ul>
+<p>The Kalman filter is the mathematical way of combining these two pieces of information:</p>
+<ol>
+<li>What we <strong>think</strong> should happen (Physics/Prediction).</li>
+<li>What the <strong>sensor</strong> tells us (Measurement).</li>
+</ol>
+<h2>The Intuition: The &quot;Predict-Update&quot; Loop</h2>
+<p>The Kalman filter works in a never-ending circle of two steps:</p>
+<h3>Step 1: Predict</h3>
+<p>First, we close our eyes and guess.
+<em>&quot;Okay, the car was at position $X$ and moving at velocity $V$. So, one second later, it should be at $X + V$.&quot;</em></p>
+<p>We also estimate our uncertainty. Since we&#39;re just guessing based on physics, we might be a little unsure. Let&#39;e call this uncertainty $P$.</p>
+<h3>Step 2: Update (The &quot;Kalman Gain&quot;)</h3>
+<p>Now, we open our eyes and look at the GPS.
+<em>&quot;The GPS says we are at position $Z$.&quot;</em></p>
+<p>Our prediction says one thing, and the GPS says another. Who do we trust?</p>
+<ul>
+<li>If the GPS is cheap and noisy, we trust our prediction more.</li>
+<li>If the GPS is super expensive and accurate, we trust the GPS more.</li>
+</ul>
+<p>This &quot;trust factor&quot; is calculated by a magic number called the <strong>Kalman Gain ($K$)</strong>.</p>
+<h2>The Golden Equation</h2>
+<p>The core logic can be written in one beautiful, simple equation:</p>
+<p>$ \text{New Estimate} = \text{Prediction} + K \cdot (\text{Measurement} - \text{Prediction}) $</p>
+<p>Let&#39;s break it down:</p>
+<ol>
+<li><strong>Measurement - Prediction</strong>: This is the &quot;Surprise&quot;. It&#39;s how different the reality was from what we expected.</li>
+<li><strong>$K$ (Kalman Gain)</strong>: This is a number between 0 and 1.<ul>
+<li>If $K$ is close to <strong>0</strong>, we ignore the measurement (sensor is noisy).</li>
+<li>If $K$ is close to <strong>1</strong>, we ignore the prediction (physics is uncertain).</li>
+</ul>
+</li>
+</ol>
+<h2>A Real World Example</h2>
+<p>Imagine measuring the temperature of water in a kettle.</p>
+<ul>
+<li><strong>Prediction</strong>: You know water takes time to boil. It was 90°C a second ago, so you predict it&#39;s 91°C now.</li>
+<li><strong>Measurement</strong>: Your thermometer reads 105°C (Sensor Glitch!).</li>
+</ul>
+<p>A Kalman filter would look at that massive jump, realize the &quot;Surprise&quot; is too high compared to the expected sensor noise, and lower the Kalman Gain ($K$) for that moment. It might estimate the true temperature is 92°C, effectively &quot;smoothing out&quot; the glitch.</p>
+<h2>Why It Matters</h2>
+<p>Without Kalman filters:</p>
+<ul>
+<li>VR headsets would make you seasick (laggy tracking).</li>
+<li>Drones would crash into trees.</li>
+<li>Apollo 11 wouldn&#39;t have made it to the moon.</li>
+</ul>
+<p>It is one of the most important algorithms of the 20th century, and it&#39;s built entirely on the idea that <strong>combining two uncertain guesses is better than relying on just one</strong>.</p>
+
+       </div>
+</body>
+
+</html>
