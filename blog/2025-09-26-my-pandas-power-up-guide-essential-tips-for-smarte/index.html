@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Pandas Power-Up Guide: Essential Tips for Smarter Data Science</h1>
-           <p>Dive into these essential Pandas tips I've picked up on my data science journey to write cleaner, faster, and more effective data manipulation code.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Pandas Power-Up Guide: Essential Tips for Smarter Data Science</h1>
+               <p>Dive into these essential Pandas tips I've picked up on my data science journey to write cleaner, faster, and more effective data manipulation code.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;re anything like me, Pandas quickly became your best friend (and sometimes, your biggest puzzle) once you started working with data in Python. It&#39;s the workhorse for almost every data scientist, analyst, or ML engineer out there. We use it to load, clean, transform, and analyze datasets of all shapes and sizes.</p>
 <p>But here&#39;s the thing: while getting started with Pandas is relatively straightforward, truly mastering it – writing code that&#39;s not just functional but also efficient, readable, and scalable – is a journey. Over time, I&#39;ve had countless &quot;aha!&quot; moments, learning little tricks and deeper concepts that fundamentally changed how I approach data manipulation.</p>
 <p>Today, I want to share some of those essential Pandas tips that have significantly leveled up my data science game. Think of this as me opening up my personal journal, sharing the powerful tools I&#39;ve added to my toolkit. Whether you&#39;re just starting your data science journey or you&#39;ve been around the block a few times, I hope you find some gems here!</p>
@@ -275,7 +277,14 @@ print(f&quot;\nFiltered (complex .query() with variables) (sales &gt;= {min_sale
 <p>The journey to becoming a proficient data scientist is all about continuous learning and refinement. Don&#39;t be afraid to dive into the documentation, experiment with different approaches, and learn from others. Each little trick you pick up adds another superpower to your data science arsenal.</p>
 <p>Keep exploring, keep coding, and happy data wrangling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Pandas Power-Up Guide: Essential Tips for Smarter Data Science</h1>
+             <p>Dive into these essential Pandas tips I've picked up on my data science journey to write cleaner, faster, and more effective data manipulation code.</p>
+        </div>
+        
 </body>
 
 </html>

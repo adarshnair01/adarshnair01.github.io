@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Static to Canvas: Unveiling the Magic Behind Diffusion Models</h1>
-           <p>Ever wondered how AI conjures stunning images from a simple text prompt? Join me on a journey to demystify Diffusion Models, the incredible technology painting the future of generative AI.</p>
-           <p>As a budding data scientist and machine learning enthusiast, few things have captivated my imagination quite like the recent explosion of generative AI. You&#39;ve seen them, I&#39;m sure: DALL-E, Stable Diffusion, Midjourney – tools that can turn your wildest text prompts into breathtaking visual art. For a long time, these felt like pure magic. But then I started digging, and what I found wasn&#39;t a wizard&#39;s spell, but an elegant dance between mathematics, probability, and neural networks: <strong>Diffusion Models</strong>.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Static to Canvas: Unveiling the Magic Behind Diffusion Models</h1>
+               <p>Ever wondered how AI conjures stunning images from a simple text prompt? Join me on a journey to demystify Diffusion Models, the incredible technology painting the future of generative AI.</p>
+               <p>As a budding data scientist and machine learning enthusiast, few things have captivated my imagination quite like the recent explosion of generative AI. You&#39;ve seen them, I&#39;m sure: DALL-E, Stable Diffusion, Midjourney – tools that can turn your wildest text prompts into breathtaking visual art. For a long time, these felt like pure magic. But then I started digging, and what I found wasn&#39;t a wizard&#39;s spell, but an elegant dance between mathematics, probability, and neural networks: <strong>Diffusion Models</strong>.</p>
 <p>If you&#39;re anything like me, you&#39;re probably curious about the &quot;how.&quot; How do these models learn to create? How do they &quot;understand&quot; what a cat wearing a spacesuit looks like? In this post, I want to take you on my personal exploration of Diffusion Models, breaking down their core mechanics in a way that&#39;s both accessible and deep. Think of it as our joint journal entry into the heart of generative AI.</p>
 <h3>The Spark of Creation: An Intuitive Beginning</h3>
 <p>Imagine you have a beautiful, pristine photograph. Now, imagine someone gradually sprinkles a tiny bit of random noise (like static on an old TV) onto it, then a bit more, and a bit more, until eventually, all you see is pure, undifferentiated static. The original image is completely gone, swallowed by randomness.</p>
@@ -112,7 +114,14 @@ where $\sigma_t$ is a specific variance for the reverse step, and $z \sim \mathc
 <p>It&#39;s been a fascinating journey for me to understand these models, moving from awe to a deeper appreciation for their elegant mechanics. We started with the simple idea of adding noise to an image, then built a neural network to learn how to precisely reverse that noise-adding process. By iteratively removing predicted noise, these models can literally sculpt new images from nothing but pure static.</p>
 <p>As we continue to push the boundaries of AI, I find immense excitement in understanding the foundational concepts like Diffusion Models. They&#39;re not just tools; they&#39;re windows into new ways of thinking about data, probability, and creation itself. Keep exploring, keep learning, and who knows what beautiful creations you might unleash next!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Static to Canvas: Unveiling the Magic Behind Diffusion Models</h1>
+             <p>Ever wondered how AI conjures stunning images from a simple text prompt? Join me on a journey to demystify Diffusion Models, the incredible technology painting the future of generative AI.</p>
+        </div>
+        
 </body>
 
 </html>

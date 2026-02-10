@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Simple Lines: Unpacking Support Vector Machines</h1>
-           <p>Ever wondered how machines make smart decisions, especially when data points seem tangled? Join me as we explore Support Vector Machines, a powerful algorithm that doesn't just draw lines, but the *best* lines to separate your data.</p>
-           <h3>My Journey into SVMs: Drawing the Best Lines in Data</h3>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Simple Lines: Unpacking Support Vector Machines</h1>
+               <p>Ever wondered how machines make smart decisions, especially when data points seem tangled? Join me as we explore Support Vector Machines, a powerful algorithm that doesn't just draw lines, but the *best* lines to separate your data.</p>
+               <h3>My Journey into SVMs: Drawing the Best Lines in Data</h3>
 <p>Imagine you&#39;re sorting candy – red M&amp;Ms from blue Skittles. Easy, right? You draw an imaginary line. But what if the candies are all mixed up, or what if some are really close to that line? This is the challenge data scientists face every day: classification. And that&#39;s where Support Vector Machines (SVMs) step in, not just to draw a line, but to draw the <em>best</em> line.</p>
 <h4>The Basic Idea: Separating Data</h4>
 <p>At its core, SVM is about finding a &quot;boundary&quot; that separates different classes of data points. If your data can be separated by a straight line (in 2D) or a flat plane (in 3D), we call it <em>linearly separable</em>. The challenge isn&#39;t just finding <em>any</em> line, but the <em>optimal</em> one.</p>
@@ -46,7 +48,14 @@
 <h4>Conclusion:</h4>
 <p>From drawing simple lines to crafting complex decision boundaries with the kernel trick, Support Vector Machines are a fascinating and powerful tool in the data scientist&#39;s arsenal. They teach us that sometimes, the best solution isn&#39;t just any solution, but the one that maximizes clarity and separation. Keep exploring, and you&#39;ll find SVMs are just one of many brilliant algorithms waiting to be discovered!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Simple Lines: Unpacking Support Vector Machines</h1>
+             <p>Ever wondered how machines make smart decisions, especially when data points seem tangled? Join me as we explore Support Vector Machines, a powerful algorithm that doesn't just draw lines, but the *best* lines to separate your data.</p>
+        </div>
+        
 </body>
 
 </html>

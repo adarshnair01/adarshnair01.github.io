@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Your Digital Sidekick: Unpacking the Magic of Recommender Systems</h1>
-           <p>Ever wonder how Netflix knows your next binge, or how Spotify curates the perfect playlist? Dive into the fascinating world of recommender systems, the invisible architects of our personalized digital experiences.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Your Digital Sidekick: Unpacking the Magic of Recommender Systems</h1>
+               <p>Ever wonder how Netflix knows your next binge, or how Spotify curates the perfect playlist? Dive into the fascinating world of recommender systems, the invisible architects of our personalized digital experiences.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever paused to think about how much of your digital life is shaped by recommendations? From the movies Netflix suggests to the products Amazon pushes your way, or even the news articles you see on your feed – it&#39;s all powered by an incredibly clever piece of technology: the Recommender System.</p>
 <p>For a long time, I took these suggestions for granted. They just <em>appeared</em>. But as I delved deeper into the world of data science and machine learning, I realized that behind every &quot;you might also like&quot; lies a sophisticated algorithm, working tirelessly to understand our preferences and predict our desires. It&#39;s like having a digital friend who just <em>gets</em> your taste.</p>
 <p>In this post, I want to take you on a journey through the heart of recommender systems. We&#39;ll peel back the layers, understand how they work, explore their different flavors, and even touch upon some of the fascinating challenges they face. Whether you&#39;re a high school student curious about AI or a fellow data science enthusiast, I hope this makes the magic a little more tangible.</p>
@@ -161,7 +163,14 @@ Imagine you have a huge table (a matrix) where rows are users, columns are items
 <p>The field is constantly evolving, with new research in areas like deep learning for recommendations, fairness, and causal inference. It&#39;s a fantastic area to explore if you&#39;re passionate about building intelligent systems that truly understand and enhance human experience.</p>
 <p>What&#39;s your favorite recommendation you&#39;ve ever received? Let me know in the comments!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Your Digital Sidekick: Unpacking the Magic of Recommender Systems</h1>
+             <p>Ever wonder how Netflix knows your next binge, or how Spotify curates the perfect playlist? Dive into the fascinating world of recommender systems, the invisible architects of our personalized digital experiences.</p>
+        </div>
+        
 </body>
 
 </html>

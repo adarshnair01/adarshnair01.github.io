@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Unsung Hero: How Regularization Keeps Our Models Honest (and Smart!)</h1>
-           <p>Ever wondered how machine learning models learn to generalize instead of just memorizing? Join me on a journey to uncover the secret weapon: Regularization, the quiet force that prevents our algorithms from getting *too* clever for their own good.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Unsung Hero: How Regularization Keeps Our Models Honest (and Smart!)</h1>
+               <p>Ever wondered how machine learning models learn to generalize instead of just memorizing? Join me on a journey to uncover the secret weapon: Regularization, the quiet force that prevents our algorithms from getting *too* clever for their own good.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my little corner of the internet where we demystify the magic behind data science. Today, I want to talk about something incredibly fundamental, yet often overlooked until you&#39;ve bumped your head against the wall a few times: <strong>Regularization</strong>.</p>
 <p>I remember when I first started building machine learning models. I was so proud of my model&#39;s ability to achieve 99% accuracy on my training data. &quot;Look at it go!&quot; I thought. Then came the moment of truth: testing it on new, unseen data. And... <em>thud</em>. A spectacular flop. My model, which seemed like a genius just moments ago, was now acting like it had never seen a data point in its life.</p>
 <p>Sound familiar? This, my friends, is the classic tale of <strong>overfitting</strong>.</p>
@@ -91,7 +93,14 @@
 <p>By understanding L1 and L2 regularization, you gain a powerful way to guide your models towards generalization, making them not just smart, but truly wise. So, the next time your model is getting a bit too enthusiastic about your training data, remember the quiet hero: regularization, the unsung champion fighting against overfitting!</p>
 <p>Keep learning, keep building, and keep your models honest!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Unsung Hero: How Regularization Keeps Our Models Honest (and Smart!)</h1>
+             <p>Ever wondered how machine learning models learn to generalize instead of just memorizing? Join me on a journey to uncover the secret weapon: Regularization, the quiet force that prevents our algorithms from getting *too* clever for their own good.</p>
+        </div>
+        
 </body>
 
 </html>

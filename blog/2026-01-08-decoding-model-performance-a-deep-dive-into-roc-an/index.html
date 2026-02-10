@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Decoding Model Performance: A Deep Dive into ROC and AUC</h1>
-           <p>Ever wondered if your classification model is truly as good as it seems? Join me on a journey to uncover the secrets of ROC curves and AUC scores, essential tools for every data scientist's toolkit.</p>
-           <p>Hello, fellow explorers of data!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Decoding Model Performance: A Deep Dive into ROC and AUC</h1>
+               <p>Ever wondered if your classification model is truly as good as it seems? Join me on a journey to uncover the secrets of ROC curves and AUC scores, essential tools for every data scientist's toolkit.</p>
+               <p>Hello, fellow explorers of data!</p>
 <p>There&#39;s a thrill that comes with building a machine learning model. You&#39;ve cleaned your data, engineered features, chosen an algorithm, and finally, you hit <code>model.fit()</code>. The moment of truth arrives: how well did it do? Often, the first metric we look at is accuracy. It feels intuitive, right? If my model got 95 out of 100 predictions correct, that sounds pretty great!</p>
 <p>But what if I told you that accuracy, while simple, can sometimes be the most misleading friend you have in model evaluation?</p>
 <p>I remember my early days, proudly presenting a model with 98% accuracy. My mentor, a seasoned data scientist, just smiled and asked, &quot;What about the other 2%?&quot; That simple question opened my eyes to a whole new dimension of understanding model performance, one that goes beyond a single number. This is where the magic of <strong>ROC (Receiver Operating Characteristic) curves</strong> and <strong>AUC (Area Under the Curve) scores</strong> comes in. They are not just metrics; they are powerful diagnostic tools that help us truly understand the trade-offs our models make.</p>
@@ -130,7 +132,14 @@ $FPR = \frac{FP}{FP + TN}$</p>
 <p>So, the next time you build a classification model, don&#39;t just stop at accuracy. Dive deeper. Plot that ROC curve. Calculate that AUC score. Understand the trade-offs. Your models, and your insights, will be all the better for it.</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Decoding Model Performance: A Deep Dive into ROC and AUC</h1>
+             <p>Ever wondered if your classification model is truly as good as it seems? Join me on a journey to uncover the secrets of ROC curves and AUC scores, essential tools for every data scientist's toolkit.</p>
+        </div>
+        
 </body>
 
 </html>

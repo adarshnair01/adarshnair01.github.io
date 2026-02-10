@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cultivating Insight: Growing Your Own Random Forest for Data Science</h1>
-           <p>Imagine a wise council, not a single expert, making your most important decisions. That's the magic of Random Forests: an ensemble of decision trees working together to unlock powerful insights from your data.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cultivating Insight: Growing Your Own Random Forest for Data Science</h1>
+               <p>Imagine a wise council, not a single expert, making your most important decisions. That's the magic of Random Forests: an ensemble of decision trees working together to unlock powerful insights from your data.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to the portfolio journal where we demystify some of the coolest algorithms in machine learning. Today, we’re venturing into a lush, interconnected world that’s become a cornerstone of many data science projects: <strong>Random Forests</strong>. If you’ve ever felt like your data is a tangled wilderness, prepare to learn how to cultivate a powerful forest of knowledge that can help you navigate it with uncanny accuracy.</p>
 <h3>The Lone Tree: Our Starting Point</h3>
 <p>Before we can appreciate a forest, let’s first look at a single tree. In machine learning, this is called a <strong>Decision Tree</strong>.</p>
@@ -120,7 +122,14 @@ c.  <strong>Random Feature Selection:</strong> At each node of the tree, <em>bef
 <p>Happy coding, and may your data insights be ever-blooming!</p>
 <hr>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cultivating Insight: Growing Your Own Random Forest for Data Science</h1>
+             <p>Imagine a wise council, not a single expert, making your most important decisions. That's the magic of Random Forests: an ensemble of decision trees working together to unlock powerful insights from your data.</p>
+        </div>
+        
 </body>
 
 </html>

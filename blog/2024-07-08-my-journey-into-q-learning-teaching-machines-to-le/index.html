@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey into Q-Learning: Teaching Machines to Learn by Doing</h1>
-           <p>Ever wondered how AI learns to navigate complex worlds, make decisions, and even master games without being explicitly programmed? Today, we're pulling back the curtain on Q-Learning, a foundational algorithm in Reinforcement Learning that empowers agents to learn optimally through trial and error, just like us.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey into Q-Learning: Teaching Machines to Learn by Doing</h1>
+               <p>Ever wondered how AI learns to navigate complex worlds, make decisions, and even master games without being explicitly programmed? Today, we're pulling back the curtain on Q-Learning, a foundational algorithm in Reinforcement Learning that empowers agents to learn optimally through trial and error, just like us.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever learned a new skill, like riding a bike or playing a video game, purely through practice? You try something, it works or it doesn&#39;t, and you adjust. You fall, you get back up, and slowly, your brain figures out the best way to balance, steer, and pedal. This &quot;learn-by-doing&quot; approach is incredibly powerful, and it&#39;s precisely the spirit behind one of the most elegant and fundamental algorithms in Artificial Intelligence: <strong>Q-Learning</strong>.</p>
 <p>For me, diving into Q-Learning felt like unlocking a secret superpower for machines. It’s an algorithm that allows an AI agent to figure out the best course of action in an unknown environment, all without a human explicitly telling it what to do. Pretty cool, right?</p>
 <p>Let&#39;s embark on this journey together and demystify Q-Learning.</p>
@@ -177,7 +179,14 @@ c.  <strong>Optionally, decay $\epsilon$</strong>: Reduce $\epsilon$ slightly to
 <p>It&#39;s the foundation upon which many advanced Reinforcement Learning algorithms are built. Understanding Q-Learning provides a solid mental model for how machines can learn to navigate complex, uncertain worlds. So, next time you see an AI agent perform an impressive feat, remember the humble Q-table and its powerful update rule, patiently learning the &quot;quality&quot; of every possible move.</p>
 <p>Keep exploring, keep learning, and maybe try to implement a small Q-Learning agent yourself. You might be surprised by what you can teach a machine!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey into Q-Learning: Teaching Machines to Learn by Doing</h1>
+             <p>Ever wondered how AI learns to navigate complex worlds, make decisions, and even master games without being explicitly programmed? Today, we're pulling back the curtain on Q-Learning, a foundational algorithm in Reinforcement Learning that empowers agents to learn optimally through trial and error, just like us.</p>
+        </div>
+        
 </body>
 
 </html>

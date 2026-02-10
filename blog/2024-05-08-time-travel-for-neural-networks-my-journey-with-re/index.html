@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Time Travel for Neural Networks: My Journey with Recurrent Neural Networks</h1>
-           <p>Ever wondered how AI understands sentences, predicts the next word you type, or even generates music? It's all thanks to a special kind of neural network that can remember the past: Recurrent Neural Networks.</p>
-           <p>Hey there, fellow explorers of the AI universe! Have you ever looked at a sequence of data – like words in a sentence, notes in a melody, or stock prices over time – and wondered how a machine could possibly make sense of it? For a long time, standard neural networks struggled with this. They were like brilliant statisticians with amnesia, excellent at analyzing individual data points but completely forgetting what came before.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Time Travel for Neural Networks: My Journey with Recurrent Neural Networks</h1>
+               <p>Ever wondered how AI understands sentences, predicts the next word you type, or even generates music? It's all thanks to a special kind of neural network that can remember the past: Recurrent Neural Networks.</p>
+               <p>Hey there, fellow explorers of the AI universe! Have you ever looked at a sequence of data – like words in a sentence, notes in a melody, or stock prices over time – and wondered how a machine could possibly make sense of it? For a long time, standard neural networks struggled with this. They were like brilliant statisticians with amnesia, excellent at analyzing individual data points but completely forgetting what came before.</p>
 <p>Today, I want to take you on a journey through one of the most elegant and powerful solutions to this problem: <strong>Recurrent Neural Networks (RNNs)</strong>. Think of this as my personal journal entry, chronicling my &quot;aha!&quot; moments and struggles in understanding how we gave neural networks a memory.</p>
 <h3>The Problem: When Order Matters</h3>
 <p>Imagine you&#39;re trying to build an AI that can understand sentences. If you give a standard Feedforward Neural Network (FNN) the words &quot;I am happy&quot; versus &quot;Am I happy?&quot;, it might struggle. Why? Because an FNN processes each input independently. It sees &quot;I,&quot; then &quot;am,&quot; then &quot;happy,&quot; but it doesn&#39;t inherently remember &quot;I&quot; when it&#39;s processing &quot;am.&quot; It treats each word as a fresh start, losing the crucial context that makes human language, well, <em>human</em>.</p>
@@ -116,7 +118,14 @@ $y_t = W_{hy}h_t + b_y$ (often followed by a softmax activation for classificati
 <p>So, the next time you marvel at an AI generating coherent text or translating a phrase instantly, remember the humble recurrent loop – the elegant mechanism that taught neural networks to remember. It&#39;s a testament to human ingenuity in solving complex problems, and it continues to inspire me to explore the frontiers of artificial intelligence.</p>
 <p>What sequence will you teach an RNN to understand next? The possibilities are truly endless!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Time Travel for Neural Networks: My Journey with Recurrent Neural Networks</h1>
+             <p>Ever wondered how AI understands sentences, predicts the next word you type, or even generates music? It's all thanks to a special kind of neural network that can remember the past: Recurrent Neural Networks.</p>
+        </div>
+        
 </body>
 
 </html>

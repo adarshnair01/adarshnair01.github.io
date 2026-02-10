@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Don't Fool Yourself: Unmasking Your Model's True Performance with Cross-Validation</h1>
-           <p>Ever built a machine learning model, seen amazing accuracy, and then watched it crumble in the real world? Cross-validation is your model's ultimate sanity check, ensuring it performs robustly beyond just one test.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Don't Fool Yourself: Unmasking Your Model's True Performance with Cross-Validation</h1>
+               <p>Ever built a machine learning model, seen amazing accuracy, and then watched it crumble in the real world? Cross-validation is your model's ultimate sanity check, ensuring it performs robustly beyond just one test.</p>
+               <p>Hey everyone!</p>
 <p>So, you&#39;ve just trained your first machine learning model. Maybe it&#39;s a classifier predicting cat vs. dog, or a regressor estimating house prices. You run your evaluation metrics – accuracy, precision, RMSE – and <em>bam!</em> You see an amazing score. 95% accuracy! 0.05 RMSE! You feel like a data science wizard, ready to deploy your masterpiece to the world.</p>
 <p>Then, reality hits.</p>
 <p>You deploy your model, feed it new, unseen data, and suddenly those stellar numbers plummet. Your 95% accuracy is now 60%. Your perfect house price predictor is way off. What happened? Why did your model &quot;lie&quot; to you?</p>
@@ -111,7 +113,14 @@
 <p>It’s more than just a technique; it&#39;s a philosophy of robust evaluation. By embracing cross-validation, you move beyond the illusion of a single, potentially misleading score and gain a deeper, more reliable understanding of your model&#39;s true capability to generalize. It empowers you to build models that don&#39;t just perform well on your development machine but truly shine when faced with the unpredictable data of the real world.</p>
 <p>So next time you&#39;re evaluating a model, don&#39;t just split and pray. Cross-validate, understand the range of your model&#39;s performance, and build with confidence!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Don't Fool Yourself: Unmasking Your Model's True Performance with Cross-Validation</h1>
+             <p>Ever built a machine learning model, seen amazing accuracy, and then watched it crumble in the real world? Cross-validation is your model's ultimate sanity check, ensuring it performs robustly beyond just one test.</p>
+        </div>
+        
 </body>
 
 </html>

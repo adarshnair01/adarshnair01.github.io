@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Bayesian Way: How to Think Like a Detective with Your Data</h1>
-           <p>Forget what you think you know about statistics; Bayesian thinking isn't just about numbers, it's about evolving your understanding with every new piece of evidence. Join me as we explore how to make smarter, more intuitive decisions by embracing uncertainty.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Bayesian Way: How to Think Like a Detective with Your Data</h1>
+               <p>Forget what you think you know about statistics; Bayesian thinking isn't just about numbers, it's about evolving your understanding with every new piece of evidence. Join me as we explore how to make smarter, more intuitive decisions by embracing uncertainty.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Have you ever found yourself in a situation where you had a strong initial hunch about something, but then, as new information came in, your belief subtly shifted? Maybe you thought your favorite sports team was going to win easily, but then their star player got injured in warm-ups, and suddenly your confidence waned. Or perhaps you&#39;re trying to diagnose a problem with your car, starting with a few suspects, and eliminating possibilities as you gather more clues.</p>
 <p>This intuitive process of <em>updating our beliefs in light of new evidence</em> is something we do constantly in our daily lives. And guess what? There&#39;s a powerful branch of statistics that formalizes this exact way of thinking: <strong>Bayesian Statistics</strong>.</p>
 <p>For a long time, traditional or &quot;frequentist&quot; statistics dominated the data science landscape, focusing on things like p-values, null hypothesis significance testing, and confidence intervals. While incredibly useful, I often felt something was missing – a way to explicitly incorporate what we <em>already know</em> or <em>believe</em> into our analysis, and to quantify our uncertainty in a truly intuitive way. That&#39;s where Bayes comes in.</p>
@@ -95,7 +97,14 @@ $P(H|E) \approx 0.001976$</p>
 <p>So, next time you encounter a problem, ask yourself: What do I believe <em>before</em> seeing the data? What would the data look like <em>if</em> my hypothesis were true? And how can I combine these to form my <em>updated</em> belief? You&#39;ll be thinking like a true data detective, and that, in my opinion, is a superpower worth cultivating.</p>
 <p>Keep exploring, keep questioning, and start thinking probabilistically!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Bayesian Way: How to Think Like a Detective with Your Data</h1>
+             <p>Forget what you think you know about statistics; Bayesian thinking isn't just about numbers, it's about evolving your understanding with every new piece of evidence. Join me as we explore how to make smarter, more intuitive decisions by embracing uncertainty.</p>
+        </div>
+        
 </body>
 
 </html>

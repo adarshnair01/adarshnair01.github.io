@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My AI Journey: Building with Conscience in the Age of Algorithms</h1>
-           <p>Join me as we explore the ethical dilemmas baked into the heart of AI, and why understanding them is crucial for anyone shaping our technological future. This isn't just about code; it's about building a better world, responsibly.</p>
-           <p>Hey there, future innovators!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My AI Journey: Building with Conscience in the Age of Algorithms</h1>
+               <p>Join me as we explore the ethical dilemmas baked into the heart of AI, and why understanding them is crucial for anyone shaping our technological future. This isn't just about code; it's about building a better world, responsibly.</p>
+               <p>Hey there, future innovators!</p>
 <p>I remember the first time I truly felt the magic of AI. It wasn&#39;t some futuristic robot, but a simple recommendation engine suggesting a song I <em>loved</em> but had never heard. Or maybe it was a tool that could instantly translate languages, bridging gaps I thought were insurmountable. It felt like magic, a force for incredible good. But as I dove deeper into the world of Data Science and Machine Learning, pulling back the curtain on how these intelligent systems are built, I started seeing something else: shadows.</p>
 <p>These aren&#39;t shadows of malice, not usually. They&#39;re more like unintended consequences, blind spots, and the echoes of human biases amplified by powerful algorithms. And that, my friends, is where the conversation about <strong>Ethics in AI</strong> truly begins. It&#39;s a conversation I believe every one of us – especially those of you dreaming of coding the next big thing or analyzing the next big dataset – needs to be a part of.</p>
 <p>This isn&#39;t just academic theory; it&#39;s about the real-world impact of the AI systems we build, deploy, and interact with every single day. So, grab a virtual coffee, and let&#39;s unravel some of the biggest ethical challenges facing AI today.</p>
@@ -94,7 +96,14 @@
 <p>So, as you learn to code, to model, to innovate, remember to also learn to question, to empathize, and to lead with ethics. Your future self, and indeed, the future of our world, will thank you for it.</p>
 <p>Let&#39;s build that better future, together.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My AI Journey: Building with Conscience in the Age of Algorithms</h1>
+             <p>Join me as we explore the ethical dilemmas baked into the heart of AI, and why understanding them is crucial for anyone shaping our technological future. This isn't just about code; it's about building a better world, responsibly.</p>
+        </div>
+        
 </body>
 
 </html>

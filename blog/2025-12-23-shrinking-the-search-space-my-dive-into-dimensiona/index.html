@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Shrinking the Search Space: My Dive into Dimensionality Reduction</h1>
-           <p>Ever felt overwhelmed by too much information? In the world of data, that feeling is called the "curse of dimensionality," and thankfully, we have powerful tools like dimensionality reduction to combat it.</p>
-           <p>Hey everyone! Today, let&#39;s talk about a concept that feels like magic once you grasp it: <strong>Dimensionality Reduction</strong>. If you&#39;ve ever stared at a spreadsheet with hundreds of columns, or tried to make sense of a dataset with thousands of features, you&#39;ve implicitly felt the need for it. It&#39;s like trying to find a specific grain of sand on a vast beach, or navigating a city with a map so detailed it shows every blade of grass. Too much information can be just as paralyzing as too little.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Shrinking the Search Space: My Dive into Dimensionality Reduction</h1>
+               <p>Ever felt overwhelmed by too much information? In the world of data, that feeling is called the "curse of dimensionality," and thankfully, we have powerful tools like dimensionality reduction to combat it.</p>
+               <p>Hey everyone! Today, let&#39;s talk about a concept that feels like magic once you grasp it: <strong>Dimensionality Reduction</strong>. If you&#39;ve ever stared at a spreadsheet with hundreds of columns, or tried to make sense of a dataset with thousands of features, you&#39;ve implicitly felt the need for it. It&#39;s like trying to find a specific grain of sand on a vast beach, or navigating a city with a map so detailed it shows every blade of grass. Too much information can be just as paralyzing as too little.</p>
 <p>As I&#39;ve explored the world of Data Science and Machine Learning, I&#39;ve realized that dealing with complexity isn&#39;t just about building smarter algorithms; it&#39;s often about making the data simpler <em>before</em> the algorithms even see it. And that, my friends, is the heart of dimensionality reduction.</p>
 <h3>The Elephant in the Room: The Curse of Dimensionality</h3>
 <p>Before we dive into solutions, let&#39;s properly introduce the problem: <strong>The Curse of Dimensionality</strong>.</p>
@@ -165,7 +167,14 @@ $Y = XW$</li>
 <p>Whether you&#39;re battling the curse of dimensionality in academic research, optimizing a machine learning pipeline, or just trying to make sense of your messy datasets, techniques like PCA, t-SNE, and UMAP are indispensable tools in your data science arsenal.</p>
 <p>So, go forth, explore your data, and don&#39;t be afraid to simplify! It&#39;s often the clearest path to understanding.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Shrinking the Search Space: My Dive into Dimensionality Reduction</h1>
+             <p>Ever felt overwhelmed by too much information? In the world of data, that feeling is called the "curse of dimensionality," and thankfully, we have powerful tools like dimensionality reduction to combat it.</p>
+        </div>
+        
 </body>
 
 </html>

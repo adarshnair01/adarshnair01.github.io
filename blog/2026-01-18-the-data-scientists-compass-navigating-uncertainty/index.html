@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Data Scientist's Compass: Navigating Uncertainty with Hypothesis Testing</h1>
-           <p>Ever wondered how data scientists make critical decisions without just guessing? Join me on a journey to discover Hypothesis Testing, the powerful statistical tool that lets us test our assumptions and uncover truths hidden in our data.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Data Scientist's Compass: Navigating Uncertainty with Hypothesis Testing</h1>
+               <p>Ever wondered how data scientists make critical decisions without just guessing? Join me on a journey to discover Hypothesis Testing, the powerful statistical tool that lets us test our assumptions and uncover truths hidden in our data.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal, where I demystify the concepts that power our data-driven world. Today, we&#39;re diving into a topic that&#39;s absolutely fundamental for anyone aspiring to build intelligent systems or make sense of complex datasets: <strong>Hypothesis Testing</strong>.</p>
 <p>Remember that time you wondered if a new ad campaign <em>really</em> boosted sales, or if a particular ingredient <em>actually</em> made a difference in your favorite recipe? As data scientists and machine learning engineers, we&#39;re constantly bombarded with claims and data. Our gut feelings can be helpful, but when it comes to making critical decisions that impact products, users, or even lives, we need something more robust. We need a way to move beyond intuition and let the data speak for itself, with a structured, scientific approach. That&#39;s where the magic of Hypothesis Testing comes in.</p>
 <h3>What&#39;s the Big Idea? The Core of Statistical Proof</h3>
@@ -161,7 +163,14 @@ For a Z-score of -1.936 in a one-tailed test (looking for values less than 0.60)
 <p>Happy analyzing!
 [Your Name/Alias]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Data Scientist's Compass: Navigating Uncertainty with Hypothesis Testing</h1>
+             <p>Ever wondered how data scientists make critical decisions without just guessing? Join me on a journey to discover Hypothesis Testing, the powerful statistical tool that lets us test our assumptions and uncover truths hidden in our data.</p>
+        </div>
+        
 </body>
 
 </html>

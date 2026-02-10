@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Math Behind Machine Learning</h1>
-           <p>Exploring the fundamental equations that power data science.</p>
-           <h1>Mathematical Foundations</h1>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Math Behind Machine Learning</h1>
+               <p>Exploring the fundamental equations that power data science.</p>
+               <h1>Mathematical Foundations</h1>
 <p>Data science relies heavily on mathematical concepts. Here are a few key examples formatted beautifully in this journal.</p>
 <h2>Linear Regression</h2>
 <p>The simple linear regression model is defined as:</p>
@@ -46,7 +48,14 @@
 <p>Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix:</p>
 <p>$ (AB)<em>{ij} = \sum</em>{k=1}^n A_{ik}B_{kj} $</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Math Behind Machine Learning</h1>
+             <p>Exploring the fundamental equations that power data science.</p>
+        </div>
+        
 </body>
 
 </html>

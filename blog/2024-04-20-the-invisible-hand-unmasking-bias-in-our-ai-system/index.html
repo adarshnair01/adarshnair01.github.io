@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Invisible Hand: Unmasking Bias in Our AI Systems</h1>
-           <p>We build AI to be objective, a beacon of fairness, yet often, it mirrors our own imperfections. Join me on a journey to explore the silent, pervasive issue of bias in machine learning and how we, as future data scientists, can fight it.</p>
-           <p>Hey there, future innovators and curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Invisible Hand: Unmasking Bias in Our AI Systems</h1>
+               <p>We build AI to be objective, a beacon of fairness, yet often, it mirrors our own imperfections. Join me on a journey to explore the silent, pervasive issue of bias in machine learning and how we, as future data scientists, can fight it.</p>
+               <p>Hey there, future innovators and curious minds!</p>
 <p>I remember the first time I truly &quot;got&quot; machine learning. It felt like magic – algorithms learning from data, making predictions, seeing patterns no human could. The promise was immense: impartial decisions, unbiased insights, a future where AI could transcend human error and prejudice. For a long time, I envisioned AI as a purely objective force, a digital judge weighing facts without emotion or preconception.</p>
 <p>But then, as I delved deeper into the field, I started noticing cracks in this pristine vision. Stories emerged: facial recognition systems failing to identify people of color, hiring algorithms favoring men, loan applications being unfairly rejected for certain demographics. It hit me like a ton of bricks: <strong>our AI, despite its mathematical purity, can be incredibly biased.</strong></p>
 <p>This isn&#39;t about malicious programmers intentionally building discriminatory systems (though that can happen). This is about something far more insidious and subtle, an &quot;invisible hand&quot; guiding our algorithms towards unfair outcomes. Understanding this bias, identifying its sources, and developing strategies to mitigate it is not just a technical challenge; it&#39;s an ethical imperative. It&#39;s about building a future where AI genuinely serves <em>everyone</em>.</p>
@@ -129,7 +131,14 @@ $DIR = \frac{P(\hat{Y}=1 | G=G_A)}{P(\hat{Y}=1 | G=G_B)}$</p>
 <p>The journey to build truly fair and unbiased AI systems is challenging, but incredibly rewarding. It requires vigilance, critical thinking, and a commitment to ethical principles. As future data scientists and machine learning engineers, you are not just building models; you are shaping the future. You have the power to create systems that amplify human potential, or systems that reinforce existing inequalities.</p>
 <p>Let&#39;s choose to be the architects of a more equitable future. Let&#39;s learn to recognize the invisible hand of bias, understand its origins, and equip ourselves with the tools and mindset to counteract it. The magic of machine learning should be accessible and beneficial to <em>everyone</em>. It’s a responsibility we all share, and it starts with understanding.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Invisible Hand: Unmasking Bias in Our AI Systems</h1>
+             <p>We build AI to be objective, a beacon of fairness, yet often, it mirrors our own imperfections. Join me on a journey to explore the silent, pervasive issue of bias in machine learning and how we, as future data scientists, can fight it.</p>
+        </div>
+        
 </body>
 
 </html>

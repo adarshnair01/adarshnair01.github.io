@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Invisible Tug-of-War: Why Accuracy Isn't Enough (A Deep Dive into Precision vs Recall)</h1>
-           <p>Dive into the heart of machine learning evaluation where simple accuracy often falls short, and discover the critical balancing act between Precision and Recall that shapes real-world decisions.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Invisible Tug-of-War: Why Accuracy Isn't Enough (A Deep Dive into Precision vs Recall)</h1>
+               <p>Dive into the heart of machine learning evaluation where simple accuracy often falls short, and discover the critical balancing act between Precision and Recall that shapes real-world decisions.</p>
+               <p>Hey everyone!</p>
 <p>It feels like just yesterday I was getting started with machine learning, and honestly, the sheer volume of metrics, algorithms, and concepts felt a bit like trying to drink from a firehose. One of the first &quot;aha!&quot; moments I had, something that fundamentally shifted my understanding of what makes a &quot;good&quot; model, revolved around two seemingly simple terms: <em>Precision</em> and <em>Recall</em>.</p>
 <p>You see, when you&#39;re first learning, &quot;accuracy&quot; is king. It&#39;s intuitive: how many predictions did your model get right? But as I built more complex systems and started thinking about real-world consequences, I quickly learned that accuracy can be a deceptive friend. Sometimes, getting 95% of predictions correct isn&#39;t good enough, or even worse, it might be hiding a critical flaw.</p>
 <p>Today, I want to take you on a journey through the often-misunderstood relationship between Precision and Recall. We&#39;ll explore why they matter, when to prioritize one over the other, and how understanding this invisible tug-of-war is absolutely essential for anyone building intelligent systems. Whether you&#39;re a high school student just dipping your toes into AI or a seasoned data scientist, I promise this will give you a deeper appreciation for the nuances of model evaluation.</p>
@@ -179,7 +181,14 @@ In our cancer diagnosis scenario, high recall means our model is very good at ca
 <p>So, as you build your next model, resist the urge to just glance at accuracy. Dig deeper. Construct that confusion matrix. Calculate Precision and Recall. And most importantly, have a thoughtful conversation with stakeholders about which type of error is more tolerable. That&#39;s where true machine learning mastery begins, transforming you from a model builder into a problem solver.</p>
 <p>Keep exploring, keep questioning, and happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Invisible Tug-of-War: Why Accuracy Isn't Enough (A Deep Dive into Precision vs Recall)</h1>
+             <p>Dive into the heart of machine learning evaluation where simple accuracy often falls short, and discover the critical balancing act between Precision and Recall that shapes real-world decisions.</p>
+        </div>
+        
 </body>
 
 </html>

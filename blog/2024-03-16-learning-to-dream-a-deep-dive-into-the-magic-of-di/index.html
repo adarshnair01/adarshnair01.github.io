@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Learning to Dream: A Deep Dive into the Magic of Diffusion Models</h1>
-           <p>Ever wondered how AI conjures stunning images, realistic faces, or even entirely new worlds from thin air? Join me on a journey to demystify Diffusion Models, the incredible technology behind today's most captivating generative AI.</p>
-           <p>As a young student, I was always captivated by the idea of creation. Not just building things with my hands, but the very act of bringing something new into existence. Fast forward to today, and I find myself utterly spellbound by the creative power of Artificial Intelligence, particularly a groundbreaking family of models called <strong>Diffusion Models</strong>. You&#39;ve probably seen their breathtaking work in tools like DALL-E 2, Midjourney, or Stable Diffusion – generating everything from photorealistic landscapes to fantastical creatures, all from a simple text prompt.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Learning to Dream: A Deep Dive into the Magic of Diffusion Models</h1>
+               <p>Ever wondered how AI conjures stunning images, realistic faces, or even entirely new worlds from thin air? Join me on a journey to demystify Diffusion Models, the incredible technology behind today's most captivating generative AI.</p>
+               <p>As a young student, I was always captivated by the idea of creation. Not just building things with my hands, but the very act of bringing something new into existence. Fast forward to today, and I find myself utterly spellbound by the creative power of Artificial Intelligence, particularly a groundbreaking family of models called <strong>Diffusion Models</strong>. You&#39;ve probably seen their breathtaking work in tools like DALL-E 2, Midjourney, or Stable Diffusion – generating everything from photorealistic landscapes to fantastical creatures, all from a simple text prompt.</p>
 <p>When I first encountered these models, it felt like pure magic. How could a computer learn to &quot;dream&quot; and paint such intricate masterpieces? It seemed like an alchemist&#39;s secret. But as I peeled back the layers, I discovered that the magic isn&#39;t in some unknowable force, but in elegant mathematics and clever engineering. It&#39;s a journey from pure static noise to coherent, beautiful imagery, step by careful step. And today, I want to share that journey with you.</p>
 <h3>What Even <em>Are</em> Generative Models?</h3>
 <p>Before we dive into diffusion, let&#39;s quickly frame what generative models are. In machine learning, we often talk about two main types of tasks:</p>
@@ -124,7 +126,14 @@ where $z \sim \mathcal{N}(0, \mathbf{I})$ (a small amount of <em>new</em> noise 
 <p>Of course, challenges remain. Generating high-resolution images can still be computationally intensive, and the speed of sampling, though improved, can still be a bottleneck for some applications. However, active research in areas like latent diffusion models (which perform diffusion in a compressed latent space rather than pixel space) and faster sampling schedules are continuously addressing these issues.</p>
 <p>If you&#39;re a student fascinated by AI, I encourage you to dive deeper. Explore the papers, experiment with open-source models like Stable Diffusion, and perhaps even try implementing a simple diffusion model yourself. You&#39;ll find that the &quot;magic&quot; of AI often reveals itself to be a beautiful interplay of mathematics, statistics, and brilliant computational design. And that, to me, is more captivating than any illusion.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Learning to Dream: A Deep Dive into the Magic of Diffusion Models</h1>
+             <p>Ever wondered how AI conjures stunning images, realistic faces, or even entirely new worlds from thin air? Join me on a journey to demystify Diffusion Models, the incredible technology behind today's most captivating generative AI.</p>
+        </div>
+        
 </body>
 
 </html>

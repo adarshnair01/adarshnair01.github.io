@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Taming the Overzealous Model: A Guide to Regularization</h1>
-           <p>Ever built a machine learning model that's brilliant on data it's seen, but flops spectacularly on anything new? Welcome to the world of overfitting, and meet your model's new best friend: Regularization!</p>
-           <p>My journey into machine learning has been a rollercoaster of &quot;aha!&quot; moments and head-scratching frustrations. One of the earliest and most profound lessons I learned was the difference between a model that <em>memorizes</em> and a model that <em>understands</em>. It&#39;s the difference between a student who aced an exam by cramming specific answers and one who truly grasped the underlying concepts.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Taming the Overzealous Model: A Guide to Regularization</h1>
+               <p>Ever built a machine learning model that's brilliant on data it's seen, but flops spectacularly on anything new? Welcome to the world of overfitting, and meet your model's new best friend: Regularization!</p>
+               <p>My journey into machine learning has been a rollercoaster of &quot;aha!&quot; moments and head-scratching frustrations. One of the earliest and most profound lessons I learned was the difference between a model that <em>memorizes</em> and a model that <em>understands</em>. It&#39;s the difference between a student who aced an exam by cramming specific answers and one who truly grasped the underlying concepts.</p>
 <p>In machine learning, this distinction is called <strong>generalization</strong>. We don&#39;t just want our models to perform well on the data they were trained on (their &quot;homework&quot;). We want them to make accurate predictions on <em>new, unseen data</em> (the &quot;final exam&quot;). The pitfall? A phenomenon called <strong>overfitting</strong>.</p>
 <h3>The Problem: When Your Model Knows Too Much (About the Wrong Things)</h3>
 <p>Imagine you&#39;re trying to predict house prices based on features like size, number of bedrooms, location, and maybe even the color of the front door. You gather a dataset, train a model, and it&#39;s fantastic! Your model predicts the prices of houses in your training set almost perfectly. You&#39;re ecstatic.</p>
@@ -139,7 +141,14 @@ $ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 + \lam
 <p>It teaches us that sometimes, less is more. By gently constraining our models, we don&#39;t limit their potential; we guide them towards true understanding, ensuring they perform not just brilliantly on homework, but spectacularly on life&#39;s ever-changing final exams.</p>
 <p>So, next time you&#39;re training a model and see its performance on the validation set starting to plateau or even worsen, remember regularization. It might just be the guiding hand your model needs to become truly wise. Keep experimenting, keep learning, and keep regularizing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Taming the Overzealous Model: A Guide to Regularization</h1>
+             <p>Ever built a machine learning model that's brilliant on data it's seen, but flops spectacularly on anything new? Welcome to the world of overfitting, and meet your model's new best friend: Regularization!</p>
+        </div>
+        
 </body>
 
 </html>

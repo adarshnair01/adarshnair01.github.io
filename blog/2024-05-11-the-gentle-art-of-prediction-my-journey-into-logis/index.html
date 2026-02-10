@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Gentle Art of Prediction: My Journey into Logistic Regression</h1>
-           <p>Ever wondered how computers make 'yes' or 'no' decisions from a sea of data? Join me as we unravel the elegant simplicity and profound power behind Logistic Regression, a cornerstone of predictive modeling that's much more than just a fancy name.</p>
-           <p>My journey into data science often feels like exploring a vast, interconnected landscape, where each algorithm is a unique tool designed to tackle specific challenges. One of the first peaks I encountered, and certainly one of the most fundamental, was <strong>Logistic Regression</strong>. Don&#39;t let the &quot;regression&quot; in its name fool you; this algorithm is a classification superstar, adept at helping us predict probabilities for binary outcomes like &quot;yes/no,&quot; &quot;spam/not spam,&quot; or &quot;disease/no disease.&quot;</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Gentle Art of Prediction: My Journey into Logistic Regression</h1>
+               <p>Ever wondered how computers make 'yes' or 'no' decisions from a sea of data? Join me as we unravel the elegant simplicity and profound power behind Logistic Regression, a cornerstone of predictive modeling that's much more than just a fancy name.</p>
+               <p>My journey into data science often feels like exploring a vast, interconnected landscape, where each algorithm is a unique tool designed to tackle specific challenges. One of the first peaks I encountered, and certainly one of the most fundamental, was <strong>Logistic Regression</strong>. Don&#39;t let the &quot;regression&quot; in its name fool you; this algorithm is a classification superstar, adept at helping us predict probabilities for binary outcomes like &quot;yes/no,&quot; &quot;spam/not spam,&quot; or &quot;disease/no disease.&quot;</p>
 <p>Let&#39;s dive in and demystify this workhorse of machine learning.</p>
 <h2>The Problem: When Linear Isn&#39;t Enough</h2>
 <p>Imagine we&#39;re trying to predict if a student will pass an exam based on how many hours they studied. If we used simple Linear Regression, we might get a model that outputs a score. But what if we want to predict a <em>probability</em> of passing? And then, turn that probability into a &quot;pass&quot; or &quot;fail&quot; decision?</p>
@@ -102,7 +104,14 @@ $e^{0.5} \approx 1.65$. This means that for every one-unit increase in $x_1$, th
 <p>My journey with Logistic Regression revealed it to be far more than just another algorithm. It&#39;s a cornerstone of predictive analytics, offering a clear, interpretable, and efficient way to model binary outcomes. From its clever use of the sigmoid function to transform linear outputs into probabilities, to its robust Log Loss function for learning, and its insightful coefficient interpretations via log-odds, every piece of Logistic Regression is designed with a purpose.</p>
 <p>For anyone venturing into the world of data science, truly understanding Logistic Regression isn&#39;t just about memorizing formulas; it&#39;s about grasping the intuitive logic behind how we can teach a machine to make reasoned, probabilistic decisions from data. It&#39;s a fundamental step that opens doors to understanding more complex classification techniques, and a skill that remains invaluable in any data scientist&#39;s toolkit. So, the next time you see a &quot;yes&quot; or &quot;no&quot; decision made by a machine, you&#39;ll know a bit about the gentle art of prediction that might be happening behind the scenes!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Gentle Art of Prediction: My Journey into Logistic Regression</h1>
+             <p>Ever wondered how computers make 'yes' or 'no' decisions from a sea of data? Join me as we unravel the elegant simplicity and profound power behind Logistic Regression, a cornerstone of predictive modeling that's much more than just a fancy name.</p>
+        </div>
+        
 </body>
 
 </html>

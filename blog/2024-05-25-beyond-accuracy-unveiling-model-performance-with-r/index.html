@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: Unveiling Model Performance with ROC and AUC</h1>
-           <p>Ever felt that model accuracy isn't telling the whole story? Dive into the fascinating world of ROC curves and AUC scores, and discover how these powerful tools help us truly understand our classification models, especially when stakes are high.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: Unveiling Model Performance with ROC and AUC</h1>
+               <p>Ever felt that model accuracy isn't telling the whole story? Dive into the fascinating world of ROC curves and AUC scores, and discover how these powerful tools help us truly understand our classification models, especially when stakes are high.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my little corner of the data science world. Today, I want to talk about something fundamental, yet often misunderstood, in machine learning: evaluating our classification models. When I first started my journey, I thought accuracy was king. If my model was 95% accurate, surely it was amazing, right? Oh, how naive I was! It turns out, the world of binary classification is far more nuanced, and metrics like ROC (Receiver Operating Characteristic) curves and AUC (Area Under the Curve) are our guiding stars.</p>
 <p>Join me as we unravel the mysteries behind these powerful evaluation tools, making them accessible whether you&#39;re just starting out or looking to solidify your understanding.</p>
 <h2>The Deceptive Simplicity of Accuracy</h2>
@@ -157,7 +159,14 @@ print(f&quot;The AUC score for the model is: {roc_auc:.4f}&quot;)
 <p>Next time you evaluate a classification model, don&#39;t just glance at the accuracy. Dig deeper. Plot that ROC curve. Understand that AUC score. It will tell you a much richer story about your model&#39;s true capabilities and help you make more informed decisions about which model to deploy and at what operating point (threshold) to use it.</p>
 <p>Keep learning, keep exploring, and remember: the journey of a data scientist is a continuous quest for deeper understanding!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: Unveiling Model Performance with ROC and AUC</h1>
+             <p>Ever felt that model accuracy isn't telling the whole story? Dive into the fascinating world of ROC curves and AUC scores, and discover how these powerful tools help us truly understand our classification models, especially when stakes are high.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Choices to Classifications: Demystifying Decision Trees</h1>
-           <p>Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process.</p>
-           <p>Hey there, fellow data explorer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Choices to Classifications: Demystifying Decision Trees</h1>
+               <p>Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process.</p>
+               <p>Hey there, fellow data explorer!</p>
 <p>Have you ever played a game of &quot;20 Questions&quot;? Or perhaps navigated a &quot;choose your own adventure&quot; book? That&#39;s precisely the intuition behind one of the most elegant and understandable algorithms in machine learning: the <strong>Decision Tree</strong>. As someone passionate about making sense of data, I find Decision Trees particularly captivating because they explain their reasoning in a way that feels incredibly human.</p>
 <h3>What&#39;s a Decision Tree, Really?</h3>
 <p>Imagine a flowchart. That&#39;s essentially what a Decision Tree is! It&#39;s a non-parametric supervised learning algorithm used for both classification and regression tasks. At its core, it breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with <strong>decision nodes</strong> and <strong>leaf nodes</strong>.</p>
@@ -55,7 +57,14 @@ Here, $N$ is the number of samples in the parent node, $N_i$ is the number of sa
 <h3>Your Turn to Decide!</h3>
 <p>Decision Trees offer a fantastic entry point into the world of machine learning. Their transparency allows us to peek into the &quot;mind&quot; of the algorithm, understanding <em>why</em> a particular decision was made. So next time you&#39;re making a choice, remember the humble Decision Tree – a simple yet powerful structure guiding us through the complex landscape of data. Go on, build one yourself and see the magic unfold!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Choices to Classifications: Demystifying Decision Trees</h1>
+             <p>Ever wonder how computers learn to make choices, just like we do? Today, we're peeling back the layers on Decision Trees, a foundational machine learning algorithm that mirrors our everyday decision-making process.</p>
+        </div>
+        
 </body>
 
 </html>

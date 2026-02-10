@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Journey Through Time: Decoding the Future with Time Series Analysis</h1>
-           <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or how your smartwatch tracks your heart rate trends? It's all about understanding data's most powerful dimension: time.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Journey Through Time: Decoding the Future with Time Series Analysis</h1>
+               <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or how your smartwatch tracks your heart rate trends? It's all about understanding data's most powerful dimension: time.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever gazed at a graph that shows how something changes over days, months, or years? Maybe it was stock prices fluctuating, the temperature rising and falling with the seasons, or even the number of YouTube views on your favorite video. What we&#39;re looking at in these scenarios isn&#39;t just a collection of numbers; it&#39;s a story unfolding through time. And that, my friends, is the heart of <strong>Time Series Analysis</strong>.</p>
 <p>Welcome to my personal journal entry on a topic that truly fascinates me: making sense of data that has a memory. It&#39;s not just about what happened, but <em>when</em> it happened, and how that sequence gives us clues about what <em>might</em> happen next.</p>
 <h3>What&#39;s So Special About Time?</h3>
@@ -116,7 +118,14 @@ where $\theta_1$ is the coefficient for the lag-1 error term. An MA(q) model inc
 <p>It&#39;s a field that&#39;s constantly evolving, with new techniques emerging from machine learning and deep learning, pushing the boundaries of what&#39;s possible. So, dive in, explore some datasets, build your first forecasting model, and start decoding the rhythmic stories hidden within time!</p>
 <p>Happy forecasting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Journey Through Time: Decoding the Future with Time Series Analysis</h1>
+             <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or how your smartwatch tracks your heart rate trends? It's all about understanding data's most powerful dimension: time.</p>
+        </div>
+        
 </body>
 
 </html>

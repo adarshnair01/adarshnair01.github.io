@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Mapping the Invisible: Unraveling High-Dimensional Data with t-SNE</h1>
-           <p>Ever felt overwhelmed by data with too many features? t-SNE is a magical algorithm that helps us find hidden patterns and visualize complex datasets in a beautiful, interpretable 2D or 3D map.</p>
-           <p>My first encounter with high-dimensional data felt a lot like trying to understand a complex tapestry by only looking at individual threads. Imagine a dataset not just with a few columns, but hundreds, even thousands, describing everything from pixel values in an image to word frequencies in a document. How do you make sense of that? How do you spot clusters of similar items or identify outliers when your data lives in a space we can&#39;t possibly visualize?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Mapping the Invisible: Unraveling High-Dimensional Data with t-SNE</h1>
+               <p>Ever felt overwhelmed by data with too many features? t-SNE is a magical algorithm that helps us find hidden patterns and visualize complex datasets in a beautiful, interpretable 2D or 3D map.</p>
+               <p>My first encounter with high-dimensional data felt a lot like trying to understand a complex tapestry by only looking at individual threads. Imagine a dataset not just with a few columns, but hundreds, even thousands, describing everything from pixel values in an image to word frequencies in a document. How do you make sense of that? How do you spot clusters of similar items or identify outliers when your data lives in a space we can&#39;t possibly visualize?</p>
 <p>That, my friends, is the high-dimensional headache. And that&#39;s exactly where an elegant algorithm called <strong>t-Distributed Stochastic Neighbor Embedding</strong>, or <strong>t-SNE</strong> for short, steps onto the scene as a true hero.</p>
 <h3>The High-Dimensional Headache: Why Our Brains Struggle</h3>
 <p>Our human brains are wired for a maximum of three dimensions. We can easily grasp length, width, and depth. A scatter plot in 2D? No problem. A 3D cube? We can visualize that too. But what about 10 dimensions? 100? 1000?</p>
@@ -124,7 +126,14 @@ where $N$ is the total number of data points. This symmetric probability represe
 <p>t-SNE is a masterpiece of an algorithm. It transforms daunting, multi-dimensional datasets into beautiful, insightful 2D or 3D maps, allowing us to perceive structures and relationships that would otherwise remain invisible. It&#39;s not a perfect mirror of the high-dimensional world, but rather a carefully crafted projection, optimizing for the preservation of local neighborhoods.</p>
 <p>In my journey through data science, t-SNE has been an indispensable tool for understanding complex systems, from grouping customer segments to visualizing the semantic space of words. It empowers us to find meaning where mere numbers fail, making it a must-have in any data scientist&#39;s toolkit. So, go ahead, grab a dataset, and let t-SNE unveil its hidden map for you!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Mapping the Invisible: Unraveling High-Dimensional Data with t-SNE</h1>
+             <p>Ever felt overwhelmed by data with too many features? t-SNE is a magical algorithm that helps us find hidden patterns and visualize complex datasets in a beautiful, interpretable 2D or 3D map.</p>
+        </div>
+        
 </body>
 
 </html>

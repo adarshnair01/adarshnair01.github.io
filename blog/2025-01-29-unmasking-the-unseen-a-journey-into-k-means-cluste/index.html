@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
-           <p>Ever wondered how computers find hidden groups in a mountain of data without being told what to look for? Today, we're diving into K-Means Clustering, a powerful algorithm that helps us discover structure where none was explicitly defined.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
+               <p>Ever wondered how computers find hidden groups in a mountain of data without being told what to look for? Today, we're diving into K-Means Clustering, a powerful algorithm that helps us discover structure where none was explicitly defined.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my corner of the data science universe. Today, I&#39;m absolutely thrilled to pull back the curtain on an algorithm that, for me, truly embodies the &quot;magic&quot; of machine learning: <strong>K-Means Clustering</strong>.</p>
 <p>Imagine you&#39;ve just inherited a massive, unlabeled box of LEGO bricks. You want to organize them, but there are no instructions, no color-coded compartments, nothing. Your goal is simply to group similar bricks together. You might start by picking a few random bricks to represent your &quot;main types,&quot; then sort all the other bricks into piles based on which &quot;type&quot; they&#39;re most like. Once you&#39;ve done that, you might look at your piles and realize, &quot;Okay, maybe <em>this</em> brick is a better representative for this pile than the one I picked initially.&quot; So, you pick new representatives, and then re-sort all the bricks again. You repeat this process until your piles feel &quot;right&quot; and stable.</p>
 <p>Believe it or not, you&#39;ve just conceptualized K-Means Clustering! It&#39;s an unsupervised learning algorithm that does exactly this, but with data points instead of LEGOs. It&#39;s about finding inherent groups within data without any prior labels or categories. And trust me, it&#39;s one of the most fundamental and widely used tools in a data scientist&#39;s toolkit.</p>
@@ -130,7 +132,14 @@
 <p>Until next time,
 [Your Name/Portfolio Name]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
+             <p>Ever wondered how computers find hidden groups in a mountain of data without being told what to look for? Today, we're diving into K-Means Clustering, a powerful algorithm that helps us discover structure where none was explicitly defined.</p>
+        </div>
+        
 </body>
 
 </html>

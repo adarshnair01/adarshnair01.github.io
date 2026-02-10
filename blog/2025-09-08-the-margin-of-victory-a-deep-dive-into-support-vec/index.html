@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Margin of Victory: A Deep Dive into Support Vector Machines</h1>
-           <p>Ever wondered how a machine learns to draw the 'best' line between two types of data? Support Vector Machines offer an elegant, powerful answer, focusing on the most critical data points to achieve optimal separation.</p>
-           <p>Hello fellow data explorers! Today, I want to talk about one of my absolute favorite algorithms in the machine learning world: <strong>Support Vector Machines (SVMs)</strong>. When I first encountered SVMs, I was immediately struck by their elegance and sheer power. They tackle classification problems with a clarity that many other algorithms aspire to, often delivering robust and impressive results.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Margin of Victory: A Deep Dive into Support Vector Machines</h1>
+               <p>Ever wondered how a machine learns to draw the 'best' line between two types of data? Support Vector Machines offer an elegant, powerful answer, focusing on the most critical data points to achieve optimal separation.</p>
+               <p>Hello fellow data explorers! Today, I want to talk about one of my absolute favorite algorithms in the machine learning world: <strong>Support Vector Machines (SVMs)</strong>. When I first encountered SVMs, I was immediately struck by their elegance and sheer power. They tackle classification problems with a clarity that many other algorithms aspire to, often delivering robust and impressive results.</p>
 <p>Imagine you&#39;re trying to sort a basket full of apples and oranges. It&#39;s easy for us humans, but how would you teach a computer to do it? You might tell it, &quot;If it&#39;s red and round, it&#39;s an apple. If it&#39;s orange and round, it&#39;s an orange.&quot; But what about a green apple? Or a very small orange? This is where the concept of a &quot;decision boundary&quot; comes in – a line, a plane, or even a complex curve that separates different categories of data.</p>
 <p>SVMs don&#39;t just find <em>any</em> boundary; they find the <em>best</em> boundary. And what makes a boundary &quot;best&quot;? That&#39;s what we&#39;re about to uncover!</p>
 <h3>The Intuition: Maximizing the Margin</h3>
@@ -146,7 +148,14 @@ The new constraints become: $y_i(w \cdot x_i + b) \ge 1 - \xi_i$, with $\xi_i \g
 <p>They remind us that sometimes, the most robust solutions come from focusing on the critical points and ensuring the widest possible &quot;margin of victory.&quot; So, next time you&#39;re faced with a classification challenge, give SVMs a try. You might just find they provide the best separation you&#39;re looking for!</p>
 <p>Keep exploring, keep learning, and happy classifying!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Margin of Victory: A Deep Dive into Support Vector Machines</h1>
+             <p>Ever wondered how a machine learns to draw the 'best' line between two types of data? Support Vector Machines offer an elegant, powerful answer, focusing on the most critical data points to achieve optimal separation.</p>
+        </div>
+        
 </body>
 
 </html>

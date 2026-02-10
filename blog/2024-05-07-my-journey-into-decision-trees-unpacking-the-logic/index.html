@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey into Decision Trees: Unpacking the Logic Behind Our Choices</h1>
-           <p>Ever wondered how computers can mimic our decision-making process? Let's dive into Decision Trees, a fundamental and fascinating machine learning algorithm that breaks down complex choices into simple, understandable steps.</p>
-           <p>Hello there, fellow data explorer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey into Decision Trees: Unpacking the Logic Behind Our Choices</h1>
+               <p>Ever wondered how computers can mimic our decision-making process? Let's dive into Decision Trees, a fundamental and fascinating machine learning algorithm that breaks down complex choices into simple, understandable steps.</p>
+               <p>Hello there, fellow data explorer!</p>
 <p>Today, I want to share a piece of my personal learning journey that truly demystified a core concept in Machine Learning: <strong>Decision Trees</strong>. Remember those flowcharts we used in school to decide if we should bring an umbrella or if a plant needed watering? Decision Trees are essentially the algorithmic, super-powered version of that, and they&#39;re incredibly intuitive once you peek under the hood.</p>
 <p>For me, the allure of machine learning always came from the idea of making computers &quot;think.&quot; But how do they <em>think</em>? How do they make decisions? Decision Trees, with their crisp, tree-like structure, offer one of the most transparent answers to this question. They’re like an open book, showing you exactly why a prediction was made. And that, my friends, is powerful.</p>
 <p>Let&#39;s embark on this journey together.</p>
@@ -187,7 +189,14 @@ This involves growing a full tree first and then removing (pruning) branches tha
 <p>Keep learning, keep exploring, and keep building!
 I hope this peek into the world of Decision Trees was as enlightening for you as it was for me. What&#39;s your favorite aspect of Decision Trees? Let me know!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey into Decision Trees: Unpacking the Logic Behind Our Choices</h1>
+             <p>Ever wondered how computers can mimic our decision-making process? Let's dive into Decision Trees, a fundamental and fascinating machine learning algorithm that breaks down complex choices into simple, understandable steps.</p>
+        </div>
+        
 </body>
 
 </html>

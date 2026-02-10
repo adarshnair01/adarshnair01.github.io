@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My 'Aha!' Moment with Support Vector Machines: Finding the Perfect Line in a Messy World</h1>
-           <p>Ever wonder how machines find the absolute best way to draw a line between two groups of data? Today, let's unlock the elegance of Support Vector Machines, a powerful algorithm that truly revolutionized how I thought about classification.</p>
-           <p>Hey there, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My 'Aha!' Moment with Support Vector Machines: Finding the Perfect Line in a Messy World</h1>
+               <p>Ever wonder how machines find the absolute best way to draw a line between two groups of data? Today, let's unlock the elegance of Support Vector Machines, a powerful algorithm that truly revolutionized how I thought about classification.</p>
+               <p>Hey there, fellow data explorers!</p>
 <p>Today, I want to share a revelation I had while diving deeper into machine learning – an algorithm that truly made me go &#39;Aha!&#39;. We&#39;re talking about <strong>Support Vector Machines (SVMs)</strong>. If you&#39;ve ever tried to separate two groups of items, you&#39;ll appreciate their sheer brilliance.</p>
 <p>Imagine you have a bunch of red dots and blue dots scattered on a piece of paper. Your task is to draw a line that separates them. Sounds easy, right? But what if there are many possible lines? Which one is the <em>best</em>?</p>
 <p>This is where SVMs shine. Unlike some other algorithms that just try to find <em>any</em> separating line, SVMs are obsessed with finding the <em>absolute best</em> one. This &#39;best&#39; line is called a <strong>hyperplane</strong> (just a fancy word for a line in 2D, a plane in 3D, or a more complex separator in higher dimensions).</p>
@@ -42,7 +44,14 @@ where $w$ is a vector perpendicular to the hyperplane, $x$ is a point on the hyp
 </ul>
 <p>My journey with SVMs showed me that sometimes, the most elegant solutions are also the most powerful. They teach us that finding the &#39;best&#39; boundary isn&#39;t just about drawing a line, but about finding the widest, most robust separation possible. Keep exploring, and you&#39;ll find these &#39;aha!&#39; moments too!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My 'Aha!' Moment with Support Vector Machines: Finding the Perfect Line in a Messy World</h1>
+             <p>Ever wonder how machines find the absolute best way to draw a line between two groups of data? Today, let's unlock the elegance of Support Vector Machines, a powerful algorithm that truly revolutionized how I thought about classification.</p>
+        </div>
+        
 </body>
 
 </html>

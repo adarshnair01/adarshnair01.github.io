@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Whispers in the Data: The Art and Science of Anomaly Detection</h1>
-           <p>Imagine a system silently flagging fraud, predicting machine failure, or even detecting a new disease outbreak – that's the profound power of anomaly detection, the unsung hero safeguarding our digital world.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Whispers in the Data: The Art and Science of Anomaly Detection</h1>
+               <p>Imagine a system silently flagging fraud, predicting machine failure, or even detecting a new disease outbreak – that's the profound power of anomaly detection, the unsung hero safeguarding our digital world.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Today, I want to pull back the curtain on a fascinating and incredibly critical area of data science: <strong>Anomaly Detection</strong>. It&#39;s not always the flashiest topic, perhaps overshadowed by generative AI or complex NLP models, but its impact is immense. Think of it as the vigilant guardian, constantly scanning for anything that just... doesn&#39;t fit. It’s the art of spotting the black sheep in a flock, the lone wolf in a pack, or that one data point that screams &quot;I&#39;m different!&quot; amidst millions of &#39;normals.&#39;</p>
 <h3>What Even <em>Is</em> an Anomaly?</h3>
 <p>At its core, anomaly detection is about identifying items, events, or observations which do not conform to an expected pattern or other items in a dataset. These &quot;non-conforming&quot; items are often referred to as anomalies, outliers, novelties, noise, or exceptions. They&#39;re rare, they&#39;re often suspicious, and they can hold vital information.</p>
@@ -153,7 +155,14 @@ We often flag points with $|Z| &gt; 2$ or $|Z| &gt; 3$ as anomalies.</p>
 <p>The field is constantly evolving, with new techniques emerging, especially in deep learning. As data becomes more ubiquitous and complex, our ability to intelligently spot the &quot;unusual&quot; will only grow in importance. So, next time you&#39;re sifting through data, remember the whispers—those faint signals hinting at something out of place. Learning to hear them is a powerful skill, and a rewarding journey!</p>
 <p>Happy detecting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Whispers in the Data: The Art and Science of Anomaly Detection</h1>
+             <p>Imagine a system silently flagging fraud, predicting machine failure, or even detecting a new disease outbreak – that's the profound power of anomaly detection, the unsung hero safeguarding our digital world.</p>
+        </div>
+        
 </body>
 
 </html>

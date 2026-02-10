@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Support Vector Machines: Drawing the Ultimate Line in Your Data</h1>
-           <p>Ever wondered how machines can learn to categorize things with incredible precision, even when the data seems messy? Dive into the world of Support Vector Machines (SVMs), where we learn to draw the perfect boundary.</p>
-           <p>Welcome back to my personal data science journal! Today, I want to talk about a machine learning algorithm that, for a long time, felt like pure magic to me: Support Vector Machines (SVMs). If you&#39;ve ever had to sort a pile of diverse items into distinct categories, you&#39;ve intuitively performed classification. SVMs do this, but with a mathematical elegance that&#39;s truly captivating.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Support Vector Machines: Drawing the Ultimate Line in Your Data</h1>
+               <p>Ever wondered how machines can learn to categorize things with incredible precision, even when the data seems messy? Dive into the world of Support Vector Machines (SVMs), where we learn to draw the perfect boundary.</p>
+               <p>Welcome back to my personal data science journal! Today, I want to talk about a machine learning algorithm that, for a long time, felt like pure magic to me: Support Vector Machines (SVMs). If you&#39;ve ever had to sort a pile of diverse items into distinct categories, you&#39;ve intuitively performed classification. SVMs do this, but with a mathematical elegance that&#39;s truly captivating.</p>
 <p>Imagine you&#39;re trying to separate two types of marbles – red and blue – scattered on a table. If they&#39;re neatly clustered, you could draw a simple line to separate them. Easy, right? But what if they&#39;re a bit mixed up? What if some red marbles are near the blue cluster, and vice-versa? This is where classification gets interesting, and where SVMs really shine.</p>
 <h3>The Intuition: More Than Just Any Line</h3>
 <p>At its core, an SVM is a discriminative classifier that aims to find an optimal &quot;hyperplane&quot; that best separates different classes in your dataset. Let&#39;s break that down.</p>
@@ -104,7 +106,14 @@ subject to $y_i (w \cdot x_i + b) \ge 1 - \xi_i$ and $\xi_i \ge 0$</p>
 <p>Support Vector Machines are a testament to the elegance and power of machine learning. From their intuitive goal of finding the widest &quot;street&quot; between classes to the ingenious kernel trick that tackles non-linear data, SVMs offer a robust and efficient solution for a wide array of classification problems.</p>
 <p>Next time you encounter a classification challenge, remember the SVM. It&#39;s a reminder that sometimes, the best way to separate things isn&#39;t just to draw <em>a</em> line, but to draw the <em>ultimate</em> line, with a generous margin of safety. Keep exploring, keep learning, and keep drawing those ultimate lines!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Support Vector Machines: Drawing the Ultimate Line in Your Data</h1>
+             <p>Ever wondered how machines can learn to categorize things with incredible precision, even when the data seems messy? Dive into the world of Support Vector Machines (SVMs), where we learn to draw the perfect boundary.</p>
+        </div>
+        
 </body>
 
 </html>

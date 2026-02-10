@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Data Whisperer's Guide: Mastering Data Cleaning Strategies for Robust Models</h1>
-           <p>Ever felt like your data is a tangled mess, holding secrets it's not quite ready to share? Join me on a journey to unravel the mysteries of dirty data and transform it into the pristine fuel your models crave.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Data Whisperer's Guide: Mastering Data Cleaning Strategies for Robust Models</h1>
+               <p>Ever felt like your data is a tangled mess, holding secrets it's not quite ready to share? Join me on a journey to unravel the mysteries of dirty data and transform it into the pristine fuel your models crave.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever baked a cake with expired ingredients, or tried to build a magnificent Lego castle with half the pieces missing and others covered in mud? You can try, but the results are rarely what you envisioned. The same goes for data science. We pour our hearts into building sophisticated machine learning models, dreaming of groundbreaking insights and predictions. But if the data we feed them is messy, incomplete, or outright wrong, our dreams quickly turn into a &quot;garbage in, garbage out&quot; nightmare.</p>
 <p>This, my friends, is why data cleaning isn&#39;t just a step in the data science pipeline; it&#39;s a <em>foundational art form</em>. It&#39;s where we, as aspiring data scientists and machine learning engineers, truly earn our stripes. It&#39;s the detective work, the meticulous craft that transforms raw, unruly information into the pristine, reliable fuel our algorithms need to shine.</p>
 <p>Today, I want to share some of the core strategies I&#39;ve learned for tackling the inevitable mess that is real-world data. Think of this as my personal journal entry, a guide for navigating the wilds of imperfect datasets and emerging victorious.</p>
@@ -214,7 +216,14 @@ df.drop_duplicates(subset=[&#39;CustomerID&#39;], keep=&#39;first&#39;, inplace=
 <p>So, roll up your sleeves, embrace the mess, and become the data whisperer your projects need! The cleaner your data, the clearer your path to impactful discoveries.</p>
 <p>Happy cleaning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Data Whisperer's Guide: Mastering Data Cleaning Strategies for Robust Models</h1>
+             <p>Ever felt like your data is a tangled mess, holding secrets it's not quite ready to share? Join me on a journey to unravel the mysteries of dirty data and transform it into the pristine fuel your models crave.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Art of Learning by Doing: Demystifying Reinforcement Learning</h1>
-           <p>Imagine teaching an AI to play a complex game or navigate a robot through a maze, not by programming every single move, but by letting it learn through pure trial and error, just like a child discovering the world. Welcome to the captivating realm of Reinforcement Learning!</p>
-           <p>Hey everyone! Today, I want to share something truly fascinating from the world of AI that has always captivated me: <strong>Reinforcement Learning (RL)</strong>. If you&#39;ve ever marvelled at AlphaGo beating the world&#39;s best Go players or dreamed of intelligent robots learning to perform complex tasks, then you&#39;ve witnessed the power of RL in action. It&#39;s a field that feels less like traditional programming and more like teaching an agent to discover optimal behaviour on its own, through pure experience.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Art of Learning by Doing: Demystifying Reinforcement Learning</h1>
+               <p>Imagine teaching an AI to play a complex game or navigate a robot through a maze, not by programming every single move, but by letting it learn through pure trial and error, just like a child discovering the world. Welcome to the captivating realm of Reinforcement Learning!</p>
+               <p>Hey everyone! Today, I want to share something truly fascinating from the world of AI that has always captivated me: <strong>Reinforcement Learning (RL)</strong>. If you&#39;ve ever marvelled at AlphaGo beating the world&#39;s best Go players or dreamed of intelligent robots learning to perform complex tasks, then you&#39;ve witnessed the power of RL in action. It&#39;s a field that feels less like traditional programming and more like teaching an agent to discover optimal behaviour on its own, through pure experience.</p>
 <h3>What is Reinforcement Learning? A Story of Trial and Error</h3>
 <p>Think back to when you learned to ride a bike. No one gave you a perfect set of instructions for every pedal stroke, every turn, or every wobble. Instead, you tried, you fell (a &#39;negative reward&#39;), you adjusted, and eventually, you got the hang of it (a &#39;positive reward&#39;). You learned through direct interaction with your environment, guided by feedback.</p>
 <p>This is the core idea behind Reinforcement Learning. Unlike supervised learning, where models learn from labelled examples, or unsupervised learning, where they find patterns in unlabelled data, RL focuses on an <strong>agent</strong> learning to make sequences of decisions by interacting with an <strong>environment</strong> to achieve a specific <strong>goal</strong>. There&#39;s no teacher providing the &quot;right&quot; answer for every situation; instead, the agent receives <strong>rewards</strong> (or penalties) for its actions, guiding it towards better strategies over time.</p>
@@ -106,7 +108,14 @@
 <p>The journey from simple Q-tables to sophisticated Deep Q-Networks and beyond is a testament to the power of combining fundamental learning principles with modern deep learning architectures. While challenges like sparse rewards, sample efficiency, and safety remain, the field is rapidly advancing, promising an exciting future where AI agents can learn to solve increasingly complex problems with minimal human intervention.</p>
 <p>If this peek into RL has sparked your curiosity, I highly encourage you to dive deeper! Try implementing a simple Q-learning agent for a grid world problem, or explore the fascinating world of open-source RL frameworks like OpenAI Gym and Stable Baselines. The best way to understand this &quot;learning by doing&quot; paradigm is to do some learning yourself!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Art of Learning by Doing: Demystifying Reinforcement Learning</h1>
+             <p>Imagine teaching an AI to play a complex game or navigate a robot through a maze, not by programming every single move, but by letting it learn through pure trial and error, just like a child discovering the world. Welcome to the captivating realm of Reinforcement Learning!</p>
+        </div>
+        
 </body>
 
 </html>

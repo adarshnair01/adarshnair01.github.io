@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Dive into K-Means: Grouping Data Like a Pro!</h1>
-           <p>Ever wondered how machines find hidden groups in massive, unlabeled datasets? Today, let's unravel K-Means Clustering \\u2013 a powerful algorithm that brings order to chaos, perfect for any aspiring data scientist!</p>
-           <p>Hey everyone! 👋</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Dive into K-Means: Grouping Data Like a Pro!</h1>
+               <p>Ever wondered how machines find hidden groups in massive, unlabeled datasets? Today, let's unravel K-Means Clustering \\u2013 a powerful algorithm that brings order to chaos, perfect for any aspiring data scientist!</p>
+               <p>Hey everyone! 👋</p>
 <p>Remember that overwhelming feeling when you stare at a mountain of data, wondering how to make sense of it all? No labels, no categories, just raw numbers. That&#39;s exactly where I found myself last week with a new dataset for my portfolio project. My goal? To discover natural groupings within the data without any prior knowledge of what those groups might be. This challenge led me straight to one of the most elegant and widely used unsupervised learning algorithms: <strong>K-Means Clustering</strong>.</p>
 <h3>What is Clustering?</h3>
 <p>Before we jump into K-Means, let&#39;s talk about clustering in general. Imagine you have a giant box of mixed LEGO bricks. You want to sort them into piles, but nobody told you what the piles should be. You&#39;d probably start putting similar colors together, then perhaps similar shapes within those colors. Clustering is essentially the same idea: it&#39;s the task of dividing the data points into a number of groups such that data points in the same group are more similar to each other than to those in other groups.</p>
@@ -63,7 +65,14 @@ $ \mu_j = \frac{1}{|C_j|} \sum_{x \in C_j} x $</p>
 <p>My journey with K-Means has been incredibly insightful. It&#39;s truly satisfying to see structure emerge from what once seemed like random noise. For anyone diving into data science or machine learning, understanding K-Means is a fundamental step. It&#39;s a testament to how simple mathematical ideas can unlock complex patterns in data. So, next time you&#39;re faced with an unlabeled dataset, give K-Means a try – you might be surprised by what hidden stories your data tells!</p>
 <p>Happy clustering! 📊✨</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Dive into K-Means: Grouping Data Like a Pro!</h1>
+             <p>Ever wondered how machines find hidden groups in massive, unlabeled datasets? Today, let's unravel K-Means Clustering \\u2013 a powerful algorithm that brings order to chaos, perfect for any aspiring data scientist!</p>
+        </div>
+        
 </body>
 
 </html>

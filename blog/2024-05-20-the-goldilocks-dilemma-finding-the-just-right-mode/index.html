@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Goldilocks Dilemma: Finding the 'Just Right' Model in Machine Learning</h1>
-           <p>Ever built a model that aced its practice test but bombed the real deal? Or one that couldn't even grasp the basics? Welcome to the fundamental tug-of-war in machine learning: Overfitting vs. Underfitting.</p>
-           <p>Hey there, fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Goldilocks Dilemma: Finding the 'Just Right' Model in Machine Learning</h1>
+               <p>Ever built a model that aced its practice test but bombed the real deal? Or one that couldn't even grasp the basics? Welcome to the fundamental tug-of-war in machine learning: Overfitting vs. Underfitting.</p>
+               <p>Hey there, fellow explorers of the data universe!</p>
 <p>Today, I want to talk about something incredibly fundamental, yet often overlooked until it bites you in the backside: the delicate balance between <strong>overfitting</strong> and <strong>underfitting</strong> in machine learning. It&#39;s like the Goldilocks story for data scientists – you don&#39;t want your model to be too hot (overfit) or too cold (underfit); you want it to be <em>just right</em>.</p>
 <p>I remember when I first started tinkering with machine learning models. I&#39;d train a model, see fantastic accuracy on my training data, and proudly think I&#39;d built a masterpiece. Then, I&#39;d unleash it on new, unseen data, and… <em>crash</em>. The performance would plummet. It was incredibly frustrating, like studying for hours for a test, only to find the actual exam was completely different from what I&#39;d prepared for.</p>
 <p>What I didn&#39;t fully grasp then, but quickly learned, was the core concept of <strong>generalization</strong>.</p>
@@ -135,7 +137,14 @@ $ \text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error
 <p>It&#39;s a continuous dance between model complexity, data quantity, and evaluation metrics. So, as you embark on your next project, remember the Goldilocks principle. Seek that &#39;just right&#39; model, and your journey into the world of AI will be much smoother and more successful.</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Goldilocks Dilemma: Finding the 'Just Right' Model in Machine Learning</h1>
+             <p>Ever built a model that aced its practice test but bombed the real deal? Or one that couldn't even grasp the basics? Welcome to the fundamental tug-of-war in machine learning: Overfitting vs. Underfitting.</p>
+        </div>
+        
 </body>
 
 </html>

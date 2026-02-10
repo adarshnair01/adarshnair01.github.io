@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Ultimate Separator: Demystifying Support Vector Machines (SVMs)</h1>
-           <p>Ever wondered how machines learn to draw the perfect line between different things, even when the data gets messy? Join me as we unravel the elegant power behind Support Vector Machines, a true classic in the world of machine learning.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Ultimate Separator: Demystifying Support Vector Machines (SVMs)</h1>
+               <p>Ever wondered how machines learn to draw the perfect line between different things, even when the data gets messy? Join me as we unravel the elegant power behind Support Vector Machines, a true classic in the world of machine learning.</p>
+               <p>Hey everyone!</p>
 <p>As a data science enthusiast, I&#39;m constantly amazed by the clever ways we&#39;ve devised to make sense of the world&#39;s data. Today, I want to take you on a journey into the heart of a truly iconic algorithm: the Support Vector Machine (SVM). If you&#39;ve ever tried to separate two groups of items, whether they&#39;re different types of fruit, spam emails, or even medical diagnoses, you&#39;ve likely grappled with the challenge of drawing a clear line. SVMs don&#39;t just draw <em>any</em> line; they strive to draw the <em>best</em> line, one that maximizes the &quot;breathing room&quot; between your categories.</p>
 <p>Sounds simple, right? A line is just a line. But trust me, there&#39;s a beautiful blend of geometry, optimization, and a little bit of magic (the &quot;kernel trick&quot;!) that makes SVMs incredibly powerful and surprisingly versatile.</p>
 <h3>The &quot;Aha!&quot; Moment: Finding the Widest Street</h3>
@@ -98,7 +100,14 @@ Subject to: $y_i (w \cdot x_i + b) \ge 1 - \xi_i$ and $\xi_i \ge 0$ for all $i$.
 <p>So, the next time you see a machine perfectly separating two complex categories of data, remember the Support Vector Machine at work. It&#39;s not just drawing a line; it&#39;s meticulously constructing the widest possible street, leveraging the power of geometry and the cleverness of the kernel trick to navigate even the most tangled data landscapes.</p>
 <p>I hope this journey into SVMs has given you a deeper appreciation for their inner workings and their enduring legacy in machine learning. Keep exploring, keep questioning, and keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Ultimate Separator: Demystifying Support Vector Machines (SVMs)</h1>
+             <p>Ever wondered how machines learn to draw the perfect line between different things, even when the data gets messy? Join me as we unravel the elegant power behind Support Vector Machines, a true classic in the world of machine learning.</p>
+        </div>
+        
 </body>
 
 </html>

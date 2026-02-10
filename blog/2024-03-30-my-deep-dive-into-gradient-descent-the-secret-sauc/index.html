@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Deep Dive into Gradient Descent: The Secret Sauce of Machine Learning</h1>
-           <p>Ever wondered how your machine learning models actually *learn*? Join me on a journey to uncover Gradient Descent, the fundamental algorithm that teaches our algorithms to make sense of data.</p>
-           <p>As a budding data scientist, there are those moments when a concept clicks, when the abstract math suddenly morphs into an intuitive, elegant solution. For me, one of those pivotal &quot;aha!&quot; moments came with understanding Gradient Descent. It&#39;s not just an algorithm; it&#39;s the very heartbeat of how many machine learning models, from simple linear regression to complex neural networks, find their way to optimal performance.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Deep Dive into Gradient Descent: The Secret Sauce of Machine Learning</h1>
+               <p>Ever wondered how your machine learning models actually *learn*? Join me on a journey to uncover Gradient Descent, the fundamental algorithm that teaches our algorithms to make sense of data.</p>
+               <p>As a budding data scientist, there are those moments when a concept clicks, when the abstract math suddenly morphs into an intuitive, elegant solution. For me, one of those pivotal &quot;aha!&quot; moments came with understanding Gradient Descent. It&#39;s not just an algorithm; it&#39;s the very heartbeat of how many machine learning models, from simple linear regression to complex neural networks, find their way to optimal performance.</p>
 <p>So, buckle up! In this post, I want to share my personal journey into unraveling Gradient Descent, explaining it in a way that I wish someone had explained it to me – accessible, engaging, and deeply insightful.</p>
 <h3>The Mountain Climber&#39;s Dilemma: What are We Trying to Achieve?</h3>
 <p>Imagine you&#39;re blindfolded, standing on a vast, uneven landscape. Your goal? To find the lowest point in the valley, a point where you can finally rest. You can&#39;t see the whole landscape, only feel the slope immediately beneath your feet. How would you move?</p>
@@ -107,7 +109,14 @@ $ b_{new} = b_{old} - \alpha \frac{\partial J}{\partial b_{old}} $</p>
 <p>So, the next time you see a machine learning model performing its magic, remember the elegant simplicity and power of Gradient Descent – the silent mountain climber, always striving to reach the bottom of the valley, one calculated step at a time.</p>
 <p>Keep exploring, keep learning, and keep descending into the depths of knowledge!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Deep Dive into Gradient Descent: The Secret Sauce of Machine Learning</h1>
+             <p>Ever wondered how your machine learning models actually *learn*? Join me on a journey to uncover Gradient Descent, the fundamental algorithm that teaches our algorithms to make sense of data.</p>
+        </div>
+        
 </body>
 
 </html>

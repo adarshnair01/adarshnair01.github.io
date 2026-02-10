@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>ROC & AUC: The Unsung Heroes of Model Evaluation (A Deep Dive for Data Scientists)</h1>
-           <p>Ever wondered how to truly tell if your classification model is making smart decisions, especially when "accuracy" isn't enough? Dive in to uncover the power of ROC curves and AUC, the essential tools for any data scientist's toolkit.</p>
-           <p>Hey there, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>ROC & AUC: The Unsung Heroes of Model Evaluation (A Deep Dive for Data Scientists)</h1>
+               <p>Ever wondered how to truly tell if your classification model is making smart decisions, especially when "accuracy" isn't enough? Dive in to uncover the power of ROC curves and AUC, the essential tools for any data scientist's toolkit.</p>
+               <p>Hey there, fellow data explorers!</p>
 <p>My journey into data science has been a wild ride, filled with &quot;aha!&quot; moments and the occasional head-scratching puzzle. One of the biggest revelations for me, early on, was realizing that &quot;accuracy&quot; isn&#39;t always the king when it comes to evaluating classification models. In fact, relying solely on accuracy can sometimes lead you down a misleading path.</p>
 <p>Imagine you&#39;re building a system to detect a rare disease. Let&#39;s say only 1% of the population has this disease. If your model simply predicts &quot;no disease&quot; for everyone, it would be 99% accurate! Sounds great, right? But it missed every single person with the disease, which is disastrous. This is where the dynamic duo of ROC (Receiver Operating Characteristic) curves and AUC (Area Under the Curve) comes to the rescue. They offer a much more nuanced and powerful way to understand how well our models are truly performing.</p>
 <p>Let&#39;s dive in and demystify these powerful concepts!</p>
@@ -162,7 +164,14 @@ print(&quot;Thresholds used:&quot;, thresholds)
 <p>The next time you&#39;re evaluating a classification model, remember the dynamic duo of ROC and AUC. They are far more than just fancy terms; they are essential tools that provide a deeper, more robust understanding of your model&#39;s performance than simple accuracy ever could.</p>
 <p>By understanding the trade-offs captured by the ROC curve and the holistic performance summarized by AUC, you&#39;ll be equipped to make smarter decisions about which models to deploy, how to tune them, and ultimately, build more reliable and impactful AI systems. Keep exploring, keep questioning, and happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>ROC & AUC: The Unsung Heroes of Model Evaluation (A Deep Dive for Data Scientists)</h1>
+             <p>Ever wondered how to truly tell if your classification model is making smart decisions, especially when "accuracy" isn't enough? Dive in to uncover the power of ROC curves and AUC, the essential tools for any data scientist's toolkit.</p>
+        </div>
+        
 </body>
 
 </html>

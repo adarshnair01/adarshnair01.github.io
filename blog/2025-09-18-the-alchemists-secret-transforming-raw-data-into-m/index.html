@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Alchemist's Secret: Transforming Raw Data into ML Gold with Feature Engineering</h1>
-           <p>Forget fancy algorithms for a moment – the real magic in machine learning often happens before the model even sees the data. Join me on a journey to uncover the art and science of Feature Engineering, where raw ingredients become powerful predictors.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Alchemist's Secret: Transforming Raw Data into ML Gold with Feature Engineering</h1>
+               <p>Forget fancy algorithms for a moment – the real magic in machine learning often happens before the model even sees the data. Join me on a journey to uncover the art and science of Feature Engineering, where raw ingredients become powerful predictors.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my portfolio journal. Today, I want to pull back the curtain on something that, early in my data science journey, felt like a mystical art form, but has since become one of my favorite and most impactful aspects of building machine learning models: <strong>Feature Engineering</strong>.</p>
 <p>If you&#39;ve spent any time exploring machine learning, you&#39;ve probably heard the phrase &quot;Garbage In, Garbage Out.&quot; It&#39;s a cliché for a reason. No matter how sophisticated your neural network or how finely tuned your gradient boosting machine, if the data you feed it is poor, irrelevant, or simply not in a format that helps the model understand the underlying patterns, your results will be disappointing. This is where Feature Engineering swoops in, cape flowing dramatically, to save the day.</p>
 <h3>What Even <em>Are</em> Features? And Why Should We Engineer Them?</h3>
@@ -131,7 +133,14 @@ This creates a continuous, circular representation.</li>
 <p>So, next time you&#39;re building a model, challenge yourself: before tweaking that learning rate or adding another layer, ask, &quot;Can I engineer a better feature?&quot; The answer is often a resounding &quot;Yes!&quot;</p>
 <p>Happy engineering!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Alchemist's Secret: Transforming Raw Data into ML Gold with Feature Engineering</h1>
+             <p>Forget fancy algorithms for a moment – the real magic in machine learning often happens before the model even sees the data. Join me on a journey to uncover the art and science of Feature Engineering, where raw ingredients become powerful predictors.</p>
+        </div>
+        
 </body>
 
 </html>

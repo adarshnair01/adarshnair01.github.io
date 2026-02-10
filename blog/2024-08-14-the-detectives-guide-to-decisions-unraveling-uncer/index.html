@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Detective's Guide to Decisions: Unraveling Uncertainty with Hypothesis Testing</h1>
-           <p>Ever wondered how data scientists make crucial decisions when faced with uncertainty? Join me on a journey to understand Hypothesis Testing, the powerful statistical framework that helps us make informed judgments about the world, one data point at a time.</p>
-           <p>Hey there, curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Detective's Guide to Decisions: Unraveling Uncertainty with Hypothesis Testing</h1>
+               <p>Ever wondered how data scientists make crucial decisions when faced with uncertainty? Join me on a journey to understand Hypothesis Testing, the powerful statistical framework that helps us make informed judgments about the world, one data point at a time.</p>
+               <p>Hey there, curious minds!</p>
 <p>Today, I want to share a little secret weapon that data scientists, machine learning engineers, and even everyday problem-solvers use constantly: <strong>Hypothesis Testing</strong>. It&#39;s not some arcane ritual for mathematicians; it&#39;s a practical, elegant way to make decisions when you don&#39;t have all the information – which, let&#39;s be honest, is most of the time in the real world.</p>
 <p>Imagine you&#39;re a detective. You&#39;ve got a theory, some clues, and you need to decide if your theory holds up or if you need to keep digging. Hypothesis testing is essentially the statistical toolkit for that detective work.</p>
 <h3>So, What <em>Is</em> Hypothesis Testing, Really?</h3>
@@ -166,7 +168,14 @@ $Z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}} = \frac{2650 - 2500}{500 / \sqrt{
 </ul>
 <p>So, the next time you hear a grand claim, channel your inner detective. Ask for the data, and then use the principles of hypothesis testing to critically evaluate if the evidence truly supports the story. It&#39;s a skill that elevates you from a data consumer to a data expert, making you a more thoughtful decision-maker in a world full of claims and conjectures. Happy testing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Detective's Guide to Decisions: Unraveling Uncertainty with Hypothesis Testing</h1>
+             <p>Ever wondered how data scientists make crucial decisions when faced with uncertainty? Join me on a journey to understand Hypothesis Testing, the powerful statistical framework that helps us make informed judgments about the world, one data point at a time.</p>
+        </div>
+        
 </body>
 
 </html>

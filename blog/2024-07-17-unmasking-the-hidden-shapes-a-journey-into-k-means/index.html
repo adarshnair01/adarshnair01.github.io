@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Hidden Shapes: A Journey into K-Means Clustering</h1>
-           <p>Ever wondered how computers find hidden groups in messy data without being told what to look for? Dive into the elegant world of K-Means clustering, an algorithm that's surprisingly simple yet incredibly powerful for discovering structure where none seems to exist.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Hidden Shapes: A Journey into K-Means Clustering</h1>
+               <p>Ever wondered how computers find hidden groups in messy data without being told what to look for? Dive into the elegant world of K-Means clustering, an algorithm that's surprisingly simple yet incredibly powerful for discovering structure where none seems to exist.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to the lab. Today, we&#39;re not just learning about an algorithm; we&#39;re peeling back the curtain on one of the most fundamental and intuitive concepts in machine learning: <em>clustering</em>. Imagine you have a giant pile of LEGO bricks, all mixed up. Some are red, some are blue, some are flat, some are tall. Your goal? To sort them into groups that &quot;make sense,&quot; even if no one told you beforehand what &quot;red&quot; or &quot;flat&quot; meant. You&#39;re just trying to find natural groupings.</p>
 <p>That&#39;s the essence of clustering. It&#39;s a journey into the heart of <strong>unsupervised learning</strong>, where our data has no labels, no right answers we&#39;re trying to predict. Instead, we&#39;re explorers, seeking patterns, structures, and hidden communities within the raw data itself. And at the forefront of this exploration, shining bright with its simplicity and effectiveness, is an algorithm called <strong>K-Means Clustering</strong>.</p>
 <h3>The Intuition: Finding Neighbors in a Crowded Room</h3>
@@ -113,7 +115,14 @@ This is a more sophisticated metric that measures how similar a data point is to
 <p>So next time you encounter a dataset without labels, remember K-Means. It&#39;s waiting to help you uncover the hidden shapes and patterns that lie within, turning data chaos into meaningful insights.</p>
 <p>Keep exploring, keep learning, and remember that sometimes, the simplest ideas hold the most profound power.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Hidden Shapes: A Journey into K-Means Clustering</h1>
+             <p>Ever wondered how computers find hidden groups in messy data without being told what to look for? Dive into the elegant world of K-Means clustering, an algorithm that's surprisingly simple yet incredibly powerful for discovering structure where none seems to exist.</p>
+        </div>
+        
 </body>
 
 </html>

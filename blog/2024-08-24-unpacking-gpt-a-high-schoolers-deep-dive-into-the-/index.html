@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unpacking GPT: A High-Schooler's Deep Dive into the Architecture Behind the AI Magic</h1>
-           <p>Ever wondered how GPT seems to "think" and generate human-like text? Let's pull back the curtain and explore the ingenious architectural blueprint that makes these language models so incredibly powerful.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unpacking GPT: A High-Schooler's Deep Dive into the Architecture Behind the AI Magic</h1>
+               <p>Ever wondered how GPT seems to "think" and generate human-like text? Let's pull back the curtain and explore the ingenious architectural blueprint that makes these language models so incredibly powerful.</p>
+               <p>Hey everyone!</p>
 <p>Remember that feeling when you first encountered GPT-3 or ChatGPT? That initial awe, maybe a little bit of wonder, mixed with &quot;how on Earth does it <em>do</em> that?&quot; I certainly do. It felt like magic, capable of writing poems, debugging code, explaining complex topics, and even holding surprisingly coherent conversations. For a long time, I just accepted it as &quot;advanced AI,&quot; but the engineer in me kept nagging: <em>how does it actually work?</em></p>
 <p>This blog post is my attempt to demystify the core architecture of GPT. We&#39;re going to break down the &quot;T&quot; (Transformer) and the &quot;GP&quot; (Generative Pre-trained) and understand the elegant principles that empower these language models. Don&#39;t worry if you&#39;re new to some of these terms; we&#39;ll build our understanding step-by-step, like assembling a cool Lego set.</p>
 <h3>The &quot;T&quot; in GPT: Enter the Transformer</h3>
@@ -100,7 +102,14 @@ $ PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i/d_{model}}) $</p>
 <p>We&#39;ve explored the core components: the power of self-attention to weigh word relationships, the multi-headed approach for diverse insights, positional encoding to preserve order, and the decoder-only, masked self-attention structure that allows GPT to be <em>generative</em>.</p>
 <p>It&#39;s not just about predicting the next word; it&#39;s about learning the intricate patterns and relationships within language that allow it to <em>understand</em> and <em>create</em>. The journey from &quot;magical black box&quot; to &quot;understandable engineering marvel&quot; is incredibly rewarding, and I hope this deep dive has shed some light on the ingenious brain behind our AI companions. The world of AI is moving fast, but understanding these foundational architectures is key to not just using, but truly shaping its future. Keep learning, keep exploring!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unpacking GPT: A High-Schooler's Deep Dive into the Architecture Behind the AI Magic</h1>
+             <p>Ever wondered how GPT seems to "think" and generate human-like text? Let's pull back the curtain and explore the ingenious architectural blueprint that makes these language models so incredibly powerful.</p>
+        </div>
+        
 </body>
 
 </html>

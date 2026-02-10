@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond the Yes/No: Demystifying Logistic Regression, My First Classification Friend</h1>
-           <p>Ever wondered how algorithms predict if an email is spam, a customer will click a button, or if a medical test result is positive? Dive into the fascinating world of Logistic Regression, a foundational machine learning algorithm that turns chances into confident classifications.</p>
-           <p>Hello fellow data explorer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond the Yes/No: Demystifying Logistic Regression, My First Classification Friend</h1>
+               <p>Ever wondered how algorithms predict if an email is spam, a customer will click a button, or if a medical test result is positive? Dive into the fascinating world of Logistic Regression, a foundational machine learning algorithm that turns chances into confident classifications.</p>
+               <p>Hello fellow data explorer!</p>
 <p>Today, I want to share a journey into one of the most fundamental yet powerful algorithms in machine learning: Logistic Regression. When I first encountered it, the &quot;regression&quot; in its name confused me. &quot;Isn&#39;t regression about predicting continuous numbers, like house prices?&quot; I thought. And you&#39;d be right! That&#39;s linear regression. But Logistic Regression, despite its name, isn&#39;t about predicting a number; it&#39;s about predicting <em>categories</em>. It&#39;s our friendly go-to for classification tasks.</p>
 <p>Imagine you&#39;re trying to figure out if an email is spam or not spam, if a customer will churn or stay, or if a student will pass or fail an exam. These are all binary classification problems, where the outcome is one of two categories. This is where Logistic Regression truly shines.</p>
 <h3>Why Not Linear Regression for Classification?</h3>
@@ -117,7 +119,14 @@
 <p>So, the next time you encounter a binary classification task, don&#39;t shy away from this classic algorithm. Understand its mechanics, appreciate its strengths, and you&#39;ll find it to be one of your most reliable friends in the world of data science.</p>
 <p>Keep exploring, keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond the Yes/No: Demystifying Logistic Regression, My First Classification Friend</h1>
+             <p>Ever wondered how algorithms predict if an email is spam, a customer will click a button, or if a medical test result is positive? Dive into the fascinating world of Logistic Regression, a foundational machine learning algorithm that turns chances into confident classifications.</p>
+        </div>
+        
 </body>
 
 </html>

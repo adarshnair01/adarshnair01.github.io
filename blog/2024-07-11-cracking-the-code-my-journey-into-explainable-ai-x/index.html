@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cracking the Code: My Journey into Explainable AI (XAI)</h1>
-           <p>Ever felt like your AI was a brilliant but enigmatic oracle? Join me as we venture beyond the 'black box' and explore how Explainable AI (XAI) empowers us to understand, trust, and refine our most complex models.</p>
-           <p>Hey there, fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cracking the Code: My Journey into Explainable AI (XAI)</h1>
+               <p>Ever felt like your AI was a brilliant but enigmatic oracle? Join me as we venture beyond the 'black box' and explore how Explainable AI (XAI) empowers us to understand, trust, and refine our most complex models.</p>
+               <p>Hey there, fellow explorers of the digital frontier!</p>
 <p>I remember vividly the first time I built a truly complex machine learning model. It was for a hackathon – predicting customer churn for a telecom company. After days of tweaking features, optimizing hyperparameters, and celebrating a surprisingly high accuracy score, I felt a rush of accomplishment. But then, a judge asked, &quot;Why did this specific customer churn?&quot; My brilliant model, with its intricate neural network architecture, just blinked back at me metaphorically. It knew <em>what</em> would happen, but not <em>why</em>. It was a black box.</p>
 <p>That moment, for me, sparked a profound curiosity: how do we peek inside these powerful, opaque systems? This quest led me to the fascinating world of <strong>Explainable AI (XAI)</strong>.</p>
 <h2>What&#39;s the Big Deal with the &quot;Black Box&quot;?</h2>
@@ -112,7 +114,14 @@ Where:</p>
 </ul>
 <p>My journey into XAI is driven by this vision. It&#39;s about moving from simply <em>deploying</em> powerful AI to truly <em>understanding</em> it. It&#39;s an exciting time to be in AI, and embracing explainability is key to unlocking its full, responsible potential. So, let&#39;s keep exploring, keep questioning, and keep striving to build AI that&#39;s not just intelligent, but also wise and transparent.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cracking the Code: My Journey into Explainable AI (XAI)</h1>
+             <p>Ever felt like your AI was a brilliant but enigmatic oracle? Join me as we venture beyond the 'black box' and explore how Explainable AI (XAI) empowers us to understand, trust, and refine our most complex models.</p>
+        </div>
+        
 </body>
 
 </html>

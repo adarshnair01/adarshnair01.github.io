@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The AI Revolution's Blueprint: A Personal Journey Through Transformers</h1>
-           <p>Remember when AI models struggled with understanding context across long texts? Get ready to uncover the ingenious architecture that changed everything, giving us models like ChatGPT and DALL-E.</p>
-           <p>My journey into the world of artificial intelligence has been a series of &quot;aha!&quot; moments, but few have been as impactful as understanding the Transformer architecture. It felt like discovering the secret blueprint behind the most advanced AI systems we use today. For anyone who&#39;s ever marvelled at the fluent conversations with ChatGPT, the creative images from DALL-E, or the nuanced sentiment analysis powering modern applications, the Transformer is the unsung hero.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The AI Revolution's Blueprint: A Personal Journey Through Transformers</h1>
+               <p>Remember when AI models struggled with understanding context across long texts? Get ready to uncover the ingenious architecture that changed everything, giving us models like ChatGPT and DALL-E.</p>
+               <p>My journey into the world of artificial intelligence has been a series of &quot;aha!&quot; moments, but few have been as impactful as understanding the Transformer architecture. It felt like discovering the secret blueprint behind the most advanced AI systems we use today. For anyone who&#39;s ever marvelled at the fluent conversations with ChatGPT, the creative images from DALL-E, or the nuanced sentiment analysis powering modern applications, the Transformer is the unsung hero.</p>
 <p>But what exactly is a Transformer? And why did it cause such a stir in the deep learning community? Let&#39;s take a personal dive into its mechanics, breaking down why it works, and how it came to dominate the AI landscape.</p>
 <h3>The World Before Transformers: When AI Had Short-Term Memory</h3>
 <p>Before we talk about the future, let&#39;s briefly glance at the past. For a long time, the go-to architecture for processing sequential data like text or speech was Recurrent Neural Networks (RNNs) and their more sophisticated cousins, LSTMs (Long Short-Term Memory networks).</p>
@@ -101,7 +103,14 @@ $PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i/d_{model}})$</p>
 <p>The Transformer isn&#39;t just a model; it&#39;s a paradigm shift. It showed us that with the right architecture, we could build AI systems that truly understand and generate complex human-like text and other forms of data. It unlocked an explosion of research and applications that continue to redefine what&#39;s possible with AI.</p>
 <p>As you explore the fascinating world of data science and machine learning, understanding the Transformer is no longer just a specialization – it&#39;s foundational. It&#39;s the blueprint that continues to shape the future of AI, and I encourage you to keep building, experimenting, and discovering its endless possibilities.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The AI Revolution's Blueprint: A Personal Journey Through Transformers</h1>
+             <p>Remember when AI models struggled with understanding context across long texts? Get ready to uncover the ingenious architecture that changed everything, giving us models like ChatGPT and DALL-E.</p>
+        </div>
+        
 </body>
 
 </html>

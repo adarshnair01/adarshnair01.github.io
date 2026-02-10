@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Demystifying ROC and AUC: Your Classifier's True Performance Story</h1>
-           <p>Ever wondered if your classification model is truly good, or just good at guessing? Dive into the nuanced world of ROC curves and AUC scores, the powerful duo that reveals the real performance and trade-offs of your binary classifiers.</p>
-           <p>Hello, fellow data enthusiasts!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Demystifying ROC and AUC: Your Classifier's True Performance Story</h1>
+               <p>Ever wondered if your classification model is truly good, or just good at guessing? Dive into the nuanced world of ROC curves and AUC scores, the powerful duo that reveals the real performance and trade-offs of your binary classifiers.</p>
+               <p>Hello, fellow data enthusiasts!</p>
 <p>Today, I want to share a journey that completely reshaped how I evaluate my machine learning models. We often start our data science adventure learning about accuracy, precision, and recall. They&#39;re great, foundational metrics! But, as I delved deeper into the complexities of real-world datasets, I quickly realized that these metrics, while useful, don&#39;t always tell the full story. Especially when dealing with imbalanced datasets or scenarios where the cost of different types of errors varies wildly.</p>
 <p>That&#39;s when I stumbled upon the dynamic duo: the <strong>Receiver Operating Characteristic (ROC) curve</strong> and the <strong>Area Under the Curve (AUC)</strong>. Trust me, understanding these two concepts isn&#39;t just an academic exercise; it&#39;s a superpower that will elevate your model evaluation to a whole new level. Let&#39;s peel back the layers and uncover their magic together.</p>
 <h3>The Problem with Simple Accuracy</h3>
@@ -140,7 +142,14 @@ roc_auc = auc(fpr, tpr)
 <p>So, the next time you&#39;re evaluating a binary classification model, don&#39;t just stop at accuracy. Dive deeper. Plot that ROC curve, calculate that AUC, and truly listen to what your model is telling you about its ability to distinguish between the signal and the noise. These aren&#39;t just metrics; they&#39;re lenses that bring clarity to your model&#39;s true performance story.</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Demystifying ROC and AUC: Your Classifier's True Performance Story</h1>
+             <p>Ever wondered if your classification model is truly good, or just good at guessing? Dive into the nuanced world of ROC curves and AUC scores, the powerful duo that reveals the real performance and trade-offs of your binary classifiers.</p>
+        </div>
+        
 </body>
 
 </html>

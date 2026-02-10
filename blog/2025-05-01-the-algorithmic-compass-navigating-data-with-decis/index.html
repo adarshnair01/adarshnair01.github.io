@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Algorithmic Compass: Navigating Data with Decision Trees</h1>
-           <p>Ever wondered how machines make decisions, much like we follow a flowchart? Dive into the fascinating world of Decision Trees, the intuitive algorithms that power many predictive models and mirror our own decision-making processes.</p>
-           <p>Hello fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Algorithmic Compass: Navigating Data with Decision Trees</h1>
+               <p>Ever wondered how machines make decisions, much like we follow a flowchart? Dive into the fascinating world of Decision Trees, the intuitive algorithms that power many predictive models and mirror our own decision-making processes.</p>
+               <p>Hello fellow data adventurers!</p>
 <p>Today, I want to take you on a journey through one of the most fundamental and surprisingly intuitive algorithms in machine learning: the Decision Tree. When I first started diving into the world of AI, I was often intimidated by complex mathematical equations and abstract concepts. But then I met Decision Trees, and it was like a breath of fresh air. They just <em>make sense</em>.</p>
 <h3>The Everyday Art of Decision Making</h3>
 <p>Think about your daily life. Every morning, you make a series of decisions:</p>
@@ -161,7 +163,14 @@
 <p>Decision Trees are more than just an algorithm; they&#39;re an intuitive framework for thinking about data and making predictions. They mirror our human decision-making process, making them incredibly accessible yet surprisingly powerful. From determining loan eligibility to diagnosing medical conditions or predicting customer churn, Decision Trees serve as a reliable algorithmic compass, guiding us through complex data landscapes.</p>
 <p>I hope this journey into Decision Trees has been insightful for you. They are truly an essential tool in any data scientist&#39;s toolkit and a fantastic starting point for understanding more advanced machine learning concepts. So go forth, explore your data, and happy tree building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Algorithmic Compass: Navigating Data with Decision Trees</h1>
+             <p>Ever wondered how machines make decisions, much like we follow a flowchart? Dive into the fascinating world of Decision Trees, the intuitive algorithms that power many predictive models and mirror our own decision-making processes.</p>
+        </div>
+        
 </body>
 
 </html>

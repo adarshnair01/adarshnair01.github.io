@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Thinking Like Sherlock Holmes: An Intuitive Dive into Bayesian Statistics</h1>
-           <p>Ever wonder how we truly update our beliefs with new evidence, much like a detective piecing together clues? Bayesian Statistics offers a powerful framework for exactly that, allowing us to quantify and refine our understanding of the world.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Thinking Like Sherlock Holmes: An Intuitive Dive into Bayesian Statistics</h1>
+               <p>Ever wonder how we truly update our beliefs with new evidence, much like a detective piecing together clues? Bayesian Statistics offers a powerful framework for exactly that, allowing us to quantify and refine our understanding of the world.</p>
+               <p>Hey everyone!</p>
 <p>Welcome to my little corner of the internet where we explore the fascinating world of data and models. Today, I want to talk about something that profoundly shifted how I think about uncertainty and learning: <strong>Bayesian Statistics</strong>. It&#39;s not just a set of equations; it&#39;s a philosophy, a way of updating our understanding of the world as we gather new information.</p>
 <p>I remember my first encounter with the idea. It felt like uncovering a secret language for intuition itself. We, as humans, are constantly making predictions, observing outcomes, and adjusting our internal models. &quot;Will it rain today?&quot; &quot;Is that new online review trustworthy?&quot; &quot;Is this machine learning model actually improving user experience?&quot; Bayesian statistics provides a rigorous mathematical framework for these very human processes.</p>
 <h3>The Problem with &quot;Just Statistics&quot; (and Why We Need Something More)</h3>
@@ -87,7 +89,14 @@ $P(H|D) \approx 0.009803$</p>
 <p>So next time you&#39;re faced with uncertainty, or trying to make sense of new information, remember Thomas Bayes. He gave us a powerful lens through which to view the world, one that empowers us to think like meticulous detectives, constantly refining our understanding with every new clue.</p>
 <p>Keep exploring, keep questioning, and keep learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Thinking Like Sherlock Holmes: An Intuitive Dive into Bayesian Statistics</h1>
+             <p>Ever wonder how we truly update our beliefs with new evidence, much like a detective piecing together clues? Bayesian Statistics offers a powerful framework for exactly that, allowing us to quantify and refine our understanding of the world.</p>
+        </div>
+        
 </body>
 
 </html>

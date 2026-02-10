@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Novice to Ninja: Mastering Pandas for Data Science</h1>
-           <p>Pandas is the backbone of data science, but knowing a few pro tips can dramatically speed up your workflow and make your code shine. Join me as we unlock its hidden potential, transforming data wrangling from a chore into an efficient and enjoyable process.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Novice to Ninja: Mastering Pandas for Data Science</h1>
+               <p>Pandas is the backbone of data science, but knowing a few pro tips can dramatically speed up your workflow and make your code shine. Join me as we unlock its hidden potential, transforming data wrangling from a chore into an efficient and enjoyable process.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;re diving into the exciting world of data science, you&#39;ve undoubtedly encountered Pandas. It&#39;s that friendly, powerful Python library that lets us manipulate tabular data like a spreadsheet on steroids. I remember when I first started, Pandas felt like magic – suddenly, I could load huge datasets, filter rows, and calculate averages with just a few lines of code. It was a game-changer!</p>
 <p>But, as with any powerful tool, there&#39;s a learning curve. There are &quot;good enough&quot; ways to do things, and then there are <em>better</em>, more efficient, and often more elegant ways. Over my journey, I&#39;ve had countless &quot;aha!&quot; moments discovering little tricks and best practices that completely transformed how I approached data wrangling. These aren&#39;t just about writing less code; they&#39;re about writing <em>faster</em> code, <em>cleaner</em> code, and ultimately, making your data science workflow a joy rather than a struggle.</p>
 <p>Today, I want to share some of my favorite Pandas tips that helped me level up my game, and I hope they do the same for you. Think of this as me sharing my personal journal of Pandas discoveries – accessible enough if you&#39;re just starting, but deep enough to make you think about how you&#39;re currently tackling your data.</p>
@@ -291,7 +293,14 @@ print(f&quot;Categorical groupby time: {categorical_groupby_time:.4f} seconds&qu
 <p>Pandas is an incredible library that will be a constant companion in your data science adventures. The more you master its intricacies, the more time you&#39;ll save, and the more robust and elegant your data solutions will become.</p>
 <p>Happy data wrangling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Novice to Ninja: Mastering Pandas for Data Science</h1>
+             <p>Pandas is the backbone of data science, but knowing a few pro tips can dramatically speed up your workflow and make your code shine. Join me as we unlock its hidden potential, transforming data wrangling from a chore into an efficient and enjoyable process.</p>
+        </div>
+        
 </body>
 
 </html>

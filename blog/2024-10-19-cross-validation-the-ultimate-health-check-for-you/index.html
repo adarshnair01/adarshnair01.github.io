@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cross-Validation: The Ultimate Health Check for Your Machine Learning Models</h1>
-           <p>Ever built a machine learning model that looks amazing on paper but flops in the real world? It's a classic problem, and cross-validation is your model's best friend for preventing such heartbreak.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cross-Validation: The Ultimate Health Check for Your Machine Learning Models</h1>
+               <p>Ever built a machine learning model that looks amazing on paper but flops in the real world? It's a classic problem, and cross-validation is your model's best friend for preventing such heartbreak.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;ve spent any time tinkering with machine learning, you know the exhilarating feeling of seeing your model achieve 99% accuracy on your training data. It feels like magic, right? You&#39;ve built a superhero! But then, you unleash it on new, unseen data, and suddenly, your superhero starts tripping over its cape. What happened? Welcome to the challenging, yet fascinating, world of <em>model evaluation</em>, and specifically, the unsung hero that is <strong>Cross-Validation</strong>.</p>
 <p>Today, I want to take you on a journey through why a simple &quot;train-test split&quot; often isn&#39;t enough, and how cross-validation provides a far more robust and reliable assessment of your model&#39;s true capabilities. Think of it as giving your model a comprehensive health check, not just a quick glance.</p>
 <h3>The Illusion of Perfection: Why Training Accuracy Can Be Deceiving</h3>
@@ -124,7 +126,14 @@
 <p>So, next time you&#39;re building a model, don&#39;t just give it a quick glance. Give it a thorough health check using cross-validation. Your future self, and your stakeholders, will thank you!</p>
 <p>Keep learning, keep building, and always, always cross-validate!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cross-Validation: The Ultimate Health Check for Your Machine Learning Models</h1>
+             <p>Ever built a machine learning model that looks amazing on paper but flops in the real world? It's a classic problem, and cross-validation is your model's best friend for preventing such heartbreak.</p>
+        </div>
+        
 </body>
 
 </html>

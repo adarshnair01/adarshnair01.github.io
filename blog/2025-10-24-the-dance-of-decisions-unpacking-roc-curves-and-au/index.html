@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Dance of Decisions: Unpacking ROC Curves and AUC for Smarter Model Evaluation</h1>
-           <p>Ever wondered if your machine learning model is truly 'good' at making decisions? Dive into the fascinating world of ROC curves and AUC, where we uncover the subtle dance between different types of errors and learn how to pick the perfect threshold.</p>
-           <p>Remember that exhilarating moment when your machine learning model finally made its first prediction? Perhaps it was classifying emails as spam or not spam, or maybe predicting if a customer would churn. Accuracy, our trusty old friend, often gets the first glance. &quot;My model is 95% accurate!&quot; we exclaim. But what if I told you that accuracy, while valuable, can sometimes paint a dangerously misleading picture? It&#39;s like judging a chef solely by how many dishes they didn&#39;t burn, without considering if the edible ones actually tasted good.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Dance of Decisions: Unpacking ROC Curves and AUC for Smarter Model Evaluation</h1>
+               <p>Ever wondered if your machine learning model is truly 'good' at making decisions? Dive into the fascinating world of ROC curves and AUC, where we uncover the subtle dance between different types of errors and learn how to pick the perfect threshold.</p>
+               <p>Remember that exhilarating moment when your machine learning model finally made its first prediction? Perhaps it was classifying emails as spam or not spam, or maybe predicting if a customer would churn. Accuracy, our trusty old friend, often gets the first glance. &quot;My model is 95% accurate!&quot; we exclaim. But what if I told you that accuracy, while valuable, can sometimes paint a dangerously misleading picture? It&#39;s like judging a chef solely by how many dishes they didn&#39;t burn, without considering if the edible ones actually tasted good.</p>
 <p>As data scientists and aspiring ML engineers, we quickly learn that the real world is rarely black and white. Our models often don&#39;t just say &#39;yes&#39; or &#39;no&#39;; they give us probabilities, a nuanced spectrum of &#39;maybe.&#39; And it&#39;s how we interpret these &#39;maybes&#39; that makes all the difference. This is where the magic of ROC curves and AUC swoops in, offering us a far more comprehensive lens to evaluate our classification models. Let&#39;s peel back the layers and discover why these tools are indispensable in your machine learning toolkit, helping you make truly informed decisions beyond a simple percentage.</p>
 <h3>The &quot;Confusion&quot; Before Clarity: Revisiting the Confusion Matrix</h3>
 <p>Before we dive deeper, let&#39;s quickly re-acquaint ourselves with the bedrock of classification evaluation: the confusion matrix. Imagine we&#39;re building a model to predict if a student will pass (Positive class) or fail (Negative class) a difficult exam.</p>
@@ -107,7 +109,14 @@ While powerful, ROC and AUC aren&#39;t the <em>only</em> tools. For highly imbal
 <p>So, the next time you&#39;re evaluating a classification model, resist the urge to stop at accuracy. Dive deeper. Explore the nuances of False Positives and False Negatives. Visualize the trade-offs with an ROC curve, and get a robust summary of your model&#39;s discriminative power with AUC.</p>
 <p>These tools empower you to not just build models that predict, but models that truly understand the underlying distinctions in your data, helping you make smarter, more responsible decisions. They are more than just metrics; they are lenses through which we can better understand the intricate dance of probabilities and consequences that define machine learning. Keep exploring, keep questioning, and keep striving for models that are not just accurate, but truly insightful!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Dance of Decisions: Unpacking ROC Curves and AUC for Smarter Model Evaluation</h1>
+             <p>Ever wondered if your machine learning model is truly 'good' at making decisions? Dive into the fascinating world of ROC curves and AUC, where we uncover the subtle dance between different types of errors and learn how to pick the perfect threshold.</p>
+        </div>
+        
 </body>
 
 </html>

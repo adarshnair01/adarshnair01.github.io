@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey into the Mind of a Machine: Unpacking Reinforcement Learning</h1>
-           <p>Ever wondered how an AI masters a complex video game or navigates a robot through a maze without explicit instructions? This isn't magic; it's the captivating world of Reinforcement Learning, where agents learn through an endless loop of trial, error, and reward.</p>
-           <p>Hello there, fellow curious mind!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey into the Mind of a Machine: Unpacking Reinforcement Learning</h1>
+               <p>Ever wondered how an AI masters a complex video game or navigates a robot through a maze without explicit instructions? This isn't magic; it's the captivating world of Reinforcement Learning, where agents learn through an endless loop of trial, error, and reward.</p>
+               <p>Hello there, fellow curious mind!</p>
 <p>Remember that feeling of learning something completely new? Maybe it was riding a bike, playing a new sport, or mastering a difficult video game level. You didn&#39;t start with a thick instruction manual detailing every single move. Instead, you tried things, stumbled, learned from your mistakes, celebrated small victories, and eventually, through sheer grit and repeated effort, you got it. That intuitive process of learning by <em>doing</em>, by experiencing the consequences of your actions, is precisely what fascinates me about <strong>Reinforcement Learning (RL)</strong>.</p>
 <p>As someone deeply entrenched in the world of Data Science and Machine Learning, I&#39;ve spent a lot of time with supervised learning (think image classification, where we show the AI millions of labeled pictures) and unsupervised learning (finding hidden patterns in data without labels). But RL? RL felt different. It felt like teaching an AI to <em>think</em> and <em>learn</em> in a way that truly mimics natural intelligence – by exploring an environment, making decisions, and optimizing for long-term rewards. It&#39;s a field brimming with both profound elegance and daunting complexity, and in this post, I want to take you on a journey through its core ideas, as I&#39;ve come to understand them.</p>
 <h3>The Core Idea: Learning by Trial and Error</h3>
@@ -131,7 +133,14 @@ $Q^\pi(s, a) = E_\pi \left[ \sum_{k=0}^{\infty} \gamma^k R_{t+k+1} | S_t = s, A_
 <p>If you&#39;re looking to dive deeper, I highly recommend exploring resources like Sutton and Barto&#39;s &quot;Reinforcement Learning: An Introduction&quot; – it&#39;s the bible of the field! Experiment with open-source RL libraries like <a href="https://stable-baselines3.readthedocs.io/en/master/">Stable Baselines3</a> or <a href="https://docs.ray.io/en/latest/rllib/index.html">RLlib</a> and try your hand at training an agent in an OpenAI Gym environment. The satisfaction of watching an agent learn to master a task purely through its own experience is truly unparalleled.</p>
 <p>Reinforcement Learning isn&#39;t just a subfield of AI; it&#39;s a paradigm shift in how we approach machine intelligence, allowing us to build agents that truly learn, adapt, and make complex decisions in dynamic, unpredictable worlds. It&#39;s a testament to the power of algorithms, and for me, it&#39;s one of the most exciting frontiers in data science.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey into the Mind of a Machine: Unpacking Reinforcement Learning</h1>
+             <p>Ever wondered how an AI masters a complex video game or navigates a robot through a maze without explicit instructions? This isn't magic; it's the captivating world of Reinforcement Learning, where agents learn through an endless loop of trial, error, and reward.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From High School Algebra to Predictive Power: Demystifying Linear Regression</h1>
-           <p>Remember drawing lines on graphs in math class? What if those lines could predict the future? Join me as we unravel the magic behind Linear Regression, one of the most fundamental algorithms in data science.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From High School Algebra to Predictive Power: Demystifying Linear Regression</h1>
+               <p>Remember drawing lines on graphs in math class? What if those lines could predict the future? Join me as we unravel the magic behind Linear Regression, one of the most fundamental algorithms in data science.</p>
+               <p>Hey everyone!</p>
 <p>It feels like just yesterday I was struggling with algebra, trying to grasp the concept of $y = mx + b$. Little did I know, that seemingly simple equation holds the key to unlocking some serious predictive power in the world of data science. Today, I want to share my journey into one of the most foundational algorithms out there: <strong>Linear Regression</strong>.</p>
 <p>If you&#39;ve ever wondered how a self-driving car predicts the trajectory of another vehicle, or how a real estate agent might estimate a house&#39;s price, or even how scientists model the growth of a disease, you&#39;ve likely encountered the spirit of linear regression. It&#39;s deceptively simple yet incredibly powerful.</p>
 <h3>My First &quot;Aha!&quot; Moment: Seeing the Invisible Line</h3>
@@ -135,7 +137,14 @@ predicted_score = model.predict(new_study_hours)
 <p>While it&#39;s just one piece of the vast machine learning puzzle, mastering Linear Regression provides an incredibly strong foundation for understanding more advanced techniques. So, next time you see a scatter plot, try to imagine that invisible line – it might just be trying to tell you something about the future!</p>
 <p>Keep exploring, keep learning, and happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From High School Algebra to Predictive Power: Demystifying Linear Regression</h1>
+             <p>Remember drawing lines on graphs in math class? What if those lines could predict the future? Join me as we unravel the magic behind Linear Regression, one of the most fundamental algorithms in data science.</p>
+        </div>
+        
 </body>
 
 </html>

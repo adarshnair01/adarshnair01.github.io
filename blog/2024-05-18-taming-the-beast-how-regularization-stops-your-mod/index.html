@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Taming the Beast: How Regularization Stops Your Models From Over-Enthusiastic Memorization</h1>
-           <p>Ever felt your perfectly trained machine learning model crumbles when faced with new data? That's overfitting, and regularization is our secret weapon to teach it humility and true understanding.</p>
-           <p>Hey everyone, and welcome back to my little corner of the data science universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Taming the Beast: How Regularization Stops Your Models From Over-Enthusiastic Memorization</h1>
+               <p>Ever felt your perfectly trained machine learning model crumbles when faced with new data? That's overfitting, and regularization is our secret weapon to teach it humility and true understanding.</p>
+               <p>Hey everyone, and welcome back to my little corner of the data science universe!</p>
 <p>Today, I want to talk about something fundamental, a technique that often acts as the unsung hero behind robust, reliable machine learning models. It&#39;s a concept that, once understood, feels like unlocking a new superpower in your data science toolkit: <strong>Regularization</strong>.</p>
 <p>If you&#39;ve spent any time building predictive models, you&#39;ve probably encountered that frustrating moment. Your model achieves a near-perfect score on the training data – 99%, even 100%! You pat yourself on the back, ready to deploy. But then, you feed it some fresh, unseen data, and BAM! The performance tanks. What happened?</p>
 <p>Your model, my friend, became a victim of its own success. It <strong>overfit</strong>.</p>
@@ -106,7 +108,14 @@ L1 regularization also shrinks coefficients towards zero, but it has a unique pr
 <p>So, the next time you&#39;re building a model, remember your regularization tools. They&#39;re not just mathematical terms; they&#39;re your allies in building more robust, reliable, and ultimately, more intelligent systems.</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Taming the Beast: How Regularization Stops Your Models From Over-Enthusiastic Memorization</h1>
+             <p>Ever felt your perfectly trained machine learning model crumbles when faced with new data? That's overfitting, and regularization is our secret weapon to teach it humility and true understanding.</p>
+        </div>
+        
 </body>
 
 </html>

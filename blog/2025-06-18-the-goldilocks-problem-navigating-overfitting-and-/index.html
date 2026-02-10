@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Goldilocks Problem: Navigating Overfitting and Underfitting in Machine Learning</h1>
-           <p>Ever wondered why some AI models perform brilliantly on data they've seen but stumble on new information? It's all about finding the perfect balance between learning too much and learning too little – welcome to the world of Overfitting and Underfitting!</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Goldilocks Problem: Navigating Overfitting and Underfitting in Machine Learning</h1>
+               <p>Ever wondered why some AI models perform brilliantly on data they've seen but stumble on new information? It's all about finding the perfect balance between learning too much and learning too little – welcome to the world of Overfitting and Underfitting!</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal, where we demystify the fascinating world of data science and machine learning. Today, we&#39;re diving into a topic that&#39;s not just fundamental but truly essential for anyone looking to build robust and reliable AI models: <strong>Overfitting vs. Underfitting</strong>. Think of it as the &quot;Goldilocks Problem&quot; of machine learning – finding the model that&#39;s &quot;just right.&quot;</p>
 <p>You see, building a machine learning model isn&#39;t just about feeding it data and pressing &quot;go.&quot; The real magic, and the real challenge, lies in ensuring your model learns the underlying patterns in your data <em>without</em> memorizing every single detail, noise included. It needs to be smart enough to understand the core concepts but not so rigid that it can&#39;t adapt to new, unseen situations. This delicate balancing act is precisely what we&#39;ll explore today.</p>
 <h3>The Ultimate Goal: Generalization</h3>
@@ -160,7 +162,14 @@ Let&#39;s revisit our house price prediction. An overfit model might try to hit 
 <p>As you build your own models, always keep an eye on your training and validation performance. Don&#39;t be fooled by a perfect score on your training data; the real test lies in how well your model performs on data it has never encountered before. By applying the techniques we&#39;ve discussed – from careful feature engineering to strategic regularization and robust validation – you&#39;ll be well on your way to building models that not only work but generalize beautifully.</p>
 <p>Keep experimenting, keep learning, and keep building! Until next time.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Goldilocks Problem: Navigating Overfitting and Underfitting in Machine Learning</h1>
+             <p>Ever wondered why some AI models perform brilliantly on data they've seen but stumble on new information? It's all about finding the perfect balance between learning too much and learning too little – welcome to the world of Overfitting and Underfitting!</p>
+        </div>
+        
 </body>
 
 </html>

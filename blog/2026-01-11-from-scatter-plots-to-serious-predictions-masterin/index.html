@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Scatter Plots to Serious Predictions: Mastering Linear Regression</h1>
-           <p>Ever wondered how we make sense of data points scattered everywhere? Join me on a journey to uncover Linear Regression, the foundational technique that draws insights and makes powerful predictions by finding the straightest path through chaos.</p>
-           <p>Hey there, fellow data explorer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Scatter Plots to Serious Predictions: Mastering Linear Regression</h1>
+               <p>Ever wondered how we make sense of data points scattered everywhere? Join me on a journey to uncover Linear Regression, the foundational technique that draws insights and makes powerful predictions by finding the straightest path through chaos.</p>
+               <p>Hey there, fellow data explorer!</p>
 <p>Have you ever looked at a bunch of numbers and just <em>felt</em> like there was a pattern hidden within them, a story waiting to be told? Maybe you&#39;ve seen graphs showing how ice cream sales spike when temperatures rise, or how longer study hours generally lead to better exam scores. For me, these observations always sparked a burning question: can we <em>quantify</em> these relationships? Can we not just observe them, but actually <em>predict</em> future outcomes based on them?</p>
 <p>This curiosity is what first drew me into the world of Data Science and Machine Learning. And at the very heart of making sense of such patterns, at least for beginners, lies an elegant and incredibly powerful technique: <strong>Linear Regression</strong>. It’s often called the &quot;Hello World&quot; of predictive modeling, and for good reason. It&#39;s simple enough to grasp quickly, yet forms the backbone of countless real-world applications.</p>
 <p>So, buckle up! In this post, I want to share my journey of understanding Linear Regression – what it is, how it works, and why it&#39;s such a vital tool in our data science toolkit. We’ll dive into the intuition, the math, and even a few of the caveats, all while keeping it as engaging as a detective story.</p>
@@ -144,7 +146,14 @@ $e_i = y_i - \hat{y}_i$</p>
 <p>So, the next time you see a scatter plot, don&#39;t just see a jumble of points. See the potential for a story, a trend, and perhaps, a beautifully fitted line ready to make its next prediction. This is just the beginning of your journey into the vast and exciting world of predictive modeling. Keep exploring, keep asking questions, and keep fitting those lines!</p>
 <p>What other foundational algorithms would you like to explore next? Let me know in the comments!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Scatter Plots to Serious Predictions: Mastering Linear Regression</h1>
+             <p>Ever wondered how we make sense of data points scattered everywhere? Join me on a journey to uncover Linear Regression, the foundational technique that draws insights and makes powerful predictions by finding the straightest path through chaos.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>ROC and AUC: Your Guide to Truly Understanding Your Classification Model</h1>
-           <p>Ever wondered if 'accuracy' tells the whole story of your machine learning model? Dive into the world of ROC curves and AUC scores to discover how to truly evaluate and compare your binary classifiers, even with tricky, imbalanced data.</p>
-           <p>Hey there, fellow data enthusiast!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>ROC and AUC: Your Guide to Truly Understanding Your Classification Model</h1>
+               <p>Ever wondered if 'accuracy' tells the whole story of your machine learning model? Dive into the world of ROC curves and AUC scores to discover how to truly evaluate and compare your binary classifiers, even with tricky, imbalanced data.</p>
+               <p>Hey there, fellow data enthusiast!</p>
 <p>If you&#39;ve spent any time building classification models, you&#39;ve probably celebrated a high accuracy score. &quot;My model is 95% accurate!&quot; you might exclaim, and that&#39;s fantastic! But what if I told you that accuracy, while intuitive, doesn&#39;t always paint the full picture? Sometimes, it can even be downright misleading.</p>
 <p>I remember my early days, proudly showing off a model with 99% accuracy. My mentor, with a knowing smile, asked, &quot;What about the other 1%? Is it important?&quot; That question stuck with me. It turns out, in many real-world scenarios – like detecting a rare disease, identifying fraud, or predicting critical equipment failure – the &quot;other 1%&quot; is precisely what we care about most. A model that&#39;s 99% accurate might simply be predicting &quot;no fraud&quot; or &quot;no disease&quot; almost all the time, even if it misses the few critical cases. That&#39;s where we need more sophisticated tools to truly understand our model&#39;s performance.</p>
 <p>Today, we&#39;re going to dive deep into two such tools: the <strong>Receiver Operating Characteristic (ROC) curve</strong> and the <strong>Area Under the Curve (AUC)</strong>. These aren&#39;t just fancy metrics; they&#39;re essential for anyone serious about building robust and reliable classification models.</p>
@@ -163,7 +165,14 @@ print(f&quot;The AUC score for the model is: {roc_auc:.4f}&quot;)
 <p>The next time you&#39;re evaluating a classification model, don&#39;t just stop at accuracy. Plot that ROC curve, calculate that AUC, and truly understand the power and limitations of your model across all its potential operating points. Your more robust and insightful models will thank you for it!</p>
 <p>Keep learning, keep building, and keep pushing the boundaries of what your data can tell you!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>ROC and AUC: Your Guide to Truly Understanding Your Classification Model</h1>
+             <p>Ever wondered if 'accuracy' tells the whole story of your machine learning model? Dive into the world of ROC curves and AUC scores to discover how to truly evaluate and compare your binary classifiers, even with tricky, imbalanced data.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Straight Path to Predictions: Unpacking Linear Regression</h1>
-           <p>Ever wondered how computers make predictions from seemingly random data? Join me on a journey to unravel Linear Regression, the fundamental algorithm that finds the straight line connecting the dots.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Straight Path to Predictions: Unpacking Linear Regression</h1>
+               <p>Ever wondered how computers make predictions from seemingly random data? Join me on a journey to unravel Linear Regression, the fundamental algorithm that finds the straight line connecting the dots.</p>
+               <p>Hey everyone!</p>
 <p>Welcome to my little corner of the data science world. Today, I want to share a story about one of the first truly <em>aha!</em> moments I had in my journey into machine learning: understanding Linear Regression. It’s like discovering that beneath the chaos of everyday numbers, there&#39;s often a simple, elegant pattern just waiting to be revealed by a straight line.</p>
 <h3><strong>The Quest for Understanding: Predicting the Unpredictable</strong></h3>
 <p>Imagine you&#39;re trying to figure out how much a house in a new neighborhood might cost. You&#39;ve got data on houses sold recently: their size in square feet, number of bedrooms, distance to the nearest park, and their final selling price. If you only look at the raw numbers, it&#39;s a jumble. But then, you start noticing something: generally, bigger houses cost more. Houses closer to the park might also fetch a higher price.</p>
@@ -113,7 +115,14 @@
 <p>So, the next time you see a scatter plot, remember the elegant straight line waiting to be drawn through it – the simple yet profound power of Linear Regression. It’s a testament to how even the most complex problems can sometimes yield to a beautifully simple solution.</p>
 <p>Happy predicting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Straight Path to Predictions: Unpacking Linear Regression</h1>
+             <p>Ever wondered how computers make predictions from seemingly random data? Join me on a journey to unravel Linear Regression, the fundamental algorithm that finds the straight line connecting the dots.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Tightrope Walk: Why Precision and Recall Are More Than Just Numbers (and Why Accuracy Isn't Enough)</h1>
-           <p>Ever felt like a model's \\\"accuracy\\\" was telling you only half the story? Join me on a journey to uncover Precision and Recall, the unsung heroes that truly reveal how well our algorithms understand the world.</p>
-           <p>Hey there, fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Tightrope Walk: Why Precision and Recall Are More Than Just Numbers (and Why Accuracy Isn't Enough)</h1>
+               <p>Ever felt like a model's \\\"accuracy\\\" was telling you only half the story? Join me on a journey to uncover Precision and Recall, the unsung heroes that truly reveal how well our algorithms understand the world.</p>
+               <p>Hey there, fellow explorers of the data universe!</p>
 <p>Today, I want to talk about something that often gets glossed over when we first dive into machine learning: model evaluation. When I started, I thought, &quot;Accuracy! That&#39;s it, right? If my model is 95% accurate, it&#39;s amazing!&quot; Oh, how naive I was.</p>
 <p>It turns out, the world isn&#39;t always so straightforward. Sometimes, being &quot;mostly right&quot; isn&#39;t good enough, especially when the cost of making a specific type of mistake is astronomically high. This is where the dynamic duo of <strong>Precision</strong> and <strong>Recall</strong> stride onto the stage, ready to reveal the nuances that raw accuracy often hides.</p>
 <p>Imagine you&#39;re building a system, whether it&#39;s for detecting spam emails, diagnosing a rare disease, or flagging fraudulent transactions. In each of these scenarios, the type of mistake your model makes can have vastly different consequences. Missing a crucial email (a legitimate email wrongly classified as spam) feels different from missing an actual spam email. Missing a disease feels catastrophic compared to a false alarm.</p>
@@ -141,7 +143,14 @@
 <p>As you continue your journey into machine learning, I urge you to look beyond the seemingly simple &quot;accuracy&quot; score. Dive into the Confusion Matrix, understand the definitions of True/False Positives/Negatives, and critically ask yourself: &quot;What kind of mistake is more costly in <em>this specific situation</em>?&quot;</p>
 <p>Precision and Recall aren&#39;t just technical terms; they are powerful lenses through which we can truly understand our models&#39; behavior and, more importantly, align them with the real-world needs and values of the people and systems they serve. They remind us that building intelligent systems is about more than just prediction – it&#39;s about informed decision-making and responsible impact. Keep exploring, keep questioning, and keep learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Tightrope Walk: Why Precision and Recall Are More Than Just Numbers (and Why Accuracy Isn't Enough)</h1>
+             <p>Ever felt like a model's \\\"accuracy\\\" was telling you only half the story? Join me on a journey to uncover Precision and Recall, the unsung heroes that truly reveal how well our algorithms understand the world.</p>
+        </div>
+        
 </body>
 
 </html>

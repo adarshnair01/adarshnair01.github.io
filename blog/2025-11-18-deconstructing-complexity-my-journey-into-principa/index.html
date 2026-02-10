@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Deconstructing Complexity: My Journey into Principal Component Analysis (PCA)</h1>
-           <p>Ever felt overwhelmed by too much data? Join me as we uncover PCA, a powerful technique that cuts through the noise, revealing the hidden essence of your datasets in a simpler, more digestible form.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Deconstructing Complexity: My Journey into Principal Component Analysis (PCA)</h1>
+               <p>Ever felt overwhelmed by too much data? Join me as we uncover PCA, a powerful technique that cuts through the noise, revealing the hidden essence of your datasets in a simpler, more digestible form.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal where I explore the fascinating world of data science and machine learning. Today, I want to talk about a concept that, at first glance, seemed a bit intimidating but quickly became one of my most cherished tools: Principal Component Analysis, or PCA.</p>
 <h3>The Overwhelm: A Data Scientist&#39;s First Battle</h3>
 <p>Imagine you&#39;re trying to understand what makes a good video game. You collect data on everything: graphics quality, story depth, sound design, replayability, online features, number of levels, character customization, budget, marketing spend, review scores from 20 different critics, player counts, genre, platform, and so on. Before you know it, you have <em>hundreds</em> of attributes, or &quot;features,&quot; for each game.</p>
@@ -116,7 +118,14 @@
 <p>Until next time,
 [Your Name/Alias]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Deconstructing Complexity: My Journey into Principal Component Analysis (PCA)</h1>
+             <p>Ever felt overwhelmed by too much data? Join me as we uncover PCA, a powerful technique that cuts through the noise, revealing the hidden essence of your datasets in a simpler, more digestible form.</p>
+        </div>
+        
 </body>
 
 </html>

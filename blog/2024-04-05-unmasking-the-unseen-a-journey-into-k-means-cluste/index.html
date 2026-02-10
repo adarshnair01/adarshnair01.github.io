@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
-           <p>Ever wondered how computers find hidden patterns in data without being told what to look for? Join me as we unravel the magic behind K-Means, a powerful algorithm that helps us group similar things together.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
+               <p>Ever wondered how computers find hidden patterns in data without being told what to look for? Join me as we unravel the magic behind K-Means, a powerful algorithm that helps us group similar things together.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to the portfolio deep dive. Today, we&#39;re going on an adventure into the heart of Machine Learning, specifically into a fascinating corner known as <strong>Unsupervised Learning</strong>. Unlike our previous explorations where we trained models with labeled data (like telling a computer, &quot;this is a cat, this is a dog&quot;), today we&#39;re letting the computer discover patterns all by itself.</p>
 <p>Our guide for this journey? The humble, yet incredibly powerful, <strong>K-Means Clustering</strong> algorithm.</p>
 <h3>The &quot;Aha!&quot; Moment: What Even <em>Is</em> Clustering?</h3>
@@ -140,7 +142,14 @@
 <p>It&#39;s a testament to how elegant mathematical principles, combined with iterative processes, can unlock profound insights from raw data. Next time you encounter a dataset, think about the hidden patterns waiting to be unmasked by K-Means!</p>
 <p>Keep exploring, keep questioning, and happy clustering!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Unseen: A Journey into K-Means Clustering</h1>
+             <p>Ever wondered how computers find hidden patterns in data without being told what to look for? Join me as we unravel the magic behind K-Means, a powerful algorithm that helps us group similar things together.</p>
+        </div>
+        
 </body>
 
 </html>

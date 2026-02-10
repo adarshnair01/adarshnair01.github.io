@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Welcome to My Blog</h1>
-           <p>This is my first blog post on my new portfolio website.</p>
-           <h1>Welcome to My Blog!</h1>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Welcome to My Blog</h1>
+               <p>This is my first blog post on my new portfolio website.</p>
+               <h1>Welcome to My Blog!</h1>
 <p>This is the first post on my new blog. Since my portfolio is built with React, I decided to integrate a markdown-based blog directly into the site.</p>
 <h2>Why Markdown?</h2>
 <p>Markdown is a lightweight markup language that&#39;s easy to read and write. It&#39;s perfect for blogging because it allows you to focus on the content without worrying about complex HTML structures.</p>
@@ -35,7 +37,14 @@
 </ul>
 <p>Stay tuned for more updates!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Welcome to My Blog</h1>
+             <p>This is my first blog post on my new portfolio website.</p>
+        </div>
+        
 </body>
 
 </html>

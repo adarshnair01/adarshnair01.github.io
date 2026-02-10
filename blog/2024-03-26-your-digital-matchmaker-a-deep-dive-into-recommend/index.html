@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Your Digital Matchmaker: A Deep Dive into Recommender Systems</h1>
-           <p>Ever wondered how Netflix knows what you'll binge next or how Amazon always suggests that perfect gadget? Welcome to the fascinating world of Recommender Systems, the unseen architects shaping our digital experiences.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Your Digital Matchmaker: A Deep Dive into Recommender Systems</h1>
+               <p>Ever wondered how Netflix knows what you'll binge next or how Amazon always suggests that perfect gadget? Welcome to the fascinating world of Recommender Systems, the unseen architects shaping our digital experiences.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Today, I want to talk about something that&#39;s probably influencing your life right now, even if you don&#39;t realize it: <strong>Recommender Systems</strong>. Think about it – every time you scroll through Netflix, browse products on Amazon, discover new music on Spotify, or get suggested videos on YouTube, you&#39;re interacting with one. These systems are the digital matchmakers of our age, connecting us with items, movies, songs, or even people that we might love.</p>
 <p>For me, the fascination started with a simple question: &quot;How <em>do</em> they know?&quot; It felt like magic, but as I delved deeper into the world of Data Science and Machine Learning, I realized it&#39;s not magic at all – it&#39;s brilliant engineering and clever algorithms. If you&#39;ve ever felt that same curiosity, grab a virtual cup of coffee, because we&#39;re about to pull back the curtain on these incredible systems.</p>
 <h3>Why Do Recommender Systems Matter?</h3>
@@ -139,7 +141,14 @@ Where $P$ is the user-latent factor matrix, and $Q$ is the item-latent factor ma
 <p>So, the next time Netflix suggests your perfect Friday night movie, or Spotify introduces you to your new favorite song, take a moment to appreciate the complex, intelligent system working behind the scenes. It&#39;s not just technology; it&#39;s a testament to our ability to model human preference and connection in the digital realm.</p>
 <p>Keep exploring, keep questioning, and maybe, just maybe, you&#39;ll be the one building the next generation of digital matchmakers!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Your Digital Matchmaker: A Deep Dive into Recommender Systems</h1>
+             <p>Ever wondered how Netflix knows what you'll binge next or how Amazon always suggests that perfect gadget? Welcome to the fascinating world of Recommender Systems, the unseen architects shaping our digital experiences.</p>
+        </div>
+        
 </body>
 
 </html>

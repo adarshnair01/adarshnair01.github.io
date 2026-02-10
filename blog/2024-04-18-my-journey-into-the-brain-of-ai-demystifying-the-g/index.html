@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey into the Brain of AI: Demystifying the GPT Architecture</h1>
-           <p>Ever wondered how GPT seems to magically write stories, answer questions, and even code? Let's pull back the curtain and explore the ingenious architecture that makes these AI marvels possible, piece by intricate piece.</p>
-           <p>Hello fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey into the Brain of AI: Demystifying the GPT Architecture</h1>
+               <p>Ever wondered how GPT seems to magically write stories, answer questions, and even code? Let's pull back the curtain and explore the ingenious architecture that makes these AI marvels possible, piece by intricate piece.</p>
+               <p>Hello fellow data adventurers!</p>
 <p>It feels like just yesterday I was marveling at ChatGPT&#39;s ability to spin intricate tales or debug complex code. It felt... magical. And, as any good data scientist knows, magic is often just science we don&#39;t understand yet. So, I embarked on a personal quest: to peel back the layers and truly grasp the genius behind these Generative Pre-trained Transformers (GPTs). What I found was a beautiful, elegant, and surprisingly intuitive architecture.</p>
 <p>Come along with me, and let&#39;s explore it together. My goal today is to demystify GPT&#39;s inner workings, making it accessible whether you&#39;re a seasoned MLE or a curious high school student dipping your toes into AI.</p>
 <h3>The Spark: What Exactly <em>Is</em> a GPT?</h3>
@@ -104,7 +106,14 @@ $Output = Input + Sublayer(Input)$</p>
 <p>It&#39;s not magic, but it&#39;s certainly ingenious engineering. And understanding these core principles is your first step to not just <em>using</em> AI, but <em>building</em> the next generation of intelligent systems. So, keep exploring, keep asking questions, and maybe, just maybe, you&#39;ll be the one to uncover the next big leap!</p>
 <p>Happy coding and even happier learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey into the Brain of AI: Demystifying the GPT Architecture</h1>
+             <p>Ever wondered how GPT seems to magically write stories, answer questions, and even code? Let's pull back the curtain and explore the ingenious architecture that makes these AI marvels possible, piece by intricate piece.</p>
+        </div>
+        
 </body>
 
 </html>

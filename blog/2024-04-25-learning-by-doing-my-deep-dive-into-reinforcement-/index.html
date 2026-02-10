@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Learning by Doing: My Deep Dive into Reinforcement Learning (and Why It's So Cool!)</h1>
-           <p>Ever wondered how an AI can master a game, navigate a robot, or even drive a car, seemingly by itself? It's not magic, it's Reinforcement Learning \\u2013 the incredible field where algorithms learn through trial and error, just like we do!</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Learning by Doing: My Deep Dive into Reinforcement Learning (and Why It's So Cool!)</h1>
+               <p>Ever wondered how an AI can master a game, navigate a robot, or even drive a car, seemingly by itself? It's not magic, it's Reinforcement Learning \\u2013 the incredible field where algorithms learn through trial and error, just like we do!</p>
+               <p>Hey everyone!</p>
 <p>As someone deeply fascinated by how intelligence works, both biological and artificial, I&#39;ve spent a lot of time pondering one of the most fundamental aspects of learning: <strong>experience</strong>. Think about it – from a baby learning to walk to a seasoned chess player mastering new strategies, we all learn by trying things out, seeing what happens, and adjusting our behavior based on the outcomes. We get &quot;rewards&quot; (like successfully taking a step or winning a game) and &quot;punishments&quot; (falling over, losing). This intuitive process of &quot;learning by doing&quot; isn&#39;t just for humans; it&#39;s also at the heart of one of the most exciting branches of Artificial Intelligence: <strong>Reinforcement Learning (RL)</strong>.</p>
 <p>Today, I want to take you on a journey into the world of RL. We&#39;ll strip away the jargon and explore its core ideas, the math that makes it tick, and why it&#39;s shaping the future of AI in incredible ways. If you&#39;ve ever been curious about how AI agents can seemingly learn on their own, you&#39;re in for a treat!</p>
 <h3>The Fundamental Idea: Learning Through Interaction</h3>
@@ -123,7 +125,14 @@ $Q(s,a) \leftarrow Q(s,a) + \alpha [R_{t+1} + \gamma \max_{a&#39;} Q(S_{t+1}, a&
 <p>From simple maze-solving bots to sophisticated systems that can beat world champions in complex games, RL is pushing the boundaries of what AI can achieve. As we continue to develop more robust algorithms and harness greater computational power, I believe RL will play an even more pivotal role in creating intelligent systems that can truly learn by doing, solving some of humanity&#39;s most complex challenges.</p>
 <p>It&#39;s an exciting time to be involved in Data Science and Machine Learning, and diving deeper into RL is definitely a journey worth taking. Keep learning, keep experimenting, and who knows what incredible AI agents you might build!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Learning by Doing: My Deep Dive into Reinforcement Learning (and Why It's So Cool!)</h1>
+             <p>Ever wondered how an AI can master a game, navigate a robot, or even drive a car, seemingly by itself? It's not magic, it's Reinforcement Learning \\u2013 the incredible field where algorithms learn through trial and error, just like we do!</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Unseen: A Deep Dive into K-Means Clustering</h1>
-           <p>Ever wondered how machines find hidden patterns in data without being told what to look for? Join me on a journey to explore K-Means, a beautifully simple yet powerful algorithm that helps us discover natural groupings in the wild world of unlabeled data.</p>
-           <h2>My First Foray into Unsupervised Learning</h2>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Unseen: A Deep Dive into K-Means Clustering</h1>
+               <p>Ever wondered how machines find hidden patterns in data without being told what to look for? Join me on a journey to explore K-Means, a beautifully simple yet powerful algorithm that helps us discover natural groupings in the wild world of unlabeled data.</p>
+               <h2>My First Foray into Unsupervised Learning</h2>
 <p>Hey there, fellow data explorer!</p>
 <p>Do you remember that feeling when you first started learning about machine learning? All those exciting stories about predicting house prices, recognizing faces, or translating languages. Most of those fall under &quot;supervised learning&quot; – where we have historical data with clear labels, and our algorithms learn to map inputs to outputs.</p>
 <p>But what if you&#39;re given a massive dataset with no labels, no categories, no &quot;correct answers&quot; to learn from? What if you just have a jumble of points, and your task is to figure out if there are any natural groups lurking within? That&#39;s precisely the challenge that got me hooked on unsupervised learning, and it&#39;s where K-Means clustering truly shines.</p>
@@ -129,7 +131,14 @@ $\mu_j = \frac{1}{N_j} \sum_{i=1}^{N_j} x_i$</p>
 <p>So, next time you&#39;re faced with a sea of unlabeled data, remember the dance of K-Means. It might just be the algorithm to help you unmask the unseen patterns waiting to be discovered!</p>
 <p>Happy clustering!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Unseen: A Deep Dive into K-Means Clustering</h1>
+             <p>Ever wondered how machines find hidden patterns in data without being told what to look for? Join me on a journey to explore K-Means, a beautifully simple yet powerful algorithm that helps us discover natural groupings in the wild world of unlabeled data.</p>
+        </div>
+        
 </body>
 
 </html>

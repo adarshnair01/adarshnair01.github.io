@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
-           <p>We've built incredible AI models, but do we truly understand *why* they make the decisions they do? Join me as we explore Explainable AI (XAI) and peek inside the fascinating, often opaque, world of artificial intelligence.</p>
-           <h2>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h2>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
+               <p>We've built incredible AI models, but do we truly understand *why* they make the decisions they do? Join me as we explore Explainable AI (XAI) and peek inside the fascinating, often opaque, world of artificial intelligence.</p>
+               <h2>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h2>
 <p>Hey there, fellow explorers of the data frontier!</p>
 <p>If you&#39;re anything like me, you&#39;ve been captivated by the sheer power of Artificial Intelligence. From recommending your next binge-watch to driving autonomous vehicles, AI is everywhere, quietly (or sometimes loudly) shaping our world. It&#39;s exhilarating to build a model that achieves 95% accuracy, isn&#39;t it? But then, that lingering question creeps in: &quot;How did it <em>actually</em> get there?&quot; Or, more pointedly, &quot;Why did it make <em>that specific</em> prediction?&quot;</p>
 <p>For a long time, especially with complex models like deep neural networks or intricate ensemble methods, the answer was often a shrug and a &quot;well, it just <em>does</em>.&quot; We called these &quot;black box&quot; models. They take an input, give an output, and what happens in between is largely a mystery. But as AI moves into critical domains – healthcare, finance, justice – that shrug isn&#39;t good enough anymore. And frankly, as a data scientist, the mystery, while intriguing, quickly becomes a barrier to true understanding and responsible deployment.</p>
@@ -117,7 +119,14 @@
 <p>My journey into XAI has fundamentally changed how I approach building and deploying AI systems. It&#39;s transformed AI from a magical oracle into a powerful, albeit complex, tool that we can understand, scrutinize, and ultimately, improve.</p>
 <p>As data scientists and machine learning engineers, we have a responsibility to not just build powerful models, but to build <em>understandable</em> and <em>trustworthy</em> ones. XAI is the compass guiding us toward that future – a future where AI isn&#39;t just intelligent, but also wise, transparent, and accountable. It&#39;s a journey I&#39;m excited to continue, and I hope you&#39;ll join me!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
+             <p>We've built incredible AI models, but do we truly understand *why* they make the decisions they do? Join me as we explore Explainable AI (XAI) and peek inside the fascinating, often opaque, world of artificial intelligence.</p>
+        </div>
+        
 </body>
 
 </html>

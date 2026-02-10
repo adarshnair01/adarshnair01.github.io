@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Art of the Descent: How AI Learns to Optimize with Gradient Descent</h1>
-           <p>Ever wondered how AI "learns" to make decisions or predict outcomes? It's not magic, but a clever, iterative journey down a hill, guided by a mathematical compass. Discover Gradient Descent, the fundamental algorithm that helps machines find optimal solutions.</p>
-           <p>Hey everyone! Have you ever looked at a perfectly trained AI model – whether it&#39;s recognizing faces, recommending movies, or driving a car – and wondered, &quot;How did it <em>learn</em> to do that?&quot; It seems almost magical, right? For a long time, I found myself in awe, thinking there must be some incredibly complex, mystical process at play. But then I delved deeper, and discovered the elegant simplicity of its core mechanism: an algorithm called <strong>Gradient Descent</strong>.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Art of the Descent: How AI Learns to Optimize with Gradient Descent</h1>
+               <p>Ever wondered how AI "learns" to make decisions or predict outcomes? It's not magic, but a clever, iterative journey down a hill, guided by a mathematical compass. Discover Gradient Descent, the fundamental algorithm that helps machines find optimal solutions.</p>
+               <p>Hey everyone! Have you ever looked at a perfectly trained AI model – whether it&#39;s recognizing faces, recommending movies, or driving a car – and wondered, &quot;How did it <em>learn</em> to do that?&quot; It seems almost magical, right? For a long time, I found myself in awe, thinking there must be some incredibly complex, mystical process at play. But then I delved deeper, and discovered the elegant simplicity of its core mechanism: an algorithm called <strong>Gradient Descent</strong>.</p>
 <p>Think of it like this: if AI has a brain, Gradient Descent is one of the most critical processes running inside it, teaching it how to get better, step by careful step. Today, I want to take you on a journey to demystify this powerful algorithm, showing you not just <em>what</em> it is, but <em>how</em> it works, and why it&#39;s so fundamental to the world of data science and machine learning.</p>
 <h2>The Valley of Errors: Our AI&#39;s Quest</h2>
 <p>Imagine you&#39;re blindfolded and dropped onto a vast, undulating mountain range. Your mission, should you choose to accept it, is to find the absolute lowest point in this entire landscape – a deep valley. You can&#39;t see, so how do you proceed?</p>
@@ -120,7 +122,14 @@ $b_{new} = b_{old} - \alpha \frac{\partial J}{\partial b}$</p>
 <p>So, the next time you hear about an AI accomplishing an impressive feat, remember the humble yet powerful Gradient Descent. It&#39;s not a magical black box, but a methodical, iterative process of feeling its way down an error landscape, guided by the compass of the gradient, one carefully chosen step at a time. It’s a beautiful testament to how mathematics forms the bedrock of our technological future.</p>
 <p>Keep exploring, keep learning, and perhaps try implementing a simple Gradient Descent yourself! It&#39;s a truly rewarding experience to see this concept come to life in code. Happy descending!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Art of the Descent: How AI Learns to Optimize with Gradient Descent</h1>
+             <p>Ever wondered how AI "learns" to make decisions or predict outcomes? It's not magic, but a clever, iterative journey down a hill, guided by a mathematical compass. Discover Gradient Descent, the fundamental algorithm that helps machines find optimal solutions.</p>
+        </div>
+        
 </body>
 
 </html>

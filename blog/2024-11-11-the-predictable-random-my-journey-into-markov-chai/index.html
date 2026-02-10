@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Predictable Random: My Journey into Markov Chains</h1>
-           <p>Ever wondered how complex sequences, from weather patterns to website rankings, can be modeled with surprising simplicity? Join me as we demystify Markov Chains, a powerful concept where the future depends only on the present.</p>
-           <p>As a budding data scientist, I&#39;m often struck by the elegant simplicity underlying some of the most profound concepts in our field. One such concept that captivated me early on, bridging the gap between abstract mathematics and real-world applications, is the <strong>Markov Chain</strong>. It’s a tool so versatile, it powers everything from Google&#39;s PageRank algorithm to the predictive text on your phone.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Predictable Random: My Journey into Markov Chains</h1>
+               <p>Ever wondered how complex sequences, from weather patterns to website rankings, can be modeled with surprising simplicity? Join me as we demystify Markov Chains, a powerful concept where the future depends only on the present.</p>
+               <p>As a budding data scientist, I&#39;m often struck by the elegant simplicity underlying some of the most profound concepts in our field. One such concept that captivated me early on, bridging the gap between abstract mathematics and real-world applications, is the <strong>Markov Chain</strong>. It’s a tool so versatile, it powers everything from Google&#39;s PageRank algorithm to the predictive text on your phone.</p>
 <p>But what exactly <em>is</em> a Markov Chain? When I first encountered the term, it sounded intimidating, almost like something out of a dense theoretical physics textbook. Yet, as I dug deeper, I realized its core idea is beautifully intuitive. It&#39;s about making predictions based on <em>just</em> the current situation, forgetting everything that happened before.</p>
 <p>Let&#39;s dive in.</p>
 <h3>The Heart of the Matter: Memorylessness</h3>
@@ -138,7 +140,14 @@ We can achieve this by multiplying the transition matrix by itself. If $P$ gives
 <p>My exploration of Markov Chains continues. What started as a simple concept of &quot;memorylessness&quot; has unfolded into a rich tapestry of applications and theoretical depth. From understanding how my favorite search engine works to appreciating the nuances of natural language, Markov Chains offer a robust framework for modeling sequential data.</p>
 <p>If you&#39;re just starting out in data science or machine learning, I highly encourage you to spend some time with Markov Chains. They provide a fantastic stepping stone into understanding stochastic processes, dynamic systems, and the elegant ways mathematics can model the seemingly random patterns of our world. It&#39;s a journey well worth taking!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Predictable Random: My Journey into Markov Chains</h1>
+             <p>Ever wondered how complex sequences, from weather patterns to website rankings, can be modeled with surprising simplicity? Join me as we demystify Markov Chains, a powerful concept where the future depends only on the present.</p>
+        </div>
+        
 </body>
 
 </html>

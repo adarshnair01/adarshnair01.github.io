@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Goldilocks Problem: Finding the 'Just Right' Model in Machine Learning</h1>
-           <p>Ever wondered why some AI models fail spectacularly, while others seem to predict the future with eerie accuracy? It all boils down to a delicate balancing act: understanding the twin perils of overfitting and underfitting.</p>
-           <p>Hello fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Goldilocks Problem: Finding the 'Just Right' Model in Machine Learning</h1>
+               <p>Ever wondered why some AI models fail spectacularly, while others seem to predict the future with eerie accuracy? It all boils down to a delicate balancing act: understanding the twin perils of overfitting and underfitting.</p>
+               <p>Hello fellow explorers of the data universe!</p>
 <p>If you&#39;re anything like me, you&#39;ve probably been captivated by the seemingly magical predictions of machine learning models. From recommending your next favorite song to powering self-driving cars, these algorithms are transforming our world. But behind every successful model lies a struggle, a fundamental challenge that data scientists wrestle with every single day: the &quot;Goldilocks Problem.&quot;</p>
 <p>No, we&#39;re not talking about porridge. We&#39;re talking about finding the model that&#39;s &quot;just right&quot; – not too simple, not too complex, but perfectly balanced to make accurate predictions on data it has <em>never seen before</em>. This, my friends, is the heart of <strong>generalization</strong>, and it&#39;s where the twin evils of <strong>overfitting</strong> and <strong>underfitting</strong> come into play.</p>
 <p>Let&#39;s embark on a journey to demystify these concepts and understand how we train our models to be smart, not just parrots.</p>
@@ -130,7 +132,14 @@ Again, consider our scatter plot with data points forming a gentle curve. An ove
 <p>So, the next time you encounter a machine learning model, take a moment to appreciate the &quot;Goldilocks Problem&quot; that its creators had to solve to make it &quot;just right.&quot; Keep exploring, keep questioning, and happy modeling!</p>
 <hr>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Goldilocks Problem: Finding the 'Just Right' Model in Machine Learning</h1>
+             <p>Ever wondered why some AI models fail spectacularly, while others seem to predict the future with eerie accuracy? It all boils down to a delicate balancing act: understanding the twin perils of overfitting and underfitting.</p>
+        </div>
+        
 </body>
 
 </html>

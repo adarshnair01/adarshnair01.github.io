@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Sigmoid's Secret: Unpacking Logistic Regression for Classification</h1>
-           <p>Ever wondered how computers decide between 'yes' and 'no'? Dive into Logistic Regression, the elegant algorithm that powers countless classification tasks, from predicting disease to filtering spam, by understanding the magic of the Sigmoid function.</p>
-           <p>Hey there, fellow data explorer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Sigmoid's Secret: Unpacking Logistic Regression for Classification</h1>
+               <p>Ever wondered how computers decide between 'yes' and 'no'? Dive into Logistic Regression, the elegant algorithm that powers countless classification tasks, from predicting disease to filtering spam, by understanding the magic of the Sigmoid function.</p>
+               <p>Hey there, fellow data explorer!</p>
 <p>Have you ever paused to wonder how a computer distinguishes between &#39;yes&#39; and &#39;no&#39;? How does it decide if an email is spam or not, if a customer will churn, or if a tumor is benign or malignant? These aren&#39;t simple &#39;more&#39; or &#39;less&#39; problems; they&#39;re about choosing categories. And that, my friends, is the realm of classification. Today, we&#39;re going to pull back the curtain on one of the most fundamental, yet incredibly powerful, algorithms in this domain: <strong>Logistic Regression</strong>.</p>
 <h3>Beyond Linear: Why Classification Needs a Different Approach</h3>
 <p>My first thought, and maybe yours too, was: &quot;Can&#39;t we just use Linear Regression?&quot; After all, it&#39;s great at predicting numerical values, like house prices or temperatures, right? If we assign &#39;0&#39; to one category and &#39;1&#39; to another, maybe a linear line could fit?</p>
@@ -111,7 +113,14 @@ $ P(Y=1|X) = \frac{1}{1 + e^{-z}} $</li>
 <p>Logistic Regression might be one of the older algorithms in the machine learning toolbox, but its simplicity, efficiency, and interpretability make it a cornerstone for data scientists and ML engineers alike. It&#39;s a fantastic starting point for any classification task and often serves as a robust baseline against which more complex models are measured.</p>
 <p>So, the next time you see a computer make a &#39;yes&#39; or &#39;no&#39; decision, you&#39;ll know there&#39;s a good chance a bit of sigmoid magic, powered by Logistic Regression, is quietly working its charm behind the scenes. Keep exploring, keep questioning, and keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Sigmoid's Secret: Unpacking Logistic Regression for Classification</h1>
+             <p>Ever wondered how computers decide between 'yes' and 'no'? Dive into Logistic Regression, the elegant algorithm that powers countless classification tasks, from predicting disease to filtering spam, by understanding the magic of the Sigmoid function.</p>
+        </div>
+        
 </body>
 
 </html>

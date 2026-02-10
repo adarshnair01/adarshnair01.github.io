@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unveiling Hidden Worlds: A Journey into t-SNE, the Data Whisperer</h1>
-           <p>Ever felt lost in a sea of data, struggling to see the forest for the trees? Join me as we dive into t-SNE, a magical tool that helps us visualize complex, high-dimensional data in a way that reveals its secret, intricate structures.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unveiling Hidden Worlds: A Journey into t-SNE, the Data Whisperer</h1>
+               <p>Ever felt lost in a sea of data, struggling to see the forest for the trees? Join me as we dive into t-SNE, a magical tool that helps us visualize complex, high-dimensional data in a way that reveals its secret, intricate structures.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever tried to describe something incredibly complex, like the full, intricate beauty of a rainforest, to someone who&#39;s only ever seen a single tree? Or perhaps imagined trying to draw a fully three-dimensional object, with all its depths and curves, onto a flat piece of paper, while still wanting to show how everything is connected <em>inside</em>?</p>
 <p>That&#39;s the kind of challenge we face constantly in the world of Data Science and Machine Learning. We&#39;re often dealing with data that has <em>hundreds</em>, sometimes <em>thousands</em>, of &quot;dimensions&quot; or features. Imagine trying to understand customer behavior based on their age, income, purchase history, website clicks, social media activity, location, favorite colors, political views... the list goes on! Each of these is a dimension. Our brains are fantastic, but they&#39;re fundamentally limited to perceiving the world in 3D (plus time). How do we make sense of 1000 dimensions?</p>
 <p>This is where the magic of <strong>dimensionality reduction</strong> comes in. It&#39;s about taking that incredibly rich, multi-dimensional information and squishing it down into something we can actually look at, usually two or three dimensions, without losing the most important relationships. And today, I want to talk about one of the most celebrated and often-used tools for this: <strong>t-Distributed Stochastic Neighbor Embedding</strong>, or <strong>t-SNE</strong> for short.</p>
@@ -105,7 +107,14 @@
 <p>t-SNE is a powerful, elegant, and often beautiful tool for peeling back the layers of high-dimensional data. It&#39;s not a silver bullet, and its outputs require careful interpretation, but when used thoughtfully, it can provide profound insights into the hidden structures and relationships that define your data.</p>
 <p>So next time you&#39;re faced with an overwhelming dataset, don&#39;t despair! Remember t-SNE, the data whisperer, ready to help you draw a meaningful map of your data&#39;s secret neighborhoods. Go forth, explore, and unveil those hidden worlds!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unveiling Hidden Worlds: A Journey into t-SNE, the Data Whisperer</h1>
+             <p>Ever felt lost in a sea of data, struggling to see the forest for the trees? Join me as we dive into t-SNE, a magical tool that helps us visualize complex, high-dimensional data in a way that reveals its secret, intricate structures.</p>
+        </div>
+        
 </body>
 
 </html>

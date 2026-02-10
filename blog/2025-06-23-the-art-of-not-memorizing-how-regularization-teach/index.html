@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Art of Not Memorizing: How Regularization Teaches Models to Truly Learn</h1>
-           <p>Ever wonder why some students ace exams by understanding, while others just cram and forget? In data science, regularization is the secret sauce that helps our models learn, not just memorize, making them truly smart.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Art of Not Memorizing: How Regularization Teaches Models to Truly Learn</h1>
+               <p>Ever wonder why some students ace exams by understanding, while others just cram and forget? In data science, regularization is the secret sauce that helps our models learn, not just memorize, making them truly smart.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my portfolio journal. Today, I want to dive into a concept that, once you grasp it, will fundamentally change how you think about building robust machine learning models: <strong>Regularization</strong>.</p>
 <p>Imagine you&#39;re preparing for a big exam. You have two ways to study:</p>
 <ol>
@@ -109,7 +111,14 @@ If a feature&#39;s coefficient becomes zero, it means that feature is completely
 <p>Next time you train a model, remember the student who understood the concepts, not just memorized the answers. Regularization helps your models become that student.</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Art of Not Memorizing: How Regularization Teaches Models to Truly Learn</h1>
+             <p>Ever wonder why some students ace exams by understanding, while others just cram and forget? In data science, regularization is the secret sauce that helps our models learn, not just memorize, making them truly smart.</p>
+        </div>
+        
 </body>
 
 </html>

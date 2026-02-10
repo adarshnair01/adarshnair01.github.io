@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Crossing the Threshold: My Dive into Logistic Regression</h1>
-           <p>Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict "yes" or "no" outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices.</p>
-           <h3>Hey there, fellow data explorers!</h3>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Crossing the Threshold: My Dive into Logistic Regression</h1>
+               <p>Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict "yes" or "no" outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices.</p>
+               <h3>Hey there, fellow data explorers!</h3>
 <p>Today, I want to share something that truly clicked for me when I first started learning about machine learning: Logistic Regression. It&#39;s one of those foundational algorithms that pops up everywhere, yet its name can sometimes feel a bit intimidating. &quot;Regression? I thought we were classifying things!&quot; you might think, and trust me, I&#39;ve been there. But once you pull back the curtain, it&#39;s remarkably intuitive and incredibly powerful.</p>
 <p>So, grab a virtual coffee, and let&#39;s unravel this together.</p>
 <h3>The &quot;Yes&quot; or &quot;No&quot; Dilemma</h3>
@@ -137,7 +139,14 @@
 <p>It&#39;s a workhorse in data science, used in everything from medical diagnosis and credit scoring to predicting customer churn and website conversion. It&#39;s often the first algorithm I reach for when tackling a binary classification problem, not just because it&#39;s simple, but because it&#39;s effective and interpretable.</p>
 <p>So, the next time you see a &quot;yes&quot; or &quot;no&quot; prediction, remember the humble yet powerful Logistic Regression working behind the scenes, crossing thresholds and making decisions, one S-curve at a time. Keep exploring, keep questioning, and happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Crossing the Threshold: My Dive into Logistic Regression</h1>
+             <p>Join me on a journey to demystify Logistic Regression, the elegant algorithm that helps us predict "yes" or "no" outcomes, from spam detection to medical diagnoses. It's more than just a fancy math trick; it's a powerful tool for making sense of choices.</p>
+        </div>
+        
 </body>
 
 </html>

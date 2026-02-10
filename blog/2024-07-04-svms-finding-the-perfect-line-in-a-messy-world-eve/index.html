@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>SVMs: Finding the Perfect Line in a Messy World (Even When There Isn't One)</h1>
-           <p>Ever wondered how a machine learning model can classify data with such precision, even when the data looks completely jumbled? Dive into the world of Support Vector Machines, where the magic isn't just about drawing a line, but finding the *best possible* line, or even transforming the space itself!</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>SVMs: Finding the Perfect Line in a Messy World (Even When There Isn't One)</h1>
+               <p>Ever wondered how a machine learning model can classify data with such precision, even when the data looks completely jumbled? Dive into the world of Support Vector Machines, where the magic isn't just about drawing a line, but finding the *best possible* line, or even transforming the space itself!</p>
+               <p>Hello fellow data explorers!</p>
 <p>Today, I want to share a journey into one of the most elegant and powerful algorithms in the machine learning toolkit: <strong>Support Vector Machines (SVMs)</strong>. When I first encountered SVMs, they felt like magic. They could draw a line (or a curve!) to separate data points with astonishing accuracy, even in situations where I thought it was impossible. It&#39;s a testament to mathematical ingenuity meeting real-world problems. So, grab your imaginary lab coat, and let&#39;s unravel the secrets of SVMs together!</p>
 <h3>The Challenge: Drawing the Line</h3>
 <p>Imagine you&#39;re trying to separate two types of fruit in a basket – say, apples and oranges. If they&#39;re clearly distinct in size and color, it&#39;s easy. You could literally draw a line in your mind, or physically separate them into two piles. This is classification in its simplest form.</p>
@@ -154,7 +156,14 @@ $w \cdot x + b = -1$ (for the negative class, e.g., apples)</p>
 <p>Our journey through Support Vector Machines reveals an algorithm of remarkable elegance and power. From the simple yet profound idea of maximizing a margin, to the genius of handling non-linear data through the kernel trick, SVMs stand as a testament to how mathematical insights can yield incredibly effective solutions for complex real-world problems.</p>
 <p>Next time you see a machine learning model performing seemingly magic classifications, remember the humble support vectors, the expansive margin, and the clever kernel trick working tirelessly behind the scenes. SVMs truly allow us to find that &quot;perfect line&quot; – even when our intuition says there isn&#39;t one. Keep exploring, keep questioning, and keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>SVMs: Finding the Perfect Line in a Messy World (Even When There Isn't One)</h1>
+             <p>Ever wondered how a machine learning model can classify data with such precision, even when the data looks completely jumbled? Dive into the world of Support Vector Machines, where the magic isn't just about drawing a line, but finding the *best possible* line, or even transforming the space itself!</p>
+        </div>
+        
 </body>
 
 </html>

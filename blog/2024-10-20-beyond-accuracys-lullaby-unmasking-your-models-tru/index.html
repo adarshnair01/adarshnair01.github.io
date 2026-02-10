@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy's Lullaby: Unmasking Your Model's True Story with Precision and Recall</h1>
-           <p>Forget accuracy! Dive into the world of Precision and Recall, two vital metrics that reveal the true performance of your machine learning models and guide you through critical decision-making in the real world.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy's Lullaby: Unmasking Your Model's True Story with Precision and Recall</h1>
+               <p>Forget accuracy! Dive into the world of Precision and Recall, two vital metrics that reveal the true performance of your machine learning models and guide you through critical decision-making in the real world.</p>
+               <p>Hey everyone!</p>
 <p>Ever built a machine learning model, watched its accuracy soar, and felt that rush of accomplishment? I know I have! There&#39;s a certain satisfaction in seeing <code>Accuracy: 0.95</code> or even <code>0.99</code>. It feels like you&#39;ve created a masterpiece, a digital prophet predicting the future with uncanny precision.</p>
 <p>But what if I told you that accuracy, while important, can sometimes be a deceptive friend? What if I said that a model with 99% accuracy could, in certain crucial situations, be utterly useless, or even dangerous?</p>
 <p>Sounds counterintuitive, right? Well, today, we&#39;re going on an adventure beyond the comforting simplicity of accuracy. We&#39;re going to dive deep into two unsung heroes of model evaluation: <strong>Precision</strong> and <strong>Recall</strong>. These metrics don&#39;t just tell you <em>if</em> your model is right; they tell you <em>how</em> it&#39;s right, and more importantly, <em>where</em> it&#39;s wrong, which is often far more critical.</p>
@@ -168,7 +170,14 @@
 <p>By thoughtfully considering these questions, you&#39;ll be able to choose the right metrics, tune your models effectively, and build systems that are not just intelligent, but also responsible and truly valuable.</p>
 <p>Keep exploring, keep questioning, and keep building better models that understand the nuances of the world! What are some real-world scenarios where you&#39;ve had to make tough choices between Precision and Recall? Share your thoughts in the comments!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy's Lullaby: Unmasking Your Model's True Story with Precision and Recall</h1>
+             <p>Forget accuracy! Dive into the world of Precision and Recall, two vital metrics that reveal the true performance of your machine learning models and guide you through critical decision-making in the real world.</p>
+        </div>
+        
 </body>
 
 </html>

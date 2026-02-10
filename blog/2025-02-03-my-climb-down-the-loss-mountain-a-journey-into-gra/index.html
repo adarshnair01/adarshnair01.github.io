@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Climb Down the Loss Mountain: A Journey into Gradient Descent</h1>
-           <p>Ever wondered how machines "learn" to make decisions or predictions? At the heart of many powerful AI models lies a surprisingly intuitive, yet profoundly effective algorithm called Gradient Descent. It's how our models find their way to the best possible answers.</p>
-           <p>Welcome, fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Climb Down the Loss Mountain: A Journey into Gradient Descent</h1>
+               <p>Ever wondered how machines "learn" to make decisions or predictions? At the heart of many powerful AI models lies a surprisingly intuitive, yet profoundly effective algorithm called Gradient Descent. It's how our models find their way to the best possible answers.</p>
+               <p>Welcome, fellow explorers of the digital frontier!</p>
 <p>Today, I want to share a story, a journey really, that&#39;s fundamental to understanding how intelligent systems come to be. It&#39;s a tale of finding the lowest point in a complex landscape, a quest for optimal answers – and it&#39;s called <strong>Gradient Descent</strong>.</p>
 <p>Think of it this way: Imagine you&#39;re blindfolded, standing on a vast, undulating terrain somewhere in the mountains. Your goal? To reach the lowest point in the valley. You can&#39;t see the path ahead, but you <em>can</em> feel the slope directly beneath your feet. What do you do? Naturally, you&#39;d take a step in the direction that feels steepest downwards. You&#39;d repeat this process, taking small steps, always feeling for the steepest descent, until you eventually find yourself at the bottom.</p>
 <p>This, in a nutshell, is the intuitive magic behind Gradient Descent.</p>
@@ -115,7 +117,14 @@ $</p>
 <p>Learning about Gradient Descent was a pivotal moment in my own data science journey. It transformed my understanding of abstract mathematical concepts into practical, tangible mechanisms that power AI. It&#39;s a beautiful demonstration of how simple, iterative steps, guided by a clear objective, can lead to powerful and intelligent outcomes.</p>
 <p>As you continue your own exploration of machine learning, remember the blindfolded climber. Understand the terrain (the loss function), trust your compass (the gradient), and choose your steps wisely (the learning rate). With these principles, you&#39;re well-equipped to guide your models to their own &quot;best&quot; answers. Keep learning, keep experimenting, and keep descending!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Climb Down the Loss Mountain: A Journey into Gradient Descent</h1>
+             <p>Ever wondered how machines "learn" to make decisions or predictions? At the heart of many powerful AI models lies a surprisingly intuitive, yet profoundly effective algorithm called Gradient Descent. It's how our models find their way to the best possible answers.</p>
+        </div>
+        
 </body>
 
 </html>

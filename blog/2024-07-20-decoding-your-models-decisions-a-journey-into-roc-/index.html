@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Decoding Your Model's Decisions: A Journey into ROC Curves and AUC Scores</h1>
-           <p>Ever wondered if your machine learning model is truly 'good' beyond just its accuracy score? Let's dive into ROC curves and AUC to uncover the deeper truth of its performance, revealing how well it distinguishes between positive and negative outcomes.</p>
-           <p>Hello fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Decoding Your Model's Decisions: A Journey into ROC Curves and AUC Scores</h1>
+               <p>Ever wondered if your machine learning model is truly 'good' beyond just its accuracy score? Let's dive into ROC curves and AUC to uncover the deeper truth of its performance, revealing how well it distinguishes between positive and negative outcomes.</p>
+               <p>Hello fellow data adventurers!</p>
 <p>Today, I want to share a little story, a common &quot;aha!&quot; moment I&#39;ve had many times in my machine learning journey, and one that I think many of you might relate to. It often starts like this:</p>
 <p>&quot;My model achieved 95% accuracy! It&#39;s fantastic!&quot;</p>
 <p>...and then, the cold splash of reality when it goes into production, and suddenly, &quot;fantastic&quot; doesn&#39;t quite describe the situation. It&#39;s missing crucial positive cases, or it&#39;s crying wolf too often. What went wrong? Why did our trusty accuracy metric betray us?</p>
@@ -163,7 +165,14 @@ print(f&quot;The AUC score for this model is: {roc_auc:.2f}&quot;)
 <p>They are not just metrics; they are lenses that reveal the intrinsic ability of your model to discriminate, allowing you to fine-tune its behavior for your specific needs, rather than blindly trusting a single number.</p>
 <p>Go forth, evaluate with confidence, and build models that don&#39;t just predict, but truly understand! Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Decoding Your Model's Decisions: A Journey into ROC Curves and AUC Scores</h1>
+             <p>Ever wondered if your machine learning model is truly 'good' beyond just its accuracy score? Let's dive into ROC curves and AUC to uncover the deeper truth of its performance, revealing how well it distinguishes between positive and negative outcomes.</p>
+        </div>
+        
 </body>
 
 </html>

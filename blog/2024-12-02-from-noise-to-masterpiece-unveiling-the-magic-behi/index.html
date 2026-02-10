@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Noise to Masterpiece: Unveiling the Magic Behind Diffusion Models</h1>
-           <p>Ever wondered how AI conjures stunning images, music, or even complex molecules from thin air? Join me on a journey into the heart of Diffusion Models, the revolutionary technology turning digital static into breathtaking reality.</p>
-           <p>Hello fellow explorers of the AI universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Noise to Masterpiece: Unveiling the Magic Behind Diffusion Models</h1>
+               <p>Ever wondered how AI conjures stunning images, music, or even complex molecules from thin air? Join me on a journey into the heart of Diffusion Models, the revolutionary technology turning digital static into breathtaking reality.</p>
+               <p>Hello fellow explorers of the AI universe!</p>
 <p>Lately, if you&#39;ve been anywhere near the internet, you&#39;ve probably seen jaw-dropping images created by AI – fantastical landscapes, hyper-realistic portraits, or even adorable anthropomorphic animals. Tools like DALL-E 2, Stable Diffusion, and Midjourney have democratized creativity, allowing anyone to become a digital artist with just a few words. But what&#39;s the secret sauce behind this artistic revolution? More often than not, it&#39;s a family of algorithms called <strong>Diffusion Models</strong>.</p>
 <p>As a data science enthusiast, I&#39;ve always been captivated by generative AI. From the early days of Generative Adversarial Networks (GANs) to the more recent advancements, the idea of a machine <em>creating</em> something entirely new, rather than just classifying or predicting, feels like genuine magic. Diffusion Models, however, have truly stolen the spotlight, offering unprecedented quality and stability. Today, I want to demystify these models and walk you through their elegant yet surprisingly simple core ideas.</p>
 <h3>Imagine an Artist and a Canvas... Made of Noise</h3>
@@ -92,7 +94,14 @@ where $z \sim \mathcal{N}(0, \mathbf{I})$ (unless $t=1$, where $z$ is omitted), 
 <p>As someone who loves blending the mathematical rigor of machine learning with its awe-inspiring applications, diving into Diffusion Models has been a truly enriching experience. They remind us that sometimes, the most profound insights come from understanding how to systematically undo a simple act of chaos. The future of AI is undeniably generative, and Diffusion Models are undoubtedly leading the charge, transforming noise into masterpieces one step at a time.</p>
 <p>I hope this journey into the heart of Diffusion Models has sparked your curiosity and given you a deeper appreciation for the ingenuity behind these incredible systems. The possibilities are truly boundless!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Noise to Masterpiece: Unveiling the Magic Behind Diffusion Models</h1>
+             <p>Ever wondered how AI conjures stunning images, music, or even complex molecules from thin air? Join me on a journey into the heart of Diffusion Models, the revolutionary technology turning digital static into breathtaking reality.</p>
+        </div>
+        
 </body>
 
 </html>

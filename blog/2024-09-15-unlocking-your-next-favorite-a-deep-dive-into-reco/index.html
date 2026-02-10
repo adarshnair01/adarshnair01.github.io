@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking Your Next Favorite: A Deep Dive into Recommender Systems</h1>
-           <p>Ever wondered how Netflix knows exactly what movie you'll love next, or how Amazon always seems to suggest that perfect product? Dive into the fascinating world of Recommender Systems, the unseen architects behind our personalized digital experiences, and discover the algorithms that power them.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking Your Next Favorite: A Deep Dive into Recommender Systems</h1>
+               <p>Ever wondered how Netflix knows exactly what movie you'll love next, or how Amazon always seems to suggest that perfect product? Dive into the fascinating world of Recommender Systems, the unseen architects behind our personalized digital experiences, and discover the algorithms that power them.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my portfolio journal. Today, I want to talk about something truly ubiquitous in our digital lives, yet often goes unnoticed: Recommender Systems. You interact with them hundreds of times a day, whether you realize it or not. They are the silent architects of your personalized online experience, whispering suggestions that often feel uncannily accurate.</p>
 <p>Think about it:</p>
 <ul>
@@ -131,7 +133,14 @@
 <p>If you&#39;re looking to dive deeper, I encourage you to experiment with publicly available datasets like the MovieLens dataset. Try implementing a simple content-based recommender or a basic user-based collaborative filter. You&#39;ll quickly see the power and complexity involved!</p>
 <p>Thanks for joining me on this exploration. Until next time, keep exploring, keep learning, and maybe, just maybe, let that recommendation guide you to something truly amazing.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking Your Next Favorite: A Deep Dive into Recommender Systems</h1>
+             <p>Ever wondered how Netflix knows exactly what movie you'll love next, or how Amazon always seems to suggest that perfect product? Dive into the fascinating world of Recommender Systems, the unseen architects behind our personalized digital experiences, and discover the algorithms that power them.</p>
+        </div>
+        
 </body>
 
 </html>

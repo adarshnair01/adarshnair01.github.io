@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Predicting the Future with a Straight Line: A Journey into Linear Regression</h1>
-           <p>Ever wondered how machines make educated guesses about the future? Our journey into Linear Regression begins with a simple idea: finding the perfect straight line to predict outcomes, opening the door to the vast world of machine learning.</p>
-           <p>Hey there, aspiring data scientists and curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Predicting the Future with a Straight Line: A Journey into Linear Regression</h1>
+               <p>Ever wondered how machines make educated guesses about the future? Our journey into Linear Regression begins with a simple idea: finding the perfect straight line to predict outcomes, opening the door to the vast world of machine learning.</p>
+               <p>Hey there, aspiring data scientists and curious minds!</p>
 <p>Welcome to my personal notebook, where today we&#39;re going to unravel one of the most fundamental yet powerful algorithms in machine learning: <strong>Linear Regression</strong>. Don&#39;t let the &quot;regression&quot; part scare you; it&#39;s just a fancy word for predicting a continuous number. Think predicting house prices, stock values, or even how many hours of sunshine we&#39;ll get tomorrow.</p>
 <p>When I first dipped my toes into the world of data science, Linear Regression felt like magic. How could a simple straight line predict so much? But as I dug deeper, I realized its elegance lies in its simplicity and the beautiful math that underpins it. It&#39;s often the first stop for anyone learning predictive modeling, and for good reason – it lays down a fantastic foundation for understanding more complex algorithms.</p>
 <p>So, grab a warm drink, and let&#39;s embark on this journey together!</p>
@@ -150,7 +152,14 @@ $\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y
 <p>Until next time,
 [Your Name/Alias]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Predicting the Future with a Straight Line: A Journey into Linear Regression</h1>
+             <p>Ever wondered how machines make educated guesses about the future? Our journey into Linear Regression begins with a simple idea: finding the perfect straight line to predict outcomes, opening the door to the vast world of machine learning.</p>
+        </div>
+        
 </body>
 
 </html>

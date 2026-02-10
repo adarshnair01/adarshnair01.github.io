@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Kalman Filters: The GPS of the Math World</h1>
-           <p>A simple guide to understanding how robots and phones know where they are, even when sensors are noisy.</p>
-           <h1>Kalman Filters: A High School Guide</h1>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Kalman Filters: The GPS of the Math World</h1>
+               <p>A simple guide to understanding how robots and phones know where they are, even when sensors are noisy.</p>
+               <h1>Kalman Filters: A High School Guide</h1>
 <p>Have you ever wondered how your phone knows <em>exactly</em> where you are on a map, even when you&#39;re driving through a tunnel or surrounded by tall buildings? Or how a SpaceX rocket lands itself on a tiny barge in the ocean?</p>
 <p>The secret isn&#39;t magic—it&#39;s an algorithm called the <strong>Kalman Filter</strong>.</p>
 <h2>The Problem: Sensors Lie</h2>
@@ -80,7 +82,14 @@
 </ul>
 <p>It is one of the most important algorithms of the 20th century, and it&#39;s built entirely on the idea that <strong>combining two uncertain guesses is better than relying on just one</strong>.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Kalman Filters: The GPS of the Math World</h1>
+             <p>A simple guide to understanding how robots and phones know where they are, even when sensors are noisy.</p>
+        </div>
+        
 </body>
 
 </html>

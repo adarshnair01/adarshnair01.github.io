@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey into the Data Vortex: Taming High Dimensions with Dimensionality Reduction</h1>
-           <p>Ever felt lost in a sea of data features? Join me as we explore the magical world of Dimensionality Reduction, where complex datasets are transformed into simpler, more insightful forms, making machine learning models smarter and visualizations clearer.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey into the Data Vortex: Taming High Dimensions with Dimensionality Reduction</h1>
+               <p>Ever felt lost in a sea of data features? Join me as we explore the magical world of Dimensionality Reduction, where complex datasets are transformed into simpler, more insightful forms, making machine learning models smarter and visualizations clearer.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;re anything like me, when you first started diving deep into the world of data science, you probably felt that exhilarating rush of possibility. So much data, so many insights waiting to be discovered! But then, you hit a wall. A very, very tall wall made of… <em>too many features</em>.</p>
 <p>I remember one of my first real-world datasets for a classification task. It had over 500 features – everything from user demographics to intricate behavioral patterns. My laptop groaned, my models took ages to train, and trying to visualize anything beyond a simple scatter plot felt like trying to draw a portrait blindfolded. That&#39;s when I realized I was staring down the barrel of what data scientists lovingly (or perhaps fearfully) call the &quot;<strong>Curse of Dimensionality</strong>.&quot;</p>
 <p>This isn&#39;t some ancient data science folklore; it&#39;s a very real problem. When your dataset has a high number of features (or &quot;dimensions&quot;), things get complicated, fast. Data points become incredibly sparse, meaning they&#39;re all super far apart, making it tough for algorithms to find meaningful patterns. Imagine trying to find a specific grain of sand in a vast desert versus a small sandbox – the desert is your high-dimensional space. High dimensionality leads to:</p>
@@ -131,7 +133,14 @@ $ \Sigma v = \lambda v $<ul>
 <p>So, the next time you face a dataset with more features than you can shake a stick at, don&#39;t despair! Embrace the tools of dimensionality reduction. Experiment, visualize, and watch as your data starts to reveal its hidden stories.</p>
 <p>Happy coding, and may your dimensions be ever reduced!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey into the Data Vortex: Taming High Dimensions with Dimensionality Reduction</h1>
+             <p>Ever felt lost in a sea of data features? Join me as we explore the magical world of Dimensionality Reduction, where complex datasets are transformed into simpler, more insightful forms, making machine learning models smarter and visualizations clearer.</p>
+        </div>
+        
 </body>
 
 </html>

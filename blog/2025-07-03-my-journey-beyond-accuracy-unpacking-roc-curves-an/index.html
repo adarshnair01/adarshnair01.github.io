@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey Beyond Accuracy: Unpacking ROC Curves and AUC</h1>
-           <p>Ever wondered if your classification model is truly good, especially when 'accuracy' just doesn't tell the whole story? Join me as we unravel the elegant dance of ROC curves and the power of AUC, essential tools for any aspiring data scientist.</p>
-           <p>Hey there, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey Beyond Accuracy: Unpacking ROC Curves and AUC</h1>
+               <p>Ever wondered if your classification model is truly good, especially when 'accuracy' just doesn't tell the whole story? Join me as we unravel the elegant dance of ROC curves and the power of AUC, essential tools for any aspiring data scientist.</p>
+               <p>Hey there, fellow data explorers!</p>
 <p>Remember that exhilarating feeling when you train your very first classification model? Whether it was predicting spam emails, identifying cat pictures, or flagging potential fraudulent transactions, the moment you saw that &quot;accuracy score&quot; pop up, you probably felt a rush. &quot;90% accurate! My model is amazing!&quot; I certainly did.</p>
 <p>But then, as I delved deeper into the fascinating world of machine learning, I started hearing whispers. Whispers about &quot;imbalanced datasets,&quot; &quot;false positives,&quot; and how &quot;accuracy isn&#39;t everything.&quot; It was like realizing there was a whole secret language of model evaluation I hadn&#39;t learned yet. That&#39;s when I stumbled upon the dynamic duo: ROC Curves and AUC. And trust me, once you understand them, you&#39;ll never look at classification models the same way again.</p>
 <p>So, buckle up! We&#39;re about to go on a journey to demystify these powerful tools, starting from the basics and building our way up to a deep, intuitive understanding.</p>
@@ -151,7 +153,14 @@ $FPR = \frac{FP}{TN + FP}$</li>
 <p>So, the next time you build a classifier, don&#39;t just stop at accuracy. Dive into the ROC curve, ponder the AUC score, and you&#39;ll gain a much deeper, more nuanced understanding of your model&#39;s true capabilities. It&#39;s an indispensable superpower for any data scientist!</p>
 <p>Happy classifying!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey Beyond Accuracy: Unpacking ROC Curves and AUC</h1>
+             <p>Ever wondered if your classification model is truly good, especially when 'accuracy' just doesn't tell the whole story? Join me as we unravel the elegant dance of ROC curves and the power of AUC, essential tools for any aspiring data scientist.</p>
+        </div>
+        
 </body>
 
 </html>

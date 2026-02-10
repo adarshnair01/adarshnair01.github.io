@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Goldilocks Zone of Machine Learning: Finding 'Just Right' with Overfitting and Underfitting</h1>
-           <p>Ever wondered why some machine learning models perform brilliantly on data they've seen but crumble when faced with new information? Or why others just can't seem to learn anything useful at all? Let's unravel the mysteries of overfitting and underfitting.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Goldilocks Zone of Machine Learning: Finding 'Just Right' with Overfitting and Underfitting</h1>
+               <p>Ever wondered why some machine learning models perform brilliantly on data they've seen but crumble when faced with new information? Or why others just can't seem to learn anything useful at all? Let's unravel the mysteries of overfitting and underfitting.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal – a place where I jot down my thoughts and learnings from the exciting, sometimes bewildering, world of data science and machine learning. Today, I want to talk about a concept that&#39;s absolutely fundamental, something that tripped me up quite a bit in my early days, and frankly, still keeps me on my toes: <strong>Overfitting and Underfitting</strong>.</p>
 <p>Think of it like this: building a machine learning model is a bit like cooking. You want to prepare a meal that’s not just delicious for the tasters in your kitchen, but also for any new guests who might drop by. You want a recipe that&#39;s &quot;just right.&quot; If your dish is too bland (underfitting) or too eccentric (overfitting), your guests won&#39;t be happy. This &quot;just right&quot; spot? That&#39;s our <strong>Goldilocks Zone</strong> in machine learning.</p>
 <p>The core goal of any machine learning model is <strong>generalization</strong>. We don&#39;t just want our model to memorize the data it was trained on; we want it to learn the <em>underlying patterns</em> so it can make accurate predictions on <em>new, unseen data</em>. This is where the delicate balance between overfitting and underfitting comes into play.</p>
@@ -111,7 +113,14 @@ Here, $\text{Loss}(\theta)$ is your original cost function (e.g., Mean Squared E
 <p><em>Stay curious,</em>
 <em>[Your Name/Portfolio Name]</em></p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Goldilocks Zone of Machine Learning: Finding 'Just Right' with Overfitting and Underfitting</h1>
+             <p>Ever wondered why some machine learning models perform brilliantly on data they've seen but crumble when faced with new information? Or why others just can't seem to learn anything useful at all? Let's unravel the mysteries of overfitting and underfitting.</p>
+        </div>
+        
 </body>
 
 </html>

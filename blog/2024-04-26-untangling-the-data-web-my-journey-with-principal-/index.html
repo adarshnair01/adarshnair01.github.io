@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Untangling the Data Web: My Journey with Principal Component Analysis (PCA)</h1>
-           <p>Ever felt lost in a sea of data, where every feature seems to scream for attention? Join me as we demystify Principal Component Analysis, a powerful technique that helps us find clarity and meaning in complex datasets.</p>
-           <p>As a budding data scientist, there are moments when you feel like a detective, sifting through mountains of evidence. And then there are moments when you feel like you&#39;re drowning in it. I distinctly remember one project where I was trying to predict housing prices. I had everything: square footage, number of bedrooms, bathrooms, year built, ZIP code, school district ratings, proximity to parks, crime rates, average income, renovation history, solar panel presence, type of heating system, roof material... the list went on, exceeding 50 features! My models were slow, prone to overfitting, and honestly, even I couldn&#39;t keep track of what was going on.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Untangling the Data Web: My Journey with Principal Component Analysis (PCA)</h1>
+               <p>Ever felt lost in a sea of data, where every feature seems to scream for attention? Join me as we demystify Principal Component Analysis, a powerful technique that helps us find clarity and meaning in complex datasets.</p>
+               <p>As a budding data scientist, there are moments when you feel like a detective, sifting through mountains of evidence. And then there are moments when you feel like you&#39;re drowning in it. I distinctly remember one project where I was trying to predict housing prices. I had everything: square footage, number of bedrooms, bathrooms, year built, ZIP code, school district ratings, proximity to parks, crime rates, average income, renovation history, solar panel presence, type of heating system, roof material... the list went on, exceeding 50 features! My models were slow, prone to overfitting, and honestly, even I couldn&#39;t keep track of what was going on.</p>
 <p>That&#39;s when I first truly appreciated the magic of <strong>Principal Component Analysis (PCA)</strong>. It felt like someone handed me a powerful magnifying glass that also knew how to declutter. Instead of trying to juggle all 50 features, PCA helped me find the <em>essence</em> of the data, allowing my models to breathe, perform better, and even become more understandable.</p>
 <h3>The Curse of Dimensionality: Why Less Can Be More</h3>
 <p>Before we dive into PCA, let&#39;s talk about the problem it solves: the &quot;curse of dimensionality.&quot; Imagine you&#39;re trying to describe a point in 1 dimension (a line). Easy! You just need one number. In 2 dimensions (a flat surface), you need two numbers. In 3 dimensions (our world), you need three. Now imagine trying to describe something in 50, 100, or even 1000 dimensions!</p>
@@ -130,7 +132,14 @@ print(&quot;Cumulative explained variance:&quot;, sum(pca.explained_variance_rat
 <p>If you&#39;re just starting out, don&#39;t be intimidated by terms like &quot;eigenvectors.&quot; Focus on the intuition first: PCA finds the most important directions of spread in your data. Then, slowly peel back the layers to understand the math. It&#39;s a rewarding process that will equip you with a powerful tool for your data science arsenal.</p>
 <p>So, the next time you find yourself tangled in a web of too many features, remember PCA. It might just be the guiding light you need to untangle the mess and discover the true story hidden within your data.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Untangling the Data Web: My Journey with Principal Component Analysis (PCA)</h1>
+             <p>Ever felt lost in a sea of data, where every feature seems to scream for attention? Join me as we demystify Principal Component Analysis, a powerful technique that helps us find clarity and meaning in complex datasets.</p>
+        </div>
+        
 </body>
 
 </html>

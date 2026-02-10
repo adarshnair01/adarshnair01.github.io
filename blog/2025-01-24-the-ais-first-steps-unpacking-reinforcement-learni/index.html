@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The AI's First Steps: Unpacking Reinforcement Learning with Me</h1>
-           <p>Ever wondered how AI learns to master complex games or drive cars without explicit instructions? Join me on a journey into Reinforcement Learning, the fascinating field where agents learn by trial, error, and a lot of smart feedback.</p>
-           <p>My journey into the world of Artificial Intelligence has been a constant source of wonder, a bit like watching a magic trick unfold and then getting to peek behind the curtain. And if there&#39;s one area that feels particularly magical, it&#39;s Reinforcement Learning (RL). It&#39;s the part of AI that most closely mimics how we, as humans, learn many of our skills: through interaction, experimentation, and feedback.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The AI's First Steps: Unpacking Reinforcement Learning with Me</h1>
+               <p>Ever wondered how AI learns to master complex games or drive cars without explicit instructions? Join me on a journey into Reinforcement Learning, the fascinating field where agents learn by trial, error, and a lot of smart feedback.</p>
+               <p>My journey into the world of Artificial Intelligence has been a constant source of wonder, a bit like watching a magic trick unfold and then getting to peek behind the curtain. And if there&#39;s one area that feels particularly magical, it&#39;s Reinforcement Learning (RL). It&#39;s the part of AI that most closely mimics how we, as humans, learn many of our skills: through interaction, experimentation, and feedback.</p>
 <p>Think about how a baby learns to walk. Nobody gives them a detailed instruction manual or labeled dataset of &quot;correct&quot; steps. Instead, they try, they fall, they get up, and they try again. Each successful step, each moment of balance, is a tiny reward, encouraging them to keep going. Reinforcement Learning empowers AI agents to do something remarkably similar.</p>
 <h3>What is Reinforcement Learning? The &#39;Trial and Error&#39; Paradigm</h3>
 <p>At its core, Reinforcement Learning is about an <strong>agent</strong> learning to make decisions by performing <strong>actions</strong> in an <strong>environment</strong> to maximize a cumulative <strong>reward</strong>. Unlike Supervised Learning, where we provide explicit input-output pairs, or Unsupervised Learning, where we find hidden structures in data, RL thrives on a dynamic feedback loop. The agent doesn&#39;t know the &#39;right&#39; answer beforehand; it discovers it through interaction.</p>
@@ -123,7 +125,14 @@ $G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots = \sum_{k=0}^{\infty}
 <p>Diving deep into Reinforcement Learning has been an exhilarating experience. It&#39;s a field that beautifully marries statistics, computer science, and an intuitive understanding of how intelligent beings learn. The ability of an agent to start with no knowledge and, through perseverance and smart feedback, learn to master a complex task is nothing short of awe-inspiring.</p>
 <p>As you build your own data science and MLE portfolio, understanding RL isn&#39;t just about adding another tool to your belt; it&#39;s about grasping a fundamental paradigm of intelligence. It teaches you to think about problems not just as data mappings, but as dynamic decision-making processes over time. So, go ahead, pick an RL problem, experiment with an agent, and watch it take its first steps towards intelligence. The journey is incredibly rewarding!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The AI's First Steps: Unpacking Reinforcement Learning with Me</h1>
+             <p>Ever wondered how AI learns to master complex games or drive cars without explicit instructions? Join me on a journey into Reinforcement Learning, the fascinating field where agents learn by trial, error, and a lot of smart feedback.</p>
+        </div>
+        
 </body>
 
 </html>

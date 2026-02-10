@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Alchemy of Data: Mastering Feature Engineering for Stellar Models</h1>
-           <p>Imagine having all the ingredients for a delicious cake, but they're still in their raw form. Feature Engineering is about transforming that raw data into the perfect, model-ready ingredients, making your algorithms not just work, but truly shine.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Alchemy of Data: Mastering Feature Engineering for Stellar Models</h1>
+               <p>Imagine having all the ingredients for a delicious cake, but they're still in their raw form. Feature Engineering is about transforming that raw data into the perfect, model-ready ingredients, making your algorithms not just work, but truly shine.</p>
+               <p>Hey everyone!</p>
 <p>Welcome to another dive into the fascinating world of Data Science. Today, we&#39;re pulling back the curtain on one of the most impactful, yet often overlooked, aspects of building powerful machine learning models: <strong>Feature Engineering</strong>.</p>
 <p>If you&#39;ve spent any time with data, you&#39;ve probably heard the phrase &quot;Garbage In, Garbage Out&quot; (GIGO). It&#39;s a cliché for a reason! No matter how sophisticated your algorithms are, their performance is fundamentally limited by the quality and relevance of the data you feed them. And that, my friends, is where Feature Engineering swoops in, cape flowing, to save the day.</p>
 <h3>What is Feature Engineering, Anyway?</h3>
@@ -187,7 +189,14 @@ Think back to <code>BMI = weight / (height^2)</code>. This is a classic example 
 <p>So, the next time you&#39;re building a model, don&#39;t just settle for feeding it raw ingredients. Put on your chef&#39;s hat, experiment with different transformations, combine elements, and sculpt your data into a masterpiece. Your models (and your stakeholders) will thank you for it!</p>
 <p>What are your favorite feature engineering tricks? Share them in the comments below!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Alchemy of Data: Mastering Feature Engineering for Stellar Models</h1>
+             <p>Imagine having all the ingredients for a delicious cake, but they're still in their raw form. Feature Engineering is about transforming that raw data into the perfect, model-ready ingredients, making your algorithms not just work, but truly shine.</p>
+        </div>
+        
 </body>
 
 </html>

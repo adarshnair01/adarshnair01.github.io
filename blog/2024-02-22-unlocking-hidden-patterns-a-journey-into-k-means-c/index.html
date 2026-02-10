@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking Hidden Patterns: A Journey into K-Means Clustering</h1>
-           <p>Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights.</p>
-           <p>Hey everyone! Today, let&#39;s dive into one of my absolute favorite unsupervised learning algorithms: K-Means Clustering. Imagine you have a massive pile of LEGOs, all mixed up, and you want to sort them into groups without any pre-defined labels. How would you do it? You&#39;d probably start by picking a few distinct pieces and then putting similar ones next to them, right? That&#39;s essentially what K-Means helps computers do with data!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking Hidden Patterns: A Journey into K-Means Clustering</h1>
+               <p>Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights.</p>
+               <p>Hey everyone! Today, let&#39;s dive into one of my absolute favorite unsupervised learning algorithms: K-Means Clustering. Imagine you have a massive pile of LEGOs, all mixed up, and you want to sort them into groups without any pre-defined labels. How would you do it? You&#39;d probably start by picking a few distinct pieces and then putting similar ones next to them, right? That&#39;s essentially what K-Means helps computers do with data!</p>
 <p>K-Means is an <strong>unsupervised learning algorithm</strong> designed to find natural groupings (clusters) within unlabeled data. Our goal isn&#39;t to predict a specific outcome, but rather to discover inherent structures. The &quot;K&quot; in K-Means is crucial – it stands for the <em>number of clusters</em> you want to find. If you want to group your LEGOs into 3 types, K=3. The algorithm then aims to partition &#39;n&#39; observations into these &#39;k&#39; clusters, where each observation belongs to the cluster with the nearest mean (centroid).</p>
 <p>The magic of K-Means unfolds in an iterative process, much like refining your LEGO sorting until it feels just right:</p>
 <ol>
@@ -50,7 +52,14 @@ This step effectively draws boundaries, assigning each data point to its current
 </ul>
 <p>K-Means clustering is a fantastic entry point into unsupervised machine learning. It&#39;s elegantly simple, computationally efficient, and incredibly versatile for uncovering hidden structures in data. Understanding how it works is a fundamental skill for anyone in data science or machine learning. So next time you see data begging to be grouped, remember K-Means – your friendly neighborhood cluster finder!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking Hidden Patterns: A Journey into K-Means Clustering</h1>
+             <p>Ever wondered how Netflix recommends movies or how stores group their customers? K-Means clustering is a simple yet powerful algorithm that helps us find natural groupings within complex data, revealing hidden stories and insights.</p>
+        </div>
+        
 </body>
 
 </html>

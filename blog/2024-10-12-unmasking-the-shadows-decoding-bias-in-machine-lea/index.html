@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Shadows: Decoding Bias in Machine Learning</h1>
-           <p>Dive into the hidden corners of Artificial Intelligence and discover how our own biases can subtly creep into algorithms, shaping a future we might not intend.</p>
-           <p>Ever thought about how a computer decides whether you get a loan, a job interview, or even what news article pops up on your feed? It&#39;s easy to imagine these systems as purely objective, spitting out decisions based on cold, hard logic. But what if I told you that the very machines we build to be fair can sometimes inherit our deepest, most unconscious prejudices?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Shadows: Decoding Bias in Machine Learning</h1>
+               <p>Dive into the hidden corners of Artificial Intelligence and discover how our own biases can subtly creep into algorithms, shaping a future we might not intend.</p>
+               <p>Ever thought about how a computer decides whether you get a loan, a job interview, or even what news article pops up on your feed? It&#39;s easy to imagine these systems as purely objective, spitting out decisions based on cold, hard logic. But what if I told you that the very machines we build to be fair can sometimes inherit our deepest, most unconscious prejudices?</p>
 <p>As a data scientist, I&#39;ve spent countless hours staring at datasets, building models, and pushing the boundaries of what machines can learn. And the more I build, the more profoundly I realize something critical: <strong>Machine Learning models are not born neutral.</strong> They are reflections of the data they consume and the humans who design them. This realization led me down a rabbit hole, exploring one of the most pressing challenges in AI today: <strong>Bias in Machine Learning.</strong></p>
 <h3>What Exactly <em>Is</em> Bias in Machine Learning?</h3>
 <p>When we talk about &quot;bias&quot; in everyday language, we often mean prejudice or favoritism towards a person or group. In Machine Learning, it&#39;s remarkably similar. Fundamentally, <strong>ML bias is a systematic and unfair discrimination by an AI system against certain individuals or groups of individuals, leading to skewed, inaccurate, or unjust outcomes.</strong></p>
@@ -122,7 +124,14 @@ This implies the model makes errors equally for both positive and negative actua
 <p>As future data scientists, ML engineers, or simply informed citizens, we have a profound responsibility. We must be critical of our data sources, thoughtful in our model design, and proactive in evaluating and mitigating bias. Every line of code, every dataset chosen, every model deployed carries ethical weight.</p>
 <p>Let&#39;s strive to build intelligent systems that not only push the boundaries of technology but also uphold the principles of fairness and justice, ensuring that the future we&#39;re creating is one where technology empowers everyone, not just a privileged few. It’s a challenge, but one that is absolutely worth taking on.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Shadows: Decoding Bias in Machine Learning</h1>
+             <p>Dive into the hidden corners of Artificial Intelligence and discover how our own biases can subtly creep into algorithms, shaping a future we might not intend.</p>
+        </div>
+        
 </body>
 
 </html>

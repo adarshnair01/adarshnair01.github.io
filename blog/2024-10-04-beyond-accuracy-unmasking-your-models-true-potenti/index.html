@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: Unmasking Your Model's True Potential with ROC and AUC</h1>
-           <p>Ever wondered if your AI model is truly fair and effective, or just putting on a good show? Dive into ROC curves and AUC scores to truly understand how well your binary classifiers perform, beyond simple accuracy.</p>
-           <p>As data scientists, we spend countless hours crafting machine learning models, tweaking hyperparameters, and exploring complex architectures. But at the end of the day, how do we <em>really</em> know if our model is any good? Is it truly making intelligent decisions, or is it just cleverly guessing?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: Unmasking Your Model's True Potential with ROC and AUC</h1>
+               <p>Ever wondered if your AI model is truly fair and effective, or just putting on a good show? Dive into ROC curves and AUC scores to truly understand how well your binary classifiers perform, beyond simple accuracy.</p>
+               <p>As data scientists, we spend countless hours crafting machine learning models, tweaking hyperparameters, and exploring complex architectures. But at the end of the day, how do we <em>really</em> know if our model is any good? Is it truly making intelligent decisions, or is it just cleverly guessing?</p>
 <p>I&#39;ve often found myself grappling with this question, especially when building binary classifiers – models that predict one of two outcomes, like &quot;spam&quot; or &quot;not spam,&quot; &quot;disease&quot; or &quot;no disease,&quot; &quot;fraud&quot; or &quot;not fraud.&quot; The go-to metric for many beginners (and even seasoned pros under time pressure) is often accuracy. It&#39;s simple, intuitive: &quot;My model is 95% accurate!&quot; Sounds impressive, right?</p>
 <p>But what if I told you that accuracy can be a deceptive friend, especially in the nuanced world of real-world data? Today, we&#39;re going to pull back the curtain on two powerful tools that offer a much deeper, more robust understanding of your model&#39;s performance: the <strong>Receiver Operating Characteristic (ROC) curve</strong> and the <strong>Area Under the Curve (AUC)</strong>. Think of them as the lie detector and the ultimate scorecard for your binary classification models.</p>
 <h3>The Deceptive Charm of Accuracy</h3>
@@ -151,7 +153,14 @@ import matplotlib.pyplot as plt
 <p>In the fast-paced world of data science, it&#39;s tempting to grab the quickest, most intuitive metric to evaluate our models. But as we&#39;ve explored today, simple accuracy can be a mirage, particularly when dealing with the complexities of real-world data distributions.</p>
 <p>The ROC curve and AUC score equip us with a more profound, nuanced, and reliable way to assess our binary classifiers. They force us to think critically about the trade-offs involved in prediction errors and provide a robust framework for comparing models. So, the next time you&#39;re evaluating a binary classification model, don&#39;t just settle for accuracy. Dive deeper. Explore the ROC curve. Calculate the AUC. Understand the true potential lurking within your model. Your data, and your users, will thank you for it.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: Unmasking Your Model's True Potential with ROC and AUC</h1>
+             <p>Ever wondered if your AI model is truly fair and effective, or just putting on a good show? Dive into ROC curves and AUC scores to truly understand how well your binary classifiers perform, beyond simple accuracy.</p>
+        </div>
+        
 </body>
 
 </html>

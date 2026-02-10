@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Coach in the Machine: How Regularization Keeps Our Models Honest</h1>
-           <p>Ever trained a machine learning model that aced the training data but bombed in the real world? That's overfitting, and regularization is our secret weapon to prevent it, ensuring our models learn to generalize, not just memorize.</p>
-           <p>As a budding data scientist, there&#39;s a certain thrill in watching your machine learning model train. The loss function drops, the accuracy soars on your training set, and you feel like a wizard. &quot;Eureka!&quot; you might exclaim, imagining your model conquering the world.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Coach in the Machine: How Regularization Keeps Our Models Honest</h1>
+               <p>Ever trained a machine learning model that aced the training data but bombed in the real world? That's overfitting, and regularization is our secret weapon to prevent it, ensuring our models learn to generalize, not just memorize.</p>
+               <p>As a budding data scientist, there&#39;s a certain thrill in watching your machine learning model train. The loss function drops, the accuracy soars on your training set, and you feel like a wizard. &quot;Eureka!&quot; you might exclaim, imagining your model conquering the world.</p>
 <p>But then, you unleash it on new, unseen data – the real test. And... <em>crash</em>. Your model, once a shining beacon of predictive power, now performs barely better than random chance. What happened? You, my friend, have just met the infamous beast called <strong>overfitting</strong>.</p>
 <p>It&#39;s a rite of passage for anyone diving into machine learning, and understanding how to combat it is absolutely crucial. This brings us to a technique that&#39;s as fundamental as it is elegant: <strong>Regularization</strong>. Think of it as the wise coach who tells your model, &quot;Don&#39;t just memorize the playbook; <em>understand</em> the game.&quot;</p>
 <h3>The Peril of Overfitting: When Memorizing Trumps Understanding</h3>
@@ -162,7 +164,14 @@ $ J_{Lasso}(\mathbf{w}) = \frac{1}{2N} \sum_{i=1}^{N} (y_i - \hat{y}<em>i)^2 + \
 <p>But that&#39;s the profound lesson: <strong>Perfection on training data is often a mirage.</strong> The true goal of machine learning is <em>generalization</em> – building models that can make accurate predictions on data they&#39;ve never seen before. Regularization is our steadfast ally in achieving that goal.</p>
 <p>From simple linear regression to complex neural networks, regularization techniques are ubiquitous. They are a fundamental tool in the machine learning engineer&#39;s toolkit, ensuring our models are not just smart, but also wise, adaptable, and robust. So, the next time your model trains, don&#39;t just celebrate dropping loss; celebrate the subtle influence of regularization, guiding your model towards true understanding. It&#39;s the coach that keeps your model honest, and ultimately, more powerful.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Coach in the Machine: How Regularization Keeps Our Models Honest</h1>
+             <p>Ever trained a machine learning model that aced the training data but bombed in the real world? That's overfitting, and regularization is our secret weapon to prevent it, ensuring our models learn to generalize, not just memorize.</p>
+        </div>
+        
 </body>
 
 </html>

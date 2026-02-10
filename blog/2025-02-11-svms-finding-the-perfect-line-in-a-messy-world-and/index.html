@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>SVMs: Finding the Perfect Line in a Messy World (and Beyond!)</h1>
-           <p>Ever wondered how machines learn to draw the 'best' dividing line between different categories of data, even when that data is a tangled mess? Join me on a journey to uncover the elegant power of Support Vector Machines!</p>
-           <p>As a budding data scientist, I&#39;m constantly fascinated by how seemingly complex problems can be distilled into elegant mathematical solutions. One algorithm that truly captured my imagination early on was the Support Vector Machine, or SVM. It&#39;s a classic, a workhorse in the machine learning toolkit, and it beautifully illustrates the power of optimization and geometry in building predictive models.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>SVMs: Finding the Perfect Line in a Messy World (and Beyond!)</h1>
+               <p>Ever wondered how machines learn to draw the 'best' dividing line between different categories of data, even when that data is a tangled mess? Join me on a journey to uncover the elegant power of Support Vector Machines!</p>
+               <p>As a budding data scientist, I&#39;m constantly fascinated by how seemingly complex problems can be distilled into elegant mathematical solutions. One algorithm that truly captured my imagination early on was the Support Vector Machine, or SVM. It&#39;s a classic, a workhorse in the machine learning toolkit, and it beautifully illustrates the power of optimization and geometry in building predictive models.</p>
 <p>Today, I want to take you on a deep dive into SVMs. We&#39;ll strip away some of the mystique, explore the core intuition, dive into the underlying math, and even discover how it tackles non-linear problems. My goal is to make this journey accessible whether you&#39;re just starting out in data science or looking for a clearer picture of how these fascinating algorithms work.</p>
 <h3>The Problem: Drawing a Line in the Sand</h3>
 <p>Imagine you have a scatter plot of data points. Some points represent &quot;cats&quot; (let&#39;s say, circles) and others represent &quot;dogs&quot; (triangles). Your task is to draw a line that separates the cats from the dogs. Simple enough, right?</p>
@@ -158,7 +160,14 @@ $ K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2) $<ul>
 </ol>
 <p>Happy machine learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>SVMs: Finding the Perfect Line in a Messy World (and Beyond!)</h1>
+             <p>Ever wondered how machines learn to draw the 'best' dividing line between different categories of data, even when that data is a tangled mess? Join me on a journey to uncover the elegant power of Support Vector Machines!</p>
+        </div>
+        
 </body>
 
 </html>

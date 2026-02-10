@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Decoding the Giants: My Journey into Large Language Models</h1>
-           <p>Ever wonder what's really going on inside those incredibly smart chatbots? Let's pull back the curtain and explore the fascinating world of Large Language Models, from their fundamental principles to the powerful Transformer architecture that makes them tick.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Decoding the Giants: My Journey into Large Language Models</h1>
+               <p>Ever wonder what's really going on inside those incredibly smart chatbots? Let's pull back the curtain and explore the fascinating world of Large Language Models, from their fundamental principles to the powerful Transformer architecture that makes them tick.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;re anything like me, you&#39;ve probably been equal parts amazed and bewildered by the rapid advancements in Artificial Intelligence, especially the rise of those incredibly articulate &quot;chatbots&quot; we now interact with daily. From writing essays to debugging code, these Large Language Models (LLMs) seem to do it all. But what <em>are</em> they, really? Are they truly intelligent? Or just incredibly sophisticated parrots?</p>
 <p>As someone diving deep into Data Science and Machine Learning Engineering, I&#39;ve found myself increasingly drawn to the magic behind these models. This post is a journey through my understanding of LLMs, designed to be accessible enough for curious high school students, yet deep enough for my fellow technical enthusiasts. Think of it as peeking under the hood of a futuristic car – we&#39;ll understand the engine without needing to design every nut and bolt ourselves.</p>
 <h3>So, What Exactly <em>Is</em> a Large Language Model?</h3>
@@ -106,7 +108,14 @@ where $d_k$ is the dimension of the key vectors, used for scaling.</p>
 <p>If you&#39;re interested in diving deeper, I encourage you to explore resources on Transformers, experiment with open-source LLMs, and perhaps even try fine-tuning a smaller model yourself. The future of AI is being written right now, and understanding these giants is a fantastic first step to being a part of it.</p>
 <p>Happy learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Decoding the Giants: My Journey into Large Language Models</h1>
+             <p>Ever wonder what's really going on inside those incredibly smart chatbots? Let's pull back the curtain and explore the fascinating world of Large Language Models, from their fundamental principles to the powerful Transformer architecture that makes them tick.</p>
+        </div>
+        
 </body>
 
 </html>

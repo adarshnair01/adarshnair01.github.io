@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: Charting the True Course of Your Classification Models with ROC and AUC</h1>
-           <p>Ever felt that your machine learning model's stellar accuracy isn't telling the whole story? Join me on a journey to uncover ROC curves and AUC scores, the dynamic duo that reveals the true discriminative power of your classification models, especially when the stakes are high or data is imbalanced.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: Charting the True Course of Your Classification Models with ROC and AUC</h1>
+               <p>Ever felt that your machine learning model's stellar accuracy isn't telling the whole story? Join me on a journey to uncover ROC curves and AUC scores, the dynamic duo that reveals the true discriminative power of your classification models, especially when the stakes are high or data is imbalanced.</p>
+               <p>Hey everyone!</p>
 <p>It&#39;s [Your Name Here], and today, I want to share something that fundamentally changed how I evaluate classification models. When I first started diving into machine learning, accuracy was my go-to metric. My model correctly predicted 90% of the cases? Fantastic! 95%? Even better! But soon, I hit a wall, realizing that accuracy, while seemingly straightforward, can be a deceptive friend.</p>
 <p>Imagine you&#39;re building a model to detect a rare but critical disease that affects only 1% of the population. A model that simply predicts &quot;no disease&quot; for everyone would achieve a 99% accuracy! Sounds great, right? But it&#39;s utterly useless for diagnosing the actual disease. This eye-opening realization made me question: <strong>How do we truly understand if our model is good at distinguishing between classes, regardless of their prevalence?</strong></p>
 <p>That&#39;s where the mighty duo of <strong>ROC (Receiver Operating Characteristic) Curve</strong> and <strong>AUC (Area Under the Curve)</strong> steps in. They&#39;re not just fancy terms; they&#39;re essential tools in every data scientist&#39;s arsenal, helping us peer deeper into our model&#39;s performance.</p>
@@ -182,7 +184,14 @@ auc_score = roc_auc_score(y_test, y_prob)
 <p>Happy modeling!
 [Your Name Here]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: Charting the True Course of Your Classification Models with ROC and AUC</h1>
+             <p>Ever felt that your machine learning model's stellar accuracy isn't telling the whole story? Join me on a journey to uncover ROC curves and AUC scores, the dynamic duo that reveals the true discriminative power of your classification models, especially when the stakes are high or data is imbalanced.</p>
+        </div>
+        
 </body>
 
 </html>

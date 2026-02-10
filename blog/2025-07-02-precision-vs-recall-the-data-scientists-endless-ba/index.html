@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Precision vs Recall: The Data Scientist's Endless Balancing Act</h1>
-           <p>Forget accuracy! In the real world of machine learning, understanding the subtle dance between Precision and Recall is key to building models that truly solve problems, not just predict them.</p>
-           <h3>The Data Scientist&#39;s Journal: Beyond the Illusion of Accuracy</h3>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Precision vs Recall: The Data Scientist's Endless Balancing Act</h1>
+               <p>Forget accuracy! In the real world of machine learning, understanding the subtle dance between Precision and Recall is key to building models that truly solve problems, not just predict them.</p>
+               <h3>The Data Scientist&#39;s Journal: Beyond the Illusion of Accuracy</h3>
 <p>Hey there, fellow data explorers!</p>
 <p>I remember when I first started my journey into machine learning. Like many, I was obsessed with &quot;accuracy.&quot; If my model predicted 95% of things correctly, I thought I was a rockstar. &quot;95% accuracy! Ship it!&quot; But then I started working on real-world problems, and quickly realized that accuracy, while seemingly intuitive, can be a deceptive mistress.</p>
 <p>Imagine building a model to detect a very rare but critical disease. Let&#39;s say it affects only 1% of the population. A lazy model could just predict &quot;no disease&quot; for everyone and achieve 99% accuracy! Sounds great, right? But it would have missed every single actual patient. That&#39;s a disaster.</p>
@@ -140,7 +142,14 @@
 <p>The answers to these questions will guide you in prioritizing Precision, Recall, or finding the optimal balance between them. Don&#39;t let a seemingly high accuracy score blind you. Dive deeper, understand the types of errors your model is making, and build systems that truly align with the real-world impact you want to achieve.</p>
 <p>Happy modeling, and remember: context is king!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Precision vs Recall: The Data Scientist's Endless Balancing Act</h1>
+             <p>Forget accuracy! In the real world of machine learning, understanding the subtle dance between Precision and Recall is key to building models that truly solve problems, not just predict them.</p>
+        </div>
+        
 </body>
 
 </html>

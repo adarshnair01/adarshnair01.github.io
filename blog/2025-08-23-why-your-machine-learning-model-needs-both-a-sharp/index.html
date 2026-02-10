@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Why Your Machine Learning Model Needs Both a Sharpshooter and a Wide Net: Precision vs Recall</h1>
-           <p>Ever wondered why 'accuracy' alone isn't enough to judge your fancy AI model? Dive into the fascinating world of Precision and Recall, where we learn how to balance being right with not missing crucial details, uncovering the true performance story of your algorithms.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Why Your Machine Learning Model Needs Both a Sharpshooter and a Wide Net: Precision vs Recall</h1>
+               <p>Ever wondered why 'accuracy' alone isn't enough to judge your fancy AI model? Dive into the fascinating world of Precision and Recall, where we learn how to balance being right with not missing crucial details, uncovering the true performance story of your algorithms.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;ve spent any time peeking under the hood of machine learning models, you&#39;ve probably heard the term &quot;accuracy&quot; thrown around a lot. It sounds great, right? Your model is 95% accurate! Fantastic! But here’s a little secret: sometimes, accuracy can be a massive liar. It&#39;s like judging a chef solely by how many dishes they <em>didn&#39;t</em> burn – it misses the point of how many delicious meals they <em>actually</em> served, or how many awful ones they dished out.</p>
 <p>Today, I want to take you on a journey beyond mere accuracy, into the crucial, often misunderstood, world of <strong>Precision</strong> and <strong>Recall</strong>. These two metrics are the bedrock of understanding how well your classification models <em>really</em> perform, especially when the stakes are high. Think of me as your guide through this vital landscape of model evaluation, a place where a deeper understanding separates the good data scientists from the truly great ones.</p>
 <h3>The Foundation: The Confusion Matrix – Your Model&#39;s Report Card</h3>
@@ -112,7 +114,14 @@ Actual Negative       False Positive       True Negative
 <p>So, the next time someone tells you their model is &quot;95% accurate,&quot; you now have the tools to ask the deeper questions: &quot;Yes, but how precise is it? And what about its recall? What kind of errors are we most concerned about?&quot;</p>
 <p>By digging into Precision and Recall, you move beyond superficial metrics and start asking the questions that truly matter for building robust, responsible, and impactful machine learning solutions. Keep exploring, keep questioning, and you&#39;ll master the art of model evaluation!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Why Your Machine Learning Model Needs Both a Sharpshooter and a Wide Net: Precision vs Recall</h1>
+             <p>Ever wondered why 'accuracy' alone isn't enough to judge your fancy AI model? Dive into the fascinating world of Precision and Recall, where we learn how to balance being right with not missing crucial details, uncovering the true performance story of your algorithms.</p>
+        </div>
+        
 </body>
 
 </html>

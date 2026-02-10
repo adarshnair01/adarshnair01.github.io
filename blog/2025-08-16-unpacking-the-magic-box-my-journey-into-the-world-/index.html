@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unpacking the Magic Box: My Journey into the World of Transformers</h1>
-           <p>Ever wondered how AI understands language, writes poems, or even codes? Join me as we peel back the layers of the Transformer architecture, the revolutionary brain behind today's most intelligent language models.</p>
-           <p>As a budding data scientist and ML engineer, there are certain moments that fundamentally shift your understanding of a field. For me, one of those seismic shifts happened when I first truly delved into &quot;Transformers.&quot; Before them, models like Recurrent Neural Networks (RNNs) and Long Short-Term Memory networks (LSTMs) were the kings of sequential data, like text. They processed information word by word, trying to remember what came before. It was clever, but also inherently slow and struggled with really long sentences – imagine trying to remember the beginning of a novel by only reading one word at a time!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unpacking the Magic Box: My Journey into the World of Transformers</h1>
+               <p>Ever wondered how AI understands language, writes poems, or even codes? Join me as we peel back the layers of the Transformer architecture, the revolutionary brain behind today's most intelligent language models.</p>
+               <p>As a budding data scientist and ML engineer, there are certain moments that fundamentally shift your understanding of a field. For me, one of those seismic shifts happened when I first truly delved into &quot;Transformers.&quot; Before them, models like Recurrent Neural Networks (RNNs) and Long Short-Term Memory networks (LSTMs) were the kings of sequential data, like text. They processed information word by word, trying to remember what came before. It was clever, but also inherently slow and struggled with really long sentences – imagine trying to remember the beginning of a novel by only reading one word at a time!</p>
 <p>Then, in 2017, a paper titled &quot;Attention Is All You Need&quot; dropped, and it changed everything. It introduced the Transformer architecture, a model that tossed out the sequential processing and, instead, used something called &quot;attention&quot; to look at all parts of a sentence simultaneously. It was like going from reading a book cover-to-cover to being able to instantly jump to any page and understand its context. This wasn&#39;t just an improvement; it was a revolution.</p>
 <h3>The Problem: Why RNNs Weren&#39;t Enough</h3>
 <p>Let&#39;s quickly recap the challenge. When you read a sentence like &quot;The dog, which was chasing the cat, ran into the house,&quot; a human effortlessly links &quot;dog&quot; to &quot;ran&quot; and &quot;cat&quot; to &quot;chasing.&quot; But for an RNN, processing this sentence word by word:</p>
@@ -103,7 +105,14 @@ $PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i/d_{model}})$</p>
 <p>My journey into Transformers was truly an &quot;aha!&quot; moment. It wasn&#39;t just about understanding a new architecture; it was about grasping a paradigm shift in how we approach sequential data and complex patterns. The elegance of attention, the power of parallelization, and the emergent capabilities of large-scale models – it all coalesces into a technology that is reshaping not just AI, but countless industries.</p>
 <p>We&#39;re still exploring the full potential of these models, pushing their boundaries, and making them more efficient and ethical. For me, being able to contribute to and understand this rapidly evolving field is incredibly exciting. The magic box of Transformers has been opened, and its wonders continue to unfold.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unpacking the Magic Box: My Journey into the World of Transformers</h1>
+             <p>Ever wondered how AI understands language, writes poems, or even codes? Join me as we peel back the layers of the Transformer architecture, the revolutionary brain behind today's most intelligent language models.</p>
+        </div>
+        
 </body>
 
 </html>

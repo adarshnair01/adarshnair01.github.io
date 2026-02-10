@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Art of the Optimal Split: My Journey into Support Vector Machines</h1>
-           <p>Ever wondered how a machine learns to draw the best possible line between different types of data, even when that data is a messy tangle? Support Vector Machines offer an elegant, powerful solution, and today, we're going to unravel their magic.</p>
-           <p>As a budding data scientist, I&#39;ve always been fascinated by how we can teach computers to &quot;see&quot; patterns and make decisions. One of the first times I truly felt that rush of understanding an elegant algorithm was when I delved into Support Vector Machines (SVMs). They&#39;re like the master architects of classification, meticulously finding the best possible boundary to separate different categories of data.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Art of the Optimal Split: My Journey into Support Vector Machines</h1>
+               <p>Ever wondered how a machine learns to draw the best possible line between different types of data, even when that data is a messy tangle? Support Vector Machines offer an elegant, powerful solution, and today, we're going to unravel their magic.</p>
+               <p>As a budding data scientist, I&#39;ve always been fascinated by how we can teach computers to &quot;see&quot; patterns and make decisions. One of the first times I truly felt that rush of understanding an elegant algorithm was when I delved into Support Vector Machines (SVMs). They&#39;re like the master architects of classification, meticulously finding the best possible boundary to separate different categories of data.</p>
 <p>Think about it: you have a pile of apples and oranges mixed together. How would you draw a line to separate them perfectly? It seems simple enough. But what if some apples are green like some unripe oranges? Or what if the line has to be <em>just so</em> to be most robust to new, unseen fruits? That&#39;s where SVMs shine, and they do it with a blend of geometric intuition and mathematical finesse.</p>
 <p>Join me on a journey to demystify SVMs, from their core concept of maximizing a margin to the clever &quot;kernel trick&quot; that lets them conquer complex, non-linear data.</p>
 <h3>The Core Idea: Finding the &quot;Best&quot; Separator</h3>
@@ -123,7 +125,14 @@ $ \xi_i \ge 0 \quad \text{for all } i $</p>
 <p>They taught me that sometimes, the best way to separate things isn&#39;t just to draw <em>a</em> line, but to draw the <em>widest possible</em> line, giving yourself the most confidence for future predictions. So, the next time you&#39;re faced with a classification challenge, remember the silent power of those humble support vectors, meticulously defining the boundaries that make sense of our data.</p>
 <p>Keep exploring, keep learning, and keep finding those optimal splits!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Art of the Optimal Split: My Journey into Support Vector Machines</h1>
+             <p>Ever wondered how a machine learns to draw the best possible line between different types of data, even when that data is a messy tangle? Support Vector Machines offer an elegant, powerful solution, and today, we're going to unravel their magic.</p>
+        </div>
+        
 </body>
 
 </html>

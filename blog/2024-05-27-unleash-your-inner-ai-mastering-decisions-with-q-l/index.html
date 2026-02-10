@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unleash Your Inner AI: Mastering Decisions with Q-Learning!</h1>
-           <p>Ever wondered how an AI learns to make smart decisions, even without a teacher? Dive into Q-Learning, a fundamental algorithm that empowers agents to navigate complex worlds purely through trial and error!</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unleash Your Inner AI: Mastering Decisions with Q-Learning!</h1>
+               <p>Ever wondered how an AI learns to make smart decisions, even without a teacher? Dive into Q-Learning, a fundamental algorithm that empowers agents to navigate complex worlds purely through trial and error!</p>
+               <p>Hey everyone!</p>
 <p>Have you ever found yourself fascinated by how AI agents in video games seem to learn complex strategies, or how a robot can figure out the best path through a maze all by itself? It&#39;s not magic, it&#39;s often the result of some incredibly clever algorithms from the world of Reinforcement Learning (RL). And today, I want to pull back the curtain on one of the most foundational and intuitive of these: <strong>Q-Learning</strong>.</p>
 <p>Think of Q-Learning as an AI&#39;s personal guide to making the best possible decisions in any situation, purely by learning from experience, just like how we learn to ride a bike or play a new game. It&#39;s an algorithm that&#39;s surprisingly simple at its core, yet incredibly powerful in its applications. Let&#39;s dive in!</p>
 <h3>The World of Reinforcement Learning: A Quick Detour</h3>
@@ -168,7 +170,14 @@
 <p>So, the next time you see an AI agent making smart choices, remember the humble Q-table and the journey of exploration and exploitation that led to its intelligence. This is just one step into the fascinating world of Reinforcement Learning, and I hope it sparks your curiosity to explore even deeper!</p>
 <p>Happy learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unleash Your Inner AI: Mastering Decisions with Q-Learning!</h1>
+             <p>Ever wondered how an AI learns to make smart decisions, even without a teacher? Dive into Q-Learning, a fundamental algorithm that empowers agents to navigate complex worlds purely through trial and error!</p>
+        </div>
+        
 </body>
 
 </html>

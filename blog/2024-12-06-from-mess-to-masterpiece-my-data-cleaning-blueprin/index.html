@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From Mess to Masterpiece: My Data Cleaning Blueprint for Rock-Solid Models</h1>
-           <p>Ever wonder what really makes a data science project shine? It's not just fancy algorithms, it's the meticulous craft of data cleaning, a skill I've come to deeply appreciate as the bedrock of reliable insights and the true secret to building robust machine learning models.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From Mess to Masterpiece: My Data Cleaning Blueprint for Rock-Solid Models</h1>
+               <p>Ever wonder what really makes a data science project shine? It's not just fancy algorithms, it's the meticulous craft of data cleaning, a skill I've come to deeply appreciate as the bedrock of reliable insights and the true secret to building robust machine learning models.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my portfolio blog. Today, I want to pull back the curtain on one of the most critical, yet often least glamorous, aspects of data science: <strong>Data Cleaning</strong>. If you&#39;ve spent any time at all working with real-world data, you know the drill. You download a dataset, full of excitement, ready to train the next big model, only to be met with a chaotic mess of missing values, inconsistent formats, and strange outliers.</p>
 <p>I&#39;ve been there countless times. I remember one early project where I spent weeks fine-tuning a complex neural network, only for its predictions to be wildly inaccurate. It was frustrating, to say the least. The breakthrough came when an experienced mentor asked me, &quot;Show me your data, not just your code.&quot; We went through it, cell by painstaking cell, and what we found was eye-opening: a crucial column had numbers stored as text, another had inconsistent units, and a third was riddled with missing values that I had simply ignored. My fancy algorithm was trying to learn from garbage, and naturally, it was producing garbage.</p>
 <p>This experience hammered home the golden rule of data science: <strong>&quot;Garbage In, Garbage Out&quot; (GIGO)</strong>. No matter how sophisticated your model or how powerful your computing resources, if your input data is flawed, your outputs will be too. Data cleaning isn&#39;t just a step in the process; it&#39;s the foundation upon which all reliable analysis and accurate predictions are built. It&#39;s where we transform raw, noisy information into a polished, usable asset.</p>
@@ -195,7 +197,14 @@ df[&#39;categorical_column&#39;].fillna(df[&#39;categorical_column&#39;].mode()[
 <p>Happy cleaning, and may your data always be sparkling!</p>
 <hr>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From Mess to Masterpiece: My Data Cleaning Blueprint for Rock-Solid Models</h1>
+             <p>Ever wonder what really makes a data science project shine? It's not just fancy algorithms, it's the meticulous craft of data cleaning, a skill I've come to deeply appreciate as the bedrock of reliable insights and the true secret to building robust machine learning models.</p>
+        </div>
+        
 </body>
 
 </html>

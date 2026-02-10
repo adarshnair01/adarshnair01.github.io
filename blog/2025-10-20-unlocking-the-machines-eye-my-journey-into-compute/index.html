@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking the Machine's Eye: My Journey into Computer Vision</h1>
-           <p>Ever wondered how self-driving cars "see" the road or how your phone recognizes your face? Join me on a journey to demystify Computer Vision, exploring how we're teaching machines to perceive and understand our visual world, one pixel at a time.</p>
-           <p>From the moment we open our eyes, we’re bombarded with visual information. Our brains effortlessly interpret shapes, colors, movements, and expressions, making sense of a complex world. We rarely stop to think about the intricate dance of light hitting our retinas, signals firing in our optic nerves, and higher-level processing in our visual cortex that allows us to recognize a friend, avoid a pothole, or appreciate a beautiful sunset. It’s an astounding feat of biological engineering.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking the Machine's Eye: My Journey into Computer Vision</h1>
+               <p>Ever wondered how self-driving cars "see" the road or how your phone recognizes your face? Join me on a journey to demystify Computer Vision, exploring how we're teaching machines to perceive and understand our visual world, one pixel at a time.</p>
+               <p>From the moment we open our eyes, we’re bombarded with visual information. Our brains effortlessly interpret shapes, colors, movements, and expressions, making sense of a complex world. We rarely stop to think about the intricate dance of light hitting our retinas, signals firing in our optic nerves, and higher-level processing in our visual cortex that allows us to recognize a friend, avoid a pothole, or appreciate a beautiful sunset. It’s an astounding feat of biological engineering.</p>
 <p>Now, imagine giving that power – the power of sight and understanding – to a machine. That, in essence, is the grand ambition of <strong>Computer Vision</strong>.</p>
 <h3>What Exactly <em>Is</em> Computer Vision?</h3>
 <p>At its core, Computer Vision is a field of artificial intelligence that enables computers and systems to derive meaningful information from digital images, videos, and other visual inputs, and to take actions or make recommendations based on that information. It’s not just about &quot;seeing&quot; in the literal sense (which is just collecting pixels), but about <em>understanding</em> what those pixels represent.</p>
@@ -97,7 +99,14 @@
 <p>My journey into Computer Vision has just begun, but I&#39;m already fascinated by its complexity and potential. As I build my portfolio, I&#39;m eager to dive deeper, perhaps exploring projects in areas like medical image analysis or developing more robust and fair vision models. The continuous advancements, the open-source community, and the sheer intellectual horsepower driving this field make it an incredibly exciting space to be in.</p>
 <p>Computer Vision isn&#39;t just about teaching machines to &quot;see&quot;; it&#39;s about enabling them to understand, interact, and ultimately assist us in navigating and improving our world. It&#39;s a testament to human ingenuity, and I can&#39;t wait to be a part of its unfolding story. If you&#39;re intrigued, I encourage you to grab some images, explore Python libraries like OpenCV and TensorFlow/PyTorch, and start your own journey into giving machines the gift of sight!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking the Machine's Eye: My Journey into Computer Vision</h1>
+             <p>Ever wondered how self-driving cars "see" the road or how your phone recognizes your face? Join me on a journey to demystify Computer Vision, exploring how we're teaching machines to perceive and understand our visual world, one pixel at a time.</p>
+        </div>
+        
 </body>
 
 </html>

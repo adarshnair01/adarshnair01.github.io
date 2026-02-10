@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Sherlock Holmes of Data: Unraveling Truths with Hypothesis Testing</h1>
-           <p>Ever wondered how scientists and data analysts make critical decisions based on seemingly random data? Dive into the world of Hypothesis Testing, where we learn to quantify uncertainty and find meaningful answers.</p>
-           <p>Hey everyone! As a data enthusiast, I often find myself looking at numbers and wondering: &quot;Is this difference real, or just a fluke?&quot; It&#39;s a question that plagues many aspiring data scientists and even seasoned professionals. We&#39;re constantly bombarded with data, from A/B test results to the performance metrics of a new machine learning model. How do we make confident decisions when uncertainty is the only constant?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Sherlock Holmes of Data: Unraveling Truths with Hypothesis Testing</h1>
+               <p>Ever wondered how scientists and data analysts make critical decisions based on seemingly random data? Dive into the world of Hypothesis Testing, where we learn to quantify uncertainty and find meaningful answers.</p>
+               <p>Hey everyone! As a data enthusiast, I often find myself looking at numbers and wondering: &quot;Is this difference real, or just a fluke?&quot; It&#39;s a question that plagues many aspiring data scientists and even seasoned professionals. We&#39;re constantly bombarded with data, from A/B test results to the performance metrics of a new machine learning model. How do we make confident decisions when uncertainty is the only constant?</p>
 <p>This is where <strong>Hypothesis Testing</strong> swoops in, like a trusty detective solving a perplexing case. It&#39;s a fundamental statistical framework that empowers us to make data-driven decisions by rigorously evaluating claims about a population based on sample data. Think of it as your scientific compass in the vast ocean of data.</p>
 <h3>The Problem: When Your Gut Feeling Isn&#39;t Enough</h3>
 <p>Let&#39;s set the scene with a common scenario. Imagine you&#39;re a product manager at an e-commerce company. Your team has just launched a shiny new website design, hoping it will increase the average time users spend on the site. After a week, you collect some data: users spent an average of 5.2 minutes on the new design, compared to the old design&#39;s average of 5.0 minutes.</p>
@@ -165,7 +167,14 @@ $t \approx 2.19$</li>
 <p>So, the next time you see a small difference in your metrics, don&#39;t jump to conclusions. Put on your Sherlock Holmes hat, formulate your hypotheses, gather your evidence, and let the data guide you to the truth. Mastering this technique is a powerful step towards becoming a truly effective and trustworthy data professional.</p>
 <p>Keep exploring, keep questioning, and keep testing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Sherlock Holmes of Data: Unraveling Truths with Hypothesis Testing</h1>
+             <p>Ever wondered how scientists and data analysts make critical decisions based on seemingly random data? Dive into the world of Hypothesis Testing, where we learn to quantify uncertainty and find meaningful answers.</p>
+        </div>
+        
 </body>
 
 </html>

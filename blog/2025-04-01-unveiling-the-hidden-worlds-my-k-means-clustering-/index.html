@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unveiling the Hidden Worlds: My K-Means Clustering Journey</h1>
-           <p>Ever wondered how complex datasets can be neatly organized into meaningful groups without any prior labels? Join me as we demystify K-Means Clustering, a powerful algorithm that reveals the hidden structures within your data.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unveiling the Hidden Worlds: My K-Means Clustering Journey</h1>
+               <p>Ever wondered how complex datasets can be neatly organized into meaningful groups without any prior labels? Join me as we demystify K-Means Clustering, a powerful algorithm that reveals the hidden structures within your data.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal. Today, I want to talk about something truly fascinating that transformed how I look at messy, unorganized data: <strong>K-Means Clustering</strong>. When I first started diving into machine learning, everything seemed to be about predicting things – predicting house prices, predicting stock movements, predicting customer churn. These are all examples of <em>supervised learning</em>, where you have input data and corresponding output labels that the model learns from.</p>
 <p>But what if you don&#39;t have those labels? What if you just have a giant pile of data, and you&#39;re simply trying to make sense of it, to find natural groupings or patterns that you didn&#39;t even know existed? That&#39;s where the magic of <em>unsupervised learning</em> comes in, and K-Means is one of its most elegant and widely used algorithms.</p>
 <h3>The Quest for Order: What is Clustering, Anyway?</h3>
@@ -110,7 +112,14 @@
 <p>Next time you hear about customer segmentation, targeted advertising, or even how scientific data is categorized, remember the humble K-Means algorithm working its magic behind the scenes. It&#39;s a testament to the power of algorithms to not just solve problems, but to help us understand the world a little better.</p>
 <p>I encourage you to grab a dataset and try implementing K-Means yourself! Libraries like Scikit-learn in Python make it incredibly easy to experiment with. Happy clustering!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unveiling the Hidden Worlds: My K-Means Clustering Journey</h1>
+             <p>Ever wondered how complex datasets can be neatly organized into meaningful groups without any prior labels? Join me as we demystify K-Means Clustering, a powerful algorithm that reveals the hidden structures within your data.</p>
+        </div>
+        
 </body>
 
 </html>

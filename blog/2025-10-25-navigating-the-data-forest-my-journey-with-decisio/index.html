@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Navigating the Data Forest: My Journey with Decision Trees</h1>
-           <p>Ever wondered how machines make decisions, mirroring our own thought process? Join me as we explore Decision Trees, a fundamental and intuitive algorithm that empowers computers to make choices, one thoughtful question at a time.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Navigating the Data Forest: My Journey with Decision Trees</h1>
+               <p>Ever wondered how machines make decisions, mirroring our own thought process? Join me as we explore Decision Trees, a fundamental and intuitive algorithm that empowers computers to make choices, one thoughtful question at a time.</p>
+               <p>Hey everyone!</p>
 <p>It&#39;s amazing how much data surrounds us every single day. From deciding what to eat for breakfast to picking the fastest route to school, we&#39;re constantly processing information and making choices. But what if I told you that computers could learn to make similar, structured decisions, guiding them through vast &quot;forests&quot; of data? That&#39;s precisely what <strong>Decision Trees</strong> help us achieve in the world of Machine Learning.</p>
 <p>When I first delved into machine learning, the sheer complexity of some algorithms felt daunting. Then I encountered Decision Trees. Suddenly, it clicked. This wasn&#39;t just a black box; it was a logic puzzle, a flow chart that mirrored how I&#39;d break down a complex problem into smaller, manageable questions. It felt like learning a superpower for data!</p>
 <h3>What&#39;s a Decision Tree, Really?</h3>
@@ -159,7 +161,14 @@
 <p>So, the next time you face a complex decision, try drawing it out as a Decision Tree. You might just find the clarity you need, and appreciate how our data-driven algorithms learn to do the same!</p>
 <p>Keep exploring, keep questioning, and happy coding!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Navigating the Data Forest: My Journey with Decision Trees</h1>
+             <p>Ever wondered how machines make decisions, mirroring our own thought process? Join me as we explore Decision Trees, a fundamental and intuitive algorithm that empowers computers to make choices, one thoughtful question at a time.</p>
+        </div>
+        
 </body>
 
 </html>

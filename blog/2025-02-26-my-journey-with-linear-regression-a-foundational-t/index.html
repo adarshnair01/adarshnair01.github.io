@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Journey with Linear Regression: A Foundational Tale in Data Science</h1>
-           <p>Join me as we unravel the magic behind one of the simplest yet most powerful algorithms in data science, exploring how a humble straight line can unlock profound insights from messy data.</p>
-           <h2>My First Love in Machine Learning: Unpacking Linear Regression</h2>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Journey with Linear Regression: A Foundational Tale in Data Science</h1>
+               <p>Join me as we unravel the magic behind one of the simplest yet most powerful algorithms in data science, exploring how a humble straight line can unlock profound insights from messy data.</p>
+               <h2>My First Love in Machine Learning: Unpacking Linear Regression</h2>
 <p>I remember the first time I truly &quot;got&quot; machine learning. It wasn&#39;t with a fancy neural network or a complex ensemble model. It was with something far simpler, something elegantly straightforward: Linear Regression. It felt like uncovering a secret language hidden within data, a way to draw a simple line and suddenly predict the future, or at least, understand the past.</p>
 <p>It&#39;s often the first algorithm you learn in any data science journey, and for good reason. It’s the bedrock, the fundamental concept upon which many more complex models are built. If you&#39;ve ever looked at a scatter plot and thought, &quot;Hmm, those points seem to follow a line,&quot; then you&#39;ve intuitively grasped the essence of Linear Regression.</p>
 <p>Today, I want to take you on a journey through Linear Regression. We&#39;ll explore what it is, delve into the surprisingly intuitive math that underpins it, discuss its assumptions, see it in action with a bit of Python, and finally, understand its strengths and limitations. Get ready to connect the dots!</p>
@@ -171,7 +173,14 @@ plt.show()
 <p>From predicting sales to understanding economic trends, the simple straight line continues to be an indispensable tool in the data scientist&#39;s toolkit. So, the next time you see a scatter plot, remember the elegant simplicity of Linear Regression and the power it holds to draw insights from seemingly random data points.</p>
 <p>Keep learning, keep exploring, and keep drawing those lines!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Journey with Linear Regression: A Foundational Tale in Data Science</h1>
+             <p>Join me as we unravel the magic behind one of the simplest yet most powerful algorithms in data science, exploring how a humble straight line can unlock profound insights from messy data.</p>
+        </div>
+        
 </body>
 
 </html>

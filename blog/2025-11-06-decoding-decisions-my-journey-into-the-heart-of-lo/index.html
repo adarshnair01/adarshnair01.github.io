@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Decoding Decisions: My Journey into the Heart of Logistic Regression</h1>
-           <p>Ever wondered how computers make "yes" or "no" decisions from a sea of data? Join me as we uncover Logistic Regression, the elegant algorithm that powers everything from spam filters to medical diagnoses.</p>
-           <p><strong>(My Data Science Journal - Entry 10)</strong></p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Decoding Decisions: My Journey into the Heart of Logistic Regression</h1>
+               <p>Ever wondered how computers make "yes" or "no" decisions from a sea of data? Join me as we uncover Logistic Regression, the elegant algorithm that powers everything from spam filters to medical diagnoses.</p>
+               <p><strong>(My Data Science Journal - Entry 10)</strong></p>
 <p>Hello fellow data adventurers!</p>
 <p>Today, I want to share a discovery that fundamentally shifted my understanding of predictive modeling. We&#39;ve all heard of &quot;Machine Learning,&quot; and maybe you&#39;ve even dabbled with linear regression – drawing straight lines through data points to predict things like house prices or temperatures. It&#39;s powerful, sure, but what happens when the answer isn&#39;t a number, but a <em>choice</em>?</p>
 <p>What if you&#39;re trying to predict if an email is spam or not spam? If a customer will churn or stay? If a loan applicant will default or repay? These aren&#39;t continuous values; they&#39;re discrete categories, often just two: yes/no, 0/1, true/false. This is where the magic of <strong>Logistic Regression</strong> steps in, transforming our understanding of prediction from &quot;how much?&quot; to &quot;which one?&quot;</p>
@@ -155,7 +157,14 @@ $ P(Y=1|X; \theta) = h_\theta(x) = \sigma(\theta^T X) = \frac{1}{1 + e^{-\theta^
 <p>Cheers,
 [Your Name/Alias]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Decoding Decisions: My Journey into the Heart of Logistic Regression</h1>
+             <p>Ever wondered how computers make "yes" or "no" decisions from a sea of data? Join me as we uncover Logistic Regression, the elegant algorithm that powers everything from spam filters to medical diagnoses.</p>
+        </div>
+        
 </body>
 
 </html>

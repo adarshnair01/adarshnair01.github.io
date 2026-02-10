@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
-           <p>Ever wondered *why* an AI made a particular decision? Join me as we explore the fascinating world of Explainable AI (XAI), moving beyond \"what\" an AI does to understand \"how\" and \"why.\"</p>
-           <p>My journey into data science, much like many of yours, started with a rush of excitement. The sheer power of machine learning models to identify patterns, make predictions, and even generate new content felt like magic. I remember the thrill of building my first convolutional neural network that could classify images with incredible accuracy, or a recurrent network that could predict stock prices (even if not perfectly!).</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
+               <p>Ever wondered *why* an AI made a particular decision? Join me as we explore the fascinating world of Explainable AI (XAI), moving beyond \"what\" an AI does to understand \"how\" and \"why.\"</p>
+               <p>My journey into data science, much like many of yours, started with a rush of excitement. The sheer power of machine learning models to identify patterns, make predictions, and even generate new content felt like magic. I remember the thrill of building my first convolutional neural network that could classify images with incredible accuracy, or a recurrent network that could predict stock prices (even if not perfectly!).</p>
 <p>But soon, a nagging question began to emerge from the shadows of my glowing accuracy scores and impressive F1-scores: &quot;How did it <em>know</em> that?&quot;</p>
 <p>It&#39;s a question that plagues even the most seasoned AI practitioners, because as models become more complex – deep neural networks, ensemble methods, sophisticated transformers – their internal workings often become as opaque as a sealed black box. We feed them data, they spit out answers, but the reasoning process remains a mystery. And frankly, that&#39;s a problem.</p>
 <p>This is where my fascination with <strong>Explainable AI (XAI)</strong> truly began.</p>
@@ -121,7 +123,14 @@ Let&#39;s break this down:</p>
 <p>For those of you just starting out, or even those deep into your data science careers, I urge you to embrace XAI. It&#39;s not just a niche area; it&#39;s becoming fundamental to responsible AI development. We are building the future, and that future must be transparent, accountable, and understandable.</p>
 <p>The black box era is slowly giving way to an era of clarity. And that, to me, is truly magical.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unpacking the Black Box: My Journey into Explainable AI (XAI)</h1>
+             <p>Ever wondered *why* an AI made a particular decision? Join me as we explore the fascinating world of Explainable AI (XAI), moving beyond \"what\" an AI does to understand \"how\" and \"why.\"</p>
+        </div>
+        
 </body>
 
 </html>

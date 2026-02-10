@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cracking the Code of \\\"Just For You\\\": A Deep Dive into Recommender Systems</h1>
-           <p>Ever wondered how Netflix knows your next binge-watch, or how Amazon always seems to suggest that perfect product? It's not magic, it's the fascinating world of Recommender Systems, and today, we're pulling back the curtain!</p>
-           <p>Hello fellow data enthusiasts and curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cracking the Code of \\\"Just For You\\\": A Deep Dive into Recommender Systems</h1>
+               <p>Ever wondered how Netflix knows your next binge-watch, or how Amazon always seems to suggest that perfect product? It's not magic, it's the fascinating world of Recommender Systems, and today, we're pulling back the curtain!</p>
+               <p>Hello fellow data enthusiasts and curious minds!</p>
 <p>If you&#39;re anything like me, your daily life is subtly, yet profoundly, influenced by algorithms. From the music Spotify suggests based on your mood, to the news articles Google curates just for you, we live in an era of personalized digital experiences. But have you ever paused and genuinely wondered, &quot;How do they <em>know</em>?&quot; How does a service, with millions of users and even more items, manage to pinpoint exactly what might pique <em>your</em> interest?</p>
 <p>Welcome to the captivating realm of <strong>Recommender Systems</strong>!</p>
 <p>Today, we&#39;re embarking on a journey to demystify these powerful algorithms. My goal isn&#39;t just to tell you <em>what</em> they are, but to explore <em>how</em> they work, the challenges they face, and why they&#39;ve become an indispensable part of our digital landscape. So, grab your favorite beverage, get comfy, and let&#39;s dive deep!</p>
@@ -166,7 +168,14 @@ $MAE = \frac{1}{N} \sum_{i=1}^{N} |r_i - \hat{r_i}|$</li>
 <p>So, the next time Netflix asks, &quot;Are you still watching?&quot;, give a nod to the brilliant algorithms working tirelessly behind the scenes, anticipating your desires and guiding your discovery journey. It&#39;s a field brimming with innovation, and there&#39;s never been a better time to explore it!</p>
 <p>Keep learning, keep building, and keep being curious!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cracking the Code of \\\"Just For You\\\": A Deep Dive into Recommender Systems</h1>
+             <p>Ever wondered how Netflix knows your next binge-watch, or how Amazon always seems to suggest that perfect product? It's not magic, it's the fascinating world of Recommender Systems, and today, we're pulling back the curtain!</p>
+        </div>
+        
 </body>
 
 </html>

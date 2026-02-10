@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Learning by Doing: My Journey into Reinforcement Learning (And Why It Matters)</h1>
-           <p>Imagine an AI that learns like a human toddler – through trial and error, making mistakes, and eventually mastering complex tasks. Welcome to the captivating world of Reinforcement Learning, where algorithms discover optimal strategies by interacting with their environment.</p>
-           <p>Hello there, fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Learning by Doing: My Journey into Reinforcement Learning (And Why It Matters)</h1>
+               <p>Imagine an AI that learns like a human toddler – through trial and error, making mistakes, and eventually mastering complex tasks. Welcome to the captivating world of Reinforcement Learning, where algorithms discover optimal strategies by interacting with their environment.</p>
+               <p>Hello there, fellow explorers of the data universe!</p>
 <p>If you&#39;re anything like me, you&#39;re constantly fascinated by how machines learn. We&#39;ve all heard of supervised learning, where models learn from labeled examples (like identifying cats in pictures), and unsupervised learning, where they find hidden patterns in unlabeled data (like grouping similar customers). But what if an AI had to learn <em>without</em> a dataset of correct answers? What if it had to figure things out for itself, much like we learn to ride a bike or play a video game?</p>
 <p>That&#39;s where <strong>Reinforcement Learning (RL)</strong> steps into the spotlight. For me, the magic truly began when I understood RL wasn&#39;t just about crunching numbers, but about creating intelligent agents that learn to <em>make decisions</em> in dynamic environments. It&#39;s about trial and error, feedback loops, and ultimately, mastering tasks that were once thought to be exclusively human domains.</p>
 <h3>The Human Way of Learning, Digitized</h3>
@@ -128,7 +130,14 @@ $G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + ... = \sum_{k=0}^{\infty} \
 <p>The ability for machines to learn independently, through a continuous loop of trial and error, means we&#39;re on the cusp of creating truly autonomous and adaptive AI systems. The future isn&#39;t just about what algorithms know, but about what they can <em>learn to do</em>.</p>
 <p>What fascinating problem do you think Reinforcement Learning could solve next? Share your thoughts in the comments below!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Learning by Doing: My Journey into Reinforcement Learning (And Why It Matters)</h1>
+             <p>Imagine an AI that learns like a human toddler – through trial and error, making mistakes, and eventually mastering complex tasks. Welcome to the captivating world of Reinforcement Learning, where algorithms discover optimal strategies by interacting with their environment.</p>
+        </div>
+        
 </body>
 
 </html>

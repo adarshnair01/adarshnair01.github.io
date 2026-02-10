@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Data Whisperer: Unraveling High Dimensions with t-SNE</h1>
-           <p>Ever felt lost in a sea of data, struggling to make sense of thousands of features? t-SNE is like a seasoned detective, finding hidden patterns and bringing them to life in beautiful, intuitive visualizations.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Data Whisperer: Unraveling High Dimensions with t-SNE</h1>
+               <p>Ever felt lost in a sea of data, struggling to make sense of thousands of features? t-SNE is like a seasoned detective, finding hidden patterns and bringing them to life in beautiful, intuitive visualizations.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to the portfolio deep-dive. Today, we&#39;re going to talk about a true marvel in the world of data science: <strong>t-Distributed Stochastic Neighbor Embedding</strong>, mercifully shortened to <strong>t-SNE</strong>. If you&#39;ve ever gazed at a scatter plot of data points and wished you could do the same for datasets with hundreds or thousands of characteristics, t-SNE is your guide. It&#39;s not just a tool; it&#39;s a way to unlock insights that would otherwise remain hidden in the abyss of high-dimensional space.</p>
 <h3>The Problem: When Your Data Has Too Many &quot;Looks&quot;</h3>
 <p>Imagine you&#39;re trying to understand a person. You might look at their height, hair color, and eye color – that&#39;s 3 &quot;dimensions.&quot; Easy to visualize! Now imagine you want to understand thousands of people, but instead of just these three, you have 784 different measurements for each person (like the pixels in a tiny 28x28 grayscale image). Or perhaps tens of thousands of features, like the words in a document, or the expression levels of genes in a cell.</p>
@@ -122,7 +124,14 @@ This process continues for many iterations until the cost function converges or 
 <p>Next time you&#39;re faced with a dataset that feels overwhelmingly complex, remember t-SNE. It might just be the data whisperer you need to understand what your computers are truly &quot;thinking&quot; about your data.</p>
 <p>Keep exploring, keep learning, and happy data mapping!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Data Whisperer: Unraveling High Dimensions with t-SNE</h1>
+             <p>Ever felt lost in a sea of data, struggling to make sense of thousands of features? t-SNE is like a seasoned detective, finding hidden patterns and bringing them to life in beautiful, intuitive visualizations.</p>
+        </div>
+        
 </body>
 
 </html>

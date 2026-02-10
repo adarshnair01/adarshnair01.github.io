@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The 'Choose Your Own Adventure' of AI: Demystifying Decision Trees</h1>
-           <p>Ever wished AI could make decisions as intuitively as you do with a simple 'yes' or 'no' flowchart? Enter Decision Trees: the deceptively simple yet powerful algorithms that form the bedrock of many intelligent systems.</p>
-           <p>Hello, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The 'Choose Your Own Adventure' of AI: Demystifying Decision Trees</h1>
+               <p>Ever wished AI could make decisions as intuitively as you do with a simple 'yes' or 'no' flowchart? Enter Decision Trees: the deceptively simple yet powerful algorithms that form the bedrock of many intelligent systems.</p>
+               <p>Hello, fellow data explorers!</p>
 <p>Have you ever found yourself making a decision by mentally drawing a flowchart? &quot;If it&#39;s sunny, I&#39;ll go for a run. If it&#39;s cloudy, but not raining, maybe I&#39;ll cycle. If it&#39;s raining, I&#39;ll read a book.&quot; We do this all the time, breaking down complex choices into a series of simpler, yes-or-no questions. It&#39;s an incredibly intuitive way to navigate the world.</p>
 <p>What if I told you that one of the most fundamental and powerful algorithms in Machine Learning mimics this exact human thought process? Welcome to the fascinating world of <strong>Decision Trees</strong>. They&#39;re like the &quot;Choose Your Own Adventure&quot; books of artificial intelligence, guiding a model through a series of choices to arrive at a prediction.</p>
 <h3>What Exactly <em>Is</em> a Decision Tree?</h3>
@@ -149,7 +151,14 @@ In practice, Gini Impurity and Entropy often lead to very similar trees. Gini is
 <p>Decision Trees, with their intuitive, flowchart-like structure, offer a beautiful entry point into the world of machine learning. They show us that some of the most complex problems can be broken down into a series of simple, understandable questions. While a single tree might have its quirks, its underlying principle of recursively splitting data to reduce impurity is a fundamental concept that underpins much more sophisticated AI.</p>
 <p>So, the next time you find yourself making a choice by pondering a series of &quot;if-then-else&quot; scenarios, remember that you&#39;re thinking just like an AI, and perhaps, just like a Decision Tree. And who knows, maybe you&#39;ve just gained a new tool for your own data science adventure! Keep exploring, keep questioning, and keep learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The 'Choose Your Own Adventure' of AI: Demystifying Decision Trees</h1>
+             <p>Ever wished AI could make decisions as intuitively as you do with a simple 'yes' or 'no' flowchart? Enter Decision Trees: the deceptively simple yet powerful algorithms that form the bedrock of many intelligent systems.</p>
+        </div>
+        
 </body>
 
 </html>

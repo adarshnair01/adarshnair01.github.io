@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My AI Ethics Journal: From Algorithms to Accountability</h1>
-           <p>As algorithms increasingly shape our world, the ethical dilemmas they present are no longer theoretical. Join me on a journey to understand why "doing good" with AI is as crucial as "doing well."</p>
-           <p>Welcome, fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My AI Ethics Journal: From Algorithms to Accountability</h1>
+               <p>As algorithms increasingly shape our world, the ethical dilemmas they present are no longer theoretical. Join me on a journey to understand why "doing good" with AI is as crucial as "doing well."</p>
+               <p>Welcome, fellow explorers of the digital frontier!</p>
 <p>I remember the first time I built a machine learning model that actually <em>worked</em>. It was a simple sentiment analyzer, classifying tweets as positive or negative. The feeling of seeing a piece of code learn, adapt, and make predictions was exhilarating. It felt like I was peering into the future, creating a new kind of intelligence.</p>
 <p>But as I delved deeper into the world of Data Science and Machine Learning Engineering, a more profound question began to emerge, quietly at first, then with increasing urgency: <em>Just because we <em>can</em> build something, does it mean we <em>should</em>? And if we do, how do we ensure it doesn&#39;t cause harm?</em></p>
 <p>This isn&#39;t just about technical bugs or optimizing for accuracy. This is about <strong>Ethics in AI</strong>. It’s about the silent power structures embedded in our data, the values (or lack thereof) reflected in our algorithms, and the very real human impact of decisions made by machines.</p>
@@ -110,7 +112,14 @@
 <p>As I reflect on my own path in data science, I realize that building ethically responsible AI isn&#39;t just a technical challenge; it&#39;s a moral imperative. It&#39;s about understanding that every line of code, every dataset, and every model deployment carries with it the potential for significant human impact.</p>
 <p>The promise of AI is immense – to solve some of the world&#39;s most complex problems, to push the boundaries of human knowledge, and to create incredible tools for progress. But this promise can only be fully realized if we commit to building AI systems that are fair, transparent, accountable, and designed with humanity&#39;s best interests at heart. Let&#39;s make sure our journey into the future of AI is one we can all trust.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My AI Ethics Journal: From Algorithms to Accountability</h1>
+             <p>As algorithms increasingly shape our world, the ethical dilemmas they present are no longer theoretical. Join me on a journey to understand why "doing good" with AI is as crucial as "doing well."</p>
+        </div>
+        
 </body>
 
 </html>

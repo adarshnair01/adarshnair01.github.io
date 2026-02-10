@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unveiling the Transformer: How Attention Became the New Intelligence for AI</h1>
-           <p>Ever wondered what truly powers the magic behind ChatGPT, Bard, and other cutting-edge AI? Dive into the revolutionary architecture of the Transformer, the neural network that changed everything by letting AI focus its attention.</p>
-           <p>My journey into the world of Artificial Intelligence has been a constant series of &quot;aha!&quot; moments, but few have resonated as deeply as understanding the Transformer architecture. Before 2017, when the seminal paper &quot;Attention Is All You Need&quot; dropped, the landscape of Natural Language Processing (NLP) was dominated by recurrent neural networks (RNNs) and their more sophisticated cousins, Long Short-Short Term Memory networks (LSTMs). They were good, don&#39;t get me wrong, but they had a bottleneck. Imagine trying to read a very long book, but you can only process one word at a time, sequentially, and by the time you reach the end, you&#39;ve forgotten the nuances of the beginning. That was the struggle of RNNs with long-range dependencies.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unveiling the Transformer: How Attention Became the New Intelligence for AI</h1>
+               <p>Ever wondered what truly powers the magic behind ChatGPT, Bard, and other cutting-edge AI? Dive into the revolutionary architecture of the Transformer, the neural network that changed everything by letting AI focus its attention.</p>
+               <p>My journey into the world of Artificial Intelligence has been a constant series of &quot;aha!&quot; moments, but few have resonated as deeply as understanding the Transformer architecture. Before 2017, when the seminal paper &quot;Attention Is All You Need&quot; dropped, the landscape of Natural Language Processing (NLP) was dominated by recurrent neural networks (RNNs) and their more sophisticated cousins, Long Short-Short Term Memory networks (LSTMs). They were good, don&#39;t get me wrong, but they had a bottleneck. Imagine trying to read a very long book, but you can only process one word at a time, sequentially, and by the time you reach the end, you&#39;ve forgotten the nuances of the beginning. That was the struggle of RNNs with long-range dependencies.</p>
 <p>Then came the Transformer, a paradigm shift that didn&#39;t just improve things; it <em>transformed</em> them. It introduced a new way for AI to &quot;think&quot; about sequences, not one word after another, but by looking at all words simultaneously, deciding which ones were most important for understanding each other. This is the core idea of <strong>attention</strong>.</p>
 <h3>The Problem with the Old Ways: The Sequential Bottleneck</h3>
 <p>Before we dive into the Transformer&#39;s brilliance, let&#39;s briefly acknowledge the challenge it overcame. RNNs process input sequentially. To understand &quot;The cat sat on the mat,&quot; an RNN would process &quot;The,&quot; then &quot;cat,&quot; then &quot;sat,&quot; and so on, building a hidden state that tries to encapsulate all previous information. This sequential processing makes them inherently slow for very long sequences (because you can&#39;t parallelize it), and their ability to remember information from the far past (those &quot;long-range dependencies&quot;) degrades over time. It&#39;s like playing a game of &quot;telephone&quot; where the message gets garbled with each new person.</p>
@@ -89,7 +91,14 @@ Where $pos$ is the position of the word in the sequence, $i$ is the dimension wi
 <p>While Transformers still have challenges (like their computational cost for extremely long sequences, or the &quot;hallucination&quot; problem which often stems from their probabilistic nature and training data), their elegant solution to the sequence modeling problem has opened up an exciting new chapter in AI research and application.</p>
 <p>Understanding the Transformer isn&#39;t just about knowing an architecture; it&#39;s about grasping a fundamental shift in how AI learns to comprehend and generate information. It&#39;s truly a testament to how &quot;attention&quot; can indeed be &quot;all you need&quot; to build remarkably intelligent systems.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unveiling the Transformer: How Attention Became the New Intelligence for AI</h1>
+             <p>Ever wondered what truly powers the magic behind ChatGPT, Bard, and other cutting-edge AI? Dive into the revolutionary architecture of the Transformer, the neural network that changed everything by letting AI focus its attention.</p>
+        </div>
+        
 </body>
 
 </html>

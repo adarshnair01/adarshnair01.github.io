@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond the Straight Line: Unraveling Decisions with Logistic Regression</h1>
-           <p>Ever wondered how computers make "yes" or "no" decisions? Join me on a journey to understand Logistic Regression, the elegant algorithm that transforms continuous predictions into crystal-clear choices.</p>
-           <p>Hello there, aspiring data scientists and curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond the Straight Line: Unraveling Decisions with Logistic Regression</h1>
+               <p>Ever wondered how computers make "yes" or "no" decisions? Join me on a journey to understand Logistic Regression, the elegant algorithm that transforms continuous predictions into crystal-clear choices.</p>
+               <p>Hello there, aspiring data scientists and curious minds!</p>
 <p>Today, I want to talk about an algorithm that often acts as the unsung hero in the world of machine learning: <strong>Logistic Regression</strong>. Don&#39;t let the word &quot;regression&quot; fool you; while it shares some lineage with its linear cousin, Logistic Regression is primarily a <strong>classification</strong> algorithm. It&#39;s how we teach computers to make binary decisions – &quot;yes&quot; or &quot;no,&quot; &quot;true&quot; or &quot;false,&quot; &quot;spam&quot; or &quot;not spam.&quot;</p>
 <p>Imagine you&#39;re building a system to predict if a customer will churn (leave your service) or stay. Or perhaps you&#39;re trying to classify if an email is spam or not. These aren&#39;t problems where you want to predict a continuous value like house price or temperature. You need a definitive <em>choice</em>. This is precisely where Logistic Regression shines.</p>
 <h3>The Problem with Linear Regression for Binary Decisions</h3>
@@ -123,7 +125,14 @@ $P(Y=1 | X, \beta) = h_\beta(X)$</li>
 <p>It’s a fantastic example of how taking a seemingly simple linear model and adding a clever non-linear transformation can unlock powerful capabilities. Understanding its mechanics, from the S-curve of the Sigmoid to the iterative optimization of Gradient Descent, truly deepens your appreciation for the fundamental principles that underpin much of machine learning.</p>
 <p>Keep exploring, keep questioning, and you&#39;ll find that even the &quot;simple&quot; algorithms have a wealth of knowledge to offer!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond the Straight Line: Unraveling Decisions with Logistic Regression</h1>
+             <p>Ever wondered how computers make "yes" or "no" decisions? Join me on a journey to understand Logistic Regression, the elegant algorithm that transforms continuous predictions into crystal-clear choices.</p>
+        </div>
+        
 </body>
 
 </html>

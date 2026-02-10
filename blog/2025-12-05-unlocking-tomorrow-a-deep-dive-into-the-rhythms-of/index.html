@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking Tomorrow: A Deep Dive into the Rhythms of Time Series Analysis</h1>
-           <p>Ever wondered how companies predict future sales or how meteorologists forecast tomorrow's weather? It's all about understanding the hidden patterns in time, a journey we're about to embark on with Time Series Analysis.</p>
-           <p>Hello, fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking Tomorrow: A Deep Dive into the Rhythms of Time Series Analysis</h1>
+               <p>Ever wondered how companies predict future sales or how meteorologists forecast tomorrow's weather? It's all about understanding the hidden patterns in time, a journey we're about to embark on with Time Series Analysis.</p>
+               <p>Hello, fellow data adventurers!</p>
 <p>Have you ever found yourself scrolling through stock prices, watching them bob up and down, or perhaps marveling at how weather apps seem to know exactly when it&#39;s going to rain next week? Behind these everyday predictions lies a fascinating field of data science: <strong>Time Series Analysis</strong>.</p>
 <p>As a data enthusiast building my portfolio, time series quickly became one of my favorite topics. Why? Because it&#39;s everywhere, and its power to peek into the future (or at least make a well-educated guess) feels almost magical. But trust me, there&#39;s no magic, just good old statistics and some clever algorithms.</p>
 <p>So, grab your imaginary lab coat, and let&#39;s unravel the mysteries of data over time!</p>
@@ -149,7 +151,14 @@ $RMSE = \sqrt{\frac{1}{n} \sum_{t=1}^{n} (Y_t - \hat{Y}_t)^2}$</p>
 <p>Time series analysis is a deep and continuously evolving field, but with these foundational concepts, you&#39;re well-equipped to start your journey into predicting the future, one timestamp at a time.</p>
 <p>Happy forecasting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking Tomorrow: A Deep Dive into the Rhythms of Time Series Analysis</h1>
+             <p>Ever wondered how companies predict future sales or how meteorologists forecast tomorrow's weather? It's all about understanding the hidden patterns in time, a journey we're about to embark on with Time Series Analysis.</p>
+        </div>
+        
 </body>
 
 </html>

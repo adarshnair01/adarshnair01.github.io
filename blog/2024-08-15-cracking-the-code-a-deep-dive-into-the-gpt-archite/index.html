@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cracking the Code: A Deep Dive into the GPT Architecture (No Magic, Just Math!)</h1>
-           <p>Ever wondered how GPT models seem to "understand" and generate human-like text? Join me on a journey to unravel the ingenious engineering behind these AI marvels, breaking down the complex Transformer architecture into accessible, engaging pieces.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cracking the Code: A Deep Dive into the GPT Architecture (No Magic, Just Math!)</h1>
+               <p>Ever wondered how GPT models seem to "understand" and generate human-like text? Join me on a journey to unravel the ingenious engineering behind these AI marvels, breaking down the complex Transformer architecture into accessible, engaging pieces.</p>
+               <p>Hey everyone!</p>
 <p>Have you ever chatted with a GPT model, perhaps asking it to write a poem, summarize an article, or even help you debug some code? It feels like magic, doesn&#39;t it? Like there&#39;s a tiny, brilliant writer living inside your computer. For me, that feeling of wonder quickly turns into curiosity: <em>how</em> does it actually work? What kind of brain does this digital wizard possess?</p>
 <p>That curiosity led me down a fascinating rabbit hole, and today, I want to bring you along for the ride. We&#39;re going to pull back the curtain on the Generative Pre-trained Transformer (GPT) architecture. No need for a wizard&#39;s wand, just a willingness to understand some clever math and ingenious engineering. Even if you&#39;re just starting your journey in data science or just curious about AI, I promise to break down the complexities into digestible chunks.</p>
 <h3>From Words to Vectors: The Foundation</h3>
@@ -107,7 +109,14 @@ $PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i/d_{model}})$</p>
 <p>I hope this journey into the heart of GPT has been as exciting for you as it was for me. The world of AI is constantly evolving, and by understanding these foundational pieces, you&#39;re well-equipped to follow along and perhaps even contribute to its next big leap!</p>
 <p>Keep learning, keep exploring, and who knows what amazing &quot;magic&quot; you&#39;ll demystify next!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cracking the Code: A Deep Dive into the GPT Architecture (No Magic, Just Math!)</h1>
+             <p>Ever wondered how GPT models seem to "understand" and generate human-like text? Join me on a journey to unravel the ingenious engineering behind these AI marvels, breaking down the complex Transformer architecture into accessible, engaging pieces.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Demystifying Data's Dimensions: A Personal Take on Principal Component Analysis (PCA)</h1>
-           <p>Ever felt overwhelmed by data? Principal Component Analysis (PCA) is a powerful technique that helps us cut through the noise, revealing the hidden structures within high-dimensional datasets.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Demystifying Data's Dimensions: A Personal Take on Principal Component Analysis (PCA)</h1>
+               <p>Ever felt overwhelmed by data? Principal Component Analysis (PCA) is a powerful technique that helps us cut through the noise, revealing the hidden structures within high-dimensional datasets.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Today, I want to talk about a concept that often feels like magic when you first encounter it, but is built on elegant mathematical foundations: Principal Component Analysis, or PCA. If you&#39;ve ever stared at a dataset with hundreds or even thousands of columns, feeling a slight panic about how to make sense of it all, then PCA is your friend. It&#39;s a foundational technique in machine learning and data science, and understanding it deeply is like gaining a superpower.</p>
 <h3>The &quot;Curse of Dimensionality&quot; and Why We Need PCA</h3>
 <p>Imagine trying to describe a person using only one feature: their height. It&#39;s simple, but you miss a lot. Now, imagine describing them using ten features: height, weight, hair color, eye color, shoe size, favorite ice cream, last movie watched, number of siblings, birth month, and the capital of France. Some of these are useful for identification (height, weight, hair/eye color), some less so, and some are just noise!</p>
@@ -130,7 +132,14 @@ $\text{Explained Variance Ratio for PC}<em>j = \frac{\lambda_j}{\sum</em>{i=1}^{
 <p>So, the next time you&#39;re faced with a dataset that feels too big for its britches, remember PCA. It might just be the superhero your data needs!</p>
 <p>Happy dimensionality reducing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Demystifying Data's Dimensions: A Personal Take on Principal Component Analysis (PCA)</h1>
+             <p>Ever felt overwhelmed by data? Principal Component Analysis (PCA) is a powerful technique that helps us cut through the noise, revealing the hidden structures within high-dimensional datasets.</p>
+        </div>
+        
 </body>
 
 </html>

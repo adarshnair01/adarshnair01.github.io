@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Invisible Hand: Unmasking Bias in Machine Learning</h1>
-           <p>Dive into the hidden biases that lurk within our algorithms, shaping outcomes from healthcare to hiring. Discover why understanding and addressing these biases isn't just a technical challenge, but a societal imperative for a fairer AI future.</p>
-           <p>Hey everyone,</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Invisible Hand: Unmasking Bias in Machine Learning</h1>
+               <p>Dive into the hidden biases that lurk within our algorithms, shaping outcomes from healthcare to hiring. Discover why understanding and addressing these biases isn't just a technical challenge, but a societal imperative for a fairer AI future.</p>
+               <p>Hey everyone,</p>
 <p>Ever feel like technology, despite its promises, sometimes just... gets it wrong? Not in a glitchy, crash-the-app way, but in a more subtle, unsettling way – like it&#39;s making unfair choices, or simply failing to see the full picture? If you&#39;ve ever pondered why a recommendation system seems to miss the mark for you, or heard stories about AI making biased decisions, you&#39;ve touched upon one of the most critical challenges in the world of artificial intelligence today: <strong>Bias in Machine Learning.</strong></p>
 <p>As someone deeply fascinated by the power and potential of AI, I&#39;ve spent a lot of time wrestling with its imperfections. And let me tell you, bias isn&#39;t just a bug; it&#39;s a feature of how we build and deploy AI, often mirroring the very human biases of the world it learns from.</p>
 <p>Today, I want to take you on a journey to understand this &quot;invisible hand&quot; of bias. We&#39;ll explore what it is, where it comes from, why it matters so profoundly, and most importantly, what we, as data scientists, engineers, and curious minds, can do about it.</p>
@@ -137,7 +139,14 @@ where $F(\theta)$ is a fairness penalty that increases when the model exhibits u
 <p>However, understanding bias is the first crucial step towards building a more equitable future. As aspiring data scientists and machine learning engineers, we have a profound responsibility to not just build powerful models, but to build <em>fair</em> and <em>just</em> ones. This means going beyond maximizing accuracy and proactively seeking out and mitigating biases at every stage of the AI lifecycle.</p>
 <p>Let&#39;s commit to being the architects of AI that doesn&#39;t just solve problems, but solves them fairly, for everyone. The invisible hand of bias might be powerful, but with diligence, awareness, and ethical intent, we can guide AI towards a future where its immense power serves all humanity, equally.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Invisible Hand: Unmasking Bias in Machine Learning</h1>
+             <p>Dive into the hidden biases that lurk within our algorithms, shaping outcomes from healthcare to hiring. Discover why understanding and addressing these biases isn't just a technical challenge, but a societal imperative for a fairer AI future.</p>
+        </div>
+        
 </body>
 
 </html>

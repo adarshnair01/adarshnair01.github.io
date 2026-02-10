@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Taming the Overfit Beast: My Journey with Regularization in Machine Learning</h1>
-           <p>Ever built a machine learning model that aced its training, only to flop spectacularly in the real world? That's the heartbreak of overfitting, and regularization is our hero in shining mathematical armor.</p>
-           <p>Oh, the thrill of building your first machine learning model! You gather data, meticulously clean it, choose an algorithm, train it, and then... <em>boom!</em> On your training set, the model performs like a superstar, predicting with astounding accuracy. You feel like a wizard. Then, you unleash it on new, unseen data, and suddenly, it&#39;s less wizard, more bewildered. The accuracy tanks. The predictions are wild. What happened?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Taming the Overfit Beast: My Journey with Regularization in Machine Learning</h1>
+               <p>Ever built a machine learning model that aced its training, only to flop spectacularly in the real world? That's the heartbreak of overfitting, and regularization is our hero in shining mathematical armor.</p>
+               <p>Oh, the thrill of building your first machine learning model! You gather data, meticulously clean it, choose an algorithm, train it, and then... <em>boom!</em> On your training set, the model performs like a superstar, predicting with astounding accuracy. You feel like a wizard. Then, you unleash it on new, unseen data, and suddenly, it&#39;s less wizard, more bewildered. The accuracy tanks. The predictions are wild. What happened?</p>
 <p>Welcome, my friends, to the frustrating, yet utterly common, world of <strong>overfitting</strong>. It&#39;s a rite of passage for every aspiring data scientist and machine learning engineer. I remember my own early encounters with it, staring at evaluation metrics, wondering if I&#39;d accidentally summoned a data-eating demon instead of a predictive model.</p>
 <p>This is where <strong>regularization</strong> enters the stage – not as a fancy algorithm, but as a fundamental <em>principle</em> that helps our models learn smarter, not just harder. Think of it as the wise mentor who tells your enthusiastic model, &quot;Slow down, don&#39;t try to memorize everything; understand the general patterns.&quot;</p>
 <h3>The Overfitting Dilemma: When Models Get Too Smart for Their Own Good</h3>
@@ -103,7 +105,14 @@ $J_{Lasso}(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2
 <p>My own journey with machine learning has been a continuous lesson in humility and careful experimentation. Regularization, at first, seemed like just another mathematical term to memorize. But as I built more models, wrestled with more datasets, and faced the sting of overfitting repeatedly, I came to appreciate its profound elegance and necessity. It&#39;s not about making your model less capable, but about guiding it to be <em>wiser</em> – to learn the essence of the data, not just its fleeting surface details.</p>
 <p>So, the next time your model acts like an overenthusiastic student memorizing every word of the textbook, remember regularization. It&#39;s the gentle hand that guides your model from merely memorizing to truly understanding, ensuring it&#39;s ready for the unpredictable real world. Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Taming the Overfit Beast: My Journey with Regularization in Machine Learning</h1>
+             <p>Ever built a machine learning model that aced its training, only to flop spectacularly in the real world? That's the heartbreak of overfitting, and regularization is our hero in shining mathematical armor.</p>
+        </div>
+        
 </body>
 
 </html>

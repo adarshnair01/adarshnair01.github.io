@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>GPT's Secret Sauce: My Personal Tour Through the Transformer Architecture</h1>
-           <p>Ever wondered what makes GPT-3 or ChatGPT so eerily good at understanding and generating human-like text? It's not magic, it's a brilliant piece of engineering called the Transformer architecture, and today, we're going to pull back the curtain together.</p>
-           <p>I remember the first time I truly felt the &quot;wow&quot; factor of a large language model. It wasn&#39;t just generating coherent sentences; it was understanding context, tone, and even subtle nuances. It felt like a glimpse into the future, and my data science brain immediately started buzzing: <em>How does it do that?</em></p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>GPT's Secret Sauce: My Personal Tour Through the Transformer Architecture</h1>
+               <p>Ever wondered what makes GPT-3 or ChatGPT so eerily good at understanding and generating human-like text? It's not magic, it's a brilliant piece of engineering called the Transformer architecture, and today, we're going to pull back the curtain together.</p>
+               <p>I remember the first time I truly felt the &quot;wow&quot; factor of a large language model. It wasn&#39;t just generating coherent sentences; it was understanding context, tone, and even subtle nuances. It felt like a glimpse into the future, and my data science brain immediately started buzzing: <em>How does it do that?</em></p>
 <p>The answer, as many of you might know, lies primarily in an ingenious invention called the <strong>Transformer architecture</strong>. This isn&#39;t just a fancy buzzword; it&#39;s the fundamental building block that powers GPT (Generative Pre-trained Transformer) models, and it&#39;s what we&#39;re going to dive into today.</p>
 <p>Join me on a personal journey as we unpack the core components of the Transformer. My goal is to make this complex topic accessible, deep enough for fellow data enthusiasts, and hopefully, as exciting for you as it was for me when I first truly grasped it.</p>
 <h3>Before Transformers: A Glimpse into the Past</h3>
@@ -108,7 +110,14 @@ $FFN(x) = max(0, xW_1 + b_1)W_2 + b_2$</p>
 <p>What will the next evolution look like? Will attention remain supreme, or will a new paradigm emerge? Only time will tell, but for now, the Transformer stands as a monumental achievement, continuing to shape the future of AI.</p>
 <p>Keep exploring, keep questioning, and keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>GPT's Secret Sauce: My Personal Tour Through the Transformer Architecture</h1>
+             <p>Ever wondered what makes GPT-3 or ChatGPT so eerily good at understanding and generating human-like text? It's not magic, it's a brilliant piece of engineering called the Transformer architecture, and today, we're going to pull back the curtain together.</p>
+        </div>
+        
 </body>
 
 </html>

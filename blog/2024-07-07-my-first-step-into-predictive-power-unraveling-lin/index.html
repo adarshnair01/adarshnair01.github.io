@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My First Step into Predictive Power: Unraveling Linear Regression</h1>
-           <p>Ever wondered how machines predict the future with a straight line? Join me as we demystify Linear Regression, the foundational technique that transforms data points into powerful insights.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My First Step into Predictive Power: Unraveling Linear Regression</h1>
+               <p>Ever wondered how machines predict the future with a straight line? Join me as we demystify Linear Regression, the foundational technique that transforms data points into powerful insights.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my corner of the data world. Today, I want to talk about a concept that, for many of us, including myself, was one of our very first serious encounters with machine learning: <strong>Linear Regression</strong>. It might sound fancy, but at its heart, it&#39;s about finding patterns in data – specifically, straight-line patterns.</p>
 <p>I remember when I first stumbled upon it. I was trying to make sense of a dataset showing how many hours students studied versus their test scores. My intuition told me there was a connection, a trend. More study hours usually meant better scores, right? But how could I quantify that relationship? How could I predict a score for someone who studied, say, 7 hours, if I didn&#39;t have that exact data point? That&#39;s where Linear Regression stepped in like a superhero with a ruler.</p>
 <h3>What is Linear Regression, Really?</h3>
@@ -124,7 +126,14 @@
 <p>So, next time you see a scatter plot, try to imagine that best-fit straight line. You&#39;ll be thinking like a data scientist already!</p>
 <p>Keep learning, keep exploring, and I&#39;ll catch you in the next post!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My First Step into Predictive Power: Unraveling Linear Regression</h1>
+             <p>Ever wondered how machines predict the future with a straight line? Join me as we demystify Linear Regression, the foundational technique that transforms data points into powerful insights.</p>
+        </div>
+        
 </body>
 
 </html>

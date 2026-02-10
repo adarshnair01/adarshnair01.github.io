@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>My Ascent into Optimization: A Personal Dive into Gradient Descent</h1>
-           <p>Ever wondered how machines 'learn' to make predictions or find the best solutions? Join me as we embark on a journey to understand Gradient Descent, the fundamental algorithm that powers much of modern machine learning by intelligently navigating the landscape of data.</p>
-           <p>Welcome, fellow explorers of the digital frontier! Today, I want to pull back the curtain on one of the most foundational and fascinating algorithms in machine learning: Gradient Descent. If you&#39;ve ever trained a neural network, fit a regression model, or optimized <em>anything</em> in data science, you&#39;ve likely encountered this workhorse, perhaps without even realizing the elegant simplicity at its core.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>My Ascent into Optimization: A Personal Dive into Gradient Descent</h1>
+               <p>Ever wondered how machines 'learn' to make predictions or find the best solutions? Join me as we embark on a journey to understand Gradient Descent, the fundamental algorithm that powers much of modern machine learning by intelligently navigating the landscape of data.</p>
+               <p>Welcome, fellow explorers of the digital frontier! Today, I want to pull back the curtain on one of the most foundational and fascinating algorithms in machine learning: Gradient Descent. If you&#39;ve ever trained a neural network, fit a regression model, or optimized <em>anything</em> in data science, you&#39;ve likely encountered this workhorse, perhaps without even realizing the elegant simplicity at its core.</p>
 <p>For me, understanding Gradient Descent wasn&#39;t just about memorizing a formula; it was like discovering the secret compass that helps me navigate the vast, often foggy, landscape of data. It’s a concept that feels incredibly intuitive once you grasp the underlying idea, and that’s what I hope to share with you today.</p>
 <h3>The Mountain Problem: Finding the Lowest Point</h3>
 <p>Imagine yourself high up in a mountain range, blindfolded or perhaps caught in a thick fog. Your goal: reach the lowest point in the valley. You can&#39;t see the entire landscape, but you can feel the slope directly beneath your feet. What&#39;s your strategy?</p>
@@ -118,7 +120,14 @@ $ \theta_j := \theta_j - \alpha \frac{\partial J}{\partial \theta_j} $ (for each
 <p>If you&#39;re building a data science or machine learning portfolio, not only understanding but also being able to articulate the mechanics of Gradient Descent is incredibly valuable. It demonstrates a deep comprehension of the underlying algorithms, distinguishing you from someone who merely knows how to call a library function.</p>
 <p>Keep experimenting with different learning rates, ponder the implications of local minima, and perhaps even try to implement a simple Gradient Descent from scratch. It&#39;s a journey well worth taking!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>My Ascent into Optimization: A Personal Dive into Gradient Descent</h1>
+             <p>Ever wondered how machines 'learn' to make predictions or find the best solutions? Join me as we embark on a journey to understand Gradient Descent, the fundamental algorithm that powers much of modern machine learning by intelligently navigating the landscape of data.</p>
+        </div>
+        
 </body>
 
 </html>

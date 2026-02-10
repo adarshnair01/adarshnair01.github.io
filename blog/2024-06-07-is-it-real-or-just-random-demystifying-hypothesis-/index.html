@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Is It Real, Or Just Random? Demystifying Hypothesis Testing</h1>
-           <p>Ever wondered if that new marketing strategy *really* worked, or if a model's performance improvement is more than just luck? Join me on a personal journey to demystify Hypothesis Testing, the powerful statistical tool that helps us make informed decisions from data.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Is It Real, Or Just Random? Demystifying Hypothesis Testing</h1>
+               <p>Ever wondered if that new marketing strategy *really* worked, or if a model's performance improvement is more than just luck? Join me on a personal journey to demystify Hypothesis Testing, the powerful statistical tool that helps us make informed decisions from data.</p>
+               <p>Hey everyone!</p>
 <p>Welcome back to my journal, where we tackle the fascinating world of data and machine learning. Today, I want to share a concept that, for a long time, felt like a secret handshake among statisticians: <strong>Hypothesis Testing</strong>.</p>
 <p>It sounds intimidating, right? &quot;Hypothesis Testing.&quot; My first encounter with it felt like I was being asked to solve a riddle in a foreign language. But once I truly grasped its essence, I realized it&#39;s less about complex math and more about a structured way of thinking – a detective&#39;s approach to data. And believe me, whether you&#39;re building predictive models or optimizing a website, this skill is absolutely indispensable.</p>
 <p>So, grab a coffee (or your favorite beverage), and let&#39;s pull back the curtain on this statistical superpower together.</p>
@@ -175,7 +177,14 @@
 <p>Cheers,</p>
 <p>[Your Name/Alias]</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Is It Real, Or Just Random? Demystifying Hypothesis Testing</h1>
+             <p>Ever wondered if that new marketing strategy *really* worked, or if a model's performance improvement is more than just luck? Join me on a personal journey to demystify Hypothesis Testing, the powerful statistical tool that helps us make informed decisions from data.</p>
+        </div>
+        
 </body>
 
 </html>

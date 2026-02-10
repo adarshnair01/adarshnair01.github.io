@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cracking the AI's Code: My Journey into Explainable AI (XAI)</h1>
-           <p>We've built incredible AI that can see, hear, and even reason, but sometimes it feels like a wizard hiding behind a curtain. Join me as we pull back that curtain and explore how Explainable AI (XAI) is demystifying our intelligent machines.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cracking the AI's Code: My Journey into Explainable AI (XAI)</h1>
+               <p>We've built incredible AI that can see, hear, and even reason, but sometimes it feels like a wizard hiding behind a curtain. Join me as we pull back that curtain and explore how Explainable AI (XAI) is demystifying our intelligent machines.</p>
+               <p>Hey everyone!</p>
 <p>Lately, I&#39;ve been wrestling with a fascinating challenge in the world of Artificial Intelligence: the &quot;black box&quot; problem. You know, we build these incredibly powerful machine learning models – deep neural networks that can classify images with superhuman accuracy, predict stock market trends, or even help diagnose diseases. They work, and often, they work brilliantly. But then, a nagging question creeps in: <em>Why?</em></p>
 <p>Why did the AI approve this loan application but reject that one? Why did the model classify this image as a &quot;muffin&quot; instead of a &quot;chihuahua&quot;? (Yes, that&#39;s a real and humorous problem!) Why did my self-driving car suddenly brake?</p>
 <p>As someone deeply passionate about Data Science and Machine Learning, I’ve often felt a mix of awe and unease. We&#39;re deploying these complex systems into critical domains, affecting real lives, and yet, sometimes, we can&#39;t fully articulate the rationale behind their decisions. It&#39;s like having a brilliant, silent partner who just points to the right answer without telling you how they got there.</p>
@@ -107,7 +109,14 @@ These methods look at the activations in the final convolutional layers of a CNN
 <p>Let&#39;s continue to push the boundaries, not just in AI&#39;s capabilities, but in its clarity and trustworthiness. The future of AI depends on it.</p>
 <p>Happy exploring!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cracking the AI's Code: My Journey into Explainable AI (XAI)</h1>
+             <p>We've built incredible AI that can see, hear, and even reason, but sometimes it feels like a wizard hiding behind a curtain. Join me as we pull back that curtain and explore how Explainable AI (XAI) is demystifying our intelligent machines.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unmasking the Magic: A Deep Dive into GPT's Transformer Architecture</h1>
-           <p>Ever wondered what makes large language models like GPT so incredibly powerful and seemingly intelligent? Join me as we journey into the heart of their architecture, unraveling the ingenious Transformer model that allows them to generate human-like text.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unmasking the Magic: A Deep Dive into GPT's Transformer Architecture</h1>
+               <p>Ever wondered what makes large language models like GPT so incredibly powerful and seemingly intelligent? Join me as we journey into the heart of their architecture, unraveling the ingenious Transformer model that allows them to generate human-like text.</p>
+               <p>Hey everyone!</p>
 <p>If you&#39;re anything like me, your jaw probably dropped the first time you interacted with a large language model (LLM) like ChatGPT. The ability to generate coherent articles, write code, or even craft creative stories seems almost like magic. But as data scientists and ML engineers, we know there&#39;s no magic, only incredibly clever engineering and mathematics.</p>
 <p>Today, I want to pull back the curtain and explore the foundational architecture that powers these generative AI models: the <strong>GPT architecture</strong>, which stands for <strong>Generative Pre-trained Transformer</strong>. We&#39;ll peel back the layers of abstraction, understand the core components, and hopefully, demystify what makes these models so extraordinarily effective.</p>
 <h3>What&#39;s in a Name? Deconstructing GPT</h3>
@@ -129,7 +131,14 @@ Since GPT is a <em>generative</em> model, it must only use past tokens to predic
 <p>I hope this deep dive into GPT&#39;s architecture has been insightful! Keep building, keep learning, and keep asking &quot;how does that work?!&quot;</p>
 <p>Happy exploring!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unmasking the Magic: A Deep Dive into GPT's Transformer Architecture</h1>
+             <p>Ever wondered what makes large language models like GPT so incredibly powerful and seemingly intelligent? Join me as we journey into the heart of their architecture, unraveling the ingenious Transformer model that allows them to generate human-like text.</p>
+        </div>
+        
 </body>
 
 </html>

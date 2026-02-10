@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>From \\\"Yes\\\" or \\\"No\\\" to \\\"Probably\\\": Unpacking Logistic Regression for Classification</h1>
-           <p>Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities.</p>
-           <p>Welcome, fellow data explorers! Today, we&#39;re diving into a cornerstone of machine learning: Logistic Regression. Don&#39;t let the &quot;regression&quot; in its name fool you; this elegant algorithm is all about <strong>classification</strong>, helping machines make binary decisions like &quot;spam&quot; or &quot;not spam,&quot; &quot;disease&quot; or &quot;no disease,&quot; &quot;churn&quot; or &quot;stay.&quot;</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>From \\\"Yes\\\" or \\\"No\\\" to \\\"Probably\\\": Unpacking Logistic Regression for Classification</h1>
+               <p>Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities.</p>
+               <p>Welcome, fellow data explorers! Today, we&#39;re diving into a cornerstone of machine learning: Logistic Regression. Don&#39;t let the &quot;regression&quot; in its name fool you; this elegant algorithm is all about <strong>classification</strong>, helping machines make binary decisions like &quot;spam&quot; or &quot;not spam,&quot; &quot;disease&quot; or &quot;no disease,&quot; &quot;churn&quot; or &quot;stay.&quot;</p>
 <p>Imagine you&#39;re trying to predict if a student will pass an exam based on the hours they studied. If you used simple Linear Regression, you might get predictions like 0.2 (which doesn&#39;t make sense for a &quot;pass/fail&quot; outcome) or even 1.5 (definitely not a pass/fail). Clearly, we need a different approach. We need something that gives us a probability, a value comfortably nestled between 0 and 1, which we can then use to make a confident &#39;yes&#39; or &#39;no&#39; decision.</p>
 <p>This is where Logistic Regression steps in, offering a remarkably intuitive path to turning continuous inputs into crisp, binary predictions.</p>
 <h3>Why Not Linear Regression for Classification?</h3>
@@ -107,7 +109,14 @@
 <p>Logistic Regression is a foundational algorithm in machine learning, offering an elegant and robust solution to binary classification problems. By taking a linear combination of features, passing it through the sigmoid function to obtain a probability, and then optimizing these parameters using cross-entropy loss and gradient descent, it allows machines to make clear, interpretable &quot;yes&quot; or &quot;no&quot; decisions.</p>
 <p>Understanding Logistic Regression isn&#39;t just about knowing an algorithm; it&#39;s about grasping the core concepts of probabilistic modeling and optimization that underpin much of modern machine learning. So, the next time you see an email filtered as spam, remember the humble yet mighty Logistic Regression working silently behind the scenes! Keep learning, keep exploring!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>From \\\"Yes\\\" or \\\"No\\\" to \\\"Probably\\\": Unpacking Logistic Regression for Classification</h1>
+             <p>Ever wondered how computers predict 'yes' or 'no' instead of just numbers? Join me as we unravel Logistic Regression, the foundational algorithm that makes binary classification click, transforming scores into meaningful probabilities.</p>
+        </div>
+        
 </body>
 
 </html>

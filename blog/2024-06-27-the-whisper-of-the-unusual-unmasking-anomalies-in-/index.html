@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Whisper of the Unusual: Unmasking Anomalies in Our Data</h1>
-           <p>Join me on a journey to uncover the hidden art of anomaly detection, where we learn to spot the strange, the unexpected, and the potentially critical outliers that whisper secrets in our data. It's like being a detective for data, seeking out what doesn't quite fit.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Whisper of the Unusual: Unmasking Anomalies in Our Data</h1>
+               <p>Join me on a journey to uncover the hidden art of anomaly detection, where we learn to spot the strange, the unexpected, and the potentially critical outliers that whisper secrets in our data. It's like being a detective for data, seeking out what doesn't quite fit.</p>
+               <p>Hey everyone!</p>
 <p>Ever had that gut feeling that something was just... off? A strange pattern in your routine, a weird temperature reading from a sensor, or a transaction that looked a little too good (or bad) to be true? That intuitive sense of detecting something unusual is exactly what we, as data scientists and machine learning engineers, try to capture and automate. Welcome to the fascinating world of <strong>Anomaly Detection</strong>.</p>
 <p>For a long time, the idea of finding &quot;weird stuff&quot; in data seemed almost magical. But as I dove deeper into machine learning, I realized it&#39;s less magic and more a blend of statistical rigor, clever algorithms, and a keen understanding of context. It&#39;s about building systems that act like vigilant guardians, constantly scanning for deviations from the norm. And trust me, it&#39;s one of the most impactful things you can add to your data science toolkit.</p>
 <h3>What Even <em>Is</em> an Anomaly? The &quot;What&quot; and &quot;Why&quot;</h3>
@@ -148,7 +150,14 @@
 <p>Whether you&#39;re safeguarding financial transactions, monitoring critical infrastructure, or just trying to understand your own data better, the ability to spot the unusual is an indispensable skill. So, go forth, explore these algorithms, and start listening for those whispers in your data – they might just be telling you something truly important!</p>
 <p>Happy detecting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Whisper of the Unusual: Unmasking Anomalies in Our Data</h1>
+             <p>Join me on a journey to uncover the hidden art of anomaly detection, where we learn to spot the strange, the unexpected, and the potentially critical outliers that whisper secrets in our data. It's like being a detective for data, seeking out what doesn't quite fit.</p>
+        </div>
+        
 </body>
 
 </html>

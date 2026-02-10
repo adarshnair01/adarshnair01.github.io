@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Deconstructing GPT: A Journey into the Architecture That Powers Modern AI</h1>
-           <p>Ever wondered how ChatGPT seems to \\\"understand\\\" you, crafting coherent and often brilliant responses? It's not magic, but a marvel of engineering built upon a foundational architecture called the Transformer, specifically tailored for generation.</p>
-           <p>Hello fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Deconstructing GPT: A Journey into the Architecture That Powers Modern AI</h1>
+               <p>Ever wondered how ChatGPT seems to \\\"understand\\\" you, crafting coherent and often brilliant responses? It's not magic, but a marvel of engineering built upon a foundational architecture called the Transformer, specifically tailored for generation.</p>
+               <p>Hello fellow explorers of the digital frontier!</p>
 <p>Like many of you, I&#39;ve been utterly fascinated by the recent explosion of Large Language Models (LLMs) like OpenAI&#39;s GPT series. It feels like we&#39;ve crossed a threshold, where AI can truly engage in meaningful conversation, write poetry, code, and even reason in ways we once thought impossible for machines. It&#39;s easy to look at the seamless output and think, &quot;This must be magic!&quot;</p>
 <p>But as a budding data scientist, my curiosity quickly turned from wonder to an itch to understand <em>how</em>. How does GPT actually work under the hood? What architectural marvel allows it to generate human-like text with such astounding fluency?</p>
 <p>Join me on a personal journey as we peel back the layers of the GPT architecture. We&#39;ll demystify the core components, connect them to familiar concepts, and hopefully, emerge with a clearer picture of the engineering brilliance behind these incredible models. Don&#39;t worry if you&#39;re new to deep learning – I&#39;ll try to explain everything as if we&#39;re dissecting a cool new gadget together.</p>
@@ -108,7 +110,14 @@ So, typically, the output of each sub-layer (after the residual connection) is t
 <p>If you&#39;re as fascinated as I am, I encourage you to dive deeper! Read the original &quot;Attention Is All You Need&quot; paper, explore open-source Transformer implementations, or even try to build a tiny one yourself. The world of AI is rapidly evolving, and grasping these core architectures is your key to being part of that revolution.</p>
 <p>Happy learning!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Deconstructing GPT: A Journey into the Architecture That Powers Modern AI</h1>
+             <p>Ever wondered how ChatGPT seems to \\\"understand\\\" you, crafting coherent and often brilliant responses? It's not magic, but a marvel of engineering built upon a foundational architecture called the Transformer, specifically tailored for generation.</p>
+        </div>
+        
 </body>
 
 </html>

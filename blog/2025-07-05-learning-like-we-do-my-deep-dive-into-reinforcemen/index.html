@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Learning Like We Do: My Deep Dive into Reinforcement Learning's Magic</h1>
-           <p>Imagine a world where machines learn not from labeled data, but by trial and error, just like we do. That's the captivating realm of Reinforcement Learning, and it's changing everything.</p>
-           <p>As a budding data scientist and machine learning enthusiast, I&#39;m constantly drawn to areas of AI that feel genuinely &quot;intelligent.&quot; While supervised learning has given us incredible image classifiers and language models, and unsupervised learning helps us find hidden patterns, there&#39;s a certain magic to systems that learn <em>how to act</em> in complex environments. This fascination led me down a rabbit hole into the world of <strong>Reinforcement Learning (RL)</strong>, and frankly, it&#39;s one of the most exciting paradigms I&#39;ve encountered.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Learning Like We Do: My Deep Dive into Reinforcement Learning's Magic</h1>
+               <p>Imagine a world where machines learn not from labeled data, but by trial and error, just like we do. That's the captivating realm of Reinforcement Learning, and it's changing everything.</p>
+               <p>As a budding data scientist and machine learning enthusiast, I&#39;m constantly drawn to areas of AI that feel genuinely &quot;intelligent.&quot; While supervised learning has given us incredible image classifiers and language models, and unsupervised learning helps us find hidden patterns, there&#39;s a certain magic to systems that learn <em>how to act</em> in complex environments. This fascination led me down a rabbit hole into the world of <strong>Reinforcement Learning (RL)</strong>, and frankly, it&#39;s one of the most exciting paradigms I&#39;ve encountered.</p>
 <p>Join me on a journey to explore what Reinforcement Learning is, how it works, and why it&#39;s at the forefront of creating truly adaptive and intelligent agents. We&#39;ll strip away some of the intimidating jargon and look at the core ideas that power everything from self-driving cars to AI that can beat grandmasters at Go.</p>
 <h3>The Core Idea: Learning by Doing</h3>
 <p>Think about how a baby learns to walk. They don&#39;t have a dataset of perfectly labeled &quot;walking&quot; and &quot;falling&quot; examples. Instead, they try, they stumble, they fall (negative feedback!), they push themselves up, and they take another step (positive feedback!). Over time, through countless interactions with their environment, they figure out the optimal sequence of muscle movements to achieve their goal: walking.</p>
@@ -156,7 +158,14 @@ To stabilize training (which can be notoriously difficult with DNNs and RL), DQN
 <p>Diving into Reinforcement Learning has been an exhilarating experience. It bridges the gap between theoretical AI concepts and practical, problem-solving applications in a way few other fields do. From the elegant simplicity of the agent-environment loop to the complexity of deep Q-networks, every step feels like uncovering a new layer of intelligence.</p>
 <p>If you&#39;re fascinated by machines that learn to act intelligently in dynamic environments, I highly encourage you to explore Reinforcement Learning further. Pick up a good textbook (Sutton &amp; Barto&#39;s &quot;Reinforcement Learning: An Introduction&quot; is the Bible), try implementing a simple Q-Learning agent for a classic problem like the Frozen Lake environment, and watch as your agent slowly but surely figures out how to navigate its world. It&#39;s a truly rewarding experience, both literally and figuratively!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Learning Like We Do: My Deep Dive into Reinforcement Learning's Magic</h1>
+             <p>Imagine a world where machines learn not from labeled data, but by trial and error, just like we do. That's the captivating realm of Reinforcement Learning, and it's changing everything.</p>
+        </div>
+        
 </body>
 
 </html>

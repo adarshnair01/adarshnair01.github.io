@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: The Unsung Heroes of Model Evaluation — Precision vs. Recall</h1>
-           <p>Ever felt like your machine learning model was "mostly right" but terribly wrong where it mattered most? Dive with me into the crucial world of Precision and Recall, where we learn that sometimes, being smart isn't just about being accurate.</p>
-           <p>Hey there, fellow data adventurer!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: The Unsung Heroes of Model Evaluation — Precision vs. Recall</h1>
+               <p>Ever felt like your machine learning model was "mostly right" but terribly wrong where it mattered most? Dive with me into the crucial world of Precision and Recall, where we learn that sometimes, being smart isn't just about being accurate.</p>
+               <p>Hey there, fellow data adventurer!</p>
 <p>I remember when I first started tinkering with machine learning models, especially classification ones. My first instinct, like many beginners, was to chase that glorious &quot;accuracy&quot; score. &quot;My model is 95% accurate!&quot; I&#39;d exclaim, feeling quite chuffed with myself. But as I delved deeper, building models for real-world problems like detecting rare diseases or spotting fraudulent transactions, I quickly learned a humbling truth: accuracy, while comforting, can be a dangerously misleading metric.</p>
 <p>It was like getting an A on a test, but realizing you completely flunked the one question that determined if you saved lives. That&#39;s where Precision and Recall step in – two unsung heroes that, once understood, become indispensable tools in your model evaluation toolkit.</p>
 <h3>The Treachery of Too Much Accuracy</h3>
@@ -108,7 +110,14 @@ $</p>
 <p>So, the next time you build a classification model, don&#39;t stop at accuracy. Dive into the confusion matrix, interrogate your Precision and Recall scores, and ask yourself: &quot;What kind of mistakes can my model afford to make, and which ones are simply unacceptable?&quot; That&#39;s when you start building truly intelligent and responsible systems.</p>
 <p>Keep learning, keep questioning, and keep building!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: The Unsung Heroes of Model Evaluation — Precision vs. Recall</h1>
+             <p>Ever felt like your machine learning model was "mostly right" but terribly wrong where it mattered most? Dive with me into the crucial world of Precision and Recall, where we learn that sometimes, being smart isn't just about being accurate.</p>
+        </div>
+        
 </body>
 
 </html>

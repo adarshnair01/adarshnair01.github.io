@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Ascending from Ignorance: A Personal Journey into Gradient Descent</h1>
-           <p>Ever wondered how machines "learn" to make predictions? It's not magic, but a beautifully elegant dance of calculus and iteration, much like finding your way down a misty mountain.</p>
-           <p>Hello, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Ascending from Ignorance: A Personal Journey into Gradient Descent</h1>
+               <p>Ever wondered how machines "learn" to make predictions? It's not magic, but a beautifully elegant dance of calculus and iteration, much like finding your way down a misty mountain.</p>
+               <p>Hello, fellow data explorers!</p>
 <p>Today, I want to take you on a journey, a descent, if you will, into one of the most fundamental algorithms in machine learning: <strong>Gradient Descent</strong>. When I first encountered this concept, it felt like unlocking a secret chamber in the vast castle of AI. It&#39;s the engine behind countless machine learning models, from simple linear regression to the most complex deep neural networks. Understanding it isn&#39;t just about memorizing a formula; it&#39;s about grasping the core idea of how machines optimize and learn.</p>
 <p>So, grab your virtual hiking boots – we&#39;re going to climb down a metaphorical mountain to find the lowest point.</p>
 <h3>The Mountain We&#39;re Trying to Conquer: Our Cost Function</h3>
@@ -128,7 +130,14 @@ Mini-batch GD is computationally efficient like SGD (due to vectorized operation
 <p>The next time you see a machine learning model performing its task, remember the elegant dance of Gradient Descent happening beneath the surface, iteratively guiding the model parameters towards a state of minimal error. It&#39;s a beautiful testament to how foundational mathematical concepts underpin the most advanced technologies of our time.</p>
 <p>Keep exploring, keep learning, and keep descending!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Ascending from Ignorance: A Personal Journey into Gradient Descent</h1>
+             <p>Ever wondered how machines "learn" to make predictions? It's not magic, but a beautifully elegant dance of calculus and iteration, much like finding your way down a misty mountain.</p>
+        </div>
+        
 </body>
 
 </html>

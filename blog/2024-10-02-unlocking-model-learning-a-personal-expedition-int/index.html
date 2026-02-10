@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking Model Learning: A Personal Expedition into Gradient Descent</h1>
-           <p>Ever wondered how your machine learning models truly *learn*? It's like finding your way down a dark, misty mountain to the lowest valley point, and our steadfast guide for this crucial journey is a powerful algorithm called Gradient Descent.</p>
-           <p>Hello fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking Model Learning: A Personal Expedition into Gradient Descent</h1>
+               <p>Ever wondered how your machine learning models truly *learn*? It's like finding your way down a dark, misty mountain to the lowest valley point, and our steadfast guide for this crucial journey is a powerful algorithm called Gradient Descent.</p>
+               <p>Hello fellow explorers of the data universe!</p>
 <p>Today, I want to share a concept that, for me, was a massive &quot;aha!&quot; moment in understanding how machine learning models actually <em>learn</em>. It’s an algorithm that underpins so much of what we do in this field, from linear regression to the deepest neural networks. I&#39;m talking about <strong>Gradient Descent</strong>.</p>
 <p>If you&#39;re anything like I was, you might have heard the term thrown around, perhaps seen some intimidating mathematical symbols, and thought, &quot;That sounds important, but also, terrifyingly complex.&quot; Well, I&#39;m here to tell you it&#39;s not. Or, rather, the <em>core idea</em> is elegantly simple, and once you grasp that, the rest falls into place. Think of this as our personal journal entry on this crucial concept.</p>
 <h3>The Big Problem: Finding the &quot;Best&quot; Fit</h3>
@@ -138,7 +140,14 @@ c.  <strong>Check for Convergence:</strong> Monitor the cost function $ J(\theta
 <p>So, the next time you train a model, take a moment to appreciate the humble Gradient Descent, diligently feeling its way down the cost function, step by calculated step, to find that optimal set of parameters. It&#39;s a silent hero, constantly learning, constantly improving, and constantly pushing the boundaries of what our models can achieve.</p>
 <p>Keep exploring, keep questioning, and happy descending!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking Model Learning: A Personal Expedition into Gradient Descent</h1>
+             <p>Ever wondered how your machine learning models truly *learn*? It's like finding your way down a dark, misty mountain to the lowest valley point, and our steadfast guide for this crucial journey is a powerful algorithm called Gradient Descent.</p>
+        </div>
+        
 </body>
 
 </html>

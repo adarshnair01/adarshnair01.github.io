@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: Unveiling Your Model's True Story with ROC and AUC</h1>
-           <p>Ever felt that your classification model's accuracy wasn't telling the whole story? Dive into the powerful world of ROC curves and AUC scores, and discover how to truly understand your model's performance across all scenarios.</p>
-           <p>As I reflect on my journey through the fascinating world of machine learning, I vividly remember a moment of profound confusion. I had just built my first binary classification model – something simple, like predicting whether a customer would churn or not. I proudly showed off an accuracy of 95% to a mentor, expecting praise. Instead, I got a quizzical look. &quot;That&#39;s great,&quot; he said, &quot;but what if only 1% of your customers actually churn?&quot;</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: Unveiling Your Model's True Story with ROC and AUC</h1>
+               <p>Ever felt that your classification model's accuracy wasn't telling the whole story? Dive into the powerful world of ROC curves and AUC scores, and discover how to truly understand your model's performance across all scenarios.</p>
+               <p>As I reflect on my journey through the fascinating world of machine learning, I vividly remember a moment of profound confusion. I had just built my first binary classification model – something simple, like predicting whether a customer would churn or not. I proudly showed off an accuracy of 95% to a mentor, expecting praise. Instead, I got a quizzical look. &quot;That&#39;s great,&quot; he said, &quot;but what if only 1% of your customers actually churn?&quot;</p>
 <p><em>Boom.</em> My world of simple accuracy shattered. My model could simply predict &quot;no churn&quot; for everyone and still achieve 99% accuracy! It was a critical lesson: a single metric, especially accuracy, often paints an incomplete, sometimes misleading, picture of a model&#39;s true capabilities. This is where the magic of ROC curves and AUC scores stepped in, offering a much richer, more nuanced perspective.</p>
 <h3>The Foundation: Understanding Binary Classification Outcomes</h3>
 <p>Before we dive into the elegance of ROC and AUC, let&#39;s quickly lay the groundwork for binary classification. Imagine our model is trying to classify something into one of two categories – &quot;positive&quot; (e.g., customer churns, a patient has a disease, an email is spam) or &quot;negative&quot; (customer stays, patient is healthy, email is not spam).</p>
@@ -142,7 +144,14 @@ plt.show()
 <p>Understanding ROC curves and AUC scores has been one of the most transformative lessons in my data science journey. They push us beyond the simplistic view of &quot;accuracy&quot; and encourage a deeper, more comprehensive understanding of how our models truly perform.</p>
 <p>Next time you build a classification model, don&#39;t just stop at accuracy. Plot that ROC curve, calculate that AUC, and truly appreciate the nuanced story your model has to tell. It&#39;s a fundamental step towards building more robust, reliable, and interpretable machine learning systems. Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: Unveiling Your Model's True Story with ROC and AUC</h1>
+             <p>Ever felt that your classification model's accuracy wasn't telling the whole story? Dive into the powerful world of ROC curves and AUC scores, and discover how to truly understand your model's performance across all scenarios.</p>
+        </div>
+        
 </body>
 
 </html>

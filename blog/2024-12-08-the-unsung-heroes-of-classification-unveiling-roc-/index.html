@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Unsung Heroes of Classification: Unveiling ROC Curves and AUC</h1>
-           <p>Ever felt lost navigating the jungle of classification model metrics? Join me on a journey to demystify ROC curves and AUC, two powerful tools that reveal the true performance of your models beyond simple accuracy.</p>
-           <p>Hello fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Unsung Heroes of Classification: Unveiling ROC Curves and AUC</h1>
+               <p>Ever felt lost navigating the jungle of classification model metrics? Join me on a journey to demystify ROC curves and AUC, two powerful tools that reveal the true performance of your models beyond simple accuracy.</p>
+               <p>Hello fellow data adventurers!</p>
 <p>Today, I want to share a little secret about evaluating classification models. When I first started out, like many of you, I thought model evaluation was simple: &quot;What&#39;s the accuracy? Is it high? Great!&quot; Oh, how naive I was! It didn&#39;t take long for me to realize that accuracy, while intuitive, can be a deceptive friend, especially when dealing with real-world, imbalanced datasets.</p>
 <p>Imagine you&#39;re building a model to detect a rare disease that affects only 1% of the population. If your model simply predicts &quot;no disease&quot; for everyone, it achieves a whopping 99% accuracy! Sounds amazing, right? But it&#39;s utterly useless because it misses every single person who <em>actually</em> has the disease. This realization pushed me to look deeper, and that&#39;s when I stumbled upon the powerful duo: <strong>ROC Curves</strong> and <strong>AUC</strong>. They changed how I understood and evaluated my classification models forever.</p>
 <p>So, let&#39;s peel back the layers and understand why these concepts are so crucial in our data science toolkit.</p>
@@ -138,7 +140,14 @@ This is essentially <code>1 - Specificity</code>. Specificity tells us how many 
 <p>So, the next time you build a classification model, don&#39;t just ask &quot;What&#39;s the accuracy?&quot; Dive deeper. Plot that ROC curve. Calculate that AUC. Understand the trade-offs. Your models (and your stakeholders) will thank you for it!</p>
 <p>Keep learning, keep exploring, and keep building amazing things!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Unsung Heroes of Classification: Unveiling ROC Curves and AUC</h1>
+             <p>Ever felt lost navigating the jungle of classification model metrics? Join me on a journey to demystify ROC curves and AUC, two powerful tools that reveal the true performance of your models beyond simple accuracy.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Cracking the Code: A Friendly Expedition into GPT's Architecture</h1>
-           <p>Ever wondered how GPT seems to 'understand' and generate human-like text with such uncanny fluency? Let's pull back the curtain and explore the remarkable engineering that makes it all possible.</p>
-           <p>Hello, fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Cracking the Code: A Friendly Expedition into GPT's Architecture</h1>
+               <p>Ever wondered how GPT seems to 'understand' and generate human-like text with such uncanny fluency? Let's pull back the curtain and explore the remarkable engineering that makes it all possible.</p>
+               <p>Hello, fellow explorers of the digital frontier!</p>
 <p>If you&#39;re anything like me, you&#39;ve probably spent some time marveling at the capabilities of models like ChatGPT. Whether it&#39;s writing code, drafting emails, or even helping brainstorm creative ideas, it feels less like a program and more like a remarkably versatile digital assistant. It genuinely feels like magic, doesn&#39;t it?</p>
 <p>But as data scientists and machine learning enthusiasts, we know that behind every magical interface lies a foundation of clever mathematics, ingenious algorithms, and robust engineering. Today, I invite you on a journey to demystify that magic. We&#39;re going to dive deep, but gently, into the core architecture that powers Generative Pre-trained Transformers (GPTs). Think of this as your personal guided tour through the digital brain of a language model.</p>
 <p>Our goal isn&#39;t just to list components, but to understand <em>why</em> they exist and <em>how</em> they contribute to GPT&#39;s incredible abilities. Ready? Let&#39;s go!</p>
@@ -122,7 +124,14 @@ $V = X W^V$</p>
 <p>I hope this expedition has given you a clearer, deeper appreciation for the ingenuity behind these incredible models. Understanding the &quot;how&quot; empowers us to not only use these tools more effectively but also to contribute to their future development. The field of AI is still evolving rapidly, and the foundations we&#39;ve explored today are just the beginning.</p>
 <p>Keep learning, keep questioning, and maybe, just maybe, you&#39;ll be the one to design the next revolutionary architecture!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Cracking the Code: A Friendly Expedition into GPT's Architecture</h1>
+             <p>Ever wondered how GPT seems to 'understand' and generate human-like text with such uncanny fluency? Let's pull back the curtain and explore the remarkable engineering that makes it all possible.</p>
+        </div>
+        
 </body>
 
 </html>

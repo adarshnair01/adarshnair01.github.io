@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Pretty Pictures: Unveiling the Art and Science of Data Visualization Principles</h1>
-           <p>Dive deep into the core principles that transform raw data into compelling stories, understanding not just *what* to visualize, but *how* and *why* to make it truly impactful. This isn't just about making charts; it's about empowering insights.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Pretty Pictures: Unveiling the Art and Science of Data Visualization Principles</h1>
+               <p>Dive deep into the core principles that transform raw data into compelling stories, understanding not just *what* to visualize, but *how* and *why* to make it truly impactful. This isn't just about making charts; it's about empowering insights.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Have you ever looked at a chart and felt... nothing? Or worse, felt confused? As a data enthusiast, I&#39;ve been there countless times. I remember my early days, fresh out of learning how to wrangle data with Python and SQL, feeling like a wizard. I could clean, transform, and model data with increasing confidence. But then came the moment of truth: <em>showing</em> my findings.</p>
 <p>My first visualizations were, well, functional. They showed the data. But they didn&#39;t <em>speak</em> to anyone. They certainly didn&#39;t tell a story. It was then that I realized an uncomfortable truth: merely generating a graph isn&#39;t enough. A truly effective visualization doesn&#39;t just display data; it illuminates insights, sparks curiosity, and compels action. It&#39;s the bridge between complex numbers and human understanding.</p>
 <p>This journey led me down the rabbit hole of Data Visualization Principles. These aren&#39;t just rules; they are guidelines, born from decades of cognitive science, design thinking, and practical experience, to help us create visuals that resonate. Think of them as the secret sauce for turning your data analysis into a captivating narrative.</p>
@@ -131,7 +133,14 @@ Consider a bar chart. The bars themselves are data-ink. The labels on the axes a
 <p>So, go forth and visualize! Experiment, critique, learn from others, and always ask yourself: &quot;What story is my data trying to tell, and how can I help it speak its truth most clearly?&quot;</p>
 <p>Happy charting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Pretty Pictures: Unveiling the Art and Science of Data Visualization Principles</h1>
+             <p>Dive deep into the core principles that transform raw data into compelling stories, understanding not just *what* to visualize, but *how* and *why* to make it truly impactful. This isn't just about making charts; it's about empowering insights.</p>
+        </div>
+        
 </body>
 
 </html>

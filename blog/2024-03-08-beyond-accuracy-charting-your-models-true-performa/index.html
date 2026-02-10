@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond Accuracy: Charting Your Model's True Performance with ROC & AUC</h1>
-           <p>Forget the single, misleading number; unlock a panoramic view of your classification model's capabilities. Join me as we explore ROC curves and AUC, the dynamic duo that reveals how well your model truly discriminates.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond Accuracy: Charting Your Model's True Performance with ROC & AUC</h1>
+               <p>Forget the single, misleading number; unlock a panoramic view of your classification model's capabilities. Join me as we explore ROC curves and AUC, the dynamic duo that reveals how well your model truly discriminates.</p>
+               <p>Hey everyone!</p>
 <p>Remember those early days in data science, fresh-faced and eager, when the holy grail of model evaluation felt like achieving that elusive 99% accuracy? I certainly do. I&#39;d train a classification model, see a high accuracy score, and beam with pride. &quot;Look at this masterpiece!&quot; I&#39;d think. But then, reality, as it often does, came knocking.</p>
 <p>What if my model was predicting something like a rare disease, where only 1% of the population has it? A model that <em>always</em> predicts &quot;no disease&quot; would achieve 99% accuracy, but it would be utterly useless – missing every single positive case! This experience taught me a crucial lesson: <strong>accuracy, by itself, is often not enough, and sometimes, it can be downright misleading.</strong></p>
 <p>This is where the real heroes of classification model evaluation step in: the <strong>Receiver Operating Characteristic (ROC) curve</strong> and the <strong>Area Under the ROC Curve (AUC)</strong>. These tools don&#39;t just give you a single snapshot; they paint a comprehensive picture of your model&#39;s performance across all possible scenarios, helping you understand its true potential.</p>
@@ -178,7 +180,14 @@ plt.show()
 <p>So, the next time you build a classifier, don&#39;t just stop at accuracy. Unleash the power of ROC and AUC. Your models (and your stakeholders) will thank you!</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond Accuracy: Charting Your Model's True Performance with ROC & AUC</h1>
+             <p>Forget the single, misleading number; unlock a panoramic view of your classification model's capabilities. Join me as we explore ROC curves and AUC, the dynamic duo that reveals how well your model truly discriminates.</p>
+        </div>
+        
 </body>
 
 </html>

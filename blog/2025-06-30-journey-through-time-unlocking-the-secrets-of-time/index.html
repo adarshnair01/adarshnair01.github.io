@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Journey Through Time: Unlocking the Secrets of Time Series Analysis</h1>
-           <p>Ever wished you could glimpse into the future, predicting trends before they happen? Join me as we embark on a thrilling expedition into the world of Time Series Analysis, where data tells stories of what's to come.</p>
-           <h2>Journey Through Time: Unlocking the Secrets of Time Series Analysis</h2>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Journey Through Time: Unlocking the Secrets of Time Series Analysis</h1>
+               <p>Ever wished you could glimpse into the future, predicting trends before they happen? Join me as we embark on a thrilling expedition into the world of Time Series Analysis, where data tells stories of what's to come.</p>
+               <h2>Journey Through Time: Unlocking the Secrets of Time Series Analysis</h2>
 <p>Hey everyone!</p>
 <p>Have you ever looked at a graph showing stock prices over a year, or the daily temperature fluctuations, or perhaps the number of website visitors hour by hour? There’s something incredibly captivating about data that unfolds over time. It’s not just a collection of independent points; it&#39;s a narrative, a story with a beginning, a middle, and a future chapter waiting to be written. This, my friends, is the realm of <strong>Time Series Analysis</strong>.</p>
 <p>As a data enthusiast constantly seeking to understand and predict the world around us, time series analysis has always held a special place in my heart. It&#39;s like having a limited-edition time machine – not one that sends us back to the past (though we certainly look there for clues!), but one that helps us <em>project into the future</em>. And isn&#39;t that just the coolest superpower a data scientist could ask for?</p>
@@ -205,7 +207,14 @@ $\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$<ul>
 <p>I hope this exploration has demystified some of the concepts behind time series analysis and perhaps even sparked your own curiosity to delve deeper. The best way to learn is to do! Grab a time series dataset (think stock prices, weather data, or even your own daily steps data), fire up a Python notebook, and start experimenting with decomposition, differencing, and fitting your first ARIMA model. The future awaits your prediction!</p>
 <p>Happy forecasting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Journey Through Time: Unlocking the Secrets of Time Series Analysis</h1>
+             <p>Ever wished you could glimpse into the future, predicting trends before they happen? Join me as we embark on a thrilling expedition into the world of Time Series Analysis, where data tells stories of what's to come.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Beyond the Current Moment: Mastering Time Series Analysis</h1>
-           <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or why your favorite streaming service knows what you'll watch next? It often comes down to the magic of Time Series Analysis – a powerful data science discipline that helps us understand and predict data points indexed in time.</p>
-           <p>Hey everyone! Welcome back to my data science journal. Today, I want to dive into a fascinating area that often feels like peering into a crystal ball: <strong>Time Series Analysis</strong>.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Beyond the Current Moment: Mastering Time Series Analysis</h1>
+               <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or why your favorite streaming service knows what you'll watch next? It often comes down to the magic of Time Series Analysis – a powerful data science discipline that helps us understand and predict data points indexed in time.</p>
+               <p>Hey everyone! Welcome back to my data science journal. Today, I want to dive into a fascinating area that often feels like peering into a crystal ball: <strong>Time Series Analysis</strong>.</p>
 <p>Imagine data not as static snapshots, but as a flowing river. Each measurement is a drop, and the river itself has a direction – time. Understanding this river, predicting its future course, or figuring out where it came from, is the essence of time series analysis. It&#39;s a field that connects mathematics, statistics, and machine learning to make sense of our dynamic world.</p>
 <p>From predicting stock prices and electricity consumption to forecasting weather patterns and diagnosing medical conditions from sensor data, time series is everywhere. It&#39;s the silent force behind many of the predictions we encounter daily. If you&#39;ve ever checked a weather forecast, looked at a stock market chart, or wondered how your fitness tracker estimates your sleep cycles, you&#39;ve touched the world of time series data.</p>
 <p>Let&#39;s embark on this journey and unlock its secrets together!</p>
@@ -170,7 +172,14 @@ $MAPE = \frac{1}{N} \sum_{i=1}^N \left| \frac{y_i - \hat{y}_i}{y_i} \right| \tim
 <p>So, go forth and explore! Pick a dataset (stock prices, temperature data, website traffic) and try applying some of these concepts. There&#39;s no better way to learn than by doing.</p>
 <p>Happy forecasting!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Beyond the Current Moment: Mastering Time Series Analysis</h1>
+             <p>Ever wondered how companies predict sales, how meteorologists forecast weather, or why your favorite streaming service knows what you'll watch next? It often comes down to the magic of Time Series Analysis – a powerful data science discipline that helps us understand and predict data points indexed in time.</p>
+        </div>
+        
 </body>
 
 </html>

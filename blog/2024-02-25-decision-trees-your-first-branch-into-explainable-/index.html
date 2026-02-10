@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Decision Trees: Your First Branch into Explainable AI</h1>
-           <p>Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process.</p>
-           <p>Hey there, fellow explorer of the data universe! Today, I want to share a foundational concept in machine learning that&#39;s as intuitive as it is powerful: Decision Trees. If you&#39;ve ever followed a flowchart or played a &#39;choose-your-own-adventure&#39; book, you&#39;ve already got a head start on understanding them!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Decision Trees: Your First Branch into Explainable AI</h1>
+               <p>Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process.</p>
+               <p>Hey there, fellow explorer of the data universe! Today, I want to share a foundational concept in machine learning that&#39;s as intuitive as it is powerful: Decision Trees. If you&#39;ve ever followed a flowchart or played a &#39;choose-your-own-adventure&#39; book, you&#39;ve already got a head start on understanding them!</p>
 <h3>What Exactly <em>Are</em> Decision Trees?</h3>
 <p>Imagine you&#39;re trying to decide if you should go for a run. You might ask: &quot;Is it raining?&quot; If yes, you might ask: &quot;Do I have an umbrella?&quot; If no, you might ask: &quot;Is it too cold?&quot; Each question leads you down a different path until you reach a final decision: &#39;Run&#39; or &#39;Don&#39;t Run&#39;.</p>
 <p>That&#39;s precisely what a Decision Tree does for computers! It&#39;s a flowchart-like structure where each internal <strong>node</strong> represents a &#39;test&#39; on an attribute (like &#39;Is it raining?&#39;), each <strong>branch</strong> represents the outcome of that test, and each <strong>leaf node</strong> represents a class label (the decision, e.g., &#39;Run&#39;). The topmost node is called the <strong>root node</strong>.</p>
@@ -54,7 +56,14 @@ where $p_i$ is the fraction of items belonging to class $i$ and $C$ is the total
 <p>To combat overfitting, techniques like <strong>pruning</strong> (removing branches that have little predictive power) are used. Even more powerfully, multiple Decision Trees can be combined into <strong>ensemble methods</strong> like Random Forests or Gradient Boosting, creating incredibly robust models – but that&#39;s a story for another blog post!</p>
 <p>Decision Trees are a fantastic entry point into machine learning. They demonstrate the core idea of breaking down complex problems into a series of simple, logical steps. So, next time you make a decision, think of the hidden tree guiding your choices!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Decision Trees: Your First Branch into Explainable AI</h1>
+             <p>Ever wondered how computers make complex choices step-by-step? Decision Trees offer an incredibly intuitive and powerful way for machines to mimic our own logical decision-making process.</p>
+        </div>
+        
 </body>
 
 </html>

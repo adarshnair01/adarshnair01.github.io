@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Silent Language of Data: My Journey Through Visualization Principles</h1>
-           <p>Ever wondered why some charts just 'click' while others leave you staring blankly? Join me as we uncover the fundamental principles that transform raw data into clear, compelling stories, making your insights truly unforgettable.</p>
-           <p>Hey there, fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Silent Language of Data: My Journey Through Visualization Principles</h1>
+               <p>Ever wondered why some charts just 'click' while others leave you staring blankly? Join me as we uncover the fundamental principles that transform raw data into clear, compelling stories, making your insights truly unforgettable.</p>
+               <p>Hey there, fellow data explorers!</p>
 <p>There&#39;s a moment in every data scientist&#39;s journey when you realize that understanding algorithms and building models is just half the battle. The other, equally crucial half? <em>Communication</em>. You can build the most sophisticated neural network or uncover the most profound correlation, but if you can&#39;t <em>show</em> your findings effectively, they might as well stay hidden in your Jupyter notebook.</p>
 <p>I remember my early days, fresh out of an introductory data science course. I was so excited to make pretty charts with Matplotlib and Seaborn, throwing in all sorts of colors, legends, and fancy titles. I thought more &quot;stuff&quot; on the chart meant more information, more impressive. Oh, how wrong I was! My visualizations were often cluttered, confusing, and, frankly, ineffective. They were pretty pictures, but they weren&#39;t telling a story.</p>
 <p>It was a tough lesson, but a vital one. This realization kickstarted my deep dive into the <em>principles</em> of data visualization – the unspoken rules that guide us from raw data to impactful insights. These aren&#39;t just design guidelines; they&#39;re cognitive shortcuts, ethical responsibilities, and strategic tools that turn complex information into an intuitive understanding.</p>
@@ -104,7 +106,14 @@ Leveraging these attributes helps guide your audience&#39;s eye to the most impo
 </ol>
 <p>Embrace these principles, and watch your data visualizations go from good to truly great. Happy visualizing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Silent Language of Data: My Journey Through Visualization Principles</h1>
+             <p>Ever wondered why some charts just 'click' while others leave you staring blankly? Join me as we uncover the fundamental principles that transform raw data into clear, compelling stories, making your insights truly unforgettable.</p>
+        </div>
+        
 </body>
 
 </html>

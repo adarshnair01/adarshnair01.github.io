@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unlocking the Future by Understanding the Present: A Journey into Markov Chains</h1>
-           <p>Ever wondered how your phone predicts your next word, or how Google ranks web pages? Dive into the fascinating world of Markov Chains, a simple yet profoundly powerful concept that underpins many modern technologies.</p>
-           <p>Hey everyone!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unlocking the Future by Understanding the Present: A Journey into Markov Chains</h1>
+               <p>Ever wondered how your phone predicts your next word, or how Google ranks web pages? Dive into the fascinating world of Markov Chains, a simple yet profoundly powerful concept that underpins many modern technologies.</p>
+               <p>Hey everyone!</p>
 <p>As a data science enthusiast, there are certain foundational concepts that, once you grasp them, suddenly make a lot of complex systems seem brilliantly simple. For me, one of those &quot;aha!&quot; moments came with understanding <strong>Markov Chains</strong>. It&#39;s a concept so elegant, so intuitive, yet so immensely powerful that it feels like discovering a secret language the universe uses to describe change.</p>
 <p>It started with a simple thought experiment: What will the weather be like tomorrow? If it&#39;s sunny today, is it more likely to be sunny tomorrow, or cloudy? What if it&#39;s been raining for three days straight – does that history make rain more probable for day four? This seemingly trivial question opens the door to a fundamental idea in probability and statistics: the Markov Chain.</p>
 <h3>What is a Markov Chain? The &quot;Memoryless&quot; Marvel</h3>
@@ -149,7 +151,14 @@ $</p>
 <p>The world is full of these elegant, memoryless processes just waiting to be understood!</p>
 <p>Happy exploring!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unlocking the Future by Understanding the Present: A Journey into Markov Chains</h1>
+             <p>Ever wondered how your phone predicts your next word, or how Google ranks web pages? Dive into the fascinating world of Markov Chains, a simple yet profoundly powerful concept that underpins many modern technologies.</p>
+        </div>
+        
 </body>
 
 </html>

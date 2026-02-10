@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Descending to Success: Unpacking Gradient Descent, Your ML Model's Compass to Optimization</h1>
-           <p>Ever wondered how a machine learning model 'learns' to get better? It's not magic, it's mathematics! Join me as we uncover the elegant, yet powerful, optimization algorithm at the heart of most AI: Gradient Descent.</p>
-           <p>Hey there, fellow explorers of the data universe!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Descending to Success: Unpacking Gradient Descent, Your ML Model's Compass to Optimization</h1>
+               <p>Ever wondered how a machine learning model 'learns' to get better? It's not magic, it's mathematics! Join me as we uncover the elegant, yet powerful, optimization algorithm at the heart of most AI: Gradient Descent.</p>
+               <p>Hey there, fellow explorers of the data universe!</p>
 <p>Today, I want to pull back the curtain on one of the most fundamental algorithms in machine learning: <strong>Gradient Descent</strong>. If you&#39;ve ever felt a bit intimidated by the math or wondered how exactly your AI models seem to &quot;figure things out,&quot; you&#39;re in the right place. Think of this as a guided tour, where we&#39;ll demystify the core idea, peek under the hood at the math, and understand why it&#39;s the invisible force driving so much of what we do in data science.</p>
 <h3>The Quest for Perfection: Why We Need Optimization</h3>
 <p>Imagine you&#39;re building a machine learning model – say, a simple linear regression that predicts house prices based on their size. You start with some initial guesses for the line&#39;s slope and intercept. Naturally, these initial guesses probably won&#39;t be perfect. Your predictions will be off, sometimes by a lot.</p>
@@ -121,7 +123,14 @@ $ \frac{\partial}{\partial \theta_1} J(\theta_0, \theta_1) = \frac{1}{m} \sum_{i
 <p>So, the next time you hear about a deep learning model achieving impressive results, remember the humble, yet incredibly powerful, algorithm tirelessly guiding its parameters towards that optimal state: Gradient Descent. It&#39;s the compass that helps our models find their way to success.</p>
 <p>Happy descending!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Descending to Success: Unpacking Gradient Descent, Your ML Model's Compass to Optimization</h1>
+             <p>Ever wondered how a machine learning model 'learns' to get better? It's not magic, it's mathematics! Join me as we uncover the elegant, yet powerful, optimization algorithm at the heart of most AI: Gradient Descent.</p>
+        </div>
+        
 </body>
 
 </html>

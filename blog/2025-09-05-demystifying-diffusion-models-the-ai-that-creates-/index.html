@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Demystifying Diffusion Models: The AI That Creates by Destorying</h1>
-           <p>Ever wondered how AI can conjure breathtaking images from thin air? Dive into the fascinating world of Diffusion Models, where art meets science through a magical dance of noise and reconstruction.</p>
-           <p>As a budding data scientist and machine learning enthusiast, I&#39;m constantly amazed by the rapid evolution of AI. Just a few years ago, the idea of an AI drawing a hyper-realistic image from a simple text prompt felt like science fiction. Now, we have tools like DALL-E 2, Midjourney, and Stable Diffusion that do exactly that, creating stunning visuals in seconds. These aren&#39;t just parlor tricks; they represent a fundamental leap in our ability to generate complex, high-fidelity data.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Demystifying Diffusion Models: The AI That Creates by Destorying</h1>
+               <p>Ever wondered how AI can conjure breathtaking images from thin air? Dive into the fascinating world of Diffusion Models, where art meets science through a magical dance of noise and reconstruction.</p>
+               <p>As a budding data scientist and machine learning enthusiast, I&#39;m constantly amazed by the rapid evolution of AI. Just a few years ago, the idea of an AI drawing a hyper-realistic image from a simple text prompt felt like science fiction. Now, we have tools like DALL-E 2, Midjourney, and Stable Diffusion that do exactly that, creating stunning visuals in seconds. These aren&#39;t just parlor tricks; they represent a fundamental leap in our ability to generate complex, high-fidelity data.</p>
 <p>At the heart of many of these modern marvels lies a powerful class of generative models: <strong>Diffusion Models</strong>. When I first heard the name, I imagined something about spreading information, like a rumor diffusing through a crowd. While it&#39;s not quite that, the core idea — of gradual change and transformation — is surprisingly apt.</p>
 <p>So, how do these models work their magic? What&#39;s the secret sauce that allows them to &quot;paint&quot; a masterpiece from a canvas of pure static? Let&#39;s unpack the beautiful math and intuitive principles behind Diffusion Models.</p>
 <h3>The Intuition: From a Masterpiece to Noise, and Back Again</h3>
@@ -114,7 +116,14 @@ $L = ||\epsilon - \epsilon_\theta(x_t, t)||^2$</li>
 <p>It&#39;s a testament to the power of breaking down complex problems into manageable, iterative steps. From pure statistical noise, these models don&#39;t just restore what was lost; they conjure entirely new realities. The future of AI is not just about understanding data, but about creating it, and Diffusion Models are undoubtedly leading the charge.</p>
 <p>Ready to dive deeper? Explore the original papers like &quot;Denoising Diffusion Probabilistic Models&quot; (DDPMs) by Ho et al., or experiment with open-source implementations of Stable Diffusion. The journey from noise to masterpiece is yours to explore!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Demystifying Diffusion Models: The AI That Creates by Destorying</h1>
+             <p>Ever wondered how AI can conjure breathtaking images from thin air? Dive into the fascinating world of Diffusion Models, where art meets science through a magical dance of noise and reconstruction.</p>
+        </div>
+        
 </body>
 
 </html>

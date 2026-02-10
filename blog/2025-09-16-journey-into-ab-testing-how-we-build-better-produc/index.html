@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Journey into A/B Testing: How We Build Better Products, One Experiment at a Time</h1>
-           <p>Ever wondered how tech giants decide which button color or feature layout is best? It's not magic, it's A/B testing – a powerful scientific method that helps us make data-driven decisions and build products users truly love.</p>
-           <p>Hello fellow explorers of the digital frontier!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Journey into A/B Testing: How We Build Better Products, One Experiment at a Time</h1>
+               <p>Ever wondered how tech giants decide which button color or feature layout is best? It's not magic, it's A/B testing – a powerful scientific method that helps us make data-driven decisions and build products users truly love.</p>
+               <p>Hello fellow explorers of the digital frontier!</p>
 <p>I remember a time when I thought product development was mostly about brilliant ideas and gut feelings. You&#39;d build something, launch it, and hope for the best. Sometimes it worked, sometimes... not so much. It felt a bit like throwing darts in the dark. But then I discovered A/B testing, and it was like someone switched on the lights in a big, confusing room.</p>
 <p>Today, I want to take you on a journey into the world of A/B testing. It&#39;s a fundamental skill for anyone diving into data science, machine learning, or product management. Whether you&#39;re designing a new app feature, optimizing a website, or even just trying to figure out which email subject line gets more opens, A/B testing is your secret weapon for making <em>data-driven</em> decisions, not just guesses.</p>
 <h3>What is A/B Testing, Anyway?</h3>
@@ -143,7 +145,14 @@ $Z = \frac{(\hat{p}_B - \hat{p}_A)}{\text{SE}}$ (using a pooled SE under $H_0$ f
 <p>So, next time you see a new feature pop up on your favorite app or website, remember the rigorous A/B tests that likely went into making that decision. And maybe, just maybe, you&#39;ll feel a little spark of inspiration to design your own experiment!</p>
 <p>Keep experimenting, keep learning, and keep building better products!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Journey into A/B Testing: How We Build Better Products, One Experiment at a Time</h1>
+             <p>Ever wondered how tech giants decide which button color or feature layout is best? It's not magic, it's A/B testing – a powerful scientific method that helps us make data-driven decisions and build products users truly love.</p>
+        </div>
+        
 </body>
 
 </html>

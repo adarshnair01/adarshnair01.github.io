@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Curious Case of the Outlier: Your Guide to Anomaly Detection</h1>
-           <p>Ever wondered how banks catch fraud, or how your smartwatch knows you've fallen? It's often the magic of anomaly detection, the unsung hero finding the 'odd one out' in a sea of normal.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Curious Case of the Outlier: Your Guide to Anomaly Detection</h1>
+               <p>Ever wondered how banks catch fraud, or how your smartwatch knows you've fallen? It's often the magic of anomaly detection, the unsung hero finding the 'odd one out' in a sea of normal.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Today, I want to pull back the curtain on a fascinating and incredibly vital field within data science and machine learning: <strong>Anomaly Detection</strong>. Think of it as the Sherlock Holmes of data, always on the lookout for anything unusual, suspicious, or just plain weird.</p>
 <p>Have you ever looked at a dataset and felt like something just didn&#39;t quite fit? Maybe a sensor reading that spiked inexplicably, a transaction that was way too large for a typical customer, or a network packet behaving in a pattern no legitimate user ever would. That gut feeling? That&#39;s your brain doing a rudimentary form of anomaly detection. But for complex, massive datasets, we need more sophisticated tools.</p>
 <h3>What Exactly <em>Is</em> an Anomaly?</h3>
@@ -142,7 +144,14 @@ Where $x$ is the original input and $\hat{x}$ is the reconstructed output. A hig
 <p>As data scientists and machine learning engineers, mastering anomaly detection equips us with the tools to build more robust, intelligent, and secure systems. It&#39;s a field that constantly evolves, demanding curiosity, creativity, and a detective&#39;s eye for the unusual.</p>
 <p>So, the next time you see something odd in a dataset, remember: it might just be the whisper of an anomaly, waiting for a data detective like you to uncover its story. Keep exploring, keep questioning, and keep an eye out for those fascinating outliers!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Curious Case of the Outlier: Your Guide to Anomaly Detection</h1>
+             <p>Ever wondered how banks catch fraud, or how your smartwatch knows you've fallen? It's often the magic of anomaly detection, the unsung hero finding the 'odd one out' in a sea of normal.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Thinking in Graphs: My Journey into Graph Neural Networks</h1>
-           <p>Ever wondered how AI understands complex relationships like social networks or molecular structures? Dive with me into the fascinating world of Graph Neural Networks, where data connections become the core of intelligent learning.</p>
-           <p>Hey everyone! Remember the thrill of building your first image classifier, or maybe even a text generator? It feels like magic, right? We feed our AI grids of pixels or sequences of words, and it learns to spot cats, translate languages, or even write poetry. For a long time, I was mesmerized by how effectively Convolutional Neural Networks (CNNs) handled images and Recurrent Neural Networks (RNNs) tackled sequences. They&#39;ve revolutionized so many fields, and truly opened my eyes to the power of deep learning.</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Thinking in Graphs: My Journey into Graph Neural Networks</h1>
+               <p>Ever wondered how AI understands complex relationships like social networks or molecular structures? Dive with me into the fascinating world of Graph Neural Networks, where data connections become the core of intelligent learning.</p>
+               <p>Hey everyone! Remember the thrill of building your first image classifier, or maybe even a text generator? It feels like magic, right? We feed our AI grids of pixels or sequences of words, and it learns to spot cats, translate languages, or even write poetry. For a long time, I was mesmerized by how effectively Convolutional Neural Networks (CNNs) handled images and Recurrent Neural Networks (RNNs) tackled sequences. They&#39;ve revolutionized so many fields, and truly opened my eyes to the power of deep learning.</p>
 <p>But then, a question started nagging at me. What about data that <em>doesn&#39;t</em> fit neatly into a grid or a sequence? What about the intricate web of friendships on social media, the complex structure of a molecule, the interconnected routes of a city&#39;s transport system, or even the vast network of scientific papers citing each other? This isn&#39;t just a list of items; it&#39;s a universe of <em>relationships</em>.</p>
 <p>This is where my journey into Graph Neural Networks (GNNs) began, and let me tell you, it&#39;s been an absolute game-changer in how I perceive and model data. If you&#39;ve ever felt that traditional AI was missing a piece of the puzzle when it came to understanding connections, then you&#39;re in the right place.</p>
 <h3>The World Isn&#39;t Flat: Understanding Graphs</h3>
@@ -134,7 +136,14 @@ A typical update might be $h_v^{(k)} = \sigma(W_{\text{update}} \cdot [h_v^{(k-1
 <p>The beauty of GNNs, despite the mathematical notation, lies in their intuitive &quot;gossip algorithm&quot; for learning. It&#39;s a powerful demonstration of how deep learning can be adapted to handle complex, irregular structures, unlocking insights that were previously out of reach.</p>
 <p>If you&#39;re looking for a cutting-edge area in AI with immense real-world impact, I wholeheartedly encourage you to dive deeper into Graph Neural Networks. Your journey into the interconnected world of data has just begun!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Thinking in Graphs: My Journey into Graph Neural Networks</h1>
+             <p>Ever wondered how AI understands complex relationships like social networks or molecular structures? Dive with me into the fascinating world of Graph Neural Networks, where data connections become the core of intelligent learning.</p>
+        </div>
+        
 </body>
 
 </html>

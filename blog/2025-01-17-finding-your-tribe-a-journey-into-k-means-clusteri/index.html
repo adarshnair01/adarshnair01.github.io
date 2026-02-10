@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Finding Your Tribe: A Journey into K-Means Clustering</h1>
-           <p>Ever looked at a messy pile of data and wished it would just sort itself into neat groups? K-Means clustering is here to grant that wish, helping us find natural groupings within seemingly chaotic datasets.</p>
-           <p>Hello fellow data adventurers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Finding Your Tribe: A Journey into K-Means Clustering</h1>
+               <p>Ever looked at a messy pile of data and wished it would just sort itself into neat groups? K-Means clustering is here to grant that wish, helping us find natural groupings within seemingly chaotic datasets.</p>
+               <p>Hello fellow data adventurers!</p>
 <p>Today, I want to share a story about finding order in chaos, about making sense of the jumbled pieces of information that often land on our desks. Imagine you&#39;re a librarian with a brand new, massive shipment of books, but none of them have labels indicating their genre. They&#39;re just... books. How would you start organizing them so patrons can find what they&#39;re looking for? You&#39;d probably start by looking at titles, cover art, maybe reading a few pages, and then grouping similar books together. That&#39;s the essence of what we&#39;re going to explore today: <strong>K-Means Clustering</strong>.</p>
 <p>It&#39;s one of those elegant algorithms in machine learning that feels almost magical in its simplicity, yet incredibly powerful in its applications. It&#39;s a cornerstone of what we call <strong>unsupervised learning</strong>, a branch of AI where we don&#39;t have predefined &quot;answers&quot; or &quot;labels&quot; for our data. Instead, our goal is to discover hidden patterns and structures <em>within</em> the data itself.</p>
 <h3>What&#39;s This &quot;Clustering&quot; All About?</h3>
@@ -98,7 +100,14 @@ We go back to Step 2 (assignment) and Step 3 (update), repeating this process un
 <p>So, the next time you encounter a seemingly chaotic dataset, remember K-Means. It might just be the perfect tool to help you find its hidden tribes and bring order to its beautiful complexity.</p>
 <p>Happy clustering, and may your data always find its perfect group!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Finding Your Tribe: A Journey into K-Means Clustering</h1>
+             <p>Ever looked at a messy pile of data and wished it would just sort itself into neat groups? K-Means clustering is here to grant that wish, helping us find natural groupings within seemingly chaotic datasets.</p>
+        </div>
+        
 </body>
 
 </html>

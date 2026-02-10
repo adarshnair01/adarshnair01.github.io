@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Seeing Beyond Pixels: My Journey into the Heart of Computer Vision</h1>
-           <p>Join me on an exploration of Computer Vision, the fascinating field that teaches machines to "see" and understand the world through images, transforming everything from self-driving cars to medical diagnostics.</p>
-           <p>From the moment we open our eyes, we’re inundated with visual information. Our brains effortlessly process complex scenes, recognize faces, distinguish objects, and navigate our environment. It&#39;s a miracle we often take for granted. But what if we wanted to give machines this incredible ability? How would a computer, fundamentally a device that understands only numbers, begin to &quot;see&quot; a cat, a car, or a tumor in an X-ray?</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Seeing Beyond Pixels: My Journey into the Heart of Computer Vision</h1>
+               <p>Join me on an exploration of Computer Vision, the fascinating field that teaches machines to "see" and understand the world through images, transforming everything from self-driving cars to medical diagnostics.</p>
+               <p>From the moment we open our eyes, we’re inundated with visual information. Our brains effortlessly process complex scenes, recognize faces, distinguish objects, and navigate our environment. It&#39;s a miracle we often take for granted. But what if we wanted to give machines this incredible ability? How would a computer, fundamentally a device that understands only numbers, begin to &quot;see&quot; a cat, a car, or a tumor in an X-ray?</p>
 <p>This question sparked my initial fascination with <strong>Computer Vision (CV)</strong>, a field that sits at the thrilling intersection of artificial intelligence and digital image processing. It’s about empowering computers to derive meaningful information from digital images, videos, and other visual inputs, and then take action or make recommendations based on that understanding.</p>
 <h3>The &quot;Pixel Problem&quot;: How a Computer Sees</h3>
 <p>Imagine showing a photograph of a sunset to a friend. They instantly grasp the beauty, the colors, the mood. Now, show that same photograph to a computer. What does it see? Numbers. Lots and lots of numbers.</p>
@@ -101,7 +103,14 @@ This has several benefits:</p>
 <p>From understanding pixel matrices to unraveling the layers of a CNN, my journey into Computer Vision has been nothing short of exhilarating. It&#39;s a field that continues to evolve at a breakneck pace, constantly challenging our understanding of intelligence and perception. As a data scientist, contributing to this field means not just building powerful models, but also understanding their ethical implications and striving to create systems that are fair, transparent, and beneficial to all.</p>
 <p>The ability to give machines the gift of sight is profoundly transformative, and I believe we&#39;ve only just begun to scratch the surface of what&#39;s possible. The journey of teaching computers to &quot;see&quot; continues, and I&#39;m excited to be a part of it.</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Seeing Beyond Pixels: My Journey into the Heart of Computer Vision</h1>
+             <p>Join me on an exploration of Computer Vision, the fascinating field that teaches machines to "see" and understand the world through images, transforming everything from self-driving cars to medical diagnostics.</p>
+        </div>
+        
 </body>
 
 </html>

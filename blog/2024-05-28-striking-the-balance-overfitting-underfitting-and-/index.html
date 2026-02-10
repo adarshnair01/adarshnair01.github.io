@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Striking the Balance: Overfitting, Underfitting, and the Art of Generalization</h1>
-           <p>Ever wonder why some AI models are brilliant at what they're shown, but stumble when faced with the unknown? It all comes down to finding the sweet spot between memorizing too much and learning too little.</p>
-           <p>Hey there, aspiring data scientists and curious minds!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Striking the Balance: Overfitting, Underfitting, and the Art of Generalization</h1>
+               <p>Ever wonder why some AI models are brilliant at what they're shown, but stumble when faced with the unknown? It all comes down to finding the sweet spot between memorizing too much and learning too little.</p>
+               <p>Hey there, aspiring data scientists and curious minds!</p>
 <p>Welcome to my little corner of the internet, where I jot down thoughts and explore the fascinating world of machine learning. Today, I want to talk about something fundamental, a concept that every budding ML enthusiast grapples with: the delicate dance between <strong>overfitting</strong> and <strong>underfitting</strong>. Trust me, understanding this isn&#39;t just academic; it&#39;s absolutely crucial for building models that actually work in the real world.</p>
 <p>Think of it like this: you&#39;re studying for a big exam. You want to learn enough to pass, right? But there are two ways you can go wrong. You could either not study enough, or you could study <em>too specifically</em>, memorizing every single practice question without truly understanding the underlying concepts. In the machine learning world, these two pitfalls have names: underfitting and overfitting.</p>
 <h3>The Grand Goal: Generalization</h3>
@@ -121,7 +123,14 @@ $ \text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error
 <p>Keep learning, keep building, and keep striving for that perfect balance!</p>
 <p>Happy modeling!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Striking the Balance: Overfitting, Underfitting, and the Art of Generalization</h1>
+             <p>Ever wonder why some AI models are brilliant at what they're shown, but stumble when faced with the unknown? It all comes down to finding the sweet spot between memorizing too much and learning too little.</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Unleashing Intelligent Action: My Deep Dive into Reinforcement Learning</h1>
-           <p>Ever wondered how machines learn to play complex games or navigate the real world like we do, through trial and error? Join me on a journey into Reinforcement Learning, the captivating field where agents learn optimal behavior by interacting with their environment and receiving rewards.</p>
-           <p>Hello fellow data enthusiasts and aspiring AI builders!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Unleashing Intelligent Action: My Deep Dive into Reinforcement Learning</h1>
+               <p>Ever wondered how machines learn to play complex games or navigate the real world like we do, through trial and error? Join me on a journey into Reinforcement Learning, the captivating field where agents learn optimal behavior by interacting with their environment and receiving rewards.</p>
+               <p>Hello fellow data enthusiasts and aspiring AI builders!</p>
 <p>As someone deeply fascinated by how intelligence emerges – both in biology and in machines – I&#39;ve spent countless hours exploring the diverse landscapes of Artificial Intelligence. While Supervised Learning (think predicting house prices from labeled data) and Unsupervised Learning (finding patterns in unlabeled data like customer segments) are incredibly powerful, there&#39;s another paradigm that truly captures the essence of how we, as humans, learn: <strong>Reinforcement Learning (RL)</strong>.</p>
 <p>This isn&#39;t just about crunching numbers or categorizing images; it&#39;s about <em>learning to act</em>. It&#39;s about an agent making decisions, receiving feedback, and adapting its strategy over time to achieve a long-term goal. For my portfolio, diving deep into RL has been an illuminating experience, revealing the intricate dance between exploration, exploitation, and optimization.</p>
 <h3>What Exactly <em>Is</em> Reinforcement Learning?</h3>
@@ -115,7 +117,14 @@
 <p>If you&#39;re looking to understand intelligence not just as pattern recognition but as purposeful action, then Reinforcement Learning is a journey well worth embarking on. It&#39;s a field that continues to inspire me, and I&#39;m excited to apply its principles to future challenges in my data science and machine learning endeavors.</p>
 <p>Happy learning, and may your agents always find the optimal path!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Unleashing Intelligent Action: My Deep Dive into Reinforcement Learning</h1>
+             <p>Ever wondered how machines learn to play complex games or navigate the real world like we do, through trial and error? Join me on a journey into Reinforcement Learning, the captivating field where agents learn optimal behavior by interacting with their environment and receiving rewards.</p>
+        </div>
+        
 </body>
 
 </html>

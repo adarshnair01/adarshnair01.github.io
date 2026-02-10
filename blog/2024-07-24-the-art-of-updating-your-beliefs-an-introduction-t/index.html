@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>The Art of Updating Your Beliefs: An Introduction to Bayesian Statistics</h1>
-           <p>Imagine statistics as a journey of learning. What if you could blend what you already know with new evidence to form a stronger, more confident understanding of the world? Welcome to the fascinating realm of Bayesian Statistics!</p>
-           <h3>The Art of Updating Your Beliefs: An Introduction to Bayesian Statistics</h3>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>The Art of Updating Your Beliefs: An Introduction to Bayesian Statistics</h1>
+               <p>Imagine statistics as a journey of learning. What if you could blend what you already know with new evidence to form a stronger, more confident understanding of the world? Welcome to the fascinating realm of Bayesian Statistics!</p>
+               <h3>The Art of Updating Your Beliefs: An Introduction to Bayesian Statistics</h3>
 <p>Hey there, fellow data explorer!</p>
 <p>Have you ever wondered how we truly learn and adapt our understanding of the world? It’s not just about collecting new information; it’s about <em>integrating</em> that information with what we <em>already believe</em>. If you think about it, that&#39;s how we navigate daily life – from deciding if it&#39;s going to rain, to figuring out if a friend will be late. This intuitive process of updating our beliefs in the face of new evidence is precisely what Bayesian Statistics is all about.</p>
 <p>For a long time, statistics felt a bit rigid to me. Like a strict referee, telling me what&#39;s &quot;significant&quot; based on hypothetical repetitions. But then I met Bayesian statistics, and it felt like a breath of fresh air. It’s a framework that not only embraces our existing knowledge (our &quot;beliefs&quot;) but also provides a rigorous, mathematical way to update them as we observe new data. It feels more human, more aligned with how we naturally think.</p>
@@ -123,7 +125,14 @@ $ P(\theta|E) \propto \theta^{8-1} (1-\theta)^{4-1} $</p>
 <p>So, go forth, embrace the beautiful dance between your beliefs and the data, and start updating your understanding of the world, one posterior at a time!</p>
 <p>Happy Bayes-ing!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>The Art of Updating Your Beliefs: An Introduction to Bayesian Statistics</h1>
+             <p>Imagine statistics as a journey of learning. What if you could blend what you already know with new evidence to form a stronger, more confident understanding of the world? Welcome to the fascinating realm of Bayesian Statistics!</p>
+        </div>
+        
 </body>
 
 </html>

@@ -20,10 +20,12 @@
 
 <body>
   <div id="root"></div>
-  <div id="seo-content" style="display:none; visibility:hidden;">
-           <h1>Finding Order in Chaos: My K-Means Clustering Adventure</h1>
-           <p>Ever wondered how computers can automatically group similar things together without being told what to look for? K-Means Clustering is a classic, elegant algorithm that does exactly that, helping us discover hidden patterns in data.</p>
-           <p>Hello fellow data explorers!</p>
+
+        <noscript>
+            <div id="seo-content-static">
+               <h1>Finding Order in Chaos: My K-Means Clustering Adventure</h1>
+               <p>Ever wondered how computers can automatically group similar things together without being told what to look for? K-Means Clustering is a classic, elegant algorithm that does exactly that, helping us discover hidden patterns in data.</p>
+               <p>Hello fellow data explorers!</p>
 <p>Have you ever looked at a messy room, a sprawling collection of books, or even just a mixed bag of candies and thought, &quot;There has to be a better way to organize this?&quot; As humans, our brains are wired to find patterns, to group similar things together. We instinctively sort clothes by type, books by genre, or candies by flavor.</p>
 <p>What if we could teach a computer to do the same? Not by explicitly telling it &quot;these are shirts, these are pants,&quot; but by letting it figure out the inherent groupings on its own? This, my friends, is the magic of <strong>clustering</strong>, and today, I want to take you on a personal journey into one of the most fundamental and widely used clustering algorithms: <strong>K-Means Clustering</strong>.</p>
 <p>It&#39;s a journey from scattered data points to clear, insightful groups, and it&#39;s surprisingly simple yet incredibly powerful. Ready to dive in?</p>
@@ -129,7 +131,14 @@
 <p>So, the next time you encounter a pile of messy, unorganized data, remember K-Means. It might just be the quiet, diligent organizer you need to find order in the chaos.</p>
 <p>Happy clustering!</p>
 
-       </div>
+            </div>
+        </noscript>
+        <div id="seo-content-hidden" style="display:none; visibility:hidden;" aria-hidden="true">
+             <!-- Hidden content for crawlers that exec JS but wait for hydration -->
+             <h1>Finding Order in Chaos: My K-Means Clustering Adventure</h1>
+             <p>Ever wondered how computers can automatically group similar things together without being told what to look for? K-Means Clustering is a classic, elegant algorithm that does exactly that, helping us discover hidden patterns in data.</p>
+        </div>
+        
 </body>
 
 </html>
