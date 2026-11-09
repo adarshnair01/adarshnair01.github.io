@@ -6,10 +6,11 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: 'About', href: '#about' },
-        { name: 'Experience', href: '#experience' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'About', href: '/#about' },
+        { name: 'Experience', href: '/#experience' },
+        { name: 'Projects', href: '/#projects' },
+        { name: 'Blog', href: 'https://adarshnair.online/blog/' },
+        { name: 'Contact', href: '/#contact' },
     ];
 
     return (

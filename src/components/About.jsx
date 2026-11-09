@@ -57,7 +57,12 @@ const About = () => {
         {
             title: 'Reading',
             url: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            desc: 'Enjoying sci-fi novels and technical blogs.',
+            desc: (
+                <>
+                    Enjoying sci-fi novels and{' '}
+                    <a href="https://adarshnair.online/blog/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">technical blogs</a>.
+                </>
+            ),
             icon: Smile
         }
     ];
