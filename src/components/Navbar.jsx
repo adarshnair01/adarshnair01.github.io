@@ -10,6 +10,7 @@ const Navbar = () => {
         { name: 'Experience', href: '/#experience' },
         { name: 'Projects', href: '/#projects' },
         { name: 'Blog', href: 'https://adarshnair.online/blog/' },
+        { name: 'Travel', href: 'https://adarshnair.online/travel/' },
         { name: 'Contact', href: '/#contact' },
     ];
 
