@@ -104,7 +104,7 @@ const TicTacToeGame = () => {
         <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-[#1a1a2e]">
 
             <div className="flex flex-col items-center mb-8">
-                <h2 className="text-3xl font-black text-white font-epic tracking-wider drop-shadow-lg mb-2">
+                <h2 className="text-3xl font-black text-white font-display tracking-wider drop-shadow-lg mb-2">
                     <span className="text-blue-500">X</span> vs <span className="text-red-500">O</span>
                 </h2>
                 <div className="text-slate-400 font-mono text-sm">

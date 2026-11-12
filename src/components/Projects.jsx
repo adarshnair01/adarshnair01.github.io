@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ProjectHUD from './ProjectHUD';
-import { ScrollText } from 'lucide-react';
-import { KandaHeading, Lotus } from './Ornaments';
+import { Gift } from 'lucide-react';
+import { FestiveHeading } from './Festive';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -88,64 +88,68 @@ const Projects = () => {
     return (
         <section id="projects" className="py-24 bg-transparent relative">
             <div className="container mx-auto px-4">
-                <KandaHeading
-                    kanda="Sundara Kāṇḍa · The Great Deeds"
+                <FestiveHeading
+                    eyebrow="Chapter Three"
                     title="Featured Projects"
-                    sanskrit="॥ सुन्दरकाण्ड ॥"
-                    subtitle="Unroll a manuscript to read how each was won"
+                    script="presents under the tree"
+                    subtitle="Pick a gift to unwrap the full story"
                 />
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <motion.button
-                            type="button"
-                            key={project.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            onClick={() => setSelectedProject(project)}
-                            className="group text-left bg-ink-card rounded-t-[999px] rounded-b-md overflow-hidden border border-gold/25 hover:border-saffron transition-all duration-300 hover:shadow-[0_0_35px_rgba(240,138,36,0.25)] hover:-translate-y-1 relative"
-                        >
-                            {/* Temple-arch window framing the image */}
-                            <div className="h-52 w-full overflow-hidden relative rounded-t-[999px] border-b border-gold/30">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100 sepia-[.5] group-hover:sepia-0"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-ink-card via-ink-card/30 to-transparent"></div>
-                                <div className="absolute top-3 left-1/2 -translate-x-1/2 opacity-70 group-hover:opacity-100 transition-opacity">
-                                    <Lotus className="w-10 h-6 text-gold" />
-                                </div>
-                            </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {projects.map((project, index) => {
+                        const ribbon = ['bg-holly', 'bg-gold', 'bg-pine'][index % 3];
+                        return (
+                            <motion.button
+                                type="button"
+                                key={project.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                onClick={() => setSelectedProject(project)}
+                                className="group text-left bg-night-card rounded-2xl border border-frost/15 hover:border-gold transition-all duration-300 hover:shadow-[0_0_35px_rgba(240,195,78,0.25)] hover:-translate-y-1 relative snow-cap"
+                            >
+                                {/* Bow on top of the gift */}
+                                <span className="absolute -top-5 left-1/2 -translate-x-1/2 z-20 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-transform" aria-hidden="true">🎀</span>
 
-                            <div className="p-6 relative">
-                                <div className="text-[11px] text-saffron mb-2 font-serif italic tracking-widest uppercase flex items-center gap-2">
-                                    <ScrollText size={12} /> Sarga {index + 1}
+                                <div className="h-52 w-full overflow-hidden relative rounded-t-2xl">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-85 group-hover:opacity-100"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-night-card via-night-card/20 to-transparent"></div>
+                                    {/* Ribbon across the box */}
+                                    <span className={`absolute inset-y-0 left-1/2 -translate-x-1/2 w-4 ${ribbon} opacity-80 group-hover:opacity-0 transition-opacity duration-500`} aria-hidden="true" />
                                 </div>
-                                <h3 className="text-2xl text-palm mb-2 group-hover:text-gold transition-colors tracking-wide">{project.title}</h3>
-                                <p className="text-text-muted mb-4 text-sm line-clamp-3 leading-relaxed">{project.desc}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.slice(0, 3).map(tag => (
-                                        <span key={tag} className="px-2 py-1 text-[10px] font-semibold text-gold/80 bg-gold/5 rounded-sm border border-gold/20 group-hover:border-saffron/40 group-hover:text-saffron transition-all">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                    {project.tags.length > 3 && (
-                                        <span className="px-2 py-1 text-[10px] font-semibold text-text-muted">+{project.tags.length - 3}</span>
-                                    )}
+
+                                <div className="p-6 relative">
+                                    <div className="text-[11px] text-gold mb-2 font-bold tracking-widest uppercase flex items-center gap-2">
+                                        <Gift size={12} /> Gift No. {index + 1}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-snow mb-2 group-hover:text-gold transition-colors">{project.title}</h3>
+                                    <p className="text-text-muted mb-4 text-sm line-clamp-3 leading-relaxed">{project.desc}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tags.slice(0, 3).map(tag => (
+                                            <span key={tag} className="px-2 py-1 text-[10px] font-bold text-frost bg-frost/10 rounded-full border border-frost/20 group-hover:border-gold/40 group-hover:text-gold transition-all">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                        {project.tags.length > 3 && (
+                                            <span className="px-2 py-1 text-[10px] font-bold text-text-muted">+{project.tags.length - 3}</span>
+                                        )}
+                                    </div>
+                                    <div className="mt-5 text-sm text-holly group-hover:text-[#ff8a99] transition-colors font-bold">
+                                        Unwrap →
+                                    </div>
                                 </div>
-                                <div className="mt-5 text-xs text-gold/70 group-hover:text-saffron transition-colors font-serif italic">
-                                    Read the manuscript →
-                                </div>
-                            </div>
-                        </motion.button>
-                    ))}
+                            </motion.button>
+                        );
+                    })}
                 </div>
             </div>
 
-            {/* Palm-leaf manuscript modal */}
+            {/* Holiday letter modal */}
             <ProjectHUD
                 isOpen={!!selectedProject}
                 onClose={() => setSelectedProject(null)}

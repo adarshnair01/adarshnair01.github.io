@@ -6,22 +6,22 @@ import Projects from './components/Projects';
 import QuickGames from './components/QuickGames';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
-import GoldenDeerMascot from './components/GoldenDeerMascot';
-import { Mandala } from './components/Ornaments';
+import SnowmanMascot from './components/SnowmanMascot';
+import { Snowfall } from './components/Festive';
 
 function App() {
   return (
-    <div className="min-h-screen text-text-main selection:bg-saffron selection:text-ink overflow-x-hidden">
+    <div className="min-h-screen text-text-main selection:bg-holly selection:text-snow overflow-x-hidden">
       <MouseFollower />
+      <Snowfall />
       <Navbar />
 
-      {/* Night-sky over Ayodhya: warm ink base, saffron dusk glow, slow mandala */}
+      {/* Winter night sky: deep navy, aurora glow, warm light near the horizon */}
       <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-ink" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(240,138,36,0.16),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(15,59,74,0.35),transparent_65%)]" />
-        <Mandala className="absolute -right-48 top-1/4 w-[700px] h-[700px] text-gold/[0.05] animate-spin-slower" />
-        <Mandala className="absolute -left-56 bottom-0 w-[600px] h-[600px] text-saffron/[0.04] animate-spin-slower" />
+        <div className="absolute inset-0 bg-night" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(31,138,85,0.18),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(169,212,245,0.10),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(212,36,59,0.10),transparent_60%)]" />
       </div>
 
       <main>
@@ -30,7 +30,7 @@ function App() {
           <About />
         </div>
 
-        {/* Full-width Rama Setu journey */}
+        {/* Full-width journey band */}
         <Experience />
 
         <div className="w-[92%] max-w-[1400px] mx-auto relative">
@@ -40,7 +40,7 @@ function App() {
       </main>
 
       <Footer />
-      <GoldenDeerMascot />
+      <SnowmanMascot />
     </div>
   );
 }
