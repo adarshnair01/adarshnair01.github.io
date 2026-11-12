@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react';
 
-const LankaMazeGame = () => {
-    // 0: Path, 1: Wall, 2: Start (Hanuman), 3: Goal (Sita in Ashoka Vatika), 4: Trap (Rakshasa guard)
+const SantaMazeGame = () => {
+    // 0: Path, 1: Wall (hedge), 2: Start (Santa), 3: Goal (the tree), 4: Trap (thin ice)
     const [maze, setMaze] = useState([]);
     const [playerPos, setPlayerPos] = useState({ x: 0, y: 0 });
     const [gameState, setGameState] = useState('playing'); // playing, won
@@ -182,7 +182,7 @@ const LankaMazeGame = () => {
         // Trap Collision
         if (cell === 4) {
             // Hit a trap! Reset to start
-            setMessage('CAUGHT BY A RAKSHASA! BACK TO THE SHORE!');
+            setMessage('SLIPPED ON THIN ICE! BACK TO THE SLEIGH!');
             setPlayerPos({ x: 1, y: 1 }); // Reset to start
             setTimeout(() => setMessage(''), 1500);
             return;
@@ -212,23 +212,23 @@ const LankaMazeGame = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [playerPos, gameState, maze]);
 
-    if (maze.length === 0) return <div className="text-palm">Loading Lanka...</div>;
+    if (maze.length === 0) return <div className="text-snow">Loading the North Pole...</div>;
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-full relative p-4 bg-ink">
+        <div className="flex flex-col items-center justify-center w-full h-full relative p-4 bg-night">
 
             {/* Header */}
             <div className="flex items-center justify-between w-full max-w-md mb-4 px-4">
-                <h2 className="text-2xl text-gold font-epic tracking-wider drop-shadow-lg flex items-center gap-2">
-                    <span className="text-3xl">🐒</span> Lanka · Level {level}
+                <h2 className="text-2xl font-bold text-snow font-display tracking-wide drop-shadow-lg flex items-center gap-2">
+                    <span className="text-3xl">🎅</span> Level {level}
                 </h2>
                 {message && (
-                    <span className="text-kumkum font-bold animate-pulse text-sm">{message}</span>
+                    <span className="text-holly font-bold animate-pulse text-sm">{message}</span>
                 )}
             </div>
 
             {/* Maze Container */}
-            <div className="relative bg-[#2a1208] p-2 rounded-lg border-4 border-gold-deep shadow-2xl">
+            <div className="relative bg-[#dfe8f5] p-2 rounded-lg border-4 border-holly shadow-2xl">
                 <div
                     className="grid gap-0.5" // Tighter gap
                     style={{
@@ -238,10 +238,10 @@ const LankaMazeGame = () => {
                     {maze.map((row, y) => (
                         row.map((cell, x) => {
                             const isPlayer = playerPos.x === x && playerPos.y === y;
-                            let cellColor = 'bg-[#4a2a14]'; // Path (0)
-                            if (cell === 1) cellColor = 'bg-gradient-to-b from-[#c9a24a] to-[#8a6a20]'; // Golden walls of Lanka (1)
+                            let cellColor = 'bg-snow'; // Snowy path (0)
+                            if (cell === 1) cellColor = 'bg-gradient-to-b from-pine to-pine-deep'; // Pine hedges (1)
 
-                            // Rakshasa guards are visible so the player can avoid them
+                            // Thin-ice patches are visible so the player can avoid them
 
                             return (
                                 <div
@@ -249,22 +249,22 @@ const LankaMazeGame = () => {
                                     className={`w-6 h-6 sm:w-8 sm:h-8 rounded-sm ${cellColor} flex items-center justify-center relative`}
                                 >
                                     {/* Wall Texture */}
-                                    {cell === 1 && <div className="absolute inset-x-0 top-0 h-px bg-[#ffe7a8]/60"></div>}
+                                    {cell === 1 && <div className="absolute inset-x-0 top-0 h-1 rounded-t-sm bg-snow/80"></div>}
 
-                                    {/* Trap: Rakshasa guard */}
-                                    {cell === 4 && <span className="text-sm z-10 animate-pulse">👹</span>}
+                                    {/* Trap: thin ice */}
+                                    {cell === 4 && <span className="text-sm z-10 animate-pulse">🧊</span>}
 
-                                    {/* Goal: Sita under the Ashoka tree */}
-                                    {cell === 3 && <span className="text-xl z-20 animate-bounce">🌸</span>}
+                                    {/* Goal: the Christmas tree */}
+                                    {cell === 3 && <span className="text-xl z-20 animate-bounce">🎄</span>}
 
-                                    {/* Player: Hanuman */}
+                                    {/* Player: Santa */}
                                     {isPlayer && (
                                         <motion.div
-                                            layoutId="hanuman"
+                                            layoutId="santa"
                                             className="absolute inset-0 flex items-center justify-center z-30"
                                             transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                         >
-                                            <span className="text-xl drop-shadow-[0_0_6px_rgba(240,138,36,0.9)]">🐒</span>
+                                            <span className="text-xl drop-shadow-[0_0_6px_rgba(212,36,59,0.7)]">🎅</span>
                                         </motion.div>
                                     )}
                                 </div>
@@ -280,15 +280,15 @@ const LankaMazeGame = () => {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 flex flex-col items-center justify-center bg-ink/95 backdrop-blur-sm rounded-lg z-40 p-6 text-center"
+                            className="absolute inset-0 flex flex-col items-center justify-center bg-night/95 backdrop-blur-sm rounded-lg z-40 p-6 text-center"
                         >
-                            <h3 className="text-3xl text-gold mb-2 font-epic tracking-widest">Sita Found!</h3>
-                            <div className="text-6xl mb-4 animate-bounce">💍</div>
-                            <p className="text-palm/80 mb-6 text-sm font-serif italic">You delivered Rama's ring. Leap into a deeper part of Lanka?</p>
+                            <h3 className="text-3xl font-bold text-gold mb-2 font-display tracking-wide">Gift Delivered!</h3>
+                            <div className="text-6xl mb-4 animate-bounce">🎁</div>
+                            <p className="text-snow/80 mb-6 text-sm">Ho ho ho! Ready for the next house on the list?</p>
 
                             <button
                                 onClick={nextLevel}
-                                className="px-8 py-3 bg-saffron text-ink font-bold rounded-full hover:bg-gold transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(240,138,36,0.5)] transform hover:scale-105 active:scale-95"
+                                className="px-8 py-3 bg-holly text-snow font-bold rounded-full hover:bg-holly-deep transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(212,36,59,0.5)] transform hover:scale-105 active:scale-95"
                             >
                                 <ArrowUp size={20} /> Next Level
                             </button>
@@ -300,26 +300,26 @@ const LankaMazeGame = () => {
             {/* Mobile Controls (D-Pad) */}
             <div className="mt-6 grid grid-cols-3 gap-2 md:hidden">
                 <div></div>
-                <button onClick={() => move(0, -1)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
-                    <ArrowUp className="text-gold" />
+                <button onClick={() => move(0, -1)} className="p-4 bg-night-card border border-frost/30 rounded-lg active:bg-holly transition-colors pointer-events-auto shadow-md">
+                    <ArrowUp className="text-snow" />
                 </button>
                 <div></div>
-                <button onClick={() => move(-1, 0)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
-                    <ArrowLeft className="text-gold" />
+                <button onClick={() => move(-1, 0)} className="p-4 bg-night-card border border-frost/30 rounded-lg active:bg-holly transition-colors pointer-events-auto shadow-md">
+                    <ArrowLeft className="text-snow" />
                 </button>
-                <button onClick={() => move(0, 1)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
-                    <ArrowDown className="text-gold" />
+                <button onClick={() => move(0, 1)} className="p-4 bg-night-card border border-frost/30 rounded-lg active:bg-holly transition-colors pointer-events-auto shadow-md">
+                    <ArrowDown className="text-snow" />
                 </button>
-                <button onClick={() => move(1, 0)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
-                    <ArrowRight className="text-gold" />
+                <button onClick={() => move(1, 0)} className="p-4 bg-night-card border border-frost/30 rounded-lg active:bg-holly transition-colors pointer-events-auto shadow-md">
+                    <ArrowRight className="text-snow" />
                 </button>
             </div>
 
-            <p className="mt-4 text-text-muted text-sm font-serif italic hidden md:block">
-                Guide Hanuman to Sita 🌸 — and beware the <span className="text-kumkum font-bold">Rakshasa guards 👹</span>!
+            <p className="mt-4 text-text-muted text-sm hidden md:block">
+                Guide Santa to the tree 🎄 and watch out for <span className="text-frost font-bold">thin ice 🧊</span>!
             </p>
         </div>
     );
 };
 
-export default LankaMazeGame;
+export default SantaMazeGame;

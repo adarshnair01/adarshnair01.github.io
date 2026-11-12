@@ -256,7 +256,7 @@ const RacingGame = () => {
                         exit={{ opacity: 0 }}
                         className="absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center z-50 p-6 text-center"
                     >
-                        <h2 className="text-5xl font-black text-white mb-2 font-epic tracking-widest italic transform -skew-x-12">
+                        <h2 className="text-5xl font-black text-white mb-2 font-display tracking-widest italic transform -skew-x-12">
                             {gameState === 'start' ? 'TURBO RACER' : 'CRASHED!'}
                         </h2>
                         {gameState === 'gameover' && (

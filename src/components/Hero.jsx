@@ -1,43 +1,53 @@
 import { motion } from 'framer-motion';
-import { SunDisc, BowDivider, Diya } from './Ornaments';
+import { HollyDivider, NewYearCountdown, Bauble } from './Festive';
 
-// Silhouette of Ayodhya's temple spires along the horizon
-const AyodhyaSkyline = () => (
-    <svg viewBox="0 0 1200 160" preserveAspectRatio="none" className="w-full h-28 md:h-40" aria-hidden="true">
-        <defs>
-            <linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#3a210f" />
-                <stop offset="100%" stopColor="#140c08" />
-            </linearGradient>
-        </defs>
-        <path
-            fill="url(#skyline)"
-            d="M0 160 V120 H60 V100 H80 L95 70 L110 100 H130 V115 H190 V95 L215 40 L240 95 V115 H300 V105 H330 L345 80 L360 105 H400 V90
-               L430 60 L445 20 L460 60 L490 90 V110 H560 V100 L585 55 L600 10 L615 55 L640 100 V110 H700 V90 L730 60 L745 25 L760 60 L790 90
-               V110 H850 V100 L870 75 L890 100 H920 V115 H980 V95 L1005 45 L1030 95 V115 H1080 V100 L1095 75 L1110 100 H1140 V120 H1200 V160 Z"
-        />
-        {/* Flags on the tallest spires */}
-        <path d="M600 10 V-6 L620 0 L600 6" fill="#f08a24" />
-        <path d="M445 20 V6 L462 11 L445 16" fill="#f08a24" />
-        <path d="M745 25 V11 L762 16 L745 21" fill="#f08a24" />
-    </svg>
-);
+// A row of snowy pine trees along the horizon
+const PineHorizon = () => {
+    const trees = [
+        { x: 40, h: 90 }, { x: 120, h: 130 }, { x: 190, h: 80 }, { x: 260, h: 115 },
+        { x: 900, h: 120 }, { x: 980, h: 85 }, { x: 1050, h: 140 }, { x: 1140, h: 95 },
+        { x: 520, h: 60 }, { x: 600, h: 75 }, { x: 680, h: 55 },
+    ];
+    return (
+        <svg viewBox="0 0 1200 170" preserveAspectRatio="none" className="w-full h-28 md:h-44" aria-hidden="true">
+            {/* Snow drifts */}
+            <path d="M0 150 Q 150 120 300 140 T 600 135 T 900 140 T 1200 130 V170 H0 Z" fill="#dfe8f5" />
+            <path d="M0 160 Q 200 140 400 155 T 800 150 T 1200 152 V170 H0 Z" fill="#f4f7fc" />
+            {trees.map((t, i) => (
+                <g key={i} transform={`translate(${t.x} ${150 - t.h})`}>
+                    <path d={`M0 ${t.h} L ${t.h * 0.32} ${t.h} L 0 0 L ${-t.h * 0.32} ${t.h} Z`} fill="#0f5132" />
+                    <path d={`M0 0 L ${t.h * 0.12} ${t.h * 0.22} L ${-t.h * 0.12} ${t.h * 0.22} Z`} fill="#f4f7fc" />
+                    <path d={`M${-t.h * 0.2} ${t.h * 0.55} L ${t.h * 0.2} ${t.h * 0.55} L ${t.h * 0.1} ${t.h * 0.45} L 0 ${t.h * 0.5} L ${-t.h * 0.1} ${t.h * 0.45} Z`} fill="#f4f7fc" opacity="0.85" />
+                    <rect x={-3} y={t.h} width={6} height={8} fill="#3b2a1e" />
+                </g>
+            ))}
+            {/* Cosy cabin with a lit window */}
+            <g transform="translate(380 92)">
+                <path d="M0 30 L40 0 L80 30 Z" fill="#f4f7fc" />
+                <rect x="6" y="28" width="68" height="34" fill="#5a3522" />
+                <rect x="16" y="38" width="14" height="12" fill="#f0c34e" />
+                <rect x="46" y="38" width="14" height="24" fill="#3b2a1e" />
+                <rect x="58" y="6" width="8" height="14" fill="#5a3522" />
+            </g>
+        </svg>
+    );
+};
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex flex-col items-center justify-center pt-24 relative overflow-hidden">
-            {/* Rising sun behind the name (outer div centers, inner rotates) */}
-            <div className="absolute top-[12%] left-1/2 -translate-x-1/2 -z-10 w-[520px] h-[520px] md:w-[680px] md:h-[680px]">
-                <motion.div
-                    className="w-full h-full"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 0.25, scale: 1, rotate: 360 }}
-                    transition={{ opacity: { duration: 2 }, scale: { duration: 2 }, rotate: { duration: 160, repeat: Infinity, ease: 'linear' } }}
-                >
-                    <SunDisc className="w-full h-full" rays={32} />
-                </motion.div>
+        <section className="min-h-screen flex flex-col items-center justify-center pt-28 relative overflow-hidden">
+            {/* Moon */}
+            <div className="hidden md:block absolute top-24 right-[8%] w-24 h-24 md:w-32 md:h-32 rounded-full bg-[radial-gradient(circle_at_35%_35%,#fffbe8,#e9e3c8_60%,#c9c2a2)] shadow-[0_0_80px_20px_rgba(255,251,232,0.18)] -z-10" aria-hidden="true" />
+
+            {/* Hanging baubles */}
+            <div className="absolute top-14 left-[6%] hidden md:flex gap-6 -z-0" aria-hidden="true">
+                {[['#d4243b', 80], ['#f0c34e', 130], ['#1f8a55', 60]].map(([c, len], i) => (
+                    <div key={i} className="flex flex-col items-center origin-top animate-sway" style={{ animationDelay: `${i * 0.6}s` }}>
+                        <span className="w-px bg-gold/50" style={{ height: len }} />
+                        <Bauble color={c} className="w-10 h-12 -mt-1" />
+                    </div>
+                ))}
             </div>
-            <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -z-10 w-[420px] h-[420px] rounded-full bg-saffron/20 blur-[120px]" />
 
             <div className="container mx-auto px-4 text-center z-10 flex-1 flex flex-col justify-center">
                 <motion.div
@@ -45,72 +55,53 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9 }}
                 >
-                    <p className="font-sanskrit text-saffron/90 text-lg md:text-xl mb-4" lang="sa">॥ अथ प्रथमः सर्गः ॥</p>
-                    <p className="kanda-label mb-6">Here begins the first chapter</p>
+                    <p className="font-script text-gold text-4xl md:text-5xl mb-2">Season's Greetings</p>
+                    <p className="section-eyebrow mb-6">Merry Christmas &amp; Happy New Year</p>
 
-                    <h1 className="text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#fff1c8] via-gold to-saffron mb-4 drop-shadow-[0_4px_20px_rgba(240,138,36,0.35)] leading-tight">
+                    <h1 className="text-6xl md:text-8xl font-display font-extrabold text-snow mb-4 drop-shadow-[0_4px_24px_rgba(169,212,245,0.25)] leading-tight">
                         Adarsh Nair
                     </h1>
 
-                    <BowDivider className="mb-6" />
+                    <HollyDivider className="mb-6" />
 
-                    <h3 className="text-2xl md:text-4xl text-palm/80 mb-8 font-serif">
-                        Data Science Manager <span className="text-gold">&</span>{' '}
+                    <h3 className="text-2xl md:text-4xl text-snow/85 mb-8 font-display">
+                        Data Science Manager <span className="text-gold">&amp;</span>{' '}
                         <br className="md:hidden" />
-                        <span className="text-saffron font-semibold italic">ML Engineer</span>
+                        <span className="text-holly italic font-bold">ML Engineer</span>
                     </h3>
 
                     <p className="max-w-2xl mx-auto text-text-muted text-lg mb-10 leading-relaxed">
-                        Like an archer who studies the wind before he draws, I lead teams that read the patterns in data —
-                        building predictive models and recommendation engines that hit their mark.
+                        I lead teams that turn data into gifts worth unwrapping — predictive models and
+                        recommendation engines that make every customer feel like it's Christmas morning.
                     </p>
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.5 }}
-                        className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
+                        className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-12"
                     >
                         <a
                             href="#projects"
-                            className="px-8 py-3 bg-gradient-to-r from-saffron to-kumkum text-palm rounded-sm font-semibold transition-all hover:shadow-[0_0_25px_rgba(240,138,36,0.5)] shadow-lg uppercase tracking-[0.2em] text-sm border border-gold/40"
+                            className="px-8 py-3 bg-holly hover:bg-holly-deep text-snow rounded-full font-bold transition-all hover:shadow-[0_0_25px_rgba(212,36,59,0.55)] shadow-lg uppercase tracking-[0.15em] text-sm"
                         >
-                            Behold the Works
+                            Unwrap My Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-3 border border-gold/50 text-gold hover:bg-gold/10 hover:border-gold rounded-sm font-semibold transition-all uppercase tracking-[0.2em] text-sm"
+                            className="px-8 py-3 border-2 border-pine text-snow hover:bg-pine/20 rounded-full font-bold transition-all uppercase tracking-[0.15em] text-sm"
                         >
-                            Send a Message
+                            Send a Greeting
                         </a>
                     </motion.div>
+
+                    <NewYearCountdown />
                 </motion.div>
             </div>
 
-            {/* Horizon with diyas */}
             <div className="relative w-full mt-10">
-                <div className="absolute inset-x-0 -top-6 flex justify-around px-[10%] z-10">
-                    {[0, 1, 2, 3, 4].map((i) => (
-                        <Diya key={i} className={i % 2 ? 'hidden md:inline-flex' : ''} />
-                    ))}
-                </div>
-                <AyodhyaSkyline />
+                <PineHorizon />
             </div>
-
-            {/* Scroll indicator — a falling arrow */}
-            <motion.a
-                href="#about"
-                aria-label="Scroll to about"
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gold/80 z-20"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity }}
-            >
-                <svg width="16" height="44" viewBox="0 0 16 44" fill="none">
-                    <path d="M8 0 V36" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M2 30 L8 42 L14 30 Z" fill="#f08a24" />
-                    <path d="M4 2 L8 7 L12 2 M4 7 L8 12 L12 7" stroke="#b3261e" strokeWidth="1.2" />
-                </svg>
-            </motion.a>
         </section>
     );
 };

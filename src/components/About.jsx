@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Camera, MapPin, Smile } from 'lucide-react';
 import FullScreenOverlay from './FullScreenOverlay';
-import { KandaHeading, Lotus } from './Ornaments';
+import { FestiveHeading, Snowflake } from './Festive';
 
-// Skill bar glows like a sacrificial fire (agni) on hover
-const agniVariant = {
+// Candy-cane skill bar brightens on hover
+const glowVariant = {
     rest: { filter: "brightness(1)" },
     hover: {
-        filter: "brightness(1.35)",
+        filter: "brightness(1.3)",
         transition: { duration: 0.3 }
     }
 };
@@ -116,10 +116,10 @@ const About = () => {
         <section id="about" className="py-24 bg-transparent relative">
             <div className="container mx-auto px-4">
 
-                <KandaHeading
-                    kanda="Bāla Kāṇḍa · The Beginning"
+                <FestiveHeading
+                    eyebrow="Chapter One"
                     title="About Me"
-                    sanskrit="॥ बालकाण्ड ॥"
+                    script="the story so far"
                 />
 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
@@ -132,14 +132,14 @@ const About = () => {
                         transition={{ delay: 0.2 }}
                         className="lg:col-span-2"
                     >
-                        <h3 className="text-2xl text-gold mb-6 flex items-center gap-3">
-                            <Lotus className="w-8 h-5 text-saffron" /> Who I Am
+                        <h3 className="text-2xl font-bold text-snow mb-6 flex items-center gap-3">
+                            <Snowflake className="w-6 h-6 text-frost" /> Who I Am
                         </h3>
-                        <div className="palm-leaf text-palm-ink p-6 md:p-8 rounded-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)] relative">
-                            {/* Binding holes of a palm-leaf manuscript */}
-                            <span className="absolute left-4 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-ink/70" aria-hidden="true" />
-                            <span className="absolute right-4 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-ink/70" aria-hidden="true" />
-                            <p className="font-serif text-lg md:text-xl leading-relaxed px-4">
+                        {/* Gift tag */}
+                        <div className="relative bg-cream text-cream-ink p-6 md:p-8 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] border-l-[10px] border-holly">
+                            <span className="absolute -left-[22px] top-6 w-6 h-6 rounded-full bg-night border-4 border-gold" aria-hidden="true" />
+                            <p className="font-script text-2xl text-holly mb-2">To: you, From: Adarsh</p>
+                            <p className="text-lg leading-relaxed">
                                 I am a data science professional from Bengaluru, India, with a passion for extracting actionable insights from complex datasets.
                                 My expertise spans across machine learning, predictive modeling, and software architecture.
                                 I thrive on solving challenging problems, from improving sales forecasting to building large-scale recommendation systems.
@@ -148,28 +148,31 @@ const About = () => {
 
                         {/* Personal Interests */}
                         <div className="mt-10">
-                            <h4 className="text-lg text-palm/90 mb-4 flex items-center gap-2 font-epic">
-                                <span className="text-saffron" aria-hidden="true">✺</span> Personal Interests
+                            <h4 className="text-lg font-bold text-snow/90 mb-4 flex items-center gap-2">
+                                <span aria-hidden="true">⭐</span> Personal Interests
                             </h4>
                             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                                 {interests.map((item, index) => (
                                     <motion.button
                                         type="button"
                                         key={index}
-                                        whileHover={{ scale: 1.03 }}
+                                        whileHover={{ scale: 1.03, rotate: index % 2 ? 1 : -1 }}
                                         onClick={() => setIsInstagramOpen(true)}
-                                        className="group relative bg-ink-card rounded-t-[40px] rounded-b-md overflow-hidden shadow-md border border-gold/25 hover:border-saffron/70 transition-all h-[120px] text-left"
+                                        className="group relative bg-night-card rounded-xl overflow-hidden shadow-md border border-frost/15 hover:border-gold/70 transition-all h-[120px] text-left"
                                     >
                                         <div
-                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60 sepia-[.4]"
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60"
                                             style={{ backgroundImage: `url(${item.url})` }}
                                         ></div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-night via-night/50 to-transparent"></div>
+                                        {/* Gift ribbon */}
+                                        <span className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-3 bg-holly/70 group-hover:bg-holly transition-colors" aria-hidden="true" />
+                                        <span className="absolute inset-x-0 top-1/3 h-3 bg-holly/70 group-hover:bg-holly transition-colors" aria-hidden="true" />
 
                                         <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                                            <div className="flex items-center gap-2">
-                                                <item.icon size={14} className="text-saffron drop-shadow-md" />
-                                                <h5 className="text-palm text-xs lg:text-sm tracking-wide font-epic drop-shadow-md leading-tight">{item.title}</h5>
+                                            <div className="flex items-center gap-2 bg-night/70 rounded-md px-2 py-1 w-fit">
+                                                <item.icon size={14} className="text-gold drop-shadow-md" />
+                                                <h5 className="text-snow text-xs lg:text-sm font-bold tracking-wide leading-tight">{item.title}</h5>
                                             </div>
                                         </div>
                                     </motion.button>
@@ -178,7 +181,7 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* Skills — the Astras */}
+                    {/* Skills */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -186,9 +189,9 @@ const About = () => {
                         transition={{ delay: 0.3 }}
                         className="lg:col-span-1"
                     >
-                        <h3 className="text-2xl text-gold mb-1">Astras</h3>
-                        <p className="font-serif italic text-text-muted text-sm mb-5">Skills, sharpened like divine weapons</p>
-                        <div className="space-y-4 temple-card p-6 border-t-4 !border-t-saffron">
+                        <h3 className="text-2xl font-bold text-snow mb-1">Skills</h3>
+                        <p className="font-script text-2xl text-gold mb-4">gifts I bring</p>
+                        <div className="space-y-4 frost-card snow-cap p-6">
                             {skills.map((skill, index) => (
                                 <motion.div
                                     key={index}
@@ -197,25 +200,22 @@ const About = () => {
                                     className="group"
                                 >
                                     <div className="flex justify-between mb-1">
-                                        <span className="text-xs font-medium text-palm/90 group-hover:text-saffron transition-colors">{skill.name}</span>
-                                        <span className="text-[10px] font-medium text-text-muted">{skill.level}</span>
+                                        <span className="text-xs font-semibold text-snow/90 group-hover:text-gold transition-colors">{skill.name}</span>
+                                        <span className="text-[10px] font-semibold text-text-muted">{skill.level}</span>
                                     </div>
-                                    <div className="w-full bg-ink rounded-full h-1.5 relative border border-gold/10">
+                                    <div className="w-full bg-night rounded-full h-2 relative border border-frost/10 overflow-hidden">
                                         <motion.div
-                                            className="bg-gradient-to-r from-kumkum via-saffron to-gold h-1.5 rounded-full shadow-[0_0_10px_rgba(240,138,36,0.5)] relative"
+                                            className="candy-stripe h-2 rounded-full shadow-[0_0_10px_rgba(212,36,59,0.5)] relative"
                                             initial={{ width: 0 }}
                                             whileInView={{ width: skill.level }}
                                             viewport={{ once: true }}
                                             transition={{ type: "spring", stiffness: 50, damping: 12, delay: 0.2 }}
-                                            variants={agniVariant}
+                                            variants={glowVariant}
                                         >
-                                            {/* Arrowhead at the tip of the bar */}
-                                            <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-gold" aria-hidden="true" />
-                                            <div className="absolute inset-0 w-full h-full overflow-visible">
-                                                <div className="absolute w-1 h-1 bg-gold/70 rounded-full bottom-0 left-[15%] animate-ember-1 opacity-0 group-hover:opacity-100"></div>
-                                                <div className="absolute w-1.5 h-1.5 bg-saffron/70 rounded-full bottom-0 left-[40%] animate-ember-2 opacity-0 group-hover:opacity-100"></div>
-                                                <div className="absolute w-1 h-1 bg-gold/70 rounded-full bottom-0 left-[65%] animate-ember-3 opacity-0 group-hover:opacity-100"></div>
-                                                <div className="absolute w-1 h-1 bg-kumkum/70 rounded-full bottom-0 left-[85%] animate-ember-1 opacity-0 group-hover:opacity-100"></div>
+                                            <div className="absolute inset-0 w-full h-full">
+                                                <div className="absolute w-1 h-1 bg-gold rounded-full bottom-0 left-[15%] animate-sparkle-1 opacity-0 group-hover:opacity-100"></div>
+                                                <div className="absolute w-1.5 h-1.5 bg-snow rounded-full bottom-0 left-[45%] animate-sparkle-2 opacity-0 group-hover:opacity-100"></div>
+                                                <div className="absolute w-1 h-1 bg-gold rounded-full bottom-0 left-[75%] animate-sparkle-3 opacity-0 group-hover:opacity-100"></div>
                                             </div>
                                         </motion.div>
                                     </div>
@@ -224,7 +224,7 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* Machine Learning — the Vidyas */}
+                    {/* Machine Learning */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -232,9 +232,9 @@ const About = () => {
                         transition={{ delay: 0.4 }}
                         className="lg:col-span-1"
                     >
-                        <h3 className="text-2xl text-gold mb-1">Vidyā</h3>
-                        <p className="font-serif italic text-text-muted text-sm mb-5">Machine learning knowledge</p>
-                        <div className="flex flex-wrap gap-2 temple-card p-6 border-r-4 !border-r-kumkum">
+                        <h3 className="text-2xl font-bold text-snow mb-1">Machine Learning</h3>
+                        <p className="font-script text-2xl text-gold mb-4">my wishlist, granted</p>
+                        <div className="flex flex-wrap gap-2 frost-card snow-cap p-6">
                             {mlSkills.map((skill, index) => (
                                 <motion.span
                                     key={index}
@@ -242,7 +242,7 @@ const About = () => {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.05 + 0.5 }}
-                                    className="px-3 py-1 bg-gold/10 text-gold border border-gold/25 rounded-full text-[11px] font-semibold hover:bg-saffron/20 hover:text-saffron transition-colors cursor-default"
+                                    className={`px-3 py-1 rounded-full text-[11px] font-bold border transition-colors cursor-default ${index % 3 === 0 ? 'bg-holly/15 text-[#ff8a99] border-holly/30 hover:bg-holly/30' : index % 3 === 1 ? 'bg-pine/15 text-[#6fe0a6] border-pine/30 hover:bg-pine/30' : 'bg-gold/10 text-gold border-gold/30 hover:bg-gold/25'}`}
                                 >
                                     {skill}
                                 </motion.span>
@@ -259,9 +259,9 @@ const About = () => {
                 onClose={() => setIsInstagramOpen(false)}
                 title="📸 Instagram Gallery"
             >
-                <div className="bg-ink-card border border-gold/25 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl relative">
+                <div className="bg-night-card border border-frost/20 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl relative">
                     {/* Instagram Header Bar */}
-                    <div className="bg-ink p-4 flex items-center justify-between border-b border-gold/20">
+                    <div className="bg-night p-4 flex items-center justify-between border-b border-frost/15">
                         <span className="font-bold text-gray-200">adarshnair01</span>
                         <div className="flex gap-4">
                             <div className="w-5 h-5 border-2 border-white/20 rounded-md"></div>

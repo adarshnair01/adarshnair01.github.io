@@ -1,23 +1,29 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, X } from 'lucide-react';
-import { BowDivider } from './Ornaments';
+import { HollyDivider, Bauble } from './Festive';
 
-// Rolling ocean waves (SVG band, animated sideways)
-const Waves = ({ className = '', opacity = 0.35 }) => (
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className={`w-[110%] h-10 animate-wave ${className}`} aria-hidden="true">
-        <path
-            d="M0 30 Q 50 10 100 30 T 200 30 T 300 30 T 400 30 T 500 30 T 600 30 T 700 30 T 800 30 T 900 30 T 1000 30 T 1100 30 T 1200 30 V60 H0 Z"
-            fill={`rgba(160, 220, 230, ${opacity})`}
-        />
-    </svg>
+const BAUBLE_COLORS = ['#d4243b', '#f0c34e', '#1f8a55', '#a9d4f5', '#d4243b', '#f0c34e'];
+
+// Wrapped present (used under the tree in the teaser)
+const Present = ({ box, ribbon, className = '' }) => (
+    <div className={`relative rounded-sm shadow-[0_8px_16px_rgba(0,0,0,0.4)] ${className}`} style={{ backgroundColor: box }} aria-hidden="true">
+        <span className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-2" style={{ backgroundColor: ribbon }} />
+        <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-2" style={{ backgroundColor: ribbon }} />
+        <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-3 rounded-full border-2" style={{ borderColor: ribbon }} />
+    </div>
 );
 
-// A floating stone of the bridge, inscribed with "राम"
-const SetuStone = ({ className = '', label = 'राम' }) => (
-    <div className={`flex items-center justify-center rounded-[45%_55%_50%_50%/55%_45%_55%_45%] bg-gradient-to-br from-[#8a8070] via-[#6b6255] to-[#4a4338] shadow-[inset_-6px_-8px_14px_rgba(0,0,0,0.45),0_8px_20px_rgba(0,0,0,0.4)] ${className}`}>
-        <span className="font-sanskrit text-saffron drop-shadow-[0_0_6px_rgba(240,138,36,0.7)]" lang="sa">{label}</span>
-    </div>
+// Simple decorated Christmas tree
+const Tree = ({ className = '' }) => (
+    <svg viewBox="0 0 120 160" className={className} aria-hidden="true">
+        <path d="M60 4 L104 70 H84 L112 112 H88 L118 150 H2 L32 112 H8 L36 70 H16 Z" fill="#1f8a55" stroke="#0f5132" strokeWidth="2" />
+        <rect x="52" y="150" width="16" height="10" fill="#5a3522" />
+        <path d="M60 0 L64 10 L74 10 L66 16 L69 26 L60 20 L51 26 L54 16 L46 10 L56 10 Z" fill="#f0c34e" />
+        {[[40, 60, '#d4243b'], [78, 66, '#f0c34e'], [56, 92, '#a9d4f5'], [30, 104, '#f0c34e'], [88, 108, '#d4243b'], [46, 136, '#d4243b'], [74, 138, '#a9d4f5'], [60, 48, '#d4243b']].map(([x, y, c], i) => (
+            <circle key={i} cx={x} cy={y} r="5" fill={c} className="animate-twinkle" style={{ animationDelay: `${i * 0.3}s` }} />
+        ))}
+    </svg>
 );
 
 const experience = [
@@ -71,79 +77,83 @@ const education = [
 ];
 
 const Experience = () => {
-    const [isSetuOpen, setIsSetuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    // Lock page scroll and allow ESC to close while the Setu is open
+    // Lock page scroll and allow ESC to close while the journey is open
     useEffect(() => {
-        if (!isSetuOpen) return;
+        if (!isOpen) return;
         document.body.style.overflow = 'hidden';
-        const onKey = (e) => e.key === 'Escape' && setIsSetuOpen(false);
+        const onKey = (e) => e.key === 'Escape' && setIsOpen(false);
         window.addEventListener('keydown', onKey);
         return () => {
             document.body.style.overflow = '';
             window.removeEventListener('keydown', onKey);
         };
-    }, [isSetuOpen]);
+    }, [isOpen]);
 
     return (
         <section id="experience" className="relative overflow-hidden py-10">
 
-            {/* INLINE TEASER — the ocean waiting to be crossed */}
+            {/* INLINE TEASER: presents under the tree */}
             <motion.button
                 type="button"
-                onClick={() => setIsSetuOpen(true)}
+                onClick={() => setIsOpen(true)}
                 whileHover={{ scale: 1.005 }}
-                className="relative w-full h-[340px] overflow-hidden bg-gradient-to-b from-[#0b2530] via-ocean to-[#0b2530] border-y-2 border-gold/40 flex flex-col items-center justify-center group shadow-[0_0_60px_rgba(0,0,0,0.6)]"
-                aria-label="Open the Rama Setu: my professional journey"
+                className="relative w-full h-[360px] overflow-hidden bg-gradient-to-b from-night-soft via-[#13284a] to-night-soft border-y-4 border-holly flex flex-col items-center justify-center group shadow-[0_0_60px_rgba(0,0,0,0.6)]"
+                aria-label="Open my professional journey"
             >
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(240,138,36,0.18),transparent_60%)]" />
-                <div className="absolute bottom-0 left-0 w-full overflow-hidden"><Waves opacity={0.18} /></div>
-                <div className="absolute bottom-3 left-0 w-full overflow-hidden"><Waves opacity={0.12} className="[animation-delay:-3s]" /></div>
+                <div className="absolute inset-x-0 top-0 h-3 candy-stripe opacity-80" />
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-snow rounded-t-[100%]" />
 
-                {/* Stones of the bridge bobbing on the water */}
-                <div className="absolute bottom-10 inset-x-0 flex justify-center gap-4 md:gap-8">
+                <Tree className="absolute bottom-6 left-[6%] md:left-[12%] w-28 md:w-40 h-auto" />
+                <Tree className="absolute bottom-6 right-[6%] md:right-[12%] w-24 md:w-32 h-auto hidden sm:block" />
+
+                {/* One present per role */}
+                <div className="absolute bottom-8 inset-x-0 flex justify-center items-end gap-3 md:gap-5">
                     {experience.map((_, i) => (
                         <motion.div
                             key={i}
-                            animate={{ y: [0, -6, 0] }}
-                            transition={{ duration: 3 + (i % 3) * 0.6, repeat: Infinity, delay: i * 0.3 }}
+                            animate={{ y: [0, -5, 0] }}
+                            transition={{ duration: 2.4 + (i % 3) * 0.5, repeat: Infinity, delay: i * 0.25 }}
                             className={i > 3 ? 'hidden md:block' : ''}
                         >
-                            <SetuStone className="relative w-12 h-9 md:w-16 md:h-11 text-sm md:text-base group-hover:brightness-110 transition" />
+                            <Present
+                                box={['#d4243b', '#1f8a55', '#f0c34e', '#a9d4f5', '#d4243b', '#1f8a55'][i]}
+                                ribbon={['#f0c34e', '#d4243b', '#1f8a55', '#d4243b', '#f4f7fc', '#f0c34e'][i]}
+                                className={`${['w-12 h-10', 'w-14 h-12', 'w-10 h-9', 'w-14 h-10', 'w-12 h-12', 'w-10 h-10'][i]} group-hover:brightness-110 transition`}
+                            />
                         </motion.div>
                     ))}
                 </div>
 
-                <p className="kanda-label relative z-10 mb-3">Yuddha Kāṇḍa · The Crossing</p>
-                <h2 className="relative z-10 text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#fff1c8] via-gold to-saffron mb-3 tracking-wide drop-shadow-sm text-center">
-                    The Rama Setu
+                <p className="section-eyebrow relative z-10 mb-2">Chapter Two</p>
+                <h2 className="relative z-10 text-4xl md:text-6xl font-display font-bold text-snow mb-1 tracking-wide text-center">
+                    My Journey
                 </h2>
-                <p className="relative z-10 text-palm/80 font-serif italic text-lg md:text-xl mb-24 px-4 text-center">
-                    Tap to cross the bridge of my journey
+                <p className="relative z-10 font-script text-gold text-3xl md:text-4xl mb-28 px-4 text-center">
+                    tap to unwrap the years
                 </p>
             </motion.button>
 
-            {/* FULL SCREEN SETU */}
+            {/* FULL SCREEN JOURNEY */}
             <AnimatePresence>
-                {isSetuOpen && (
+                {isOpen && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="fixed inset-0 z-[150] bg-gradient-to-b from-[#06161d] via-ocean to-[#06161d] overflow-y-auto"
+                        className="fixed inset-0 z-[150] bg-gradient-to-b from-night via-night-soft to-night overflow-y-auto"
                         role="dialog"
                         aria-modal="true"
-                        aria-label="Rama Setu: professional journey"
+                        aria-label="Professional journey"
                     >
-                        {/* Sea shimmer */}
-                        <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(240,138,36,0.18),transparent_55%)]" />
-                        <div className="fixed bottom-0 left-0 w-full overflow-hidden pointer-events-none"><Waves opacity={0.15} /></div>
+                        <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(31,138,85,0.18),transparent_55%)]" />
 
                         <button
-                            onClick={() => setIsSetuOpen(false)}
-                            className="fixed top-5 right-5 z-[160] p-3 rounded-full bg-ink/70 border border-gold/40 text-gold hover:bg-saffron hover:text-ink transition-colors"
-                            aria-label="Close the Setu"
+                            onClick={() => setIsOpen(false)}
+                            className="fixed top-5 right-5 z-[160] p-3 rounded-full bg-night/80 border border-frost/30 text-snow hover:bg-holly transition-colors"
+                            aria-label="Close journey"
                         >
                             <X size={22} />
                         </button>
@@ -154,20 +164,15 @@ const Experience = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-center mb-16"
                             >
-                                <p className="font-sanskrit text-saffron text-xl mb-2" lang="sa">॥ सेतुबन्ध ॥</p>
-                                <h2 className="text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-[#fff1c8] via-gold to-saffron tracking-wide">
-                                    The Rama Setu
-                                </h2>
-                                <p className="text-palm/80 font-serif italic text-lg md:text-xl mt-4 max-w-2xl mx-auto">
-                                    Every stone that bore His name floated. Every role below is a stone I set upon the sea —
-                                    together they form the bridge that carried me here.
-                                </p>
-                                <BowDivider className="mt-6" />
+                                <p className="section-eyebrow mb-2">Christmas past to Christmas present</p>
+                                <h2 className="text-5xl md:text-7xl font-display font-bold text-snow tracking-wide">My Journey</h2>
+                                <p className="font-script text-gold text-3xl md:text-4xl mt-2">every year, a new ornament</p>
+                                <HollyDivider className="mt-4" />
                             </motion.div>
 
-                            {/* The bridge: a central causeway with stones alternating either side */}
+                            {/* A string of lights runs down the middle; each role hangs from a bauble */}
                             <div className="relative">
-                                <div className="absolute left-7 md:left-1/2 top-0 bottom-0 w-3 -translate-x-1/2 rounded-full bg-gradient-to-b from-[#7a7062] via-[#5c5448] to-[#3d372e] shadow-[0_0_20px_rgba(0,0,0,0.6)]" aria-hidden="true" />
+                                <div className="absolute left-7 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-[#2c3a2f]" aria-hidden="true" />
 
                                 <ol className="space-y-12 relative">
                                     {experience.map((item, index) => {
@@ -181,30 +186,28 @@ const Experience = () => {
                                                 transition={{ duration: 0.6, type: 'spring', bounce: 0.35 }}
                                                 className={`relative pl-20 md:pl-0 md:w-1/2 ${left ? 'md:pr-16 md:text-right' : 'md:ml-auto md:pl-16'}`}
                                             >
-                                                {/* Stone on the causeway */}
-                                                <SetuStone
-                                                    className={`absolute z-10 top-4 w-14 h-10 text-base ${left ? 'left-0 md:left-auto md:-right-7' : 'left-0 md:-left-7'}`}
+                                                <Bauble
+                                                    color={BAUBLE_COLORS[index % BAUBLE_COLORS.length]}
+                                                    className={`absolute z-10 top-0 w-12 h-16 drop-shadow-[0_0_12px_rgba(240,195,78,0.35)] ${left ? 'left-1 md:left-auto md:-right-6' : 'left-1 md:-left-6'}`}
                                                 />
 
-                                                <div className="palm-leaf text-palm-ink p-6 md:p-7 rounded-sm shadow-[0_15px_40px_rgba(0,0,0,0.5)] border border-palm-deep relative">
-                                                    <span className="absolute top-2 left-2 w-2 h-2 rounded-full bg-palm-ink/40" aria-hidden="true" />
-                                                    <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-palm-ink/40" aria-hidden="true" />
-                                                    <p className="text-kumkum text-xs font-semibold uppercase tracking-[0.25em] mb-1">{item.period}</p>
-                                                    <h3 className="text-2xl text-palm-ink leading-tight mb-1">{item.role}</h3>
-                                                    <p className="text-[#7a4a1a] font-semibold text-sm uppercase tracking-widest mb-3">{item.company}</p>
-                                                    <p className="font-serif text-base md:text-lg leading-relaxed text-palm-ink/90">{item.desc}</p>
+                                                <div className="frost-card snow-cap p-6 md:p-7 !bg-night-card">
+                                                    <p className="text-gold text-xs font-bold uppercase tracking-[0.25em] mb-1">{item.period}</p>
+                                                    <h3 className="text-2xl font-bold text-snow leading-tight mb-1">{item.role}</h3>
+                                                    <p className="text-[#ff8a99] font-bold text-sm uppercase tracking-widest mb-3">{item.company}</p>
+                                                    <p className="text-base leading-relaxed text-snow/80">{item.desc}</p>
                                                 </div>
                                             </motion.li>
                                         );
                                     })}
                                 </ol>
 
-                                {/* The shore where the bridge began: education */}
-                                <div className="relative mt-20 pt-6 bg-gradient-to-b from-transparent to-[#06161d]">
-                                    <h3 className="text-3xl text-gold mb-2 flex items-center justify-center gap-3 text-center">
-                                        <GraduationCap className="text-saffron" size={30} /> The Gurukula
+                                {/* Education */}
+                                <div className="relative mt-20 pt-6">
+                                    <h3 className="text-3xl font-bold text-snow mb-1 flex items-center justify-center gap-3 text-center">
+                                        <GraduationCap className="text-gold" size={30} /> Education
                                     </h3>
-                                    <p className="text-center text-palm/70 font-serif italic mb-8">Where the first lessons of the bow were learned</p>
+                                    <p className="text-center font-script text-gold text-2xl mb-8">where the first gifts were made</p>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         {education.map((item, index) => (
                                             <motion.div
@@ -213,10 +216,10 @@ const Experience = () => {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: index * 0.15 }}
-                                                className="bg-ink-card p-6 rounded-sm border border-gold/30 shadow-lg"
+                                                className="bg-cream text-cream-ink p-6 rounded-xl border-t-8 border-pine shadow-lg"
                                             >
-                                                <h4 className="text-xl text-palm mb-2">{item.degree}</h4>
-                                                <p className="text-gold/80 text-sm font-semibold uppercase tracking-wider">{item.school}</p>
+                                                <h4 className="text-xl font-bold mb-2">{item.degree}</h4>
+                                                <p className="text-holly-deep text-sm font-bold uppercase tracking-wider">{item.school}</p>
                                             </motion.div>
                                         ))}
                                     </div>
@@ -224,12 +227,12 @@ const Experience = () => {
                             </div>
 
                             <div className="mt-16 text-center">
-                                <p className="font-sanskrit text-saffron text-2xl" lang="sa">॥ इति ॥</p>
+                                <p className="font-script text-gold text-3xl">and the best is yet to come…</p>
                                 <button
-                                    onClick={() => setIsSetuOpen(false)}
-                                    className="mt-4 px-6 py-2 border border-gold/50 text-gold font-serif italic hover:bg-gold/10 rounded-sm"
+                                    onClick={() => setIsOpen(false)}
+                                    className="mt-4 px-6 py-2 rounded-full border border-frost/40 text-snow hover:bg-frost/10"
                                 >
-                                    Return to shore (Esc)
+                                    Back to the page (Esc)
                                 </button>
                             </div>
                         </div>

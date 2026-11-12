@@ -27,7 +27,7 @@ const MouseFollower = () => {
         const handleMouseDown = (e) => {
             setIsClicking(true);
 
-            // Burst of marigold petals and diya sparks
+            // Burst of red, green and gold sparks, like a tiny firework
             const burstCount = 12;
             const newBurstParticles = [];
             for (let i = 0; i < burstCount; i++) {
@@ -40,7 +40,7 @@ const MouseFollower = () => {
                     destX: e.clientX + Math.cos(angle) * distance,
                     destY: e.clientY + Math.sin(angle) * distance,
                     size: Math.random() * 6 + 3,
-                    color: i % 3 === 0 ? '#b3261e' : i % 2 === 0 ? '#f08a24' : '#e2b33c', // Kumkum, saffron, gold
+                    color: i % 3 === 0 ? '#d4243b' : i % 3 === 1 ? '#1f8a55' : '#f0c34e', // Holly, pine, gold
                     isBurst: true
                 });
             }
@@ -63,7 +63,7 @@ const MouseFollower = () => {
 
     return (
         <>
-            {/* Diya-flame glow that follows the cursor */}
+            {/* Soft starlight glow that follows the cursor */}
             <motion.div
                 className="fixed top-0 left-0 w-6 h-6 z-[100] pointer-events-none"
                 animate={{
@@ -94,16 +94,16 @@ const MouseFollower = () => {
                     }}
                     style={{
                         background: isClicking
-                            ? "radial-gradient(circle, rgba(255, 196, 92, 1) 0%, rgba(240, 138, 36, 0) 70%)"
-                            : "radial-gradient(circle, rgba(255,226,160,1) 0%, rgba(240,138,36,0) 70%)",
+                            ? "radial-gradient(circle, rgba(240, 195, 78, 1) 0%, rgba(212, 36, 59, 0) 70%)"
+                            : "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,212,245,0) 70%)",
                         boxShadow: isClicking
-                            ? "0 0 30px 10px rgba(240, 138, 36, 0.8), 0 0 60px 30px rgba(179, 38, 30, 0.25)"
-                            : "0 0 20px 5px rgba(240, 138, 36, 0.45), 0 0 40px 20px rgba(226, 179, 60, 0.12)",
+                            ? "0 0 30px 10px rgba(240, 195, 78, 0.8), 0 0 60px 30px rgba(212, 36, 59, 0.25)"
+                            : "0 0 20px 5px rgba(244, 247, 252, 0.5), 0 0 40px 20px rgba(169, 212, 245, 0.15)",
                     }}
                 />
             </motion.div>
 
-            {/* Ember trail & petal bursts */}
+            {/* Snow-sparkle trail & firework bursts */}
             <AnimatePresence>
                 {sparkles.map(sparkle => (
                     <motion.div
@@ -129,8 +129,8 @@ const MouseFollower = () => {
                         style={{
                             width: sparkle.size,
                             height: sparkle.size,
-                            backgroundColor: sparkle.color || '#ffd27a',
-                            boxShadow: `0 0 ${sparkle.isBurst ? '15px' : '10px'} 2px ${sparkle.color || 'rgba(240,138,36,0.8)'}`
+                            backgroundColor: sparkle.color || '#f4f7fc',
+                            boxShadow: `0 0 ${sparkle.isBurst ? '15px' : '10px'} 2px ${sparkle.color || 'rgba(169,212,245,0.8)'}`
                         }}
                         onAnimationComplete={() => {
                             setSparkles(prev => prev.filter(s => s.id !== sparkle.id));
