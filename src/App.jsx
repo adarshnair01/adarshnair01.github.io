@@ -7,11 +7,13 @@ import QuickGames from './components/QuickGames';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
 import SnowmanMascot from './components/SnowmanMascot';
+import { MotionConfig } from 'framer-motion';
 import { Snowfall } from './components/Festive';
 
 function App() {
   return (
-    <div className="min-h-screen text-text-main selection:bg-holly selection:text-snow overflow-x-hidden">
+    <MotionConfig reducedMotion="user">
+    <div id="top" className="min-h-screen text-text-main selection:bg-holly selection:text-snow overflow-x-hidden">
       <MouseFollower />
       <Snowfall />
       <Navbar />
@@ -42,6 +44,7 @@ function App() {
       <Footer />
       <SnowmanMascot />
     </div>
+    </MotionConfig>
   );
 }
 

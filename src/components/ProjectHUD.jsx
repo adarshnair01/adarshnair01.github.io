@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
+import { useRef } from 'react';
+import useDialogFocus from '../hooks/useDialogFocus';
 import { X, Github, ChevronLeft, ChevronRight, Zap, Target, Layers, Swords, Sparkles, Mail, Star } from 'lucide-react';
 import { HollyDivider, Snowflake } from './Festive';
 
@@ -11,21 +12,9 @@ const LetterHeading = ({ icon: Icon, children }) => (
 );
 
 const ProjectHUD = ({ isOpen, onClose, project, onNext, onPrev }) => {
-    // Keyboard: Esc closes, arrows page through projects; lock page scroll
-    useEffect(() => {
-        if (!isOpen) return;
-        document.body.style.overflow = 'hidden';
-        const onKey = (e) => {
-            if (e.key === 'Escape') onClose();
-            if (e.key === 'ArrowRight') onNext();
-            if (e.key === 'ArrowLeft') onPrev();
-        };
-        window.addEventListener('keydown', onKey);
-        return () => {
-            document.body.style.overflow = '';
-            window.removeEventListener('keydown', onKey);
-        };
-    }, [isOpen, onClose, onNext, onPrev]);
+    // Esc closes, arrow keys page through projects, Tab stays inside the dialog
+    const dialogRef = useRef(null);
+    useDialogFocus(dialogRef, isOpen, onClose, { ArrowRight: onNext, ArrowLeft: onPrev });
 
     return (
         <AnimatePresence>
@@ -36,6 +25,8 @@ const ProjectHUD = ({ isOpen, onClose, project, onNext, onPrev }) => {
                     exit={{ opacity: 0 }}
                     className="fixed inset-0 z-[150] bg-night/90 backdrop-blur-md flex items-center justify-center p-3 md:p-8"
                     onClick={onClose}
+                    ref={dialogRef}
+                    tabIndex={-1}
                     role="dialog"
                     aria-modal="true"
                     aria-label={project.title}
@@ -67,7 +58,12 @@ const ProjectHUD = ({ isOpen, onClose, project, onNext, onPrev }) => {
                                     <h2 className="text-2xl md:text-4xl font-bold text-cream-ink leading-tight">{project.title}</h2>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    {project.link && project.link !== '#' && (
+                                    {project.note && (
+                                        <span className="px-3 py-2 text-xs font-semibold text-cream-ink/70 border border-dashed border-cream-ink/30 rounded-full">
+                                            {project.note}
+                                        </span>
+                                    )}
+                                    {project.link && (
                                         <a
                                             href={project.link}
                                             target="_blank"
@@ -96,6 +92,9 @@ const ProjectHUD = ({ isOpen, onClose, project, onNext, onPrev }) => {
                                         <img
                                             src={project.image}
                                             alt={`${project.title} preview`}
+                                            width="1024"
+                                            height="1024"
+                                            decoding="async"
                                             className="w-full aspect-[4/3] object-cover"
                                         />
                                         <span className="absolute bottom-1.5 left-0 right-0 text-center font-script text-xl text-holly">{project.title}</span>

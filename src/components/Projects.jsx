@@ -31,7 +31,7 @@ const Projects = () => {
                 { value: '5M+', label: 'Daily Users' }
             ],
             link: 'https://github.com/adarshnair01/Recommendation-Engine',
-            image: '/recommendation-engine.png'
+            image: '/recommendation-engine.webp'
         },
         {
             id: 'TS-FC-02',
@@ -55,8 +55,9 @@ const Projects = () => {
                 { value: '$2M', label: 'Waste Saved' },
                 { value: '2k+', label: 'Stores' }
             ],
-            link: '#',
-            image: '/sales-forecasting.png'
+            link: null,
+            note: 'Internal project · Kvantum Inc.',
+            image: '/sales-forecasting.webp'
         },
         {
             id: 'CHURN-PRED-03',
@@ -80,8 +81,9 @@ const Projects = () => {
                 { value: '-10%', label: 'Churn Rate' },
                 { value: '1.2M', label: 'Retained' }
             ],
-            link: '#',
-            image: '/churn-prediction.png'
+            link: null,
+            note: 'Internal project · Yum! Brands',
+            image: '/churn-prediction.webp'
         }
     ];
 
@@ -116,6 +118,10 @@ const Projects = () => {
                                     <img
                                         src={project.image}
                                         alt={project.title}
+                                        width="1024"
+                                        height="1024"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-85 group-hover:opacity-100"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-night-card via-night-card/20 to-transparent"></div>
@@ -128,6 +134,7 @@ const Projects = () => {
                                         <Gift size={12} /> Gift No. {index + 1}
                                     </div>
                                     <h3 className="text-2xl font-bold text-snow mb-2 group-hover:text-gold transition-colors">{project.title}</h3>
+                                    {project.note && <p className="text-xs text-frost/80 mb-2">{project.note}</p>}
                                     <p className="text-text-muted mb-4 text-sm line-clamp-3 leading-relaxed">{project.desc}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.slice(0, 3).map(tag => (

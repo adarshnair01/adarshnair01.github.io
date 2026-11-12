@@ -1,19 +1,11 @@
-import { useEffect } from "react";
+import { useRef } from "react";
+import useDialogFocus from "../hooks/useDialogFocus";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 const FullScreenOverlay = ({ isOpen, onClose, title, children }) => {
-    // Lock body scroll and close on ESC while open
-    useEffect(() => {
-        if (!isOpen) return;
-        document.body.style.overflow = 'hidden';
-        const onKey = (e) => e.key === 'Escape' && onClose();
-        window.addEventListener('keydown', onKey);
-        return () => {
-            document.body.style.overflow = '';
-            window.removeEventListener('keydown', onKey);
-        };
-    }, [isOpen, onClose]);
+    const dialogRef = useRef(null);
+    useDialogFocus(dialogRef, isOpen, onClose);
 
     return (
         <AnimatePresence>
@@ -23,6 +15,8 @@ const FullScreenOverlay = ({ isOpen, onClose, title, children }) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className="fixed inset-0 z-[200] bg-night text-snow flex flex-col"
+                    ref={dialogRef}
+                    tabIndex={-1}
                     role="dialog"
                     aria-modal="true"
                     aria-label={typeof title === 'string' ? title : undefined}

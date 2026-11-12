@@ -2,194 +2,75 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RotateCcw, ArrowLeft, ArrowRight } from 'lucide-react';
 
+const CAR_TYPES = ['🚕', '🚙', '🚑', '🚓', '🚚'];
+
 const RacingGame = () => {
     const [gameState, setGameState] = useState('start'); // start, playing, gameover
     const [score, setScore] = useState(0);
     const [lane, setLane] = useState(1); // 0, 1, 2
     const [obstacles, setObstacles] = useState([]); // { id, lane, y, type }
-    const [speed, setSpeed] = useState(1.5);
 
-    const rafRef = useRef(null);
-    const scoreRef = useRef(0);
-    const obstacleIntervalRef = useRef(0);
-
-    const CAR_TYPES = ['🚕', '🚙', '🚑', '🚓', '🚚'];
-
-    // Game Loop
-    useEffect(() => {
-        if (gameState !== 'playing') return;
-
-        let lastTime = Date.now();
-        setObstacles([]); // Clear on start
-        setSpeed(1.5);
-        scoreRef.current = 0;
-
-        const loop = () => {
-            const now = Date.now();
-            const dt = (now - lastTime) / 16; // approx 1 frame
-            lastTime = now;
-
-            // Spawn Obstacles
-            obstacleIntervalRef.current -= dt;
-            if (obstacleIntervalRef.current <= 0) {
-                const newLane = Math.floor(Math.random() * 3);
-                const type = CAR_TYPES[Math.floor(Math.random() * CAR_TYPES.length)];
-
-                // Don't spawn if there's already a car very close in that lane (prevents unfair piles)
-                // Simplified: just push
-                setObstacles(prev => [
-                    ...prev,
-                    { id: Date.now() + Math.random(), lane: newLane, y: -20, type }
-                ]);
-
-                // Reset Interval (decreases as speed increases)
-                obstacleIntervalRef.current = Math.max(20, 100 - scoreRef.current / 5);
-            }
-
-            // Move Obstacles
-            setObstacles(prev => {
-                const next = [];
-                let collided = false;
-
-                prev.forEach(obs => {
-                    obs.y += speed * 0.8; // Move down
-
-                    // Collision Check
-                    // Player is roughly at y=80, size ~15%
-                    // Obstacle size ~15%
-                    const playerY = 80;
-                    if (
-                        obs.lane === lane &&
-                        obs.y > playerY - 10 &&
-                        obs.y < playerY + 10
-                    ) {
-                        collided = true;
-                    }
-
-                    if (obs.y < 110) next.push(obs); // Keep if on screen
-                });
-
-                if (collided) {
-                    setGameState('gameover');
-                    return prev; // Stop updating
-                }
-
-                return next;
-            });
-
-            // Increase Score & Speed
-            if (gameState === 'playing') {
-                scoreRef.current += 0.5;
-                setScore(Math.floor(scoreRef.current));
-                setSpeed(s => Math.min(3.5, s + 0.001)); // Cap speed
-                rafRef.current = requestAnimationFrame(loop);
-            }
-        };
-
-        rafRef.current = requestAnimationFrame(loop);
-        return () => cancelAnimationFrame(rafRef.current);
-    }, [gameState, lane]); // Dependency on 'lane' is crucial for collision check in closure? No, using ref for updated lane would be better, but 'lane' changes triggers re-render, forcing new closure. This is fine for simple game.
-
-    // Better way to handle collision: Check collision inside setting of state where 'lane' is accessible or use Ref for lane.
-    // Let's use Ref for lane to avoid loop restart
+    // Refs let the single game loop read the latest values without restarting
     const laneRef = useRef(1);
+    const speedRef = useRef(1.5);
+    const scoreRef = useRef(0);
+    const obstaclesRef = useRef([]);
+
     useEffect(() => { laneRef.current = lane; }, [lane]);
 
-    // Redefine Loop with Lane Ref to avoid re-binding
-    useEffect(() => {
-        if (gameState !== 'playing') return;
-        let lastTime = Date.now();
-
-        const loop = () => {
-            // ... Logic duplicated here? To fix the closure issue proper:
-            setObstacles(prev => {
-                const next = [];
-                let collided = false;
-                prev.forEach(obs => {
-                    obs.y += speed * 0.5; // Adjusted speed factor relative to fps
-
-                    if (
-                        obs.lane === laneRef.current &&
-                        obs.y > 75 && // Player top
-                        obs.y < 95    // Player bottom
-                    ) {
-                        collided = true;
-                    }
-                    if (obs.y < 120) next.push(obs);
-                });
-
-                if (collided) {
-                    setGameState('gameover');
-                    return prev;
-                }
-                return next;
-            });
-            // Spawn logic needs to be inside or outside?
-            // Let's simplify: Use a single interval for 'tick' that handles move and spawn
-        };
-        // ...
-        // Actually, the previous structure re-creating loop on 'lane' change is LAGGY.
-        // We must use the Ref approach for lane.
-    }, [gameState]); // Only run on game state change
-
-    // Correct Loop Implementation
+    // Single game loop: spawn, move, collide, score (~60 fps)
     useEffect(() => {
         if (gameState !== 'playing') return;
 
         const gameLoop = setInterval(() => {
-            setObstacles(prev => {
-                let gameOver = false;
-                // Spawn
-                if (Math.random() < (0.05 + scoreRef.current * 0.0001)) { // Increasing spawn rate
-                    const newLane = Math.floor(Math.random() * 3);
-                    // Check if lane is clear at top
-                    const isClear = !prev.some(o => o.lane === newLane && o.y < 20);
-                    if (isClear) {
-                        return [...prev, { id: Math.random(), lane: newLane, y: -20, type: CAR_TYPES[Math.floor(Math.random() * CAR_TYPES.length)] }];
-                    }
+            let next = obstaclesRef.current;
+
+            // Spawn a car (spawn rate grows with score), unless the top of that lane is busy
+            if (Math.random() < 0.05 + scoreRef.current * 0.0001) {
+                const newLane = Math.floor(Math.random() * 3);
+                if (!next.some(o => o.lane === newLane && o.y < 20)) {
+                    next = [...next, { id: Math.random(), lane: newLane, y: -20, type: CAR_TYPES[Math.floor(Math.random() * CAR_TYPES.length)] }];
                 }
+            }
 
-                // Move & Collide
-                const next = prev.map(o => ({ ...o, y: o.y + speed })).filter(o => o.y < 120);
+            // Move cars down and drop the ones that left the screen
+            next = next.map(o => ({ ...o, y: o.y + speedRef.current })).filter(o => o.y < 120);
 
-                // Check Collision
-                if (next.some(o => o.lane === laneRef.current && o.y > 70 && o.y < 95)) {
-                    setGameState('gameover');
-                    gameOver = true;
-                }
+            // Collision with the player's car
+            if (next.some(o => o.lane === laneRef.current && o.y > 70 && o.y < 95)) {
+                setGameState('gameover');
+                return;
+            }
 
-                if (!gameOver) {
-                    scoreRef.current += 1;
-                    setScore(Math.floor(scoreRef.current / 10)); // Slow down score display
-                    setSpeed(s => Math.min(4, s + 0.001));
-                }
-
-                return gameOver ? prev : next;
-            });
-        }, 16); // 60 FPS
+            obstaclesRef.current = next;
+            setObstacles(next);
+            scoreRef.current += 1;
+            setScore(Math.floor(scoreRef.current / 10)); // slower-moving score display
+            speedRef.current = Math.min(4, speedRef.current + 0.001); // gradually speed up
+        }, 16);
 
         return () => clearInterval(gameLoop);
     }, [gameState]);
 
-
     const moveLeft = () => setLane(p => Math.max(0, p - 1));
     const moveRight = () => setLane(p => Math.min(2, p + 1));
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'ArrowLeft') moveLeft();
-        if (e.key === 'ArrowRight') moveRight();
-    };
-
     useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') setLane(p => Math.max(0, p - 1));
+            if (e.key === 'ArrowRight') setLane(p => Math.min(2, p + 1));
+        };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, []);
 
     const startGame = () => {
         setLane(1);
+        laneRef.current = 1;
+        obstaclesRef.current = [];
         setObstacles([]);
         setScore(0);
-        setSpeed(1.5);
+        speedRef.current = 1.5;
         scoreRef.current = 0;
         setGameState('playing');
     };
@@ -204,7 +85,7 @@ const RacingGame = () => {
                 <div className="absolute left-2/3 top-0 h-full w-2 border-r-2 border-dashed border-white/30"></div>
 
                 {/* Moving Road Effect (Simple animate) */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-50 animate-pulse"></div>
+                <div className="absolute inset-0 opacity-50 animate-pulse bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[length:6px_6px]"></div>
 
                 {/* Obstacles */}
                 <AnimatePresence>
@@ -237,14 +118,14 @@ const RacingGame = () => {
 
             {/* Header */}
             <div className="absolute top-4 left-0 w-full text-center pointer-events-none">
-                <div className="text-3xl font-black text-white italic font-mono tracking-tighter">SPEED: {Math.floor(speed * 100)} km/h</div>
+                <div className="text-3xl font-black text-white italic font-mono tracking-tighter">SPEED: {Math.floor(Math.min(4, 1.5 + score * 0.01) * 100)} km/h</div>
                 <div className="text-xl font-bold text-yellow-400">SCORE: {score}</div>
             </div>
 
             {/* Mobile Controls */}
             <div className="absolute bottom-4 w-full flex justify-between px-8 md:hidden">
-                <button onClick={moveLeft} className="p-6 bg-white/10 rounded-full backdrop-blur active:bg-white/30"><ArrowLeft className="text-white" /></button>
-                <button onClick={moveRight} className="p-6 bg-white/10 rounded-full backdrop-blur active:bg-white/30"><ArrowRight className="text-white" /></button>
+                <button onClick={moveLeft} aria-label="Steer left" className="p-6 bg-white/10 rounded-full backdrop-blur active:bg-white/30"><ArrowLeft className="text-white" /></button>
+                <button onClick={moveRight} aria-label="Steer right" className="p-6 bg-white/10 rounded-full backdrop-blur active:bg-white/30"><ArrowRight className="text-white" /></button>
             </div>
 
             {/* Game Over / Start Screen */}

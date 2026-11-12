@@ -25,6 +25,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
+  /* Keep the familiar hand cursor on anything clickable */
+  a, button, [role="button"], summary, label[for] {
+    cursor: pointer;
+  }
+
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid #f0c34e;
+    outline-offset: 3px;
+  }
 }
 
 @layer components {

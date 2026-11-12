@@ -44,7 +44,7 @@ const QuickGames = () => {
                             <div className="w-14 h-14 bg-holly/15 border border-holly/30 rounded-full flex items-center justify-center mb-3 text-2xl group-hover:scale-110 group-hover:bg-holly/25 transition-transform">
                                 {game.icon}
                             </div>
-                            <h5 className="text-base font-bold text-snow mb-1 leading-tight">{game.title}</h5>
+                            <h3 className="text-base font-bold text-snow mb-1 leading-tight">{game.title}</h3>
                             <p className="text-[11px] md:text-xs text-text-muted">{game.desc}</p>
                         </motion.button>
                     ))}

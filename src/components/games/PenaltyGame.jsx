@@ -239,7 +239,7 @@ const PenaltyGame = () => {
                     animate={{ left: `${ballPos.x}%`, top: `${ballPos.y}%`, scale: ballPos.scale }}
                     transition={{ duration: gameState === 'kicking' ? 0.6 : 0.5, ease: "circOut" }}
                 >
-                    <div className="w-full h-full bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/1024px-Soccerball.svg.png')] bg-cover bg-center opacity-90 animate-spin-slow"></div>
+                    <div className="w-full h-full flex items-center justify-center text-[2.4rem] md:text-[3.4rem] leading-none animate-spin-slow" aria-hidden="true">⚽</div>
                 </motion.div>
 
                 {/* Result Text */}
