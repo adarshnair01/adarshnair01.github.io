@@ -246,8 +246,8 @@ const ArcheryGame = () => {
 
             {/* Header */}
             <div className="absolute top-4 left-0 w-full flex justify-between px-8 z-10 pointer-events-none">
-                <div className="text-2xl font-black text-white font-harry">Score: <span className="text-yellow-400">{score}</span></div>
-                <div className="text-2xl font-black text-white font-harry">Arrows: <span className="text-orange-400">{arrows}</span></div>
+                <div className="text-2xl font-black text-white font-epic">Score: <span className="text-yellow-400">{score}</span></div>
+                <div className="text-2xl font-black text-white font-epic">Arrows: <span className="text-orange-400">{arrows}</span></div>
             </div>
 
             {/* Target */}
@@ -482,15 +482,16 @@ const ArcheryGame = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center z-50 p-6 text-center"
+                        className="absolute inset-0 bg-ink/85 backdrop-blur-md flex flex-col items-center justify-center z-50 p-6 text-center"
                     >
-                        <h2 className="text-5xl font-black text-white mb-2 font-harry tracking-widest">
-                            {gameState === 'start' ? 'ARCHERY' : 'GAME OVER'}
+                        <h2 className="text-5xl text-gold mb-2 font-epic tracking-widest">
+                            {gameState === 'start' ? 'Archery' : 'The Quiver is Empty'}
                         </h2>
                         {gameState === 'gameover' && (
-                            <div className="text-3xl text-yellow-400 mb-6 font-bold">Score: {score}</div>
+                            <div className="text-3xl text-saffron mb-6 font-bold">Score: {score}</div>
                         )}
-                        <p className="text-slate-400 mb-8 max-w-xs leading-relaxed">
+                        <p className="font-serif italic text-palm/70 mb-3">“Like Rama’s arrow, never miss the mark.”</p>
+                        <p className="text-text-muted mb-8 max-w-xs leading-relaxed">
                             1. Move mouse to Aim.<br />
                             2. <b>Hold Click</b> to Charge Power.<br />
                             3. Release when bar is <b>GREEN</b>.
@@ -498,10 +499,10 @@ const ArcheryGame = () => {
 
                         <button
                             onClick={(e) => { e.stopPropagation(); startGame(); }}
-                            className="px-8 py-3 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-colors flex items-center gap-2 shadow-lg scale-110"
+                            className="px-8 py-3 bg-saffron text-ink font-bold rounded-full hover:bg-gold transition-colors flex items-center gap-2 shadow-lg scale-110"
                         >
                             {gameState === 'start' ? <Target size={20} /> : <RotateCcw size={20} />}
-                            {gameState === 'start' ? 'Start Shooting' : 'Try Again'}
+                            {gameState === 'start' ? 'Draw the Bow' : 'Try Again'}
                         </button>
                     </motion.div>
                 )}

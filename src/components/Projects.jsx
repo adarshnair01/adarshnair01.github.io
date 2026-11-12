@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ProjectHUD from './ProjectHUD';
-import { Github, Code } from 'lucide-react';
+import { ScrollText } from 'lucide-react';
+import { KandaHeading, Lotus } from './Ornaments';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -85,78 +86,66 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="py-10 bg-transparent">
-            {/* Tech Background decoration */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-[-1]">
-                <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-primary/5 rounded-full blur-[100px]"></div>
-                <div className="absolute bottom-[20%] left-[10%] w-64 h-64 bg-secondary/5 rounded-full blur-[100px]"></div>
-            </div>
-
+        <section id="projects" className="py-24 bg-transparent relative">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-harry tracking-wider">Featured Projects</h2>
-                    <p className="text-gray-400 font-mono text-xs tracking-widest uppercase opacity-70">
-                        Select a module to view system architecture
-                    </p>
-                </motion.div>
+                <KandaHeading
+                    kanda="Sundara Kāṇḍa · The Great Deeds"
+                    title="Featured Projects"
+                    sanskrit="॥ सुन्दरकाण्ड ॥"
+                    subtitle="Unroll a manuscript to read how each was won"
+                />
 
-                {/* Technical Projects */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
+                        <motion.button
+                            type="button"
+                            key={project.id}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setSelectedProject(project)}
-                            className="group bg-[#1e1e1e] rounded-xl overflow-hidden border border-gray-800 hover:border-[#00f3ff] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] hover:-translate-y-1 cursor-pointer relative"
+                            className="group text-left bg-ink-card rounded-t-[999px] rounded-b-md overflow-hidden border border-gold/25 hover:border-saffron transition-all duration-300 hover:shadow-[0_0_35px_rgba(240,138,36,0.25)] hover:-translate-y-1 relative"
                         >
-                            {/* Card Scanline Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-[#00f3ff]/0 via-[#00f3ff]/5 to-[#00f3ff]/0 translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-1000 pointer-events-none z-10"></div>
-
-                            <div className="h-48 w-full overflow-hidden relative">
+                            {/* Temple-arch window framing the image */}
+                            <div className="h-52 w-full overflow-hidden relative rounded-t-[999px] border-b border-gold/30">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100 group-hover:grayscale-0 grayscale"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100 sepia-[.5] group-hover:sepia-0"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] to-transparent opacity-90"></div>
-
-                                {/* Corner Decorations */}
-                                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <Code className="text-[#00f3ff]" size={20} />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink-card via-ink-card/30 to-transparent"></div>
+                                <div className="absolute top-3 left-1/2 -translate-x-1/2 opacity-70 group-hover:opacity-100 transition-opacity">
+                                    <Lotus className="w-10 h-6 text-gold" />
                                 </div>
                             </div>
 
-                            <div className="p-6 relative z-20">
-                                <div className="text-[10px] text-[#00f3ff] font-mono mb-2 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest uppercase">
-                                    Click to Initialize
+                            <div className="p-6 relative">
+                                <div className="text-[11px] text-saffron mb-2 font-serif italic tracking-widest uppercase flex items-center gap-2">
+                                    <ScrollText size={12} /> Sarga {index + 1}
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-200 mb-2 group-hover:text-[#00f3ff] transition-colors font-harry tracking-wide">{project.title}</h3>
-                                <p className="text-gray-400 mb-4 text-sm line-clamp-3 leading-relaxed font-sans">{project.desc}</p>
+                                <h3 className="text-2xl text-palm mb-2 group-hover:text-gold transition-colors tracking-wide">{project.title}</h3>
+                                <p className="text-text-muted mb-4 text-sm line-clamp-3 leading-relaxed">{project.desc}</p>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.slice(0, 3).map(tag => (
-                                        <span key={tag} className="px-2 py-1 text-[10px] font-bold text-gray-400 bg-gray-800 rounded group-hover:text-[#00f3ff] group-hover:bg-[#00f3ff]/10 border border-transparent group-hover:border-[#00f3ff]/30 transition-all font-mono">
+                                        <span key={tag} className="px-2 py-1 text-[10px] font-semibold text-gold/80 bg-gold/5 rounded-sm border border-gold/20 group-hover:border-saffron/40 group-hover:text-saffron transition-all">
                                             {tag}
                                         </span>
                                     ))}
                                     {project.tags.length > 3 && (
-                                        <span className="px-2 py-1 text-[10px] font-bold text-gray-500 font-mono">+{project.tags.length - 3}</span>
+                                        <span className="px-2 py-1 text-[10px] font-semibold text-text-muted">+{project.tags.length - 3}</span>
                                     )}
                                 </div>
+                                <div className="mt-5 text-xs text-gold/70 group-hover:text-saffron transition-colors font-serif italic">
+                                    Read the manuscript →
+                                </div>
                             </div>
-                        </motion.div>
+                        </motion.button>
                     ))}
                 </div>
             </div>
 
-            {/* IRON MAN / JARVIS STYLE MODAL */}
+            {/* Palm-leaf manuscript modal */}
             <ProjectHUD
                 isOpen={!!selectedProject}
                 onClose={() => setSelectedProject(null)}

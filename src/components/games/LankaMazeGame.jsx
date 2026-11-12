@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react';
 
-const NarutoMazeGame = () => {
-    // 0: Path, 1: Wall, 2: Start (Naruto), 3: Goal (Ramen), 4: Trap (Shuriken)
+const LankaMazeGame = () => {
+    // 0: Path, 1: Wall, 2: Start (Hanuman), 3: Goal (Sita in Ashoka Vatika), 4: Trap (Rakshasa guard)
     const [maze, setMaze] = useState([]);
     const [playerPos, setPlayerPos] = useState({ x: 0, y: 0 });
     const [gameState, setGameState] = useState('playing'); // playing, won
@@ -182,7 +182,7 @@ const NarutoMazeGame = () => {
         // Trap Collision
         if (cell === 4) {
             // Hit a trap! Reset to start
-            setMessage('IT WAS A TRAP! DATTEBAYO!');
+            setMessage('CAUGHT BY A RAKSHASA! BACK TO THE SHORE!');
             setPlayerPos({ x: 1, y: 1 }); // Reset to start
             setTimeout(() => setMessage(''), 1500);
             return;
@@ -212,23 +212,23 @@ const NarutoMazeGame = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [playerPos, gameState, maze]);
 
-    if (maze.length === 0) return <div className="text-white">Loading Maze...</div>;
+    if (maze.length === 0) return <div className="text-palm">Loading Lanka...</div>;
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-full relative p-4 bg-[#1a1a2e]">
+        <div className="flex flex-col items-center justify-center w-full h-full relative p-4 bg-ink">
 
             {/* Header */}
             <div className="flex items-center justify-between w-full max-w-md mb-4 px-4">
-                <h2 className="text-2xl font-black text-orange-500 font-harry tracking-wider drop-shadow-lg flex items-center gap-2">
-                    <span className="text-3xl">🍥</span> LVL {level}
+                <h2 className="text-2xl text-gold font-epic tracking-wider drop-shadow-lg flex items-center gap-2">
+                    <span className="text-3xl">🐒</span> Lanka · Level {level}
                 </h2>
                 {message && (
-                    <span className="text-red-500 font-bold animate-pulse text-sm">{message}</span>
+                    <span className="text-kumkum font-bold animate-pulse text-sm">{message}</span>
                 )}
             </div>
 
             {/* Maze Container */}
-            <div className="relative bg-[#0f172a] p-2 rounded-lg border-4 border-orange-600 shadow-2xl">
+            <div className="relative bg-[#2a1208] p-2 rounded-lg border-4 border-gold-deep shadow-2xl">
                 <div
                     className="grid gap-0.5" // Tighter gap
                     style={{
@@ -238,10 +238,10 @@ const NarutoMazeGame = () => {
                     {maze.map((row, y) => (
                         row.map((cell, x) => {
                             const isPlayer = playerPos.x === x && playerPos.y === y;
-                            let cellColor = 'bg-slate-800'; // Path (0)
-                            if (cell === 1) cellColor = 'bg-slate-600'; // Wall (1)
+                            let cellColor = 'bg-[#4a2a14]'; // Path (0)
+                            if (cell === 1) cellColor = 'bg-gradient-to-b from-[#c9a24a] to-[#8a6a20]'; // Golden walls of Lanka (1)
 
-                            // Trap visibility? Let's make them visible "Shurikens"
+                            // Rakshasa guards are visible so the player can avoid them
 
                             return (
                                 <div
@@ -249,22 +249,22 @@ const NarutoMazeGame = () => {
                                     className={`w-6 h-6 sm:w-8 sm:h-8 rounded-sm ${cellColor} flex items-center justify-center relative`}
                                 >
                                     {/* Wall Texture */}
-                                    {cell === 1 && <div className="absolute inset-0 bg-opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"></div>}
+                                    {cell === 1 && <div className="absolute inset-x-0 top-0 h-px bg-[#ffe7a8]/60"></div>}
 
-                                    {/* Trap: Shuriken */}
-                                    {cell === 4 && <span className="text-sm z-10 animate-spin opacity-80">✴️</span>}
+                                    {/* Trap: Rakshasa guard */}
+                                    {cell === 4 && <span className="text-sm z-10 animate-pulse">👹</span>}
 
-                                    {/* Goal: Ramen */}
-                                    {cell === 3 && <span className="text-xl z-20 animate-bounce">🍜</span>}
+                                    {/* Goal: Sita under the Ashoka tree */}
+                                    {cell === 3 && <span className="text-xl z-20 animate-bounce">🌸</span>}
 
-                                    {/* Player: Naruto Icon */}
+                                    {/* Player: Hanuman */}
                                     {isPlayer && (
                                         <motion.div
-                                            layoutId="naruto"
+                                            layoutId="hanuman"
                                             className="absolute inset-0 flex items-center justify-center z-30"
                                             transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                         >
-                                            <span className="text-xl drop-shadow-[0_0_5px_rgba(249,115,22,0.8)]">🦊</span>
+                                            <span className="text-xl drop-shadow-[0_0_6px_rgba(240,138,36,0.9)]">🐒</span>
                                         </motion.div>
                                     )}
                                 </div>
@@ -280,15 +280,15 @@ const NarutoMazeGame = () => {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 flex flex-col items-center justify-center bg-black/90 backdrop-blur-sm rounded-lg z-40 p-6 text-center"
+                            className="absolute inset-0 flex flex-col items-center justify-center bg-ink/95 backdrop-blur-sm rounded-lg z-40 p-6 text-center"
                         >
-                            <h3 className="text-3xl font-black text-orange-500 mb-2 font-harry tracking-widest">LEVEL {level} CLEAR!</h3>
-                            <div className="text-6xl mb-4 animate-bounce">🍜</div>
-                            <p className="text-slate-300 mb-6 text-sm">Delicious! Ready for harder training?</p>
+                            <h3 className="text-3xl text-gold mb-2 font-epic tracking-widest">Sita Found!</h3>
+                            <div className="text-6xl mb-4 animate-bounce">💍</div>
+                            <p className="text-palm/80 mb-6 text-sm font-serif italic">You delivered Rama's ring. Leap into a deeper part of Lanka?</p>
 
                             <button
                                 onClick={nextLevel}
-                                className="px-8 py-3 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-700 transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(234,88,12,0.5)] transform hover:scale-105 active:scale-95"
+                                className="px-8 py-3 bg-saffron text-ink font-bold rounded-full hover:bg-gold transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(240,138,36,0.5)] transform hover:scale-105 active:scale-95"
                             >
                                 <ArrowUp size={20} /> Next Level
                             </button>
@@ -300,26 +300,26 @@ const NarutoMazeGame = () => {
             {/* Mobile Controls (D-Pad) */}
             <div className="mt-6 grid grid-cols-3 gap-2 md:hidden">
                 <div></div>
-                <button onClick={() => move(0, -1)} className="p-4 bg-slate-700 rounded-lg active:bg-orange-600 transition-colors pointer-events-auto shadow-md">
-                    <ArrowUp className="text-white" />
+                <button onClick={() => move(0, -1)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
+                    <ArrowUp className="text-gold" />
                 </button>
                 <div></div>
-                <button onClick={() => move(-1, 0)} className="p-4 bg-slate-700 rounded-lg active:bg-orange-600 transition-colors pointer-events-auto shadow-md">
-                    <ArrowLeft className="text-white" />
+                <button onClick={() => move(-1, 0)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
+                    <ArrowLeft className="text-gold" />
                 </button>
-                <button onClick={() => move(0, 1)} className="p-4 bg-slate-700 rounded-lg active:bg-orange-600 transition-colors pointer-events-auto shadow-md">
-                    <ArrowDown className="text-white" />
+                <button onClick={() => move(0, 1)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
+                    <ArrowDown className="text-gold" />
                 </button>
-                <button onClick={() => move(1, 0)} className="p-4 bg-slate-700 rounded-lg active:bg-orange-600 transition-colors pointer-events-auto shadow-md">
-                    <ArrowRight className="text-white" />
+                <button onClick={() => move(1, 0)} className="p-4 bg-ink-card border border-gold/30 rounded-lg active:bg-saffron transition-colors pointer-events-auto shadow-md">
+                    <ArrowRight className="text-gold" />
                 </button>
             </div>
 
-            <p className="mt-4 text-slate-400 text-sm font-mono hidden md:block">
-                Watch out for <span className="text-red-500 font-bold">Shurikens ✴️</span>!
+            <p className="mt-4 text-text-muted text-sm font-serif italic hidden md:block">
+                Guide Hanuman to Sita 🌸 — and beware the <span className="text-kumkum font-bold">Rakshasa guards 👹</span>!
             </p>
         </div>
     );
 };
 
-export default NarutoMazeGame;
+export default LankaMazeGame;
