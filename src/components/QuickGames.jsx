@@ -3,103 +3,60 @@ import { useState } from 'react';
 import FullScreenOverlay from './FullScreenOverlay';
 import TableTennisGame from './games/TableTennisGame';
 import PenaltyGame from './games/PenaltyGame';
-import NarutoMazeGame from './games/NarutoMazeGame';
+import LankaMazeGame from './games/LankaMazeGame';
 import TicTacToeGame from './games/TicTacToeGame';
 import ArcheryGame from './games/ArcheryGame';
 import RacingGame from './games/RacingGame';
+import { KandaHeading } from './Ornaments';
+
+const games = [
+    { id: 'archery', icon: '🏹', title: 'Archery', desc: 'Draw the bow, find the mark', Component: ArcheryGame },
+    { id: 'lanka', icon: '🐒', title: 'Lanka Maze', desc: 'Lead the vanara to Sita', Component: LankaMazeGame },
+    { id: 'tictactoe', icon: '🪔', title: 'Tic Tac Toe', desc: 'A game of strategy', Component: TicTacToeGame },
+    { id: 'tennis', icon: '🏓', title: 'Table Tennis', desc: 'Pong arcade', Component: TableTennisGame },
+    { id: 'penalty', icon: '⚽', title: 'Penalty Kick', desc: 'Test your aim', Component: PenaltyGame },
+    { id: 'racing', icon: '🏎️', title: 'Turbo Racer', desc: 'Dodge the traffic', Component: RacingGame },
+];
 
 const QuickGames = () => {
     const [activeGame, setActiveGame] = useState(null);
-
-    const openGame = (game) => setActiveGame(game);
+    const current = games.find((g) => g.id === activeGame);
 
     return (
-        <section id="games" className="py-10 bg-transparent">
+        <section id="games" className="py-20 bg-transparent">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-harry tracking-wider">Quick Games</h2>
-                    <p className="mt-4 text-gray-400 font-medium">Take a break and test your skills.</p>
-                </motion.div>
+                <KandaHeading
+                    kanda="Kiṣkindhā Kāṇḍa · Games of the Vanaras"
+                    title="Quick Games"
+                    sanskrit="॥ किष्किन्धाकाण्ड ॥"
+                    subtitle="Take a break and test your skills."
+                />
 
-                {/* Compact Grid Container */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 px-2">
-                    {[
-                        { id: 'tennis', icon: '🏓', title: 'Table Tennis', desc: 'Pong Arcade', hover: 'hover:border-orange-500', bg: 'bg-orange-900/30', text: 'text-orange-500' },
-                        { id: 'penalty', icon: '⚽', title: 'Penalty Kick', desc: 'Test Your Aim', hover: 'hover:border-green-500', bg: 'bg-green-900/30', text: 'text-green-500' },
-                        { id: 'naruto', icon: '🍥', title: 'Naruto Maze', desc: 'Find Ramen', hover: 'hover:border-orange-500', bg: 'bg-orange-900/30', text: 'text-orange-500' },
-                        { id: 'tictactoe', icon: '❌', title: 'Tic Tac Toe', desc: 'Strategy', hover: 'hover:border-blue-500', bg: 'bg-blue-900/30', text: 'text-blue-500' },
-                        { id: 'archery', icon: '🏹', title: 'Archery', desc: 'Bullseye', hover: 'hover:border-yellow-500', bg: 'bg-yellow-900/30', text: 'text-yellow-500' },
-                        { id: 'racing', icon: '🏎️', title: 'Turbo Racer', desc: 'Dodge Traffic', hover: 'hover:border-red-500', bg: 'bg-red-900/30', text: 'text-red-500' }
-                    ].map((game) => (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 px-2">
+                    {games.map((game) => (
                         <motion.button
                             key={game.id}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => openGame(game.id)}
-                            className={`w-full bg-[#1e1e1e] border border-black p-4 rounded-xl text-left ${game.hover} transition-colors group shadow-lg flex flex-col items-center text-center`}
+                            whileHover={{ y: -4 }}
+                            whileTap={{ scale: 0.96 }}
+                            onClick={() => setActiveGame(game.id)}
+                            className="w-full bg-ink-card border border-gold/20 hover:border-saffron p-5 rounded-t-[60px] rounded-b-md transition-colors group shadow-lg flex flex-col items-center text-center"
                         >
-                            <div className={`w-12 h-12 ${game.bg} ${game.text} rounded-xl flex items-center justify-center mb-3 text-2xl group-hover:scale-110 transition-transform`}>
+                            <div className="w-14 h-14 bg-saffron/10 border border-gold/30 rounded-full flex items-center justify-center mb-3 text-2xl group-hover:scale-110 group-hover:bg-saffron/20 transition-transform">
                                 {game.icon}
                             </div>
-                            <h5 className="font-bold text-sm md:text-base text-gray-200 mb-1 leading-tight">{game.title}</h5>
-                            <p className="text-[10px] md:text-xs text-gray-500">{game.desc}</p>
+                            <h5 className="text-base text-palm mb-1 leading-tight">{game.title}</h5>
+                            <p className="text-[11px] md:text-xs text-text-muted font-serif italic">{game.desc}</p>
                         </motion.button>
                     ))}
                 </div>
             </div>
 
-            {/* Game Fullscreen Overlays */}
             <FullScreenOverlay
-                isOpen={activeGame === 'tennis'}
+                isOpen={!!current}
                 onClose={() => setActiveGame(null)}
-                title="🏓 Table Tennis"
+                title={current ? `${current.icon} ${current.title}` : ''}
             >
-                <TableTennisGame />
-            </FullScreenOverlay>
-
-            <FullScreenOverlay
-                isOpen={activeGame === 'penalty'}
-                onClose={() => setActiveGame(null)}
-                title="⚽ Penalty Shootout"
-            >
-                <PenaltyGame />
-            </FullScreenOverlay>
-
-            <FullScreenOverlay
-                isOpen={activeGame === 'naruto'}
-                onClose={() => setActiveGame(null)}
-                title="🍥 Naruto Maze"
-            >
-                <NarutoMazeGame />
-            </FullScreenOverlay>
-
-            <FullScreenOverlay
-                isOpen={activeGame === 'tictactoe'}
-                onClose={() => setActiveGame(null)}
-                title="⭕ Tic Tac Toe"
-            >
-                <TicTacToeGame />
-            </FullScreenOverlay>
-
-            <FullScreenOverlay
-                isOpen={activeGame === 'archery'}
-                onClose={() => setActiveGame(null)}
-                title="🏹 Archery Master"
-            >
-                <ArcheryGame />
-            </FullScreenOverlay>
-
-            <FullScreenOverlay
-                isOpen={activeGame === 'racing'}
-                onClose={() => setActiveGame(null)}
-                title="🏎️ Turbo Racer"
-            >
-                <RacingGame />
+                {current && <current.Component />}
             </FullScreenOverlay>
         </section>
     );
