@@ -27,10 +27,6 @@ const ArcheryGame = () => {
     const isPerfectShot = useRef(false);
 
     // Constants
-    // State for dynamic difficulty
-    const [difficultyLevel, setDifficultyLevel] = useState(1);
-
-    // Constants
     const TARGET_SPEED_BASE = 0.5;
     const POWER_SPEED_BASE = 1.5;
     const GRAVITY = 0.4;
@@ -39,11 +35,8 @@ const ArcheryGame = () => {
     useEffect(() => {
         if (gameState !== 'playing') return;
 
-        let startTime = Date.now();
 
         const loop = () => {
-            const now = Date.now();
-            const time = (now - startTime) / 1000;
 
             // 1. Move Target (Stationary)
             const newTargetY = 50;
@@ -184,7 +177,7 @@ const ArcheryGame = () => {
         flightVelocity.current.y = driftY;
     };
 
-    const handleHit = (hitPoints, impactY) => {
+    const handleHit = (hitPoints) => {
         setArrowState('hit');
 
         if (hitPoints > 0) {

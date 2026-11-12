@@ -1,145 +1,119 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+// Soft starlight glow that follows the cursor, with a small red/green/gold
+// firework burst on click. Only runs on devices with a fine pointer (mouse)
+// and when the visitor hasn't asked for reduced motion.
+// Everything is drawn on one canvas, so mouse movement never re-renders React.
+
+const BURST_COLORS = ['#d4243b', '#1f8a55', '#f0c34e'];
+
+const useFancyCursorEnabled = () => {
+    const query = '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)';
+    const [enabled, setEnabled] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches);
+    useEffect(() => {
+        const mql = window.matchMedia(query);
+        const onChange = () => setEnabled(mql.matches);
+        mql.addEventListener('change', onChange);
+        return () => mql.removeEventListener('change', onChange);
+    }, []);
+    return enabled;
+};
 
 const MouseFollower = () => {
-    const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
-    const [sparkles, setSparkles] = useState([]);
-
-    const [isClicking, setIsClicking] = useState(false);
-
+    const enabled = useFancyCursorEnabled();
+    const canvasRef = useRef(null);
 
     useEffect(() => {
-        const updateMousePosition = (e) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+        if (!enabled) return;
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        let w = 0, h = 0, raf = 0;
+        const mouse = { x: -100, y: -100, gx: -100, gy: -100, down: false };
+        let particles = [];
 
+        const resize = () => {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            w = window.innerWidth; h = window.innerHeight;
+            canvas.width = w * dpr; canvas.height = h * dpr;
+            canvas.style.width = `${w}px`; canvas.style.height = `${h}px`;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+
+        const onMove = (e) => {
+            mouse.x = e.clientX; mouse.y = e.clientY;
             if (Math.random() > 0.8) {
-                const newSparkle = {
-                    id: Math.random(),
-                    x: e.clientX,
-                    y: e.clientY,
-                    size: Math.random() * 4 + 2,
-                    isBurst: false
-                };
-                setSparkles(prev => [...prev.slice(-15), newSparkle]); // slightly increased trail limit
+                particles.push({ x: e.clientX, y: e.clientY, vx: 0, vy: 0.4, life: 1, decay: 0.02, r: Math.random() * 2 + 1, color: '#f4f7fc' });
             }
         };
 
-        const handleMouseDown = (e) => {
-            setIsClicking(true);
-
-            // Burst of red, green and gold sparks, like a tiny firework
-            const burstCount = 12;
-            const newBurstParticles = [];
-            for (let i = 0; i < burstCount; i++) {
-                const angle = (Math.PI * 2 * i) / burstCount;
-                const distance = Math.random() * 50 + 30; // Random spread distance
-                newBurstParticles.push({
-                    id: Date.now() + i,
-                    x: e.clientX,
-                    y: e.clientY,
-                    destX: e.clientX + Math.cos(angle) * distance,
-                    destY: e.clientY + Math.sin(angle) * distance,
-                    size: Math.random() * 6 + 3,
-                    color: i % 3 === 0 ? '#d4243b' : i % 3 === 1 ? '#1f8a55' : '#f0c34e', // Holly, pine, gold
-                    isBurst: true
+        const onDown = (e) => {
+            mouse.down = true;
+            for (let i = 0; i < 12; i++) {
+                const angle = (Math.PI * 2 * i) / 12;
+                const speed = Math.random() * 1.5 + 1.5;
+                particles.push({
+                    x: e.clientX, y: e.clientY,
+                    vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+                    life: 1, decay: 0.03, r: Math.random() * 2.5 + 1.5,
+                    color: BURST_COLORS[i % BURST_COLORS.length],
                 });
             }
-            // Add to persistent bursts list or reuse sparkles?
-            // Reusing sparkles state for simplicity but distinguishing them
-            setSparkles(prev => [...prev, ...newBurstParticles]);
+        };
+        const onUp = () => { mouse.down = false; };
+
+        const draw = () => {
+            ctx.clearRect(0, 0, w, h);
+
+            // Glow eases toward the pointer
+            mouse.gx += (mouse.x - mouse.gx) * 0.35;
+            mouse.gy += (mouse.y - mouse.gy) * 0.35;
+            const radius = mouse.down ? 22 : 14;
+            const g = ctx.createRadialGradient(mouse.gx, mouse.gy, 0, mouse.gx, mouse.gy, radius);
+            g.addColorStop(0, mouse.down ? 'rgba(240,195,78,0.9)' : 'rgba(255,255,255,0.75)');
+            g.addColorStop(1, 'rgba(169,212,245,0)');
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(mouse.gx, mouse.gy, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            particles = particles.filter((p) => p.life > 0);
+            if (particles.length > 80) particles.splice(0, particles.length - 80);
+            for (const p of particles) {
+                p.x += p.vx; p.y += p.vy;
+                p.vx *= 0.95; p.vy *= 0.95;
+                p.life -= p.decay;
+                ctx.globalAlpha = Math.max(p.life, 0);
+                ctx.fillStyle = p.color;
+                ctx.shadowColor = p.color;
+                ctx.shadowBlur = 8;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+
+            raf = requestAnimationFrame(draw);
         };
 
-        const handleMouseUp = () => setIsClicking(false);
+        resize();
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('mousedown', onDown);
+        window.addEventListener('mouseup', onUp);
+        raf = requestAnimationFrame(draw);
 
-        window.addEventListener("mousemove", updateMousePosition);
-        window.addEventListener("mousedown", handleMouseDown);
-        window.addEventListener("mouseup", handleMouseUp);
         return () => {
-            window.removeEventListener("mousemove", updateMousePosition);
-            window.removeEventListener("mousedown", handleMouseDown);
-            window.removeEventListener("mouseup", handleMouseUp);
+            cancelAnimationFrame(raf);
+            window.removeEventListener('resize', resize);
+            window.removeEventListener('mousemove', onMove);
+            window.removeEventListener('mousedown', onDown);
+            window.removeEventListener('mouseup', onUp);
         };
-    }, []);
+    }, [enabled]);
 
-    return (
-        <>
-            {/* Soft starlight glow that follows the cursor */}
-            <motion.div
-                className="fixed top-0 left-0 w-6 h-6 z-[100] pointer-events-none"
-                animate={{
-                    x: mousePosition.x - 12,
-                    y: mousePosition.y - 12,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 800,
-                    damping: 28,
-                }}
-            >
-                {/* Inner Pulsing Glow - Heartbeat */}
-                <motion.div
-                    className="w-full h-full rounded-full blur-sm mix-blend-screen"
-                    animate={{
-                        scale: isClicking ? 1.6 : [1, 1.3, 1, 1.3, 1],
-                        opacity: isClicking ? 1 : [0.6, 1, 0.6, 1, 0.6]
-                    }}
-                    transition={{
-                        scale: { duration: 0.2 },
-                        default: {
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            times: [0, 0.1, 0.2, 0.3, 1] // Lub-dub...... Lub-dub effect
-                        }
-                    }}
-                    style={{
-                        background: isClicking
-                            ? "radial-gradient(circle, rgba(240, 195, 78, 1) 0%, rgba(212, 36, 59, 0) 70%)"
-                            : "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,212,245,0) 70%)",
-                        boxShadow: isClicking
-                            ? "0 0 30px 10px rgba(240, 195, 78, 0.8), 0 0 60px 30px rgba(212, 36, 59, 0.25)"
-                            : "0 0 20px 5px rgba(244, 247, 252, 0.5), 0 0 40px 20px rgba(169, 212, 245, 0.15)",
-                    }}
-                />
-            </motion.div>
-
-            {/* Snow-sparkle trail & firework bursts */}
-            <AnimatePresence>
-                {sparkles.map(sparkle => (
-                    <motion.div
-                        key={sparkle.id}
-                        className="fixed rounded-full z-[100] pointer-events-none mix-blend-screen"
-                        initial={{
-                            opacity: 1,
-                            scale: 0.5,
-                            x: sparkle.x,
-                            y: sparkle.y
-                        }}
-                        animate={{
-                            opacity: 0,
-                            scale: 0,
-                            x: sparkle.isBurst ? sparkle.destX : sparkle.x, // Movement
-                            y: sparkle.isBurst ? sparkle.destY : sparkle.y + 20 // Fall down if not burst
-                        }}
-                        exit={{ opacity: 0 }}
-                        transition={{
-                            duration: sparkle.isBurst ? 0.6 : 1, // Faster burst
-                            ease: "easeOut"
-                        }}
-                        style={{
-                            width: sparkle.size,
-                            height: sparkle.size,
-                            backgroundColor: sparkle.color || '#f4f7fc',
-                            boxShadow: `0 0 ${sparkle.isBurst ? '15px' : '10px'} 2px ${sparkle.color || 'rgba(169,212,245,0.8)'}`
-                        }}
-                        onAnimationComplete={() => {
-                            setSparkles(prev => prev.filter(s => s.id !== sparkle.id));
-                        }}
-                    />
-                ))}
-            </AnimatePresence>
-        </>
-    );
+    if (!enabled) return null;
+    return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-[300]" aria-hidden="true" />;
 };
 
 export default MouseFollower;

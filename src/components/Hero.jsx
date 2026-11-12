@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
+import { FileText } from 'lucide-react';
 import { HollyDivider, NewYearCountdown, Bauble } from './Festive';
+import { RESUME_URL } from '../siteConfig';
 
 // A row of snowy pine trees along the horizon
 const PineHorizon = () => {
@@ -64,15 +66,15 @@ const Hero = () => {
 
                     <HollyDivider className="mb-6" />
 
-                    <h3 className="text-2xl md:text-4xl text-snow/85 mb-8 font-display">
+                    <p className="text-2xl md:text-4xl text-snow/85 mb-8 font-display">
                         Data Science Manager <span className="text-gold">&amp;</span>{' '}
                         <br className="md:hidden" />
                         <span className="text-holly italic font-bold">ML Engineer</span>
-                    </h3>
+                    </p>
 
                     <p className="max-w-2xl mx-auto text-text-muted text-lg mb-10 leading-relaxed">
-                        I lead teams that turn data into gifts worth unwrapping — predictive models and
-                        recommendation engines that make every customer feel like it's Christmas morning.
+                        I lead data science teams that build predictive models and recommendation engines
+                        used by millions of customers every day, turning complex data into measurable business impact.
                     </p>
 
                     <motion.div
@@ -85,13 +87,21 @@ const Hero = () => {
                             href="#projects"
                             className="px-8 py-3 bg-holly hover:bg-holly-deep text-snow rounded-full font-bold transition-all hover:shadow-[0_0_25px_rgba(212,36,59,0.55)] shadow-lg uppercase tracking-[0.15em] text-sm"
                         >
-                            Unwrap My Work
+                            View My Work
+                        </a>
+                        <a
+                            href={RESUME_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-8 py-3 border-2 border-gold text-snow hover:bg-gold/15 rounded-full font-bold transition-all uppercase tracking-[0.15em] text-sm inline-flex items-center justify-center gap-2"
+                        >
+                            <FileText size={16} aria-hidden="true" /> Résumé
                         </a>
                         <a
                             href="#contact"
                             className="px-8 py-3 border-2 border-pine text-snow hover:bg-pine/20 rounded-full font-bold transition-all uppercase tracking-[0.15em] text-sm"
                         >
-                            Send a Greeting
+                            Get in Touch
                         </a>
                     </motion.div>
 

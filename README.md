@@ -1,16 +1,38 @@
-# React + Vite
+# adarshnair.online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio of **Adarsh Nair**, Data Science Manager & ML Engineer.
+Live at **https://adarshnair.online**.
 
-Currently, two official plugins are available:
+Built with React 19, Vite, Tailwind CSS and Framer Motion. The current look is a
+Christmas & New Year theme: falling snow, fairy lights, a New Year countdown, and a
+few small games.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run locally
 
-## React Compiler
+```bash
+npm install
+npm run dev      # start the dev server
+npm run lint     # check the code
+npm run build    # production build into dist/
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deploying
 
-## Expanding the ESLint configuration
+Every push to `master` runs `.github/workflows/deploy.yml`, which lints, builds and
+publishes `dist/` to the `gh-pages` branch (GitHub Pages, custom domain via `public/CNAME`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Where things live
+
+| What | Where |
+|---|---|
+| Links (GitHub, LinkedIn, email, résumé) | `src/siteConfig.js` |
+| Colours and fonts | `tailwind.config.js`, `src/index.css`, `index.html` (font link) |
+| Shared decorations (snow, lights, baubles, countdown) | `src/components/Festive.jsx` |
+| Page sections | `src/components/` (`Hero`, `About`, `Experience`, `Projects`, `QuickGames`, `Footer`) |
+| Mini-games | `src/components/games/` |
+| SEO, link-preview tags, structured data | `index.html`, `public/og-image.jpg`, `public/sitemap.xml` |
+
+### Updating the résumé link
+
+`RESUME_URL` in `src/siteConfig.js` currently points to LinkedIn. To link a PDF instead,
+add the file to `public/` and set `RESUME_URL` to its path, e.g. `'/Adarsh_Nair_Resume.pdf'`.

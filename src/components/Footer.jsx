@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { LINKS } from '../siteConfig';
 import { FestiveHeading, FairyLights } from './Festive';
 
 const Footer = () => {
@@ -13,16 +14,24 @@ const Footer = () => {
                     title="Let's Connect"
                     script="send a greeting"
                 />
-                <p className="text-text-muted mb-10 max-w-xl mx-auto text-lg">
-                    Whether you have a question, an idea, or just want to say hi and swap holiday wishes,
-                    my inbox is open. I'll try my best to get back to you!
+                <p className="text-text-muted mb-8 max-w-xl mx-auto text-lg">
+                    Have a data science problem, a role, or an idea you'd like to talk through?
+                    My inbox is open and I'll get back to you as soon as I can.
                 </p>
+
+                <a
+                    href={LINKS.email}
+                    className="inline-flex items-center gap-2 px-8 py-3 mb-3 bg-holly hover:bg-holly-deep text-snow rounded-full font-bold transition-all hover:shadow-[0_0_25px_rgba(212,36,59,0.55)] uppercase tracking-[0.15em] text-sm"
+                >
+                    <Mail size={18} aria-hidden="true" /> Email Me
+                </a>
+                <p className="text-text-muted text-sm mb-10">{LINKS.email.replace('mailto:', '')}</p>
 
                 <div className="flex justify-center gap-6 mb-14">
                     {[
-                        { href: 'https://github.com/adarshnair01', label: 'GitHub', Icon: Github },
-                        { href: 'https://www.linkedin.com/in/adarshnair01', label: 'LinkedIn', Icon: Linkedin },
-                        { href: 'mailto:adarshnair01@gmail.com', label: 'Email', Icon: Mail },
+                        { href: LINKS.github, label: 'GitHub', Icon: Github },
+                        { href: LINKS.linkedin, label: 'LinkedIn', Icon: Linkedin },
+                        { href: LINKS.instagram, label: 'Instagram', Icon: Instagram },
                     ].map((item) => (
                         <a
                             key={item.label}

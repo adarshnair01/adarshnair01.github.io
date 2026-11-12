@@ -1,6 +1,7 @@
 import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import { FairyLights } from './Festive';
+import { RESUME_URL, LINKS } from '../siteConfig';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
         { name: 'Games', href: '/#games' },
         { name: 'Blog', href: 'https://adarshnair.online/blog/' },
         { name: 'Travel', href: 'https://adarshnair.in/' },
+        { name: 'Résumé', href: RESUME_URL, external: true },
         { name: 'Contact', href: '/#contact' },
     ];
 
@@ -19,16 +21,16 @@ const Navbar = () => {
         <nav className="fixed w-[92%] max-w-[1400px] z-50 top-0 left-1/2 -translate-x-1/2">
             <div className="bg-night/85 backdrop-blur-md rounded-b-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] border-x border-b border-frost/15">
                 <div className="w-full flex flex-wrap items-center justify-between mx-auto px-4 py-3">
-                    <a href="#" className="flex items-center gap-2 group">
+                    <a href="#top" className="flex items-center gap-2 group" aria-label="Adarsh Nair, back to top">
                         <span className="text-2xl" aria-hidden="true">🎄</span>
                         <span className="text-2xl font-display font-bold whitespace-nowrap text-snow tracking-wide group-hover:text-gold transition-colors">Adarsh Nair</span>
                     </a>
                     <div className="flex md:order-2 items-center gap-3">
                         <div className="hidden md:flex gap-4">
-                            <a href="https://github.com/adarshnair01" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-text-muted hover:text-gold transition-colors">
+                            <a href={LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-text-muted hover:text-gold transition-colors">
                                 <Github size={20} />
                             </a>
-                            <a href="https://www.linkedin.com/in/adarshnair01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-text-muted hover:text-gold transition-colors">
+                            <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-text-muted hover:text-gold transition-colors">
                                 <Linkedin size={20} />
                             </a>
                         </div>
@@ -48,6 +50,7 @@ const Navbar = () => {
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
+                                        {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                                         className="relative block py-2 px-3 md:p-0 text-snow/80 rounded hover:bg-frost/10 md:hover:bg-transparent md:hover:text-gold transition-colors tracking-wide after:hidden md:after:block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-holly hover:after:w-full after:transition-all"
                                         onClick={() => setIsOpen(false)}
                                     >
