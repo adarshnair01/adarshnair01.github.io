@@ -6,7 +6,6 @@ import Projects from './components/Projects';
 import QuickGames from './components/QuickGames';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
-import SnowmanMascot from './components/SnowmanMascot';
 import { MotionConfig } from 'framer-motion';
 import { Snowfall } from './components/Festive';
 
@@ -42,7 +41,6 @@ function App() {
       </main>
 
       <Footer />
-      <SnowmanMascot />
     </div>
     </MotionConfig>
   );

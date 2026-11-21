@@ -12,6 +12,7 @@ const Navbar = () => {
         { name: 'Projects', href: '/#projects' },
         { name: 'Games', href: '/#games' },
         { name: 'Blog', href: 'https://adarshnair.online/blog/' },
+        { name: 'Books', href: LINKS.books },
         { name: 'Travel', href: 'https://adarshnair.in/' },
         { name: 'Résumé', href: RESUME_URL, external: true },
         { name: 'Contact', href: '/#contact' },

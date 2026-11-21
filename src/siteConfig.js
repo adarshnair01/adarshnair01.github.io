@@ -11,4 +11,5 @@ export const LINKS = {
     email: 'mailto:adarshnair01@gmail.com',
     blog: 'https://adarshnair.online/blog/',
     travel: 'https://adarshnair.in/',
+    books: 'https://adarshnair.online/books/',
 };
