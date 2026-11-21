@@ -22,7 +22,6 @@ export const Snowfall = ({ density = 110 }) => {
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
         resize();
-        window.addEventListener('resize', resize);
 
         const count = Math.round(density * Math.min(1, w / 1400) + 30);
         const flakes = Array.from({ length: count }, () => ({
@@ -54,9 +53,24 @@ export const Snowfall = ({ density = 110 }) => {
         };
         draw();
 
+        // Resizing clears the canvas, so redraw the static frame for reduced-motion users
+        const onResize = () => {
+            resize();
+            if (reduce) draw();
+        };
+        window.addEventListener('resize', onResize);
+
+        // Stop animating while the tab is hidden to save battery
+        const onVisibility = () => {
+            cancelAnimationFrame(raf);
+            if (!document.hidden && !reduce) raf = requestAnimationFrame(draw);
+        };
+        document.addEventListener('visibilitychange', onVisibility);
+
         return () => {
             cancelAnimationFrame(raf);
-            window.removeEventListener('resize', resize);
+            window.removeEventListener('resize', onResize);
+            document.removeEventListener('visibilitychange', onVisibility);
         };
     }, [density]);
 
