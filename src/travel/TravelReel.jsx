@@ -4,7 +4,7 @@ import { geoMercator, geoPath, geoGraticule10 } from 'd3-geo';
 import { Plane, TrainFront, Car, MapPin } from 'lucide-react';
 import {
     REEL, MODES, TIMING, buildTimeline, cameraAt, segmentAt, legProgress, legPath,
-    toPathD, headingDeg, project, clamp01,
+    toPathD, headingDeg, project, clamp01, pointBack,
 } from './geo';
 import { getWorld } from './world';
 
@@ -91,12 +91,14 @@ const RouteLayer = ({ timeline, frame, cam }) => {
                     <g key={leg.index}>
                         <path d={d} fill="none" stroke="#000" strokeOpacity={0.35} strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" />
                         {leg.mode === 'flight' && (
-                            <path d={d} fill="none" stroke={color} strokeWidth={6} strokeDasharray="16 14" strokeLinecap="round" />
+                            <path d={d} fill="none" stroke={color} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
                         )}
                         {leg.mode === 'train' && (
                             <>
-                                <path d={d} fill="none" stroke={color} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" />
-                                <path d={d} fill="none" stroke="#0b1628" strokeWidth={3} strokeDasharray="4 14" />
+                                {/* sleepers across the track, then the two rails */}
+                                <path d={d} fill="none" stroke={color} strokeOpacity={0.55} strokeWidth={22} strokeDasharray="5 13" />
+                                <path d={d} fill="none" stroke={color} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />
+                                <path d={d} fill="none" stroke="#0b1628" strokeWidth={5} strokeLinecap="round" strokeLinejoin="round" />
                             </>
                         )}
                         {leg.mode === 'car' && (
@@ -124,6 +126,47 @@ const RouteLayer = ({ timeline, frame, cam }) => {
     );
 };
 
+// A little train (engine plus three carriages) that follows the curve of the track.
+const TRAIN_PARTS = [{ len: 104, engine: true }, { len: 88 }, { len: 88 }, { len: 88 }];
+const TrainSprite = ({ pts, frame, appear }) => {
+    const items = [];
+    let back = 0;
+    TRAIN_PARTS.forEach((part) => {
+        items.push({ ...part, ...pointBack(pts, back + part.len / 2) });
+        back += part.len + 12;
+    });
+    const engine = items[0];
+    const rad = (engine.angle * Math.PI) / 180;
+    return (
+        <svg width={REEL.width} height={REEL.height} style={{ position: 'absolute', inset: 0, opacity: appear }}>
+            {[0, 1, 2].map((k) => {
+                // Smoke puffs drift up from the engine and fade
+                const phase = ((frame * 0.9 + k * 13) % 39) / 39;
+                const x = engine.x - Math.cos(rad) * 24 + phase * 18;
+                const y = engine.y - Math.sin(rad) * 24 - 34 - phase * 70;
+                return <circle key={k} cx={x} cy={y} r={11 + phase * 16} fill="#e6edf3" opacity={(1 - phase) * 0.55} />;
+            })}
+            {items.slice().reverse().map((it, i) => (
+                <g key={i} transform={`translate(${it.x.toFixed(1)} ${it.y.toFixed(1)}) rotate(${it.angle.toFixed(1)})`}>
+                    {it.engine ? (
+                        <>
+                            <rect x={-52} y={-25} width={104} height={50} rx={16} fill={MODES.train.color} stroke="#0b1628" strokeWidth={5} />
+                            <rect x={14} y={-15} width={26} height={30} rx={6} fill="#0b1628" />
+                            <circle cx={46} cy={0} r={7} fill={C.gold} />
+                            <rect x={-40} y={-6} width={40} height={12} rx={4} fill="#0b1628" opacity={0.35} />
+                        </>
+                    ) : (
+                        <>
+                            <rect x={-44} y={-21} width={88} height={42} rx={11} fill="#f4f7fc" stroke="#0b1628" strokeWidth={5} />
+                            {[-28, -7, 14].map((wx) => <rect key={wx} x={wx} y={-8} width={14} height={16} rx={3} fill="#0b1628" />)}
+                        </>
+                    )}
+                </g>
+            ))}
+        </svg>
+    );
+};
+
 const Vehicle = ({ timeline, frame, cam }) => {
     const seg = timeline.segments[segmentAt(timeline.segments, frame)];
     if (seg.type !== 'leg') return null;
@@ -135,6 +178,7 @@ const Vehicle = ({ timeline, frame, cam }) => {
     // The plane points along its path; car and train stay upright and face their direction
     const iconTransform = seg.mode === 'flight' ? `rotate(${heading + 45}deg)` : (Math.abs(heading) > 90 ? 'scaleX(-1)' : 'none');
     const appear = clamp01((frame - seg.start - 4) / 8);
+    if (seg.mode === 'train') return <TrainSprite pts={pts} frame={frame} appear={appear} />;
     return (
         <div style={{
             position: 'absolute', left: x - 44, top: y - 44, width: 88, height: 88, borderRadius: 44,

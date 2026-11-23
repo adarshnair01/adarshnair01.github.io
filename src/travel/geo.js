@@ -169,34 +169,113 @@ export function legProgress(seg, frame) {
     return easeInOut(clamp01((t - 0.18) / 0.72));
 }
 
-// Points along a leg in screen space. Flights bulge into an arc; land legs are straight.
-export function legPath(cam, seg, progress, samples = 48) {
-    const a = project(cam, seg.from.lng, seg.from.lat);
-    const b = project(cam, seg.to.lng, seg.to.lat);
+// ---- Leg shapes --------------------------------------------------------------
+// Each leg's shape comes from a seed made from its end points, so the same trip
+// always draws the same curves, in the editor, the preview and the exported video.
+
+function seededRandom(seed) {
+    let s = seed >>> 0 || 1;
+    return () => {
+        s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+        return s / 4294967296;
+    };
+}
+
+export const legSeed = (a, b) =>
+    Math.round(a.lat * 1e4) * 73856093 ^ Math.round(a.lng * 1e4) * 19349663 ^
+    Math.round(b.lat * 1e4) * 83492791 ^ Math.round(b.lng * 1e4) * 2654435761;
+
+/**
+ * Points from p0 to p1 (any 2D space) shaped by travel mode:
+ *  - flight: one smooth parabolic arc bulging "up"
+ *  - car: a winding road, several bends of decreasing size
+ *  - train: a gentle sweeping curve, like a rail line
+ * Bends taper to zero at both ends so the line always meets its stops.
+ * upIsNegativeY: true on screen (y grows down), false for latitude/longitude.
+ */
+export function curvePoints(p0, p1, mode, seed, { samples = 120, upIsNegativeY = true } = {}) {
+    const dx = p1[0] - p0[0], dy = p1[1] - p0[1];
+    const len = Math.hypot(dx, dy);
+    if (len < 1e-9) return [p0, p1];
+    let nx = -dy / len, ny = dx / len;
     const pts = [];
-    const n = Math.max(2, Math.ceil(samples * progress));
-    if (seg.mode === 'flight') {
-        const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2;
-        const dx = b[0] - a[0], dy = b[1] - a[1];
-        const len = Math.hypot(dx, dy) || 1;
-        // Bulge perpendicular to the line, always towards the top of the frame
-        let nx = -dy / len, ny = dx / len;
-        if (ny > 0) { nx = -nx; ny = -ny; }
-        const c = [mx + nx * len * 0.28, my + ny * len * 0.28];
-        for (let k = 0; k <= n; k++) {
-            const u = (k / n) * progress;
-            pts.push([
-                (1 - u) ** 2 * a[0] + 2 * (1 - u) * u * c[0] + u * u * b[0],
-                (1 - u) ** 2 * a[1] + 2 * (1 - u) * u * c[1] + u * u * b[1],
-            ]);
+    if (mode === 'flight') {
+        if (upIsNegativeY ? ny > 0 : ny < 0) { nx = -nx; ny = -ny; }
+        const h = len * 0.32;
+        for (let k = 0; k <= samples; k++) {
+            const u = k / samples;
+            const off = 4 * h * u * (1 - u); // parabola: 0 at both ends, h in the middle
+            pts.push([p0[0] + dx * u + nx * off, p0[1] + dy * u + ny * off]);
         }
-    } else {
-        for (let k = 0; k <= n; k++) {
-            const u = (k / n) * progress;
-            pts.push(project(cam, seg.from.lng + (seg.to.lng - seg.from.lng) * u, seg.from.lat + (seg.to.lat - seg.from.lat) * u));
-        }
+        return pts;
+    }
+    const rnd = seededRandom(seed);
+    const waves = mode === 'train'
+        ? [[1, 0.1], [2, 0.03]] // long, gentle sweeps
+        : [[1.2, 0.08], [2.6, 0.035], [5, 0.008]]; // a road's big bends, smaller turns and a little texture
+    const parts = waves.map(([f, amp]) => ({
+        f: f * (0.8 + 0.4 * rnd()),
+        amp: amp * (rnd() < 0.5 ? -1 : 1),
+        ph: rnd() * Math.PI * 2,
+    }));
+    for (let k = 0; k <= samples; k++) {
+        const u = k / samples;
+        const taper = Math.sin(Math.PI * u);
+        const off = len * taper * parts.reduce((acc, w) => acc + w.amp * Math.sin(2 * Math.PI * w.f * u + w.ph), 0);
+        pts.push([p0[0] + dx * u + nx * off, p0[1] + dy * u + ny * off]);
     }
     return pts;
+}
+
+// Cut a polyline at a fraction of its length (so vehicles move at an even pace).
+export function trimByLength(pts, fraction) {
+    if (fraction >= 1) return pts;
+    const seglen = [];
+    let total = 0;
+    for (let i = 1; i < pts.length; i++) {
+        const l = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+        seglen.push(l);
+        total += l;
+    }
+    let target = Math.max(0, fraction) * total;
+    const out = [pts[0]];
+    for (let i = 1; i < pts.length; i++) {
+        if (target <= seglen[i - 1]) {
+            const t = seglen[i - 1] ? target / seglen[i - 1] : 0;
+            out.push([pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * t, pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * t]);
+            return out;
+        }
+        target -= seglen[i - 1];
+        out.push(pts[i]);
+    }
+    return out;
+}
+
+// Position and heading at a distance (in the polyline's units) back from its end.
+export function pointBack(pts, dist) {
+    let remaining = dist;
+    for (let i = pts.length - 1; i > 0; i--) {
+        const [x2, y2] = pts[i];
+        const [x1, y1] = pts[i - 1];
+        const l = Math.hypot(x2 - x1, y2 - y1);
+        const angle = (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI;
+        if (remaining <= l) {
+            const t = l ? remaining / l : 0;
+            return { x: x2 - (x2 - x1) * t, y: y2 - (y2 - y1) * t, angle };
+        }
+        remaining -= l;
+    }
+    const [x1, y1] = pts[0];
+    const [x2, y2] = pts[Math.min(1, pts.length - 1)];
+    return { x: x1, y: y1, angle: (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI };
+}
+
+// Screen-space points of a leg, drawn up to `progress` of its length.
+export function legPath(cam, seg, progress) {
+    const a = project(cam, seg.from.lng, seg.from.lat);
+    const b = project(cam, seg.to.lng, seg.to.lat);
+    const full = curvePoints(a, b, seg.mode, legSeed(seg.from, seg.to));
+    return trimByLength(full, progress);
 }
 
 export const toPathD = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join('');

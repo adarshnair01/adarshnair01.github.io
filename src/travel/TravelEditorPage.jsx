@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Polyline, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { searchPlaces, reverseLookup } from './geocode';
 import { TravelReel } from './TravelReel';
-import { REEL, MODES, buildTimeline, distanceKm } from './geo';
+import { REEL, MODES, buildTimeline, distanceKm, curvePoints, legSeed } from './geo';
 import { loadWorld } from './world';
 
 const MODE_ICONS = { flight: Plane, train: TrainFront, car: Car };
@@ -79,10 +79,11 @@ const FitToStops = ({ stops, focus }) => {
     const map = useMap();
     const count = stops.length;
     useEffect(() => {
-        if (focus) {
+        // Show the whole route once there are two places; zoom to the first place on its own
+        if (count > 1) {
+            map.flyToBounds(stops.map((s) => [s.lat, s.lng]), { padding: [60, 60], maxZoom: 9, duration: 0.8 });
+        } else if (focus) {
             map.flyTo([focus.lat, focus.lng], Math.max(map.getZoom(), 6), { duration: 0.8 });
-        } else if (count > 1) {
-            map.fitBounds(stops.map((s) => [s.lat, s.lng]), { padding: [60, 60], maxZoom: 9 });
         }
         // Only re-frame when a stop is added or removed, not on every rename
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -99,13 +100,19 @@ const TripMap = ({ stops, onPick, adding, focus }) => (
         />
         <ClickToAdd onPick={onPick} disabled={adding || stops.length >= MAX_STOPS} />
         <FitToStops stops={stops} focus={focus} />
-        {stops.slice(1).map((s, i) => (
-            <Polyline
-                key={s.id}
-                positions={[[stops[i].lat, stops[i].lng], [s.lat, s.lng]]}
-                pathOptions={{ color: MODES[s.mode]?.color || '#fff', weight: 4, dashArray: s.mode === 'flight' ? '8 8' : undefined }}
-            />
-        ))}
+        {stops.slice(1).map((s, i) => {
+            // Same curve shapes as the reel, drawn in longitude/latitude
+            const prev = stops[i];
+            const positions = curvePoints([prev.lng, prev.lat], [s.lng, s.lat], s.mode, legSeed(prev, s), { samples: 80, upIsNegativeY: false })
+                .map(([lng, lat]) => [lat, lng]);
+            const color = MODES[s.mode]?.color || '#fff';
+            return (
+                <Fragment key={s.id}>
+                    <Polyline positions={positions} pathOptions={{ color, weight: s.mode === 'train' ? 7 : 4 }} />
+                    {s.mode === 'train' && <Polyline positions={positions} pathOptions={{ color: '#0b1628', weight: 2 }} />}
+                </Fragment>
+            );
+        })}
         {stops.map((s, i) => (
             <Marker key={s.id} position={[s.lat, s.lng]} icon={markerIcon(i + 1, i === stops.length - 1)} title={s.name} />
         ))}
