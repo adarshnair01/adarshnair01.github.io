@@ -282,7 +282,10 @@ export const toPathD = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixe
 
 export function headingDeg(pts) {
     if (pts.length < 2) return 0;
-    const [x1, y1] = pts[pts.length - 2];
+    // Look back far enough along the path that tiny final steps don't make the angle jitter
     const [x2, y2] = pts[pts.length - 1];
+    let i = pts.length - 2;
+    while (i > 0 && Math.hypot(x2 - pts[i][0], y2 - pts[i][1]) < 30) i -= 1;
+    const [x1, y1] = pts[i];
     return (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI;
 }

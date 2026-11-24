@@ -126,8 +126,83 @@ const RouteLayer = ({ timeline, frame, cam }) => {
     );
 };
 
-// A little train (engine plus three carriages) that follows the curve of the track.
-const TRAIN_PARTS = [{ len: 104, engine: true }, { len: 88 }, { len: 88 }, { len: 88 }];
+// ---- Vehicles ------------------------------------------------------------------
+// A "lub-dub" heartbeat (about one beat a second) that makes the vehicle feel alive,
+// with a ring rippling out on every beat.
+
+const BEAT_FRAMES = 30;
+const bump = (t, centre, width) => Math.exp(-(((t - centre) / width) ** 2));
+const heartbeat = (frame) => {
+    const t = (frame % BEAT_FRAMES) / BEAT_FRAMES;
+    return {
+        scale: 1 + 0.2 * (bump(t, 0.08, 0.05) + 0.65 * bump(t, 0.3, 0.05)),
+        ripple: t, // 0..1 through the beat
+    };
+};
+
+const Ripple = ({ beat, color, base = 62 }) => (
+    <circle r={base + beat.ripple * 70} fill="none" stroke={color} strokeWidth={8 * (1 - beat.ripple)} opacity={0.7 * (1 - beat.ripple)} />
+);
+
+// Cartoon car seen from the side, facing right. Wheels spin, body bobs.
+const CarArt = ({ frame }) => {
+    const bob = Math.sin(frame * 0.9) * 1.6;
+    const spin = (frame * 24) % 360;
+    const wheel = (cx) => (
+        <g transform={`translate(${cx} 16)`}>
+            <circle r={11} fill="#1d2433" stroke="#0b1628" strokeWidth={3} />
+            <circle r={4.5} fill="#cfd8e3" />
+            <g transform={`rotate(${spin})`} stroke="#cfd8e3" strokeWidth={2.4} strokeLinecap="round">
+                <line x1={-7} y1={0} x2={7} y2={0} />
+                <line x1={0} y1={-7} x2={0} y2={7} />
+            </g>
+        </g>
+    );
+    return (
+        <g>
+            <ellipse cx={2} cy={29} rx={40} ry={5} fill="#000" opacity={0.25} />
+            <g transform={`translate(0 ${bob.toFixed(2)})`}>
+                <path d="M-42 8 Q-43 -5 -31 -7 L-19 -7 L-9 -23 Q-6 -27 -1 -27 L17 -27 Q23 -27 27 -21 L36 -7 Q45 -6 45 4 L45 12 Q45 17 40 17 L-37 17 Q-42 17 -42 12 Z"
+                    fill={MODES.car.color} stroke="#0b1628" strokeWidth={3.5} strokeLinejoin="round" />
+                <path d="M-5 -21 L1 -21 L1 -9 L-13 -9 Z" fill="#bfe6ff" stroke="#0b1628" strokeWidth={2.5} strokeLinejoin="round" />
+                <path d="M5 -21 L16 -21 Q20 -21 23 -16 L27 -9 L5 -9 Z" fill="#bfe6ff" stroke="#0b1628" strokeWidth={2.5} strokeLinejoin="round" />
+                <path d="M-36 -2 L30 -2" stroke="#fff" strokeOpacity={0.45} strokeWidth={3} strokeLinecap="round" />
+                <circle cx={41} cy={2} r={4} fill={C.gold} stroke="#0b1628" strokeWidth={2} />
+                <rect x={-43} y={4} width={7} height={5} rx={2} fill="#ffd2d8" />
+            </g>
+            {wheel(-22)}
+            {wheel(25)}
+        </g>
+    );
+};
+
+// Cartoon plane seen from above, nose pointing right.
+const PlaneArt = () => (
+    <g>
+        <path d="M2 -8 L-14 -46 Q-16 -50 -11 -50 L-5 -50 L24 -8 Z" fill={C.gold} stroke="#0b1628" strokeWidth={3} strokeLinejoin="round" />
+        <path d="M2 8 L-14 46 Q-16 50 -11 50 L-5 50 L24 8 Z" fill={C.gold} stroke="#0b1628" strokeWidth={3} strokeLinejoin="round" />
+        <path d="M-30 -5 L-42 -21 L-35 -22 L-20 -5 Z" fill={C.gold} stroke="#0b1628" strokeWidth={2.5} strokeLinejoin="round" />
+        <path d="M-30 5 L-42 21 L-35 22 L-20 5 Z" fill={C.gold} stroke="#0b1628" strokeWidth={2.5} strokeLinejoin="round" />
+        <path d="M-42 0 Q-42 -9 -30 -10 L28 -10 Q46 -9 48 0 Q46 9 28 10 L-30 10 Q-42 9 -42 0 Z" fill="#f4f7fc" stroke="#0b1628" strokeWidth={3.5} />
+        {[-20, -11, -2, 7, 16].map((wx) => <circle key={wx} cx={wx} cy={0} r={2.6} fill="#5aa9e6" />)}
+        <path d="M32 -6 Q42 -4 43 0 Q42 4 32 6 Z" fill="#5aa9e6" stroke="#0b1628" strokeWidth={2} />
+    </g>
+);
+
+const Badge = ({ x, y, color, beat, appear, children }) => (
+    <g transform={`translate(${x.toFixed(1)} ${y.toFixed(1)})`} opacity={appear}>
+        <Ripple beat={beat} color={color} />
+        <g transform={`scale(${(beat.scale * (0.6 + 0.4 * appear)).toFixed(3)})`}>
+            <circle cy={6} r={60} fill="#000" opacity={0.3} />
+            <circle r={60} fill={color} stroke="#fff" strokeWidth={6} />
+            <circle r={48} fill="#fff" opacity={0.22} />
+            {children}
+        </g>
+    </g>
+);
+
+// A cartoon train (engine plus three colourful carriages) that follows the curve of the track.
+const TRAIN_PARTS = [{ len: 112, engine: true }, { len: 90, roof: C.gold }, { len: 90, roof: MODES.car.color }, { len: 90, roof: '#4cc38a' }];
 const TrainSprite = ({ pts, frame, appear }) => {
     const items = [];
     let back = 0;
@@ -137,32 +212,37 @@ const TrainSprite = ({ pts, frame, appear }) => {
     });
     const engine = items[0];
     const rad = (engine.angle * Math.PI) / 180;
+    const beat = heartbeat(frame);
     return (
         <svg width={REEL.width} height={REEL.height} style={{ position: 'absolute', inset: 0, opacity: appear }}>
+            <g transform={`translate(${engine.x.toFixed(1)} ${engine.y.toFixed(1)})`}>
+                <Ripple beat={beat} color={MODES.train.color} base={66} />
+            </g>
             {[0, 1, 2].map((k) => {
-                // Smoke puffs drift up from the engine and fade
+                // Smoke puffs from the chimney, drifting up and fading
                 const phase = ((frame * 0.9 + k * 13) % 39) / 39;
-                const x = engine.x - Math.cos(rad) * 24 + phase * 18;
-                const y = engine.y - Math.sin(rad) * 24 - 34 - phase * 70;
-                return <circle key={k} cx={x} cy={y} r={11 + phase * 16} fill="#e6edf3" opacity={(1 - phase) * 0.55} />;
+                const x = engine.x - Math.cos(rad) * 40 + phase * 16;
+                const y = engine.y - Math.sin(rad) * 40 - 10 - phase * 80;
+                return <circle key={k} cx={x} cy={y} r={12 + phase * 18} fill="#f4f7fc" stroke="#cfd8e3" strokeWidth={2} opacity={(1 - phase) * 0.8} />;
             })}
-            {items.slice().reverse().map((it, i) => (
+            {items.slice(1).reverse().map((it, i) => (
                 <g key={i} transform={`translate(${it.x.toFixed(1)} ${it.y.toFixed(1)}) rotate(${it.angle.toFixed(1)})`}>
-                    {it.engine ? (
-                        <>
-                            <rect x={-52} y={-25} width={104} height={50} rx={16} fill={MODES.train.color} stroke="#0b1628" strokeWidth={5} />
-                            <rect x={14} y={-15} width={26} height={30} rx={6} fill="#0b1628" />
-                            <circle cx={46} cy={0} r={7} fill={C.gold} />
-                            <rect x={-40} y={-6} width={40} height={12} rx={4} fill="#0b1628" opacity={0.35} />
-                        </>
-                    ) : (
-                        <>
-                            <rect x={-44} y={-21} width={88} height={42} rx={11} fill="#f4f7fc" stroke="#0b1628" strokeWidth={5} />
-                            {[-28, -7, 14].map((wx) => <rect key={wx} x={wx} y={-8} width={14} height={16} rx={3} fill="#0b1628" />)}
-                        </>
-                    )}
+                    <rect x={-45} y={-23} width={90} height={46} rx={13} fill="#f4f7fc" stroke="#0b1628" strokeWidth={4.5} />
+                    <rect x={-37} y={-14} width={74} height={28} rx={9} fill={it.roof} />
+                    {[-24, -8, 8, 24].map((wx) => <circle key={wx} cx={wx} cy={0} r={4} fill="#fff" />)}
                 </g>
             ))}
+            <g transform={`translate(${engine.x.toFixed(1)} ${engine.y.toFixed(1)}) rotate(${engine.angle.toFixed(1)}) scale(${beat.scale.toFixed(3)})`}>
+                <path d="M56 -26 L70 0 L56 26 Z" fill={C.gold} stroke="#0b1628" strokeWidth={4} strokeLinejoin="round" />
+                <rect x={-56} y={-28} width={116} height={56} rx={20} fill={MODES.train.color} stroke="#0b1628" strokeWidth={5} />
+                <rect x={-50} y={-20} width={34} height={40} rx={9} fill="#2a5d8f" stroke="#0b1628" strokeWidth={3} />
+                <rect x={-44} y={-12} width={22} height={24} rx={5} fill="#bfe6ff" />
+                <circle cx={14} cy={0} r={13} fill="#1d2433" stroke="#0b1628" strokeWidth={3} />
+                <circle cx={14} cy={0} r={6} fill="#4b5568" />
+                <circle cx={46} cy={0} r={9} fill={C.gold} stroke="#0b1628" strokeWidth={3} />
+                <circle cx={46} cy={0} r={4} fill="#fff" />
+                <path d="M-8 -22 L36 -22" stroke="#fff" strokeOpacity={0.5} strokeWidth={4} strokeLinecap="round" />
+            </g>
         </svg>
     );
 };
@@ -172,24 +252,22 @@ const Vehicle = ({ timeline, frame, cam }) => {
     if (seg.type !== 'leg') return null;
     const p = legProgress(seg, frame);
     const pts = legPath(cam, seg, Math.max(p, 0.001));
-    const [x, y] = pts[pts.length - 1];
-    const Icon = ICONS[seg.mode];
-    const heading = headingDeg(pts);
-    // The plane points along its path; car and train stay upright and face their direction
-    const iconTransform = seg.mode === 'flight' ? `rotate(${heading + 45}deg)` : (Math.abs(heading) > 90 ? 'scaleX(-1)' : 'none');
     const appear = clamp01((frame - seg.start - 4) / 8);
     if (seg.mode === 'train') return <TrainSprite pts={pts} frame={frame} appear={appear} />;
+
+    const [x, y] = pts[pts.length - 1];
+    const heading = headingDeg(pts);
+    const beat = heartbeat(frame);
+    // The plane points along its arc and banks gently; the car stays upright and faces its direction
+    const art = seg.mode === 'flight'
+        ? <g transform={`rotate(${(heading + Math.sin(frame * 0.15) * 4).toFixed(1)}) scale(0.95)`}><PlaneArt /></g>
+        : <g transform={`scale(${Math.abs(heading) > 90 ? -1 : 1} 1)`}><CarArt frame={frame} /></g>;
     return (
-        <div style={{
-            position: 'absolute', left: x - 44, top: y - 44, width: 88, height: 88, borderRadius: 44,
-            background: MODES[seg.mode].color, border: '5px solid #fff', boxShadow: '0 10px 30px rgba(0,0,0,0.45)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: appear,
-            transform: `scale(${0.6 + 0.4 * appear})`,
-        }}>
-            <div style={{ transform: iconTransform, display: 'flex' }}>
-                <Icon size={44} color="#0b1628" strokeWidth={2.6} />
-            </div>
-        </div>
+        <svg width={REEL.width} height={REEL.height} style={{ position: 'absolute', inset: 0 }}>
+            <Badge x={x} y={y} color={seg.mode === 'flight' ? '#2a5d8f' : '#fff4e0'} beat={beat} appear={appear}>
+                {art}
+            </Badge>
+        </svg>
     );
 };
 
